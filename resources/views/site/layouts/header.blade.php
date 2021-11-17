@@ -154,7 +154,7 @@
                                     @endguest
                                     @auth
                                         <li class="has-dropdown">
-                                            <a href="#">{{ \Str::limit(auth()->user()->name, 10) }}</a>
+                                            <a href="#">welcome back : {{ \Str::limit(auth()->user()->name, 10) }}</a>
                                             <ul class="dropdown">
                                                 <li><a href="#">Profile</a></li>
                                                 {{-- @if(auth()->user()->roles_name==["Owner"]) --}}

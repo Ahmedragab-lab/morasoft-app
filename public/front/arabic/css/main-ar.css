@@ -1,6 +1,6 @@
 /* ملف خاص بتعدل الفرونت الصفحه الرئيسيه وشكرا لكم */
 /* loader */
-.pageloader {
+/* .pageloader {
     transition: transform .1s ease-out,-webkit-transform .1s ease-out ;
 }
 
@@ -9,7 +9,7 @@
 }
 .logo-text{
     color: #cf5029;
-}
+} */
 /* end loader */
 /* frame video */
 .mfp-lightbox{
@@ -22,3 +22,6 @@
 }
 /* end frame video */
 /* end frame video */
+body.header-transparent header {
+    background-color: #1c566e;
+}

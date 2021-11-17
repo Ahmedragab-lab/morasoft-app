@@ -21,7 +21,7 @@
                 <article class="blog-post">
                   <figure class="post-image">
                     <a href="./pages/about.html">
-                      <img alt="Joo - Niche Multi-Purpose HTML Template" src="./assets/images/blog/1.png"> </a>
+                      <img alt="Joo - Niche Multi-Purpose HTML Template" src="{{ asset('front/images/blog/1.png') }}"> </a>
                   </figure>
                   <div class="entry-header">
                     <h2 class="entry-title">
@@ -43,7 +43,7 @@
                 <article class="blog-post">
                   <figure class="post-image">
                     <a href="./pages/about.html">
-                      <img alt="Joo - Niche Multi-Purpose HTML Template" src="./assets/images/blog/2.png"> </a>
+                      <img alt="Joo - Niche Multi-Purpose HTML Template" src="{{ asset('front/images/blog/2.png') }}"> </a>
                   </figure>
                   <div class="entry-header">
                     <h2 class="entry-title">
@@ -65,7 +65,7 @@
                 <article class="blog-post">
                   <figure class="post-image">
                     <a href="./pages/about.html">
-                      <img alt="Joo - Niche Multi-Purpose HTML Template" src="./assets/images/blog/3.png"> </a>
+                      <img alt="Joo - Niche Multi-Purpose HTML Template" src="{{ asset('front/images/blog/3.png') }}"> </a>
                   </figure>
                   <div class="entry-header">
                     <h2 class="entry-title">
@@ -360,7 +360,7 @@
                 <article class="blog-post">
                   <figure class="post-image">
                     <a href="./blog/single.html">
-                      <img alt="Joo - Niche Multi-Purpose HTML Template" src="./assets/images/blog/4.png"> </a>
+                      <img alt="Joo - Niche Multi-Purpose HTML Template" src="{{ asset('front/images/blog/4.png') }}"> </a>
                   </figure>
                   <div class="entry-header">
                     <div class="post-meta">
@@ -386,7 +386,7 @@
                 <article class="blog-post">
                   <figure class="post-image">
                     <a href="./blog/single.html">
-                      <img alt="Joo - Niche Multi-Purpose HTML Template" src="./assets/images/blog/5.png"> </a>
+                      <img alt="Joo - Niche Multi-Purpose HTML Template" src="{{ asset('front/images/blog/5.png') }}"> </a>
                   </figure>
                   <div class="entry-header">
                     <div class="post-meta">

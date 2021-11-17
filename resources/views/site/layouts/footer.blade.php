@@ -12,43 +12,46 @@
                 <nav class="clients-list level  owl-carousel no-dots carousel-items-5">
                   <div class="client-item has-text-centered level-item">
                     <a href="#" target="_blank">
-                      <img alt="Joo - Niche Multi-Purpose HTML Template" src="./assets/images/clients/7.png"> </a>
+                      <img alt="Joo - Niche Multi-Purpose HTML Template" src="{{ asset('front/images/clients/7.png') }}">
+                    </a>
                   </div>
                   <div class="client-item has-text-centered level-item">
                     <a href="#" target="_blank">
-                      <img alt="Joo - Niche Multi-Purpose HTML Template" src="./assets/images/clients/8.png"> </a>
+                      <img alt="Joo - Niche Multi-Purpose HTML Template" src="{{ asset('front/images/clients/8.png') }}">
+                    </a>
                   </div>
                   <div class="client-item has-text-centered level-item">
                     <a href="#" target="_blank">
-                      <img alt="Joo - Niche Multi-Purpose HTML Template" src="./assets/images/clients/9.png"> </a>
+                      <img alt="Joo - Niche Multi-Purpose HTML Template" src="{{ asset('front/images/clients/9.png') }}" ></a>
                   </div>
                   <div class="client-item has-text-centered level-item">
                     <a href="#" target="_blank">
-                      <img alt="Joo - Niche Multi-Purpose HTML Template" src="./assets/images/clients/7.png"> </a>
+                      <img alt="Joo - Niche Multi-Purpose HTML Template" src="{{ asset('front/images/clients/7.png') }}">
+                    </a>
                   </div>
                   <div class="client-item has-text-centered level-item">
                     <a href="#" target="_blank">
-                      <img alt="Joo - Niche Multi-Purpose HTML Template" src="./assets/images/clients/8.png"> </a>
+                      <img alt="Joo - Niche Multi-Purpose HTML Template" src="{{ asset('front/images/clients/8.png') }}"> </a>
                   </div>
                   <div class="client-item has-text-centered level-item">
                     <a href="#" target="_blank">
-                      <img alt="Joo - Niche Multi-Purpose HTML Template" src="./assets/images/clients/9.png"> </a>
+                      <img alt="Joo - Niche Multi-Purpose HTML Template" src="{{ asset('front/images/clients/9.png') }}"> </a>
                   </div>
                   <div class="client-item has-text-centered level-item">
                     <a href="#" target="_blank">
-                      <img alt="Joo - Niche Multi-Purpose HTML Template" src="./assets/images/clients/7.png"> </a>
+                      <img alt="Joo - Niche Multi-Purpose HTML Template" src="{{ asset('front/images/clients/7.png') }}"> </a>
                   </div>
                   <div class="client-item has-text-centered level-item">
                     <a href="#" target="_blank">
-                      <img alt="Joo - Niche Multi-Purpose HTML Template" src="./assets/images/clients/8.png"> </a>
+                      <img alt="Joo - Niche Multi-Purpose HTML Template" src="{{ asset('front/images/clients/8.png') }}"> </a>
                   </div>
                   <div class="client-item has-text-centered level-item">
                     <a href="#" target="_blank">
-                      <img alt="Joo - Niche Multi-Purpose HTML Template" src="./assets/images/clients/9.png"> </a>
+                      <img alt="Joo - Niche Multi-Purpose HTML Template" src="{{ asset('front/images/clients/9.png') }}"> </a>
                   </div>
                   <div class="client-item has-text-centered level-item">
                     <a href="#" target="_blank">
-                      <img alt="Joo - Niche Multi-Purpose HTML Template" src="./assets/images/clients/7.png"> </a>
+                      <img alt="Joo - Niche Multi-Purpose HTML Template" src="{{ asset('front/images/clients/7.png') }}"> </a>
                   </div>
                 </nav>
               </div>
@@ -70,7 +73,7 @@
               <div class="textwidget">
                 <div id="footer-logo" class="site-logo ">
                   <a href="./index.html">
-                    <img alt="Joo - Niche Multi-Purpose HTML Template" src="./assets/images/logo/logo2.png">
+                    <img alt="Joo - Niche Multi-Purpose HTML Template" src="{{ asset('front/images/logo/logo2.png') }}">
                     <span class="logo-text">خدمات النقل</span>
                   </a>
                 </div>
@@ -282,7 +285,7 @@
           <div class="columns is-variable is-multiline is-2">
             <div class="column is-6">
               <figure>
-                <img alt="Joo - Niche Multi-Purpose HTML Template" src="./assets/images/portfolio//demos/creative-1.png">
+                <img alt="Joo - Niche Multi-Purpose HTML Template" src="{{ asset('front/images/portfolio//demos/creative-1.png') }}">
                 <figcaption>
                   <h5>إبداعى 01</h5>
                   <a href="https://themes.jozoor.com/html/joo/creative/01/rtl/" target="_blank">View more</a>
@@ -291,7 +294,7 @@
             </div>
             <div class="column is-6">
               <figure>
-                <img alt="Joo - Niche Multi-Purpose HTML Template" src="./assets/images/portfolio//demos/corporate-1.png">
+                <img alt="Joo - Niche Multi-Purpose HTML Template" src="{{ asset('front/images/portfolio//demos/corporate-1.png') }}">
                 <figcaption>
                   <h5>شركات 01</h5>
                   <a href="https://themes.jozoor.com/html/joo/corporate/01/rtl/" target="_blank">View more</a>
@@ -300,7 +303,7 @@
             </div>
             <div class="column is-6">
               <figure>
-                <img alt="Joo - Niche Multi-Purpose HTML Template" src="./assets/images/portfolio//demos/entertainment-2.png">
+                <img alt="Joo - Niche Multi-Purpose HTML Template" src="{{ asset('front/images/portfolio//demos/entertainment-2.png') }}">
                 <figcaption>
                   <h5>مطعم برجر</h5>
                   <a href="https://themes.jozoor.com/html/joo/entertainment/02/rtl/" target="_blank">View more</a>
