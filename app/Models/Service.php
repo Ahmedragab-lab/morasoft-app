@@ -12,6 +12,6 @@ class Service extends Model
     use HasTranslations;
 
     public $translatable = ['serve_name'];
-    protected $table = 'services';
+    // protected $table = 'services';
     protected $guarded = [];
 }

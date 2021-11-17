@@ -12,11 +12,7 @@ use App\Models\navbar_details;
 
 class FrontendController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+    
     public function index()
     {
         $servs = Service::orderBy('id','DESC')->limit(4)->get();
