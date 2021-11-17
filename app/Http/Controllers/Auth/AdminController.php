@@ -11,6 +11,7 @@ use Illuminate\Support\Facades\Auth;
 
 class AdminController extends Controller
 {
+ 
     public function create()
     {
         return view('auth.admin_login');
@@ -24,7 +25,7 @@ class AdminController extends Controller
 
         return redirect()->intended(RouteServiceProvider::ADMIN);
     }
-   
+
     // public function showLoginForm()
     // {
     //     if (Auth::guard('admin')->check()) {

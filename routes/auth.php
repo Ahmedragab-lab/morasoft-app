@@ -8,6 +8,7 @@ use App\Http\Controllers\Auth\NewPasswordController;
 use App\Http\Controllers\Auth\PasswordResetLinkController;
 use App\Http\Controllers\Auth\RegisteredUserController;
 use App\Http\Controllers\Auth\VerifyEmailController;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 //===========================================================================================
 // Show Form login admin
@@ -71,5 +72,11 @@ Route::post('/logout', [AuthenticatedSessionController::class, 'destroy'])
                 ->middleware('auth')
                 ->name('logout');
 // Request Form login out admin
-Route::post('/logout/admin', [AuthenticatedSessionController::class, 'logout'])
-    ->middleware('guest')->name('logoutadmin');
+// Route::post('/logout/admin', [AuthenticatedSessionController::class, 'logout'])
+//     ->middleware('guest')->name('logoutadmin');
+Route::post('/logout/admin',function(){
+    Auth::guard('admin')->logout();
+    return redirect('/');
+})->name('logoutadmin');
+
+
