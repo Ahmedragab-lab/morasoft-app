@@ -1,5 +1,5 @@
 <?php
-
+use App\Http\Controllers\Auth\AdminController;
 use App\Http\Controllers\Auth\AuthenticatedSessionController;
 use App\Http\Controllers\Auth\ConfirmablePasswordController;
 use App\Http\Controllers\Auth\EmailVerificationNotificationController;
@@ -9,7 +9,15 @@ use App\Http\Controllers\Auth\PasswordResetLinkController;
 use App\Http\Controllers\Auth\RegisteredUserController;
 use App\Http\Controllers\Auth\VerifyEmailController;
 use Illuminate\Support\Facades\Route;
-
+//===========================================================================================
+// Show Form login admin
+Route::get('/login/admin', [AdminController::class, 'create'])
+    ->middleware('guest')
+    ->name('login.admin');
+// Request Form login admin
+Route::post('/login/admin', [AdminController::class, 'store'])
+    ->middleware('guest')->name('admin.login');
+//================================================================================================
 Route::get('/register', [RegisteredUserController::class, 'create'])
                 ->middleware('guest')
                 ->name('register');
@@ -62,3 +70,6 @@ Route::post('/confirm-password', [ConfirmablePasswordController::class, 'store']
 Route::post('/logout', [AuthenticatedSessionController::class, 'destroy'])
                 ->middleware('auth')
                 ->name('logout');
+// Request Form login out admin
+Route::post('/logout/admin', [AuthenticatedSessionController::class, 'logout'])
+    ->middleware('guest')->name('logoutadmin');

@@ -10,7 +10,7 @@ use App\Http\Controllers\Auth\AdminAuthController;
 Route::group(
     [
         'prefix' => LaravelLocalization::setLocale(),
-        'middleware' => ['auth','localeSessionRedirect', 'localizationRedirect', 'localeViewPath']
+        'middleware' => ['auth:admin','localeSessionRedirect', 'localizationRedirect', 'localeViewPath']
     ],function () {
 
         // Route::get('adminlogin', [AdminAuthController::class, 'showLoginForm'])->name('admin.login');
@@ -24,7 +24,7 @@ Route::group(
         Route::resource('/events',Controllers\Admin\EventController::class);
         Route::resource('/agreements',Controllers\Admin\AgreementController::class);
 
-        
+
         Route::resource('navbar_data',Controllers\NavbarDetailsController::class);
     });
 

@@ -7,6 +7,7 @@ use App\Http\Requests\Auth\LoginRequest;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Session;
 
 class AuthenticatedSessionController extends Controller
 {
@@ -43,12 +44,30 @@ class AuthenticatedSessionController extends Controller
      */
     public function destroy(Request $request)
     {
+
         Auth::guard('web')->logout();
-
         $request->session()->invalidate();
-
         $request->session()->regenerateToken();
-
         return redirect('/');
     }
+    public function logout( Request $request )
+    {
+        // if(Auth::guard('admin')->check()) // this means that the admin was logged in.
+        // {
+        //     Auth::guard('admin')->logout(true);
+        //     return redirect('/');
+        // }
+
+        // $this->guard()->logout();
+        // $request->session()->invalidate();
+
+        // return $this->loggedOut($request) ?: redirect('/');
+
+        Auth::guard('admin')->logout();
+        $request->session()->invalidate();
+        $request->session()->invalidate();
+        $request->session()->regenerateToken();
+        return redirect('/');
+    }
+
 }

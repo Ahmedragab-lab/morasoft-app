@@ -9,22 +9,22 @@ use App\Providers\RouteServiceProvider;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
-class AdminCotroller extends Controller
+class AdminController extends Controller
 {
-    // public function create()
-    // {
-    //     return view('auth.admin_login');
-    // }
+    public function create()
+    {
+        return view('auth.admin_login');
+    }
 
-    // public function store(LoginRequestAdmin $request)
-    // {
-    //     $request->authenticate();
+    public function store(LoginRequestAdmin $request)
+    {
+        $request->authenticate();
 
-    //     $request->session()->regenerate();
+        $request->session()->regenerate();
 
-    //     return redirect()->intended(RouteServiceProvider::ADMIN);
-    // }
-
+        return redirect()->intended(RouteServiceProvider::ADMIN);
+    }
+   
     // public function showLoginForm()
     // {
     //     if (Auth::guard('admin')->check()) {

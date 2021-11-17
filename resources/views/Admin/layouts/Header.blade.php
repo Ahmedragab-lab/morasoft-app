@@ -123,11 +123,11 @@
                     {{-- <a class="dropdown-item" href="#"><i class="dripicons-lock text-muted"></i> Lock screen</a> --}}
                     <div class="dropdown-divider"></div>
                     {{-- <a class="dropdown-item" href="#"><i class="dripicons-exit text-muted"></i> Logout</a> --}}
-                    <a class="dropdown-item" href="{{ route('logout') }}"
+                    <a class="dropdown-item" href="{{ route('logoutadmin') }}"
                        onclick="event.preventDefault();document.getElementById('logout-form').submit();">
                        <i class="dripicons-exit text-muted"></i> log out
                     </a>
-                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                    <form id="logout-form" action="{{ route('logoutadmin') }}" method="POST" style="display: none;">
                         @csrf
                     </form>
                 </div>

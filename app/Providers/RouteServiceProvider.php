@@ -19,7 +19,7 @@ class RouteServiceProvider extends ServiceProvider
      */
     // public const HOME = '/dashboard'; // users
     public const HOME = 'en/front'; // users
-    // public const ADMIN = '/dashboard'; // admins
+    public const ADMIN = '/dashboard'; // admins
     /**
      * The controller namespace for the application.
      *

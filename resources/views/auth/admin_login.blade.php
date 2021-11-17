@@ -1,7 +1,7 @@
 <x-guest-layout>
     <x-auth-card>
-        <h1>User Login Form</h1>
-       <strong> <a href="{{ route('admin.login') }}" style="color:red">if you are admin Login Form here</a></strong>
+        <h1>Admin Login Form</h1>
+        <strong> <a href="{{ route('login') }}" style="color:red">if you are User Login Form here</a></strong>
         <x-slot name="logo">
             <a href="/">
                 <x-application-logo class="w-20 h-20 fill-current text-gray-500" />
@@ -14,12 +14,11 @@
         <!-- Validation Errors -->
         <x-auth-validation-errors class="mb-4" :errors="$errors" />
 
-        <form method="POST" action="{{ route('login') }}">
+        <form method="POST" action="{{ route('admin.login') }}">
             @csrf
-
             <!-- Email Address -->
             <div>
-                <x-label for="email" :value="__('Email')" />
+                <x-label for="email" :value="__('Email Admin')" />
 
                 <x-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required autofocus />
             </div>
