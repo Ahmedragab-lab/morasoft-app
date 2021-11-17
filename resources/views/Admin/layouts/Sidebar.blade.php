@@ -29,9 +29,7 @@
                 <a href="#" class="waves-effect"><i class="dripicons-home"></i>
                     <span>{{ trans('site.navbar') }}<span class="menu-arrow float-right "></span></span>
                 </a>
-                <ul class="list-unstyled">
-                    <li><a href="navbar_data">{{ trans('site.Navbar-Data') }}</a></li>
-                </ul>
+            
                {{-- route Admin  --}}
                <li>
                 <a href="#" class="waves-effect">

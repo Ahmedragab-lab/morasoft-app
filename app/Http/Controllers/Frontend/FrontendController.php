@@ -24,12 +24,12 @@ class FrontendController extends Controller
         $allservices = Service::orderBy('id','DESC')->get();
         $feedbacks = Feedback::orderBy('id','DESC')->limit(6)->get();
 
-        $nav_Data=navbar_details::orderby('number_nav')->get();
-        
+        // $nav_Data=navbar_details::orderby('number_nav')->get();
+
         $events=Event::all()->last();
         $Last_service = Service::orderBy('id','DESC')->first();
         $Last_agreement=Agreement::orderBy('id','DESC')->first();
-        return view('/front',compact('servs','services','feedbacks','nav_Data','events','Last_service','Last_agreement','allservices'));
+        return view('/front',compact('servs','services','feedbacks','events','Last_service','Last_agreement','allservices'));
     }
 
     /**
