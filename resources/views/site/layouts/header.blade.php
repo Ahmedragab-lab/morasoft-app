@@ -13,16 +13,16 @@
                                     </span> سبت - خميس : 09:00 - 17:00 </a>
                             </li>
                             <li>
-                                <a href="mailto:info@company.com">
+                                <a href="#">
                                     <span class="icon">
                                         <i class="icon-envelope"></i>
                                     </span> info@company.com </a>
                             </li>
                             <li>
-                                <a href="tel:+66396847263">
+                                <a href="#">
                                     <span class="icon">
                                         <i class="icon-phone"></i>
-                                    </span> +800-987-65-43 </a>
+                                    </span> +01021493036 </a>
                             </li>
                         </ul>
                     </div>
@@ -30,7 +30,7 @@
                     <div class="level-right">
                         <ul class="header-menu-icons social">
                             <li>
-                                <a href="#" target="_blank">
+                                <a href="https://www.facebook.com" target="_blank">
                                     <span class="icon">
                                         <i class="fab fa-facebook-f"></i>
                                     </span>
@@ -74,20 +74,25 @@
                         <!-- .header-menu-icons -->
                         <ul class="nav-menu-dropdown style-2 on-click">
                             <li>
-                                <a href="javascript:void(0);">
-                                    <span class="flag-icon flag-icon-gb"></span>ع</a>
+                                @if (App::getLocale() == 'ar')
+                                    {{ LaravelLocalization::getCurrentLocaleName() }}
+                                    <a href="javascript:void(0);">
+                                        <img src="{{ URL::asset('assets/images/flags/EG.png') }}" alt="">
+                                    </a>
+                                @else
+                                    {{ LaravelLocalization::getCurrentLocaleName() }}
+                                    <a href="javascript:void(0);">
+                                        <img src="{{ URL::asset('assets/images/flags/US.png') }}" alt="">
+                                    </a>
+                                @endif
                                 <ul>
                                     <li>
-                                        <a href="javascript:void(0);">
-                                            <span class="flag-icon flag-icon-es"></span>Es</a>
-                                    </li>
-                                    <li>
-                                        <a href="javascript:void(0);">
-                                            <span class="flag-icon flag-icon-tr"></span>tr</a>
-                                    </li>
-                                    <li>
-                                        <a href="javascript:void(0);">
-                                            <span class="flag-icon flag-icon-eg"></span>En</a>
+                                        @foreach(LaravelLocalization::getSupportedLocales() as $localeCode => $properties)
+                                            <a  hreflang="{{ $localeCode }}"
+                                                href="{{ LaravelLocalization::getLocalizedURL($localeCode, null, [], true) }}">
+                                                {{ $properties['native'] }}
+                                            </a>
+                                        @endforeach
                                     </li>
                                 </ul>
                             </li>

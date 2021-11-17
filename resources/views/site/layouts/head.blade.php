@@ -6,16 +6,31 @@
 <meta name="description" content="Joo - Niche Multi-Purpose HTML Template">
 <meta name="keywords" content="creative, niche, responsive, html5, css3, multipurpose, all in one, html, template">
 
-<title>Logistics | Joo - Niche Multi-Purpose HTML Template</title>
-<link rel="stylesheet" href="{{ URL::asset('front/css/vendor.css') }}">
-<link rel="stylesheet" href="{{ URL::asset('front/css/styles.css') }}">
-<link rel="stylesheet" href="{{URL:: asset('front/css/custom.css?v=1557446391092') }}">
+<title>mora soft company</title>
+
+@if (App::getLocale() == 'ar')
+
+    <link rel="stylesheet" href="{{ asset('front/arabic/css/vendor.min.css?v=1557447064956') }}">
+    <link rel="stylesheet" href="{{ asset('front/arabic/css/styles.min.css?v=1557447064956') }}">
+    <link rel="stylesheet" href="{{ asset('front/arabic/css/styles-rtl.min.css?v=1557447064956') }}">
+    <link rel="stylesheet" href="{{ asset('front/arabic/css/custom.css?v=1557447064956') }}">
+    <link rel="stylesheet" href="{{ asset('front/arabic/css/main-ar.css') }}">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600&v=1557446973926" rel="stylesheet">
+    <link href="https://www.fontstatic.com/f=sky-bold,sky?v=1557446973926" rel="stylesheet">
+@else
+    <link rel="stylesheet" href="{{ asset('front/english/css/vendor.css') }}">
+    <link rel="stylesheet" href="{{ asset('front/english/css/styles.css') }}">
+    <link rel="stylesheet" href="{{ asset('front/english/css/custom.css?v=1557446391092') }}">
+    <link rel="stylesheet" href="{{ asset('front/english/css/main-en.css') }}">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600&v=1557446305971" rel="stylesheet">
+@endif
+
 {{-- <link rel="stylesheet" href="{{ asset('front/css/owl.carousel.min') }}"> --}}
 {{-- <link rel="stylesheet" href="{{ asset('front/css/owl.theme.default.min') }}"> --}}
 {{-- <link rel="stylesheet" href="{{ asset('front/css/vendor.css') }}"> --}}
 {{-- <link rel="stylesheet" href="{{ asset('front/css/styles.css') }}"> --}}
-<link rel="stylesheet" href="{{ URL::asset('front/css/main.css') }}">
-<link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600&v=1557446305971" rel="stylesheet">
+
+{{-- <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600&v=1557446305971" rel="stylesheet"> --}}
 <!-- cdn icon fonts
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.9/css/all.css?v=1557446305971" crossorigin="anonymous">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.4.1/css/simple-line-icons.css?v=1557446305971">
@@ -37,5 +52,6 @@
 <link rel="icon" type="image/png" sizes="32x32" href="{{ URL::asset('front/images/favicons/favicon-32x32.png') }}">
 <link rel="icon" type="image/png" sizes="16x16" href="{{ URL::asset('front/images/favicons/favicon-16x16.png') }}">
 <link rel="shortcut icon" href="{{ URL::asset('front/images/favicons/favicon.ico') }}">
+
 @yield('css')
   </head>
