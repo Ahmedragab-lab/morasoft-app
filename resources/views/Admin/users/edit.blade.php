@@ -13,24 +13,36 @@
                     <div class="form-group">
                         <label>{{ __('site.name') }}</label>
                         <input type="text" class="form-control" required placeholder="Enter User Name" name="name" value="{{ $user->name }}" />
+                        @error('name')
+                        <div class="text-warning">{{ $message }}</div>
+                        @enderror
                     </div>
                     <div class="form-group">
                         <label>{{ __('site.email') }}</label>
                         <div>
                             <input type="email" class="form-control" required
                                    parsley-type="email" placeholder="Enter a valid e-mail" name="email" value="{{ $user->email }}"/>
+                            @error('email')
+                            <div class="text-warning">{{ $message }}</div>
+                            @enderror
                         </div>
                     </div>
                     <div class="form-group">
                         <label>{{ __('site.password') }}</label>
                         <div>
                             <input type="password" id="pass2" class="form-control"
-                                   placeholder="Password" name="password" value="{{ $user->password }}"/>
+                                   placeholder="Password" name="password" />
+                            @error('password')
+                            <div class="text-warning">{{ $message }}</div>
+                            @enderror
                         </div>
                         <div class="m-t-10">
                             <input type="password" class="form-control"
                                    data-parsley-equalto="#pass2"
                                    placeholder="Re-Type Password" name="confirm-password" />
+                            @error('confirm-password')
+                               <div class="text-warning">{{ $message }}</div>
+                            @enderror
                         </div>
                     </div>
                     <div class="form-group">

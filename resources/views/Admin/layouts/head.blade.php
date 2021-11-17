@@ -15,5 +15,26 @@
     <link href="{{ URL::asset('admin/en/assets/css/style.css') }}" rel="stylesheet">
 @endif
 @toastr_css
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+<script>
+     $.ajaxSetup({
+                cache:false,
+                contentType: false,
+                processData: false,
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content'),
+                }
+            });
+            $( document ).ajaxSuccess((e,res)=>console.log((res.responseJSON && res.responseJSON) || res));
+            $( document ).ajaxError(function( event, res ) {
+                console.log(res.responseJSON.errors || res);
+            });
+     function toaster(icon, message){
+                Toast.fire({
+                    icon: icon,
+                    title: message,
+                })
+            }
+</script>
 @yield('css')
 

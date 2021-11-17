@@ -24,6 +24,7 @@ class UsersRepo implements UsersInterface{
 
     public function store( $request)
     {
+
          try{
                 $data = new User();
                 if($request->hasfile('image')){
@@ -56,32 +57,36 @@ class UsersRepo implements UsersInterface{
 
     public function update( $request, $id)
     {
-             try{
-                    $data = User::find($id);
-                    if($request->hasFile('image')){
-                        $path = 'uploads/user-img/' . $data->image;
-                        if(File::exists($path)){
-                            File::delete($path);
-                        }
-                        $file = $request->file('image');
-                        $ext  = $file->getClientOriginalExtension();
-                        $filename = time() . '.' . $ext ;
-                        $file->move('uploads/user-img',$filename);
-                        $data->image = $filename;
-                    }
-                    $data->name = $request->name;
-                    $data->email = $request->email;
-                    $data->password = Hash::make($request->password);
-                    $data->status = $request->status;
-                    $data->phone = $request->phone;
-                    $data->address = $request->address;
-                    $data->update();
-                    toastr()->success(__('user update successfully'));
-                    return redirect()->route('users.index');
+        try{
+            $data = User::find($id);
 
-                } catch (\Exception $e) {
-                    return redirect()->back()->withErrors(['error' => $e->getMessage()]);
-                 }
+            if($request->hasFile('image')){
+                $path = 'uploads/user-img/' . $data->image;
+                if(File::exists($path)){
+                    File::delete($path);
+                }
+                $file = $request->file('image');
+                $ext  = $file->getClientOriginalExtension();
+                $filename = time() . '.' . $ext ;
+                $file->move('uploads/user-img',$filename);
+                $data->image = $filename;
+            }
+            $data->name = $request->name;
+
+            $data->email = $request->email;
+            $data->password = Hash::make($request->password);
+            // $data->password = Hash::make($request->password)?'':'password';
+
+            $data->status = $request->status;
+            $data->phone = $request->phone;
+            $data->address = $request->address;
+            $data->update();
+            toastr()->success(__('user update successfully'));
+            return redirect()->route('users.index');
+
+        } catch (\Exception $e) {
+            return redirect()->back()->withErrors(['error' => $e->getMessage()]);
+         }
     }
     public function destroy($id)
     {

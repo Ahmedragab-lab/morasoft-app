@@ -15,19 +15,23 @@ class storedata extends FormRequest
     public function rules()
     {
         return [
-            'name' => 'required',
+            'name' => ['required','min:3'],
+            'email' => ['required'],
+            'image' => 'image',
+            'status' => 'required|in:active,unactive',
+            'password' => 'required|same:confirm-password',
+            // 'email' => ['required','email', Rule::unique('users')->ignore($this->user)],
+            // 'password' => [
+            //     $this->route()->user ? 'nullable':'required','confirmed','min:6'
+            // ],
             // 'email' => 'required|email|unique:users,email',
             // 'email' => 'required|email|unique:users,email,'.$this->user->id,
             // 'email' => ['required',Rule::unique('users')->ignore($this->user()->id)],
-            'email' => ['required', Rule::unique('users')->ignore($this->user)],
-            // 'password' => 'required|same:confirm-password',
             // 'password' => ['required',
             //    'min:6',
             //    'regex:/^.*(?=.{3,})(?=.*[a-zA-Z])(?=.*[0-9])(?=.*[\d\x])(?=.*[!$#%]).*$/',
             //    'confirmed'],
             //    'password_confirm' => 'required|same:password',
-            'image' => 'image',
-            'status' => 'required|in:active,unactive',
         ];
     }
     public function messages()

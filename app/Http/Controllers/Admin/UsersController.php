@@ -11,6 +11,7 @@ use Illuminate\Support\Facades\Hash;
 use Intervention\Image\Facades\Image;
 use Illuminate\Validation\Rule;
 use Illuminate\Support\Facades\File;
+use Illuminate\Support\Facades\Validator;
 class UsersController extends Controller
 {
     protected $users;
@@ -43,7 +44,39 @@ class UsersController extends Controller
 
     public function update(storedata $request, $id)
     {
-        return $this->users->update( $request, $id);
+        // return $this->users->update( $request, $id);
+        try{
+            $data = User::find($id);
+
+            if($request->hasFile('image')){
+                $path = 'uploads/user-img/' . $data->image;
+                if(File::exists($path)){
+                    File::delete($path);
+                }
+                $file = $request->file('image');
+                $ext  = $file->getClientOriginalExtension();
+                $filename = time() . '.' . $ext ;
+                $file->move('uploads/user-img',$filename);
+                $data->image = $filename;
+            }
+            $data->name = $request->name;
+            if($data->email != $request->email){
+                $this->validate($request,[
+                    'email' => ['required','unique:users'],
+                ]);
+                $data->email = $request->email;
+            }
+            $data->password = Hash::make($request->password);
+            $data->status = $request->status;
+            $data->phone = $request->phone;
+            $data->address = $request->address;
+            $data->update();
+            toastr()->success(__('user update successfully'));
+            return redirect()->route('users.index');
+
+        } catch (\Exception $e) {
+            return redirect()->back()->withErrors(['error' => $e->getMessage()]);
+         }
     }
 
     public function destroy($id)
