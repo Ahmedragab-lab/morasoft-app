@@ -10,20 +10,19 @@ Route::group(
         'prefix' => LaravelLocalization::setLocale(),
         'middleware' => ['localeSessionRedirect', 'localizationRedirect', 'localeViewPath']
     ],function () {
-        // Route::get('/', function () {
-        //     return view('auth.login');
-        //  });
+        Route::resource('/', Controllers\Frontend\FrontendController::class);           // as a guest
+        //========================================================================================================================================================
+        // Route::middleware(['auth:web'])->group(function () {
+        //     Route::resource('/front', Controllers\Frontend\FrontendController::class);      // as a auth user
+        //     Route::post('/sendrequest', [Controllers\Frontend\UserReqestController::class,'sendrequest'])->name('sendrequest');   // send request by ajax
 
-    Route::resource('/', Controllers\Frontend\FrontendController::class);           // as a guest
-//========================================================================================================================================================
-    Route::middleware(['auth'])->group(function () {
-    Route::resource('/front', Controllers\Frontend\FrontendController::class);      // as a auth user
-    Route::post('/sendrequest', [Controllers\Frontend\UserReqestController::class,'sendrequest'])->name('sendrequest');   // send request by ajax
-//========================================================================================================================================================
-
-    });
-
-    require __DIR__.'/auth.php';
+        // });
+        Route::group(['guard' => 'web', 'guard' => 'admin'], function () {
+            Route::resource('/front', Controllers\Frontend\FrontendController::class);      // as a auth user
+            Route::post('/sendrequest', [Controllers\Frontend\UserReqestController::class,'sendrequest'])->name('sendrequest');   // send request by ajax
+        });
+        //========================================================================================================================================================
+        require __DIR__.'/auth.php';
 });
 
 

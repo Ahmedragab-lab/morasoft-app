@@ -157,9 +157,9 @@
                                             <a href="#">welcome back : {{ \Str::limit(auth()->user()->name, 10) }}</a>
                                             <ul class="dropdown">
                                                 <li><a href="#">Profile</a></li>
-                                                {{-- @if(auth()->user()->roles_name==["Owner"]) --}}
+                                                @if(auth()->user()->admin==1)
                                                    <li><a href="{{ route('dashboard.index') }}">My Dashboard</a></li>
-                                                {{-- @endif --}}
+                                                @endif
                                                 <li>
                                                     <a href="{{ route('logout') }}"
                                                         onclick="event.preventDefault();document.getElementById('logout-form').submit();">
