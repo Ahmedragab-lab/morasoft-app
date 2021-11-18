@@ -215,9 +215,6 @@
           </div>
         </section>
         {{-- End Event && agreement and service section --}}
-
-
-
         {{-- video section  --}}
         <section class="section watch-video is-clearfix">
             <div class="container">
@@ -268,7 +265,6 @@
               <br> </div>
           </section>
         {{-- End video section  --}}
-
         <section class="hero fun-facts is-clearfix">
           <div class="hero-body">
             <h2 class="display-none">funfacts</h2>
