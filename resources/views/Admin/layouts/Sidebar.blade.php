@@ -67,23 +67,23 @@
                     </a>
                 </li>
                 {{-- End route services   --}}
-                {{-- <li>
+                <li>
                     <a href="#" class="waves-effect">
-                        <i class="dripicons-home"></i>
+                        <i class="far fa-bookmark"></i>
                         <span>{{ trans('site.categories') }}
                             <span class="badge badge-success badge-pill float-right"></span>
                         </span>
                     </a>
-                </li> --}}
-                 {{-- <li>
+                </li>
+                 <li>
                     <a href="#" class="waves-effect">
-                        <i class="dripicons-home"></i>
+                        <i class="far fa-gem"></i>
                         <span>{{ trans('site.Products') }}
                             <span class="badge badge-success badge-pill float-right"></span>
                         </span>
                     </a>
 
-                </li> --}}
+                </li>
                 <li>
                     <a href="{{ route('agreements.index') }}" class="waves-effect">
                         <i class="dripicons-home"></i>
@@ -98,7 +98,7 @@
                 <li>
                     <a href="{{ route('events.index') }}" class="waves-effect">
 
-                        <i class="far fa-flag"></i>
+                        <i class=" far fa-newspaper"></i>
                         <span>{{ trans('site.event') }}
                             <span class="badge badge-success badge-pill float-right"></span>
                         </span>
