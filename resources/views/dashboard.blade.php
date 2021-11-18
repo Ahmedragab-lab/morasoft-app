@@ -54,6 +54,26 @@
                     </div>
                 </div>
             </div>
+            <div class="col-xl-3 col-md-6">
+                <div class="card bg-pink mini-stat text-white">
+                    <div class="p-3 mini-stat-desc">
+                        <div class="clearfix">
+                            <h6 class="text-uppercase mt-0 float-left text-white-50">Sections</h6>
+                            <h4 class="mb-3 mt-0 float-right">{{ \App\Models\Section::count() }}</h4>
+                        </div>
+                        <div>
+                            {{-- <span class="badge badge-light text-info"> +11% </span> <span class="ml-2">From previous period</span> --}}
+                        </div>
+
+                    </div>
+                    <div class="p-3">
+                        <div class="float-right">
+                            <a href="#" class="text-white-50"><i class="mdi mdi-cube-outline h5"></i></a>
+                        </div>
+                        <p class="font-14 m-0">{{ \App\Models\Section::count() }}</p>
+                    </div>
+                </div>
+            </div>
 
             <div class="col-xl-3 col-md-6">
                 <div class="card bg-info mini-stat text-white">
