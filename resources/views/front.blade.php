@@ -3,6 +3,9 @@
 @section('css')
 <meta name="csrf-token" content="{{ csrf_token() }}">
 @endsection
+@section('navslider')
+@include('site.layouts.navslider')
+@endsection
 @section('content')
  <!-- import content layouts and modules -->
         <!-- import content layouts and modules -->

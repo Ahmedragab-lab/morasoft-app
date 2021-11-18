@@ -5,7 +5,7 @@
                 <div class="level-left">
                     <div id="header-logo" class="site-logo ">
                         <div id="logo-inner" class="site-logo-inner">
-                            <a href="./index.html">
+                            <a href="{{ route('front.index') }}">
                                 <img alt="Joo - Niche Multi-Purpose HTML Template"
                                     src="{{ asset('front/images/logo/logo2.png') }}">
                                 <span class="logo-text">{{ __('front.mora') }}</span>
@@ -21,13 +21,13 @@
                         <nav class="main-navigation right">
                             <ul class="menu">
                                 <li>
-                                    <a href="./index.html">{{ __('front.home') }}</a>
+                                    <a href="{{ route('front.index') }}">{{ __('front.home') }}</a>
                                 </li>
                                 <li>
-                                    <a href="./pages/index.html">{{ __('front.sections') }}</a>
+                                    <a href="#">{{ __('front.sections') }}</a>
                                 </li>
                                 <li>
-                                    <a href="./features/index.html">{{ __('front.services') }}</a>
+                                    <a href="{{ route('allservices.index') }}">{{ __('front.services') }}</a>
                                 </li>
                                 <li>
                                     <a href="./portfolio/index.html">{{ __('front.products') }}</a>

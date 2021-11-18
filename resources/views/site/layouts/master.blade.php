@@ -6,7 +6,7 @@
         <div id="site-wrap" class="site">
             @include('site.layouts.upperbar')
             @include('site.layouts.navbar')
-            @include('site.layouts.navslider')
+            @yield('navslider')
         </div>
         <div id="content-main-wrap" class="is-clearfix">
             <div id="content-area" class="site-content-area">
