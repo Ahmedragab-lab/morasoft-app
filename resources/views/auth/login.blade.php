@@ -1,6 +1,6 @@
 <x-guest-layout>
     <x-auth-card>
-        <h1>User Login Form</h1>
+        <h1>{{ __('auth.user') }}</h1>
        <strong> <a href="{{ route('admin.login') }}" style="color:red">if you are admin Login Form here</a></strong>
         <x-slot name="logo">
             <a href="/">

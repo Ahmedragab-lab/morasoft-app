@@ -1,6 +1,6 @@
 
 <?php
-
+use App\Http\Controllers\Auth\AdminController;
 use App\Http\Controllers\TrackingstepsController;
 use Illuminate\Support\Facades\Route;
 use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
@@ -12,6 +12,7 @@ Route::group(
         'prefix' => LaravelLocalization::setLocale(),
         'middleware' => ['auth:admin','localeSessionRedirect', 'localizationRedirect', 'localeViewPath']
     ],function () {
+
 
         // Route::get('adminlogin', [AdminAuthController::class, 'showLoginForm'])->name('admin.login');
         Route::resource('/dashboard', Controllers\Admin\AdminsController::class);

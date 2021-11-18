@@ -12,7 +12,9 @@ use App\Models\navbar_details;
 
 class FrontendController extends Controller
 {
-    
+
+
+
     public function index()
     {
         $servs = Service::orderBy('id','DESC')->limit(4)->get();
