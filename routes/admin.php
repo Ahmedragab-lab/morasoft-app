@@ -21,9 +21,7 @@ Route::group(
         Route::resource('/sections',Controllers\Admin\SectionController::class);
         Route::resource('/products',Controllers\Admin\ProductController::class);
         Route::resource('/feedbacks',Controllers\Admin\FeedbackController::class);
-
         Route::resource('/tracking_steps',Controllers\Admin\TrackingstepsController::class);
-
         Route::resource('/events',Controllers\Admin\EventController::class);
         Route::resource('/agreements',Controllers\Admin\AgreementController::class);
     });
