@@ -21,9 +21,6 @@ class FrontendController extends Controller
         $services = Service::orderBy('id','DESC')->limit(6)->get();
         $allservices = Service::orderBy('id','DESC')->get();
         $feedbacks = Feedback::orderBy('id','DESC')->limit(6)->get();
-
-        // $nav_Data=navbar_details::orderby('number_nav')->get();
-
         $events=Event::all()->last();
         $Last_service = Service::orderBy('id','DESC')->first();
         $Last_agreement=Agreement::orderBy('id','DESC')->first();
