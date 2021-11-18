@@ -10,8 +10,8 @@
 
 @if (App::getLocale() == 'ar')
 
-    <link rel="stylesheet" href="{{ asset('front/arabic/css/vendor.min.css?v=1557447064956') }}">
-    <link rel="stylesheet" href="{{ asset('front/arabic/css/styles.min.css?v=1557447064956') }}">
+    <link rel="stylesheet" href="{{ asset('front/arabic/css/vendor.css') }}">
+    <link rel="stylesheet" href="{{ asset('front/arabic/css/styles.css') }}">
     <link rel="stylesheet" href="{{ asset('front/arabic/css/styles-rtl.min.css?v=1557447064956') }}">
     <link rel="stylesheet" href="{{ asset('front/arabic/css/custom.css?v=1557447064956') }}">
     <link rel="stylesheet" href="{{ asset('front/arabic/css/main-ar.css') }}">
