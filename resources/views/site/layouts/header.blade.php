@@ -118,7 +118,7 @@
                                 <a href="./index.html">
                                     <img alt="Joo - Niche Multi-Purpose HTML Template"
                                         src="{{ asset('front/images/logo/logo2.png') }}">
-                                    <span class="logo-text">خدمات النقل</span>
+                                    <span class="logo-text">{{ __('front.mora') }}</span>
                                 </a>
                             </div>
                             <!-- #logo-inner -->
@@ -131,23 +131,21 @@
                             <nav class="main-navigation right">
                                 <ul class="menu">
                                     <li>
-                                        <a href="./index.html">الرئيسية</a>
+                                        <a href="./index.html">{{ __('front.home') }}</a>
                                     </li>
                                     <li>
-                                        <a href="./features/index.html">المميزات</a>
+                                        <a href="./pages/index.html">{{ __('front.sections') }}</a>
                                     </li>
                                     <li>
-                                        <a href="./pages/index.html">الصفحات</a>
+                                        <a href="./features/index.html">{{ __('front.services') }}</a>
                                     </li>
                                     <li>
-                                        <a href="./portfolio/index.html">المشاريع</a>
+                                        <a href="./portfolio/index.html">{{ __('front.products') }}</a>
                                     </li>
                                     <li>
-                                        <a href="./blog/index.html">الاخبار</a>
+                                        <a href="./blog/index.html">{{ __('front.contactus') }}</a>
                                     </li>
-                                    <li class="mega-menu">
-                                        <a href="./elements/index.html">العناصر</a>
-                                    </li>
+
                                     @guest
                                     <li class="btn-cta"><a href="/login"><span>Login</span></a></li>
                                     <li class="btn-cta"><a href="/register"><span>register</span></a></li>
