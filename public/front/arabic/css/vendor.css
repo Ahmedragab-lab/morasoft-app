@@ -27482,8 +27482,8 @@ label.panel-block:hover {
 .pageloader {
     position: fixed;
     padding-top: 2em;
-    background: #cf5029;
-    background: #cf5029;
+    background: #1c566e;
+    background: #1c566e;
     z-index: 999998;
     transition: transform .35s ease-out,-webkit-transform .35s ease-out;
     will-change: transform;
@@ -27550,8 +27550,8 @@ label.panel-block:hover {
 }
 
 .pageloader.is-primary {
-    background-color: #cf5029;
-    background: #cf5029;
+    background-color: #1c566e;
+    background:#1c566e;
 }
 
 .pageloader.is-primary::after {

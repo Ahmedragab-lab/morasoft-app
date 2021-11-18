@@ -12,6 +12,8 @@
 } */
 /* end loader */
 /* frame video */
+@import url('https://fonts.googleapis.com/css2?family=Cairo&display=swap');
+
 .mfp-lightbox{
     width: 700px;
     height: 500px;
@@ -24,4 +26,5 @@
 /* end frame video */
 body.header-transparent header {
     background-color: #1c566e;
+    font-family: 'Cairo', sans-serif;
 }

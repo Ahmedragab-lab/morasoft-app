@@ -244,11 +244,11 @@
                             <a href="#welcome" class="slider-scroll-down">اقرأ المزيد</a>
                             <ul>
                                 @foreach ( $servs as $serv)
-                                <li data-transition="fade" data-thumb="{{ asset('assets/images/slider_01.jpg') }}"
+                                <li data-transition="fade" data-thumb="{{ asset('uploads/serv/'.$serv->image) }}"
                                     data-title="{{ $serv->serve_name }}" data-param1="{{ $serv->desc }}."
                                     data-param2="{{ asset('uploads/serv/'.$serv->image) }} ">
                                     <img alt="Joo - Niche Multi-Purpose HTML Template" class="rev-slidebg"
-                                        src="{{ asset('assets/images/slider_01.jpg') }}" data-bgposition="center center"
+                                        src="{{asset('uploads/serv/'.$serv->image) }}" data-bgposition="center center"
                                         data-bgfit="cover" data-bgrepeat="no-repeat" data-kenburns="off"
                                         data-duration="30000" data-ease="Linear.easeNone" data-scalestart="100"
                                         data-scaleend="115" data-rotatestart="0" data-rotateend="0"

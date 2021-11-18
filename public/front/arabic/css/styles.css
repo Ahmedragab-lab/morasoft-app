@@ -9,7 +9,7 @@
  * @license   https://themeforest.net/licenses/standard
  *
  */
-            
+ @import url('https://fonts.googleapis.com/css2?family=Cairo&display=swap');
 
 .breadcrumb {
     text-transform: capitalize;
@@ -34,6 +34,7 @@
 
     body.header-side-navigation .container {
         width: 100%;
+        font-family:'Cairo', sans-serif !important;
     }
 }
 

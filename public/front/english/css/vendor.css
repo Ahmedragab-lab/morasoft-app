@@ -4946,6 +4946,7 @@
 .is-overlay, .image.is-square img, .image.is-1by1 img, .image.is-5by4 img, .image.is-4by3 img, .image.is-3by2 img, .image.is-5by3 img, .image.is-16by9 img, .image.is-2by1 img, .image.is-3by1 img, .image.is-4by5 img, .image.is-3by4 img, .image.is-2by3 img, .image.is-3by5 img, .image.is-9by16 img, .image.is-1by2 img, .image.is-1by3 img, .modal, .modal-background, .hero-video, .pageloader {
     bottom: 0;
     left: 0;
+
     position: absolute;
     right: 0;
     top: 0;
@@ -27482,8 +27483,8 @@ label.panel-block:hover {
 .pageloader {
     position: fixed;
     padding-top: 2em;
-    background: #cf5029;
-    background: #cf5029;
+    background: #1c566e;
+    background: #1c566e;
     z-index: 999998;
     transition: transform .35s ease-out,-webkit-transform .35s ease-out;
     will-change: transform;
