@@ -5,16 +5,16 @@
     <div class="col-lg-12">
         <div class="card m-b-30">
             <div class="card-body">
-                <h4 class="mt-0 header-title">{{ __('site.services') }}</h4>
+                <h4 class="mt-0 header-title">{{ __('site.sections') }}</h4>
                 <div class="col-md-6 mb-3">
-                    <a href="{{ route('services.create') }}"  class="btn btn-primary btn-block"><i class="fa fa-user-circle"></i> Add service</a>
+                    <a href="{{ route('sections.create') }}"  class="btn btn-primary btn-block"><i class="fa fa-user-circle"></i> {{ __('site.add_section') }}</a>
                 </div>
                 <div class="table-responsive">
                     <table class="table table-striped mb-0">
                         <thead>
                             <tr>
                                 <th>#</th>
-                                <th>{{ __('site.Service_name') }}</th>
+                                <th>{{ __('site.section_name') }}</th>
                                 <th>{{ __('site.image') }}</th>
                                 <th>{{ __('site.status') }}</th>
                                 <th>{{ __('site.description') }}</th>
@@ -22,24 +22,24 @@
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach ( $services as $index=>$service )
+                            @foreach ( $sections as $index=>$section )
                             <tr>
                                 <th scope="row">{{ $index +1 }}</th>
-                                <td>{{ $service->serve_name }}</td>
+                                <td>{{ $section->section_name }}</td>
                                 <td>
-                                    <img src="{{ asset('uploads/serv/'.$service->image) }}" class="img-thumbnail" width="70" alt="">
+                                    <img src="{{ asset('uploads/section/'.$section->image) }}" class="img-thumbnail" width="70" alt="">
                                 </td>
                                 <td>
-                                    {{ $service->status ==1 ?  __('site.Avilable'): __('site.Unavilable') }}
+                                    {{ $section->status ==1 ?  __('site.Avilable'): __('site.Unavilable') }}
                                 </td>
-                                <td>{{ $service->desc }}</td>
+                                <td>{{ $section->desc }}</td>
                                 <td>
-                                    <form action="{{ route('services.destroy', $service->id) }}" method="post">
+                                    <form action="{{ route('sections.destroy', $section->id) }}" method="post">
                                         @csrf
                                         @method('delete')
-                                        <a href="{{ route('services.edit', $service->id) }}" class="btn btn-info">{{ __('site.edit') }}</a>
+                                        <a href="{{ route('sections.edit', $section->id) }}" class="btn btn-info">{{ __('site.edit') }}</a>
                                         <button type="button" class="btn btn-danger"
-                                        onclick="confirm('{{ __('Are you sure you want to delete this service?') }}') ? this.parentElement.submit() : ''">
+                                        onclick="confirm('{{ __('Are you sure you want to delete this section?') }}') ? this.parentElement.submit() : ''">
                                             {{ __('site.delete') }}
                                         </button>
                                     </form>

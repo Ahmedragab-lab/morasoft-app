@@ -22,7 +22,6 @@ class DatabaseSeeder extends Seeder
         $this->call(AgreementSeeder::class);
         // $this->call(CreateAdminUserSeeder::class);
         // $this->call(ClientSeeder::class);
-        // $this->call(SectionSeeder::class);
         // $this->call(ProductSeeder::class);
     }
 }

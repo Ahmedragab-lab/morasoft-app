@@ -46,9 +46,9 @@ class ProductController extends Controller
             $product->qty = $request->qty;
             $product->status = $request->status==true?'1':'0';
             $product->trending = $request->trending==true?'1':'0';
-            $product->meta_title = $request->meta_title;
-            $product->meta_desc = $request->meta_desc;
-            $product->meta_keywords = $request->meta_keywords;
+            // $product->meta_title = $request->meta_title;
+            // $product->meta_desc = $request->meta_desc;
+            // $product->meta_keywords = $request->meta_keywords;
             $product->save();
             toastr()->success(__('product create successfully'));
             return redirect()->route('products.index');
@@ -99,9 +99,9 @@ class ProductController extends Controller
             $product->qty = $request->qty;
             $product->status = $request->status==true?'1':'0';
             $product->trending = $request->trending==true?'1':'0';
-            $product->meta_title = $request->meta_title;
-            $product->meta_desc = $request->meta_desc;
-            $product->meta_keywords = $request->meta_keywords;
+            // $product->meta_title = $request->meta_title;
+            // $product->meta_desc = $request->meta_desc;
+            // $product->meta_keywords = $request->meta_keywords;
             $product->save();
             toastr()->success(__('product update successfully'));
             return redirect()->route('products.index');
