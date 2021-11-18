@@ -22,13 +22,10 @@ Route::group(
         Route::resource('/products',Controllers\Admin\ProductController::class);
         Route::resource('/feedbacks',Controllers\Admin\FeedbackController::class);
 
-        Route::resource('/tracking_steps',TrackingstepsController::class);
+        Route::resource('/tracking_steps',Controllers\Admin\TrackingstepsController::class);
 
         Route::resource('/events',Controllers\Admin\EventController::class);
         Route::resource('/agreements',Controllers\Admin\AgreementController::class);
-
-
-        Route::resource('navbar_data',Controllers\NavbarDetailsController::class);
     });
 
 require __DIR__ . '/auth.php';
