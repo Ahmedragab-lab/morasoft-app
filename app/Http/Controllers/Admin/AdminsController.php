@@ -19,11 +19,8 @@ class AdminsController extends Controller
      */
     public function index()
     {
-        $users = User::count();
-        $services = Service::count();
-        $feedback = Feedback::count();
-        $events=Event::count();
-        return view('dashboard',compact('users','services','feedback','events'));
+
+        return view('dashboard');  
     }
 
     /**

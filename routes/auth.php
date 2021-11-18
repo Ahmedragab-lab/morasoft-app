@@ -18,7 +18,7 @@ Route::group(
         'middleware' => ['localeSessionRedirect', 'localizationRedirect', 'localeViewPath']
     ],function () {
 
-        //===========================================================================================
+        //===================================route for admin guard========================================================
             // Show Form login admin
             Route::get('/login/admin', [AdminController::class, 'create'])
                 ->middleware('guest')
@@ -26,6 +26,13 @@ Route::group(
             // Request Form login admin
             Route::post('/login/admin', [AdminController::class, 'store'])
                 ->middleware('guest')->name('admin.login');
+                  // Request Form login out admin
+        // Route::post('/logout/admin', [AuthenticatedSessionController::class, 'logout'])
+        //     ->middleware('guest')->name('logoutadmin');
+        Route::post('/logout/admin',function(){
+            Auth::guard('admin')->logout();
+            return redirect('/');
+        })->name('logoutadmin');
         //================================================================================================
         Route::get('/register', [RegisteredUserController::class, 'create'])
                         ->middleware('guest')
@@ -79,13 +86,7 @@ Route::group(
         Route::post('/logout', [AuthenticatedSessionController::class, 'destroy'])
                         ->middleware('auth')
                         ->name('logout');
-        // Request Form login out admin
-        // Route::post('/logout/admin', [AuthenticatedSessionController::class, 'logout'])
-        //     ->middleware('guest')->name('logoutadmin');
-        Route::post('/logout/admin',function(){
-            Auth::guard('admin')->logout();
-            return redirect('/');
-        })->name('logoutadmin');
+
 
 
 });

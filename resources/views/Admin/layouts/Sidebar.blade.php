@@ -25,11 +25,8 @@
                 </li>
                 {{-- End home dashboard  --}}
                 <li class="menu-title"><h5>{{ trans('site.component') }}</h5></li>
-                <li class="has_sub">
-                <a href="#" class="waves-effect"><i class="dripicons-home"></i>
-                    <span>{{ trans('site.navbar') }}<span class="menu-arrow float-right "></span></span>
-                </a>
-            
+
+
                {{-- route Admin  --}}
                <li>
                 <a href="#" class="waves-effect">
@@ -43,7 +40,7 @@
                {{--  route user till i make multi auth as soon as possible  --}}
                 <li>
                     <a href="{{ route('users.index') }}" class="waves-effect">
-                        <i class="ion ion-md-albums"></i>
+                        <i class=" far fa-user"></i>
                         <span>{{ trans('site.clients') }}
                             <span class="badge badge-success badge-pill float-right"></span>
                         </span>
@@ -101,7 +98,7 @@
                 <li>
                     <a href="{{ route('events.index') }}" class="waves-effect">
 
-                        <i class="fa fa-signing"></i>
+                        <i class="far fa-flag"></i>
                         <span>{{ trans('site.event') }}
                             <span class="badge badge-success badge-pill float-right"></span>
                         </span>
@@ -109,7 +106,7 @@
                 </li>
                 <li>
                     <a href="{{ route('tracking_steps.index') }}" class="waves-effect">
-                        <i class="dripicons-home"></i>
+                        <i class=" far fa-bell"></i>
                         <span>{{ trans('site.tracking-steps') }}
                             <span class="badge badge-success badge-pill float-right"></span>
                         </span>
