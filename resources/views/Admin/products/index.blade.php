@@ -5,9 +5,9 @@
     <div class="col-lg-12">
         <div class="card m-b-30">
             <div class="card-body">
-                <h4 class="mt-0 header-title">{{ __('site.sections') }}</h4>
+                <h4 class="mt-0 header-title">{{ __('site.products') }}</h4>
                 <div class="col-md-6 mb-3">
-                    <a href="{{ route('sections.create') }}"  class="btn btn-primary btn-block"><i class="fa fa-user-circle"></i> {{ __('site.add_section') }}</a>
+                    <a href="{{ route('products.create') }}"  class="btn btn-primary btn-block"><i class="fa fa-user-circle"></i> {{ __('site.add_product') }}</a>
                 </div>
                 <div class="table-responsive">
                     <table class="table table-striped mb-0">
@@ -15,31 +15,41 @@
                             <tr>
                                 <th>#</th>
                                 <th>{{ __('site.section_name') }}</th>
+                                <th>{{ __('site.product_name') }}</th>
                                 <th>{{ __('site.image') }}</th>
+                                <th>{{ __('site.original_Price') }}</th>
+                                <th>{{ __('site.selling_Price') }}</th>
+                                <th>{{ __('site.qty') }}</th>
+                                <th>{{ __('site.tax') }}</th>
                                 <th>{{ __('site.status') }}</th>
                                 <th>{{ __('site.description') }}</th>
                                 <th>{{ __('site.action') }}</th>
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach ( $sections as $index=>$section )
+                            @foreach ( $products as $index=>$product )
                             <tr>
                                 <th scope="row">{{ $index +1 }}</th>
-                                <td>{{ $section->section_name }}</td>
+                                <td>{{ $product->section->section_name }}</td>
+                                <td>{{ $product->product_name }}</td>
                                 <td>
-                                    <img src="{{ asset('uploads/section/'.$section->image) }}" class="img-thumbnail" width="70" alt="">
+                                    <img src="{{ asset('uploads/product/'.$product->image) }}" class="img-thumbnail" width="70" alt="">
                                 </td>
+                                <td>{{ $product->original_price }}</td>
+                                <td>{{ $product->selling_price }}</td>
+                                <td>{{ $product->qty }}</td>
+                                <td>{{ $product->tax }}</td>
                                 <td>
-                                    {{ $section->status ==1 ?  __('site.Avilable'): __('site.Unavilable') }}
+                                    {{ $product->status ==1 ?  __('site.Avilable'): __('site.Unavilable') }}
                                 </td>
-                                <td>{{ $section->desc }}</td>
+                                <td>{{ $product->desc }}</td>
                                 <td>
-                                    <form action="{{ route('sections.destroy', $section->id) }}" method="post">
+                                    <form action="{{ route('products.destroy', $product->id) }}" method="post">
                                         @csrf
                                         @method('delete')
-                                        <a href="{{ route('sections.edit', $section->id) }}" class="btn btn-info">{{ __('site.edit') }}</a>
+                                        <a href="{{ route('products.edit', $product->id) }}" class="btn btn-info">{{ __('site.edit') }}</a>
                                         <button type="button" class="btn btn-danger"
-                                        onclick="confirm('{{ __('Are you sure you want to delete this section?') }}') ? this.parentElement.submit() : ''">
+                                        onclick="confirm('{{ __('Are you sure you want to delete this product?') }}') ? this.parentElement.submit() : ''">
                                             {{ __('site.delete') }}
                                         </button>
                                     </form>

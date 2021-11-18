@@ -35,7 +35,7 @@ class ProductController extends Controller
                 $product->image = $filename;
             }
             $product->section_id = $request->section_id;
-            $product->product_name = $request->product_name;
+            $product->product_name = ['en'=>$request->product_name_en ,'ar'=>$request->product_name];
             $product->slug = $request->slug;
             $product->small_desc = $request->small_desc;
             $product->desc = $request->desc;
@@ -87,7 +87,7 @@ class ProductController extends Controller
                 $file->move('uploads/product',$filename);
                 $product->image = $filename;
             }
-            $product->section_id = $request->section_id;
+            $product->product_name = ['en'=>$request->product_name_en ,'ar'=>$request->product_name];
             $product->product_name = $request->product_name;
             $product->slug = $request->slug;
             $product->small_desc = $request->small_desc;

@@ -76,7 +76,7 @@
                     </a>
                 </li>
                  <li>
-                    <a href="#" class="waves-effect">
+                    <a href="{{ route('products.index') }}" class="waves-effect">
                         <i class="far fa-gem"></i>
                         <span>{{ trans('site.Products') }}
                             <span class="badge badge-success badge-pill float-right"></span>
