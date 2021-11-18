@@ -47,7 +47,6 @@ return [
 'delete services'=>'Delete Services',
 'delete_services'=>'Delete Services',
 'sms_delete_services'=>'Are you sure to delete this services !',
-
 'required_ar'=>'please write arabic language',
 'required_en'=>'please write english language',
 'desc_required'=>'please enter services description',
@@ -61,10 +60,11 @@ return [
 'address'=>'Address',
 'users-data'=>'Users Data',
 'add-user'=>'Add New User',
-
 'edit-user'=>' Edit User',
-
-
 // end users page translation
-
+'sections'=>' Sections',
+'section_name'=>' Section Name',
+'add_section'=>' Add Section',
+'popular'=>' Popular',
+'products'=>' Products',
 ];

@@ -64,5 +64,9 @@ return [
 
 
 // end users page translation
-
+'sections'=>' الاقسام',
+'section_name'=>' اسم القسم',
+'add_section'=>' اضف قسم',
+'popular'=>' الاكثر شهره',
+'products'=>' المنتجات',
 ];

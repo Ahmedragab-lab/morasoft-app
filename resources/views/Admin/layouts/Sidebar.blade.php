@@ -68,9 +68,9 @@
                 </li>
                 {{-- End route services   --}}
                 <li>
-                    <a href="#" class="waves-effect">
+                    <a href="{{ route('sections.index') }}" class="waves-effect">
                         <i class="far fa-bookmark"></i>
-                        <span>{{ trans('site.categories') }}
+                        <span>{{ trans('site.sections') }}
                             <span class="badge badge-success badge-pill float-right"></span>
                         </span>
                     </a>

@@ -18,6 +18,7 @@ Route::group(
         Route::resource('/dashboard', Controllers\Admin\AdminsController::class);
         Route::resource('/users', Controllers\Admin\UsersController::class);
         Route::resource('/services',Controllers\Admin\ServiceController::class);
+        Route::resource('/sections',Controllers\Admin\SectionController::class);
         Route::resource('/feedbacks',Controllers\Admin\FeedbackController::class);
 
         Route::resource('/tracking_steps',TrackingstepsController::class);
