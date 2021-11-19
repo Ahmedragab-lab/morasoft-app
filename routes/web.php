@@ -12,7 +12,7 @@ Route::group(
     ],function () {
         Route::resource('/', Controllers\Frontend\FrontendController::class);           // as a guest
         //========================================================================================================================================================
-        Route::middleware(['auth:web'])->group(function () {
+        Route::middleware(['auth'])->group(function () {
             Route::resource('/front', Frontend\FrontendController::class);      // as a auth user
             Route::post('/sendrequest', [Frontend\UserReqestController::class,'sendrequest'])->name('sendrequest');   // send request from allservices page by ajax
             Route::post('/servrequest', [Frontend\UserReqestController::class,'servrequest'])->name('servrequest');   // send request from service page by ajax

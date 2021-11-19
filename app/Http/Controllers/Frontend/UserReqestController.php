@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 
 class UserReqestController extends Controller
 {
-    public function sendrequest(Request $request)
+    public function sendrequestx(Request $request)
     {
         try {
             // $validated = $request->validated();
@@ -18,13 +18,13 @@ class UserReqestController extends Controller
             // $req->service_id = $request->serv_id;
             // $req->sms = $request->sms;
             // $req->save();
-            $input = $request->all();
-            UserReqest::create($input);
+            // $input = $request->all();
+            // UserReqest::create($input);
             // return response()->json(['success'=>'Ajax request submitted successfully']);
-            return response()->json([
-                "status" => true,
-                "data" => $input
-            ]);
+            // return response()->json([
+            //     "status" => true,
+            //     "data" => $input
+            // ]);
         }
         catch (\Exception $e){
             return redirect()->back()->withErrors(['error' => $e->getMessage()]);
@@ -50,8 +50,18 @@ class UserReqestController extends Controller
         catch (\Exception $e){
             return redirect()->back()->withErrors(['error' => $e->getMessage()]);
         }
-
-
     }
+
+        public function sendrequest(Request $request){
+            $req = new UserReqest();
+            $req->name =$request->input('name') ;
+            $req->email = $request->input('email');
+            $req->address = $request->input('subject');
+            $req->service_id = $request->input('serv_id');
+            $req->sms = $request->input('sms');
+            $req->save();
+             return response()->json(['status'=>$req->name . ' request submitted successfully']);
+            //  return response()->json(['success'=>'Ajax request submitted successfully']);
+        }
 
 }

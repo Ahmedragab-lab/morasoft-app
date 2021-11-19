@@ -479,7 +479,7 @@
             <!-- ajax contact form -->
 
             <form accept-charset="UTF-8" class="ajax-contact-form" id="ajaxform" method="POST">
-                {{csrf_field()}}
+                {{-- {{csrf_field()}} --}}
                 <div class="field is-horizontal">
                 <div class="field-body">
                     <div class="field">
@@ -507,8 +507,8 @@
                     <!-- .field -->
                     <div class="field">
                     <div class="control is-expanded">
-                        <div class="select" name="serv_id">
-                        <select>
+                        <div class="select" >
+                        <select name="serv_id">
                             <option readonly >--Chosse Your Services--</option>
                             @foreach ($allservices as $serv )
                             <option value="{{ $serv->id }}">{{ $serv->serve_name }}</option>
@@ -557,31 +557,31 @@
         let email = $("input[name=email]").val();
         let subject = $("input[name=subject]").val();
         let serv_id = $("select[name=serv_id]").val();
-        let sms = $("input[name=sms]").val();
-        let _token   = $('meta[name="csrf-token"]').attr('content');
-        // console.log(name);
+        let sms = $("textarea[name=sms]").val();
+        // let _token   = $('meta[name="csrf-token"]').attr('content');
+        console.log(serv_id);
         $.ajax({
-          url: "{{ route('sendrequest') }}",
-          type:"POST",
-          dataType: "json",
+          method:"POST",
+          url: "/sendrequest",
+        //   dataType: "json",
           data:{
             name:name,
             email:email,
             subject:subject,
             serv_id:serv_id,
             sms:sms,
-            _token: _token
+            // _token: _token
           },
-          success:function(data){
-              alert(data.success);
-           }
-        //   success:function(response){
-        //     console.log(response);
-        //     if(response) {
-        //       $('.success').text(response.success);
-        //       $("#ajaxform")[0].reset();
-        //     }
-        //   },
+        //   success:function(data){
+        //       alert(data.success);
+        //    }
+          success:function(response){
+            if(response) {
+            alert(response.status);
+              $('.success').text(response.success);
+              $("#ajaxform")[0].reset();
+            }
+          },
           error: function(error) {
            console.log(error);
           }
