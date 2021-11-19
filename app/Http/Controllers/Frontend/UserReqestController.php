@@ -32,5 +32,26 @@ class UserReqestController extends Controller
 
 
     }
+    public function servrequest(Request $request)
+    {
+        try {
+            // $validated = $request->validated();
+            $data = new UserReqest();
+            $data->name =$request->name ;
+            $data->email = $request->email;
+            $data->address = $request->subject;
+            $data->service_id = $request->serv_id;
+            $data->sms = $request->sms;
+            $data->save();
+            // $data = $request->all();
+            // UserReqest::create($data);
+            return response()->json(['success'=>'Ajax request submitted successfully']);
+        }
+        catch (\Exception $e){
+            return redirect()->back()->withErrors(['error' => $e->getMessage()]);
+        }
+
+
+    }
 
 }
