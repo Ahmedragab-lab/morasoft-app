@@ -9,7 +9,7 @@
 @section('content')
 
     <!-- start adding page content -->
-    <section id="welcome" class="section welcome-section has-background-primary-light is-clearfix">
+    {{-- <section id="welcome" class="section welcome-section has-background-primary-light is-clearfix">
         <div class="container">
         <p class="heading-title-top has-text-centered">الخدمات اللوجستية</p>
         <h1 class="heading-title style-3"> شركة الشحن مع الخدمات اللوجستية
@@ -87,7 +87,49 @@
             </div>
         </div>
         <br> </div>
-    </section>
+    </section> --}}
+    <section id="welcome" class="section welcome-section has-background-primary-light is-clearfix">
+        <div class="container">
+          <p class="heading-title-top has-text-centered">welcome logistics</p>
+          <h1 class="heading-title style-3"> Our
+            {{-- <br> difference. --}}
+            <span class="has-text-primary">Products</span>
+          </h1>
+          <br>
+          <br>
+          <div class="blog-list style-2 columns is-variable is-4 is-multiline">
+            <div class="owl-carousel owl-theme">
+                @foreach ( $products as $product)
+                    <div class=" item" >
+                        <article class="blog-post">
+                        <figure class="post-image">
+                            <a href="{{route('front.show',$product->id)}}">
+                            <img alt="Joo - Niche Multi-Purpose HTML Template" src="{{ asset('uploads/product/'. $product->image) }}"> </a>
+                        </figure>
+                        <div class="entry-header">
+                            <h2 class="entry-title">
+                            <a href="#">{{ $product->product_name}}</a>
+                            </h2>
+                            <span class="float-start entry-title">{{ $product->selling_price }}</span>
+                            <span class="float-end "><s>{{ $product->original_price }}</s></span>
+                        </div>
+                        <!-- .entry-header -->
+                        <div class="entry-content">
+                            <p>{{ $product->desc }}</p>
+
+                        </div>
+                        <!-- .entry-content -->
+                        <div class="entry-footer">
+                            <a href="{{route('front.show',$product->id)}}" class="button">More details</a>
+                        </div>
+                        </article>
+                        <!-- .blog-post -->
+                    </div>
+                @endforeach
+           </div>
+          </div>
+          <br> </div>
+      </section>
     <section id="tracking" class="section tracking-section is-clearfix">
         <div class="container">
         <p class="heading-title-top has-text-centered">المتابعة</p>

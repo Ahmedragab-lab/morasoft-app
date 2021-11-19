@@ -71,10 +71,10 @@
                 submenu-is-capitalized logo-text-is-capitalized page-index">
 @endif
 
-{{-- <link rel="stylesheet" href="{{ asset('front/css/owl.carousel.min') }}"> --}}
-{{-- <link rel="stylesheet" href="{{ asset('front/css/owl.theme.default.min') }}"> --}}
-{{-- <link rel="stylesheet" href="{{ asset('front/css/vendor.css') }}"> --}}
-{{-- <link rel="stylesheet" href="{{ asset('front/css/styles.css') }}"> --}}
+<link rel="stylesheet" href="{{ asset('front/css/owl.carousel.min') }}">
+<link rel="stylesheet" href="{{ asset('front/css/owl.theme.default.min') }}">
+<link rel="stylesheet" href="{{ asset('front/css/vendor.css') }}">
+<link rel="stylesheet" href="{{ asset('front/css/styles.css') }}">
 
 {{-- <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600&v=1557446305971" rel="stylesheet"> --}}
 <!-- cdn icon fonts
