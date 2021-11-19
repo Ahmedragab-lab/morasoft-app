@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers\Frontend;
 use App\Http\Controllers\Controller;
+use App\Models\Service;
 use App\Models\UserReqest;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class UserReqestController extends Controller
 {
@@ -52,16 +54,24 @@ class UserReqestController extends Controller
         }
     }
 
-        public function sendrequest(Request $request){
-            $req = new UserReqest();
-            $req->name =$request->input('name') ;
-            $req->email = $request->input('email');
-            $req->address = $request->input('subject');
-            $req->service_id = $request->input('serv_id');
-            $req->sms = $request->input('sms');
-            $req->save();
-             return response()->json(['status'=>$req->name . ' request submitted successfully']);
-            //  return response()->json(['success'=>'Ajax request submitted successfully']);
+    public function sendrequest(Request $request){
+         $service_id = $request->input('serv_id');
+        if(Auth::check()){
+            $serv_check = Service::where('id',$service_id);
+            if($serv_check){
+                $req = new UserReqest();
+                $req->name =auth()->user()->name ;
+                $req->email = auth()->user()->email;
+                $req->address = auth()->user()->address;
+                $req->user_id = Auth::id();
+                $req->service_id = $request->input('serv_id');
+                $req->sms = $request->input('sms');
+                $req->save();
+                return response()->json(['status'=>$req->name . ' request submitted successfully']);
+            }
+        }else{
+            return response()->json(['status'=>'Login to continue']);
         }
+    }
 
 }

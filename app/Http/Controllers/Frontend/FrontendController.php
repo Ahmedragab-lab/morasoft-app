@@ -18,6 +18,7 @@ class FrontendController extends Controller
 
     public function index()
     {
+        
         $servs = Service::orderBy('id','DESC')->limit(4)->get();
         $products = Product::orderBy('id','DESC')->limit(4)->get();
         $services = Service::orderBy('id','DESC')->limit(3)->get();

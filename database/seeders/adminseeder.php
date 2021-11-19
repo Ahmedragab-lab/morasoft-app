@@ -30,16 +30,22 @@ class adminseeder extends Seeder
                 'name' => 'ahmed',
                 'email' => 'ahmed@gmail.com',
                 'password' => bcrypt('258258258'),
+                'phone' => '01021493036',
+                'address' => 'Egypt cairo',
             ],
             [
                 'name' => 'dina',
                 'email' => 'dina@gmail.com',
                 'password' => bcrypt('123456'),
+                'phone' => '01021493036',
+                'address' => 'Phalastin Gaza',
             ],
              [
                 'name' => 'Asmaa',
                 'email' => 'asmaahosnyaly@gmail.com',
                 'password' => bcrypt('123456'),
+                'phone' => '01021493036',
+                'address' => 'Egypt alex',
             ],
             // 'admin'    =>'0',
         ]);

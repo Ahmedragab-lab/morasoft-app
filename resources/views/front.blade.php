@@ -479,31 +479,32 @@
             <!-- ajax contact form -->
 
             <form accept-charset="UTF-8" class="ajax-contact-form" id="ajaxform" method="POST">
-                {{-- {{csrf_field()}} --}}
+                {{csrf_field()}}
                 <div class="field is-horizontal">
                 <div class="field-body">
                     <div class="field">
                     <div class="control is-expanded">
-                        <input class="input" type="text" name="name" placeholder="الإسم" required>
+                        {{-- <input class="input" type="text" name="name" placeholder="الإسم" required> --}}
+                        {{-- <input class="input" type="hidden" name="user_id" value="{{ auth()->user()->id }}"> --}}
                     </div>
                     </div>
                     <!-- .field -->
-                    <div class="field">
+                    {{-- <div class="field">
                     <div class="control is-expanded">
                         <input class="input" type="email" name="email" placeholder="الإيميل" required>
                     </div>
-                    </div>
+                    </div> --}}
                     <!-- .field -->
                 </div>
                 <!-- .field-body -->
                 </div>
                 <div class="field is-horizontal">
                 <div class="field-body">
-                    <div class="field">
+                    {{-- <div class="field">
                     <div class="control is-expanded">
                         <input class="input" type="text" name="subject" placeholder="العنوان" required>
                     </div>
-                    </div>
+                    </div> --}}
                     <!-- .field -->
                     <div class="field">
                     <div class="control is-expanded">
@@ -528,7 +529,7 @@
                 </div>
                 <div class="field ">
                 <div class="control">
-                    <button class="button save-data" type="submit">اطلب الآن</button>
+                    <button class="button save-data" type="submit">Order Now </button>
                 </div>
                 </div>
             </form>
@@ -545,40 +546,34 @@
 @endsection
 @section('js')
 <script type="text/javascript">
- $.ajaxSetup({
+    $.ajaxSetup({
         headers: {
             'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
         }
-    });
+        });
     $(".save-data").click(function(event){
         event.preventDefault();
-
-        let name = $("input[name=name]").val();
-        let email = $("input[name=email]").val();
-        let subject = $("input[name=subject]").val();
+        // let name = $("input[name=name]").val();
+        // let email = $("input[name=email]").val();
+        // let subject = $("input[name=subject]").val();
+        // let user_id = $("select[name=user_id]").val();
         let serv_id = $("select[name=serv_id]").val();
         let sms = $("textarea[name=sms]").val();
-        // let _token   = $('meta[name="csrf-token"]').attr('content');
         console.log(serv_id);
         $.ajax({
           method:"POST",
           url: "/sendrequest",
-        //   dataType: "json",
           data:{
-            name:name,
-            email:email,
-            subject:subject,
+            // name:name,
+            // email:email,
+            // subject:subject,
+            // user_id:user_id,
             serv_id:serv_id,
             sms:sms,
-            // _token: _token
           },
-        //   success:function(data){
-        //       alert(data.success);
-        //    }
           success:function(response){
             if(response) {
             alert(response.status);
-              $('.success').text(response.success);
               $("#ajaxform")[0].reset();
             }
           },
