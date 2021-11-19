@@ -18,7 +18,7 @@ class FrontendController extends Controller
     public function index()
     {
         $servs = Service::orderBy('id','DESC')->limit(4)->get();
-        $services = Service::orderBy('id','DESC')->limit(6)->get();
+        $services = Service::orderBy('id','DESC')->limit(3)->get();
         $allservices = Service::orderBy('id','DESC')->get();
         $feedbacks = Feedback::orderBy('id','DESC')->limit(6)->get();
         $events=Event::all()->last();

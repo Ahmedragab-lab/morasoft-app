@@ -28,3 +28,9 @@ body.header-transparent header {
     background-color: #0063dd;
     font-family: 'Cairo', sans-serif;
 }
+
+
+.page-title.services {
+    background: #141212 url(../front/images/page-title/services.png) no-repeat top center;
+    background-size: cover;
+}

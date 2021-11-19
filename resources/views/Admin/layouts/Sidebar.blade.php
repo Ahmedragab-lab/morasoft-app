@@ -4,14 +4,12 @@
     </button>
     <div class="left-side-logo d-block d-lg-none">
         <div class="text-center">
-
             <a href="index.html" class="logo"><img src="assets/images/logo_dark.png" height="20" alt="logo"></a>
         </div>
     </div>
     <div class="sidebar-inner slimscrollleft">
         <div id="sidebar-menu">
             <ul>
-
                 {{-- home dashboard  --}}
                 <li>
                     <a href="{{ route('dashboard.index') }}" class="waves-effect">
@@ -25,8 +23,6 @@
                 </li>
                 {{-- End home dashboard  --}}
                 <li class="menu-title"><h5>{{ trans('site.component') }}</h5></li>
-
-
                {{-- route Admin  --}}
                <li>
                 <a href="#" class="waves-effect">

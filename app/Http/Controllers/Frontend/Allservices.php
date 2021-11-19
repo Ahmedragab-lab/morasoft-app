@@ -10,6 +10,10 @@ class Allservices extends Controller
 {
     public function index(){
         $services = Service::all();
-        return view('allservices',compact('services'));
+        return view('site.pages.allservices',compact('services'));
+       }
+       public function show($id){
+        $service = Service::findorfail($id);
+        return view('site.pages.service',compact('service'));
        }
 }

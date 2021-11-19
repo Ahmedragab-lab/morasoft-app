@@ -25,3 +25,7 @@
 body.header-transparent header {
     background-color: #0063dd;
 }
+.page-title.services {
+    background: #1d1c1c url(../images/page-title/services.png) no-repeat top center;
+    background-size: cover;
+}
