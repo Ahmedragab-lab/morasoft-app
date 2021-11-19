@@ -9,6 +9,7 @@ use App\Models\Feedback;
 use App\Models\Service;
 use Illuminate\Http\Request;
 use App\Models\navbar_details;
+use App\Models\Product;
 
 class FrontendController extends Controller
 {
@@ -56,7 +57,8 @@ class FrontendController extends Controller
      */
     public function show($id)
     {
-        //
+        $product = Product::find($id);
+        return view('site.pages.product-details',compact('product'));
     }
 
     /**

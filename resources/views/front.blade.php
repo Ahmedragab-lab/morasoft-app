@@ -133,11 +133,12 @@
             @foreach ( $services as $serv)
                 <div class="column is-4" >
                     <div class="box-item">
-                    <a href="#"><img alt="no photo" src="{{ asset('uploads/serv/'.$serv->image) }}" style="max-height: 344px ;"></a>
-                    <h3><a href="#">{{ $serv->serve_name }}</a></h3>
+                    {{-- <a href="#"><img alt="no photo" src="{{ asset('uploads/serv/'.$serv->image) }}" style="max-height: 344px ;"></a> --}}
+                    <a href="{{ route('allservices.show',$serv->id) }}"><img alt="no photo" src="{{ asset('front/images/icons/3.png') }}" style="max-height: 344px ;"></a>
+                    <h3><a href="{{ route('allservices.show',$serv->id) }}">{{ $serv->serve_name }}</a></h3>
                     <p>{{ $serv->desc }}</p>
                     <p>{{ $serv->status == 1 ?'Available':'Unavialable' }}</p>
-                    <a href="#" class="button"> Make Order</a>
+                    <a href="{{ route('allservices.show',$serv->id) }}" class="button"> Make Order</a>
                     </div>
                 </div>
              @endforeach

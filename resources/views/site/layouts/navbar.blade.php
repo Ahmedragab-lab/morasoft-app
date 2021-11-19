@@ -30,7 +30,7 @@
                                     <a href="{{ route('allservices.index') }}">{{ __('front.services') }}</a>
                                 </li>
                                 <li>
-                                    <a href="./portfolio/index.html">{{ __('front.products') }}</a>
+                                    <a href="{{ route('allproducts.index')}}">{{ __('front.products') }}</a>
                                 </li>
                                 <li>
                                     <a href="./blog/index.html">{{ __('front.contactus') }}</a>
