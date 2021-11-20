@@ -27,64 +27,41 @@
                         </thead>
                         <tbody>
                             @foreach ( $orders as $index=>$order )
-                            <tr>
-                                <th scope="row">{{ $index +1 }}</th>
-                                <td>{{ $order->name }}</td>
-                                <td>{{ $order->email }}</td>
-                                <td>{{ $order->user->phone }}</td>
-                                <td>{{ $order->address }}</td>
+                                <tr>
+                                    <th scope="row">{{ $index +1 }}</th>
+                                    {{-- <td>{{ $order->id }}</td> --}}
+                                    <td>{{ $order->name }}</td>
+                                    <td>{{ $order->email }}</td>
+                                    <td>{{ $order->user->phone }}</td>
+                                    <td>{{ $order->address }}</td>
+                                    <td>
+                                        <img src="{{ asset('uploads/user-img/'.$order->user->image) }}" class="img-thumbnail" width="70" alt="">
+                                    </td>
+                                    <td>{{ $order->service->serve_name }}</td>
+                                    <td>{{ Str::limit($order->sms,20)}}</td>
+                                    <td></td>
+                                    {{-- <td></td> --}}
+                                    {{-- <td>{{ $order->price}}</td> --}}
+                                    {{-- <td>
+                                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" >
+                                            {{ __('site.add_price') }}
+                                        </button>
+                                    </td>
+                                </tr>
+                                @include('Admin.orders.create-price') --}}
                                 <td>
-                                    <img src="{{ asset('uploads/user-img/'.$order->user->image) }}" class="img-thumbnail" width="70" alt="">
-                                </td>
-                                <td>{{ $order->service->serve_name }}</td>
-                                <td>{{ Str::limit($order->sms,20)}}</td>
-                                <td>{{ $order->price}}</td>
-                                <td>
-                                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" >
-                                        {{ __('site.add_price') }}
-                                    </button>
-                                </td>
-
-                                {{-- <td>
-                                    <form action="{{ route('users.destroy', $order->id) }}" method="post">
+                                    <form action="{{ route('orders.destroy', $order->id) }}" method="post">
                                         @csrf
                                         @method('delete')
-                                        <a href="{{ route('users.edit', $order->id) }}" class="btn btn-info">{{ __('site.edit') }}</a>
+                                        <a href="{{ route('orders.edit', $order->id) }}" class="btn btn-info">{{ __('site.edit') }}</a>
                                         <button type="button" class="btn btn-danger"
-                                        onclick="confirm('{{ __('Are you sure you want to delete this user?') }}') ? this.parentElement.submit() : ''">
+                                        onclick="confirm('{{ __('Are you sure you want to delete this order?') }}') ? this.parentElement.submit() : ''">
                                             {{ __('site.delete') }}
                                         </button>
                                     </form>
-                                </td> --}}
-                            </tr>
-                            {{-- modal add price --}}
-                                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                    <div class="modal-dialog">
-                                    <div class="modal-content">
-                                        <div class="modal-header">
-                                        <h5 class="modal-title" id="exampleModalLabel">Add Services Price</h5>
-                                        {{-- <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button> --}}
-                                        </div>
-                                        <div class="modal-body">
-                                        <form action="{{ route('orders.store') }}" method="post">
-                                                @csrf
-                                                <div class="mb-3">
-                                                <label for="recipient-name" class="col-form-label">Add Price</label>
-                                                <input type="hidden"  name="order_id" value="{{ $order->id }}">
-                                                <input type="text" class="form-control"  name="price">
-                                                </div>
+                                </td>
+                            @endforeach
 
-                                            </div>
-                                            <div class="modal-footer">
-                                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                                <button type="submit" class="btn btn-primary">Save</button>
-                                            </div>
-                                        </form>
-                                    </div>
-                                    </div>
-                                </div>
-                            {{-- End modal add price --}}
-                        @endforeach
                         </tbody>
                     </table>
                 </div>
