@@ -178,8 +178,8 @@
             <div class="card bg-pink mini-stat text-white">
                 <div class="p-3 mini-stat-desc">
                     <div class="clearfix">
-                        <h6 class="text-uppercase mt-0 float-left text-white-50">{{ __('site.order') }}</h6>
-                        <h4 class="mb-3 mt-0 float-right">{{ \App\Models\Agreement::count() }}</h4>
+                        <h6 class="text-uppercase mt-0 float-left text-white-50">{{ __('site.orders') }}</h6>
+                        <h4 class="mb-3 mt-0 float-right">{{ \App\Models\UserReqest::count() }}</h4>
                     </div>
                     <div>
                         {{-- <span class="badge badge-light text-info"> +89% </span> <span class="ml-2">From previous period</span> --}}

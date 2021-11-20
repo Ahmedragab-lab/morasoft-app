@@ -62,9 +62,14 @@ return [
 'add-user'=>'Add New User',
 'edit-user'=>' Edit User',
 // end users page translation
+//  section  page translation
 'sections'=>' Sections',
 'section_name'=>' Section Name',
 'add_section'=>' Add Section',
 'popular'=>' Popular',
 'products'=>' Products',
+// End section  page translation
+// user request page translation
+'orders'=>'Orders',
+// end request page translation
 ];

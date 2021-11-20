@@ -44,14 +44,16 @@
                                     <li class="has-dropdown">
                                         <a href="#">welcome back : {{ \Str::limit(auth()->user()->name, 10) }}</a>
                                         <ul class="dropdown">
-                                            <li><a href="#">Profile</a></li>
-                                            @if(auth()->user()->admin==1)
+                                            <li><a href="#"><i class=" far fa-address-card"></i> Profile</a></li>
+                                            <li><a href="#"><i class=" far fa-comment-dots"></i> my orders</a></li>
+                                            <li><a href="#"><i class="icon-basket"></i> my shopping cart</a></li>
+                                            {{-- @if(auth()->user()->admin==1)
                                                <li><a href="{{ route('dashboard.index') }}">My Dashboard</a></li>
-                                            @endif
+                                            @endif --}}
                                             <li>
                                                 <a href="{{ route('logout') }}"
                                                     onclick="event.preventDefault();document.getElementById('logout-form').submit();">
-                                                    <i class="bx bx-log-out"></i>log out
+                                                    <i class="far fa-trash-alt"></i> log out
                                                 </a>
                                                 <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                                     @csrf

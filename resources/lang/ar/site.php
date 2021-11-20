@@ -69,4 +69,8 @@ return [
 'add_section'=>' اضف قسم',
 'popular'=>' الاكثر شهره',
 'products'=>' المنتجات',
+
+// user request page translation
+'orders'=>'طلبات العملاء',
+// end request page translation
 ];
