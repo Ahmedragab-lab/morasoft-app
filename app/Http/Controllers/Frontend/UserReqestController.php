@@ -60,7 +60,7 @@ class UserReqestController extends Controller
             $serv_check = Service::where('id',$service_id);
             if($serv_check){
                 $req = new UserReqest();
-                $req->name =auth()->user()->name ;
+                $req->name =auth()->user()->name;
                 $req->email = auth()->user()->email;
                 $req->address = auth()->user()->address;
                 $req->user_id = Auth::id();

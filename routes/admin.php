@@ -4,7 +4,7 @@ use App\Http\Controllers\Auth\AdminController;
 use App\Http\Controllers\TrackingstepsController;
 use Illuminate\Support\Facades\Route;
 use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
-use App\Http\Controllers;
+use App\Http\Controllers\Admin;
 use App\Http\Controllers\Auth\AdminAuthController;
 
 Route::group(
@@ -15,15 +15,16 @@ Route::group(
 
 
         // Route::get('adminlogin', [AdminAuthController::class, 'showLoginForm'])->name('admin.login');
-        Route::resource('/dashboard', Controllers\Admin\AdminsController::class);
-        Route::resource('/users', Controllers\Admin\UsersController::class);
-        Route::resource('/services',Controllers\Admin\ServiceController::class);
-        Route::resource('/sections',Controllers\Admin\SectionController::class);
-        Route::resource('/products',Controllers\Admin\ProductController::class);
-        Route::resource('/feedbacks',Controllers\Admin\FeedbackController::class);
-        Route::resource('/tracking_steps',Controllers\Admin\TrackingstepsController::class);
-        Route::resource('/events',Controllers\Admin\EventController::class);
-        Route::resource('/agreements',Controllers\Admin\AgreementController::class);
+        Route::resource('/dashboard', Admin\AdminsController::class);
+        Route::resource('/users', Admin\UsersController::class);
+        Route::resource('/services',Admin\ServiceController::class);
+        Route::resource('/sections',Admin\SectionController::class);
+        Route::resource('/products',Admin\ProductController::class);
+        Route::resource('/feedbacks',Admin\FeedbackController::class);
+        Route::resource('/tracking_steps',Admin\TrackingstepsController::class);
+        Route::resource('/events',Admin\EventController::class);
+        Route::resource('/agreements',Admin\AgreementController::class);
+        Route::resource('/orders',Admin\OrderController::class);
     });
 
 require __DIR__ . '/auth.php';
