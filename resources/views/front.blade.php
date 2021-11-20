@@ -49,12 +49,11 @@
                 </figure>
                 <div class="entry-header">
                 <h2 class="entry-title">
-                    <a href="./pages/about.html">الخدمات اللوجستية</a>
+                   
                 </h2>
                 </div>
                 <!-- .entry-header -->
                 <div class="entry-content">
-                <p>هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد النص العربى أنه مازال نصاً..</p>
                 </div>
                 <!-- .entry-content -->
                 <div class="entry-footer">
@@ -164,11 +163,8 @@
         <div class="container">
             <div class="columns is-variable is-multiline is-4">
             <div class="column is-5-desktop is-12-tablet">
-                <p class="heading-title-top">الخدمات اللوجستية</p>
-                <h1 class="heading-title style-3 has-text-left">خدماتنا الخاصة</h1>
             </div>
             <div class="column is-7-desktop is-12-tablet">
-                <p class="heading-title-bottom">خدمتنا تتحدث عننا ونحتاج الى ارائكم واقتراحتكم شكرااا جزيلا لكم فريق <strong style="color:rgb(240, 29, 29);font-size:30px;font-weight:bold;">مورا سوفت</strong></p>
             </div>
             </div><br>
             <div class="columns is-variable is-4 is-multiline boxes-style-2">
