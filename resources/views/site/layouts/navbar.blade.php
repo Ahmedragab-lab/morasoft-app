@@ -19,17 +19,32 @@
                 <div class="level-right">
                     <div class="nav-wrap">
                         <nav class="main-navigation right">
-                            <ul class="menu">
-                               
-                                
+                            <ul class="menu"                               
                                 <li>
                                     <a href="{{ route('front.index') }}">{{ __('front.home') }}</a>
                                 </li>
-                                <li>
-                                    <a href="#">{{ __('front.sections') }}</a>
+                                <li class="has-dropdown">
+                                    <a href="#"> اشحن اونلاين</a>
+                                    <ul class="dropdown">
+                                        <li><a href="#"><i class=" far fa-address-card"></i> قدم طلبك</a></li>
+                                        <li><a href="#"><i class=" far fa-comment-dots"></i> تتبع الشحنة</a></li>
+                                    </ul>
                                 </li>
-                                <li>
-                                    <a href="{{ route('allservices.index') }}">{{ __('front.services') }}</a>
+                                <li class="has-dropdown">
+                                    <a href="#"> {{ __('front.services') }}</a>
+                                    <ul class="dropdown">
+                                        @foreach ( \App\Models\Service::all() as $service)
+                                           <li><a href="{{ route('allservices.show',$service->id) }}"> {{ $service->serve_name }}</a></li>
+                                        @endforeach
+                                    </ul>
+                                </li>
+                                <li class="has-dropdown">
+                                    <a href="#"> {{ __('front.sections') }}</a>
+                                    <ul class="dropdown">
+                                        @foreach (\App\Models\Section::all() as $section)
+                                        <li><a href="{{ route('allsections.show',$section->id) }}">{{$section->section_name}}</a></li>
+                                        @endforeach
+                                    </ul>
                                 </li>
                                 <li>
                                     <a href="{{ route('allproducts.index')}}">{{ __('front.products') }}</a>
@@ -37,32 +52,6 @@
                                 <li>
                                     <a href="./blog/index.html">{{ __('front.contactus') }}</a>
                                 </li>
-                                <li class="has-dropdown">
-                                    <a href="#"> اشحن اونلاين</a>
-                                    <ul class="dropdown">
-                                        <li><a href="#"><i class=" far fa-address-card"></i> قدم طلبك</a></li>
-                                        <li><a href="#"><i class=" far fa-comment-dots"></i> تتبع الشحنة</a></li>
-                                        
-                                
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li class="has-dropdown">
-                                    <a href="#">  الخدمات</a>
-                                    <ul class="dropdown">
-                                        <li><a href="#"><i class=" far fa-address-card"></i>  الشحن الجوي</a></li>
-                                        <li><a href="#"><i class=" far fa-address-card"></i>  الشحن البحري</a></li>
-                                        <li><a href="#"><i class=" far fa-comment-dots"></i> الشحن  البري</a></li>
-                                        <li><a href="#"><i class=" far fa-address-card"></i>  تأمين  البضائع</a></li>
-                                        <li><a href="#"><i class=" far fa-comment-dots"></i> النقل  البضائع</a></li>
-                                        
-                                
-                                        </li>
-                                    </ul>
-                                </li>
-                                
-                                   
-                               
                                 @guest
                                 <li class="btn-cta"><a href="/login"><span>Login</span></a></li>
                                 <li class="btn-cta"><a href="/register"><span>register</span></a></li>
