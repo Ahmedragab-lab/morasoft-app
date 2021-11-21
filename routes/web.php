@@ -26,6 +26,7 @@ Route::group(
 
         Route::resource('allproducts',Frontend\AllProducts::class); // go to all products page
 
+
         Route::resource('allproducts',Frontend\AllProducts::class);
 
 
@@ -40,6 +41,9 @@ Route::group(
 //         });
 
 
+
+
+        Route::resource('allfeedback',Frontend\Allfeedback::class); // go to all feedback page
 
         Route::middleware(['auth'])->group(function () {
             Route::resource('mycart',Frontend\CartController::class); // go to my cart page
