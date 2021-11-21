@@ -56,8 +56,8 @@
                 dark-color footer-widgets footer-background dark-color submenu-show-arrow-right menu-is-capitalized
                 submenu-is-capitalized logo-text-is-capitalized page-index">
 
-@else
-@yield('css')
+{{-- @else --}}
+{{-- @yield('css')
     <link rel="stylesheet" href="{{ asset('front/english/css/vendor.min.css?v=1557446391092') }}">
     <link rel="stylesheet" href="{{ asset('front/english/css/styles.min.css?v=1557446391092') }}">
     <link rel="stylesheet" href="{{ asset('front/english/css/custom.css?v=1557446391092') }}">
@@ -74,7 +74,7 @@
     <link rel="apple-touch-icon" sizes="180x180" href="{{ URL::asset('front/images/favicons/apple-touch-icon-180x180.png') }}">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <meta name="apple-mobile-web-app-title" content="Joo Template">
+    <meta name="apple-mobile-web-app-title" content="Joo Template"> --}}
 
     @else
         @yield('css')
