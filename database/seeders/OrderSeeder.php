@@ -16,15 +16,15 @@ class OrderSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('user_reqests')->delete();
-        $order = new UserReqest();
-        $order->name = Str::random(2);
-        $order->email = Str::random(2).'@gmail.com';
-        $order->address = Str::random(2);
-        $order->user_id = Str::random();
-        $order->service_id = Str::random();
-        $order->sms= Str::random(2);
-        $order->price = '5000';
-        $order->save();
+        // DB::table('user_reqests')->delete();
+        // $order = new UserReqest();
+        // $order->name = Str::random(2);
+        // $order->email = Str::random(2).'@gmail.com';
+        // $order->address = Str::random(2);
+        // $order->user_id = Str::random();
+        // $order->service_id = Str::random();
+        // $order->sms= Str::random(2);
+        // $order->price = '5000';
+        // $order->save();
     }
 }

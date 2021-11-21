@@ -1,15 +1,14 @@
 
-<meta charset="UTF-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="author" content="Jozoor">
-<meta name="description" content="Joo - Niche Multi-Purpose HTML Template">
-<meta name="keywords" content="creative, niche, responsive, html5, css3, multipurpose, all in one, html, template">
-
-<title>mora soft company</title>
+ <meta charset="UTF-8">
+ <meta http-equiv="X-UA-Compatible" content="IE=edge">
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+ <meta name="author" content="Jozoor">
+ <meta name="description" content="Joo - Niche Multi-Purpose HTML Template">
+ <meta name="keywords" content="creative, niche, responsive, html5, css3, multipurpose, all in one, html, template">
+ <title>@yield('title')</title>
 
 @if (App::getLocale() == 'ar')
-
+@yield('css')
     <link rel="stylesheet" href="{{ asset('front/arabic/css/vendor.min.css?v=1557447064956') }}">
     <link rel="stylesheet" href="{{ asset('front/arabic/css/styles.min.css?v=1557447064956') }}">
     <link rel="stylesheet" href="{{ asset('front/arabic/css/styles-rtl.min.css?v=1557447064956') }}">
@@ -34,13 +33,14 @@
     <link rel="icon" type="image/png" sizes="16x16" href="{{ URL::asset('front/images/favicons/favicon-16x16.png') }}">
     <link rel="shortcut icon" href="{{ URL::asset('front/images/favicons/favicon.ico') }}">
 
-    @yield('css')
+
     </head>
     <body class=" rtl active-pageloader corporate logistics header-sticky hide-on-scroll
                 header-menu-with-icons header-transparent header-menu-border-bottom header-topbar topbar-background
                 dark-color footer-widgets footer-background dark-color submenu-show-arrow-right menu-is-capitalized
                 submenu-is-capitalized logo-text-is-capitalized page-index">
 @else
+@yield('css')
     <link rel="stylesheet" href="{{ asset('front/english/css/vendor.min.css?v=1557446391092') }}">
     <link rel="stylesheet" href="{{ asset('front/english/css/styles.min.css?v=1557446391092') }}">
     <link rel="stylesheet" href="{{ asset('front/english/css/custom.css?v=1557446391092') }}">
@@ -63,7 +63,7 @@
     <link rel="icon" type="image/png" sizes="16x16" href="{{ URL::asset('front/images/favicons/favicon-16x16.png') }}">
     <link rel="shortcut icon" href="{{ URL::asset('front/images/favicons/favicon.ico') }}">
 
-    @yield('css')
+
     </head>
     <body class=" active-pageloader corporate logistics header-sticky hide-on-scroll
                 header-menu-with-icons header-transparent header-menu-border-bottom header-topbar topbar-background

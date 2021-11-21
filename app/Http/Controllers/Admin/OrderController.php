@@ -37,17 +37,7 @@ class OrderController extends Controller
      */
     public function store(Request $request )
     {
-        try {
-            $order_id = $request->order_id;
-            $price = $request->price;
-            $order_price = UserReqest::findorfail($order_id);
-            $order_price->price = $price;
-            $order_price->save();
-            toastr()->success(__('price added successfully'));
-            return redirect()->route('orders.index');
-        }catch (\Exception $e){
-            return redirect()->back()->withErrors(['error' => $e->getMessage()]);
-        }
+
     }
 
     /**
@@ -81,7 +71,18 @@ class OrderController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        // dd($request->id);
+        // try {
+        //     // $order_id = $request->order_id;
+        //     $price = $request->price;
+        //     $order_price = UserReqest::find($id);
+        //     $order_price->price = $price;
+        //     $order_price->update();
+        //     toastr()->success(__('price added successfully'));
+        //     return redirect()->route('orders.index');
+        // }catch (\Exception $e){
+        //     return redirect()->back()->withErrors(['error' => $e->getMessage()]);
+        // }
     }
 
     /**

@@ -163,6 +163,8 @@ return [
         Illuminate\View\ViewServiceProvider::class,
         Yoeunes\Toastr\ToastrServiceProvider::class,
         Yajra\DataTables\DataTablesServiceProvider::class,
+
+        // Illuminate\Notifications\NotificationServiceProvider::class,
         /*
          * Package Service Providers...
          */
