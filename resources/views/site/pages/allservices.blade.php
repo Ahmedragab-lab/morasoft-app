@@ -53,76 +53,73 @@
                 <h1 class="heading-title style-3"> Our
                   <span class="has-text-primary">services</span>
                 </h1>
-              <div class="columns is-variable is-4 is-multiline">
-               @foreach ( $services as $service )
-                    <div class="column is-3" data-aos="fade">
-                        <div class="work-item">
-                        <figure>
-                            <a href="#">
-                            <img alt="no photo" src="{{ asset('uploads/serv/'. $service->image) }}">
-                            </a>
-                            <figcaption>
-                            <ul class="social">
-                                {{-- <li>
-                                <a href="../pages/shop-service.html" target="_blank">
-                                    <span class="icon">
-                                    <i class="icon-basket"></i>
-                                    </span>
-                                </a>
-                                </li> --}}
+                <div class="columns is-variable is-4 is-multiline boxes-style-2">
+                    @foreach ($services as $service)
+                        <div class="column is-4" >
+                            <div class="box-item">
+
                                 <li>
-                                <a href="{{ route('allservices.show',$service->id) }}">
-                                    <span class="icon">
+                                    <a href="{{ route('allservices.show',$service->id) }}">
+                                 <span class="icon">
                                     <i class="icon-link"></i>
                                     </span>
-                                </a>
+                                    </a>
                                 </li>
-                            </ul>
-                            </figcaption>
-                        </figure>
-                        <div class="work-item-meta">
-                            <h3>{{ $service->serve_name }}</h3>
-                            <p><a href="#">{{ $service->desc}}</a></p>
-                            <h3>{{ $service->status == 1?'__("site.avialable")':'__("site.unavialable")'}}</h3>
-                            <h5>
-                            {{-- <a href="#">{{ $service->selling_price }} LE</a> --}}
-                            </h5>
-                            <div class="shop-rating">
-                            <span class="icon">
-                                <i class="ion-md-star"></i>
-                            </span>
-                            <span class="icon">
-                                <i class="ion-md-star"></i>
-                            </span>
-                            <span class="icon">
-                                <i class="ion-md-star"></i>
-                            </span>
-                            <span class="icon">
-                                <i class="ion-md-star"></i>
-                            </span>
-                            <span class="icon">
-                                <i class="ion-md-star"></i>
-                            </span>
-                            </div>
-                        </div>
-                        </div>
-                        <!-- .work-item -->
-                    </div>
-               @endforeach
+                                <div class="work-item-meta">
 
-              </div>
-              <!-- .columns -->
-            </div>
+                                <figure>
+                                    <a href="#">
+                                        <img alt="no photo" src="{{ asset('uploads/serv/'. $service->image) }}">
+                                    </a>
+
+                                </figure>
+
+                                </div>
+                                <br>
+
+                                <div class="work-item-meta">
+                                    <h3>{{ $service->serve_name }}</h3>
+
+                                    <p><a href="#">{{ $service->desc}}</a></p>
+
+                                    <h3>   {{ $service->status ==1 ?  __('site.Avilable'): __('site.Unavilable') }}</h3>
+                                    <h5>
+                                        {{-- <a href="#">{{ $service->selling_price }} LE</a> --}}
+                                    </h5>
+                                    <div class="shop-rating">
+                            <span class="icon">
+                                <i class="ion-md-star"></i>
+                            </span>
+                                        <span class="icon">
+                                <i class="ion-md-star"></i>
+                            </span>
+                                        <span class="icon">
+                                <i class="ion-md-star"></i>
+                            </span>
+                                        <span class="icon">
+                                <i class="ion-md-star"></i>
+                            </span>
+                                        <span class="icon">
+                                <i class="ion-md-star"></i>
+                            </span>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- .work-item -->
+                        </div>
+                    @endforeach
+
+                </div>
             <!-- .works -->
             <nav class="pagination is-centered">
               <a href="#" class="pagination-previous">Prev</a>
               <a href="#" class="pagination-next">Next</a>
               <ul class="pagination-list">
                 <li>
-                  <a href="#" class="pagination-link ">1</a>
+                  <a href="#" class="pagination-link is-current">1</a>
                 </li>
                 <li>
-                  <a href="#" class="pagination-link is-current">2</a>
+                  <a href="#" class="pagination-link ">2</a>
                 </li>
                 <li>
                   <a href="#" class="pagination-link ">3</a>
@@ -131,11 +128,9 @@
                   <a href="#" class="pagination-ellipsis ">...</a>
                 </li>
                 <li>
-                  <a href="#" class="pagination-link ">11</a>
+                  <a href="#" class="pagination-link ">10</a>
                 </li>
-                <li>
-                  <a href="#" class="pagination-link ">12</a>
-                </li>
+
               </ul>
             </nav>
             <!-- .pagination -->
