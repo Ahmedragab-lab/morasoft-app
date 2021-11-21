@@ -1,10 +1,14 @@
 @extends('site.layouts.master')
+@section('title')
+   mycart
+@endsection
 @section('css')
     <link href="https://fonts.googleapis.com/css?family=Lato:300,400,400italic,700,700italic,900,900italic&amp;subset=latin,latin-ext" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Open%20Sans:300,400,400italic,600,600italic,700,700italic&amp;subset=latin,latin-ext" rel="stylesheet">
+
 	<link rel="stylesheet" type="text/css" href="{{ asset('ecommerce') }}/css/animate.css">
 	<link rel="stylesheet" type="text/css" href="{{ asset('ecommerce') }}/css/font-awesome.min.css">
-	<link rel="stylesheet" type="text/css" href="{{ asset('ecommerce') }}/css/bootstrap.min.css">
+	{{-- <link rel="stylesheet" type="text/css" href="{{ asset('ecommerce') }}/css/bootstrap.min.css"> --}}
 	<link rel="stylesheet" type="text/css" href="{{ asset('ecommerce') }}/css/owl.carousel.min.css">
 	<link rel="stylesheet" type="text/css" href="{{ asset('ecommerce') }}/css/chosen.min.css">
 	<link rel="stylesheet" type="text/css" href="{{ asset('ecommerce') }}/css/style.css">
@@ -13,7 +17,7 @@
 @endsection
 @section('content')
 <!--main area-->
-<main id="main" class="main-site">
+{{-- <main id="main" class="main-site"> --}}
 
     <div class="container">
 
@@ -28,52 +32,32 @@
             <div class="wrap-iten-in-cart">
                 <h3 class="box-title">Products Name</h3>
                 <ul class="products-cart">
-                    <li class="pr-cart-item">
-                        <div class="product-image">
-                            <figure><img src="{{ asset('ecommerce') }}/images/products/digital_18.jpg" alt=""></figure>
+                  @foreach ( $cartitems as $item)
+                  <li class="pr-cart-item">
+                    <div class="product-image">
+                        <figure><img src="{{ asset('uploads/product/'.$item->product->image) }}" alt=""></figure>
+                    </div>
+                    <div class="product-name">
+                        <a class="link-to-product" href="#">{{ $item->product->product_name }}</a>
+                    </div>
+                    <div class="price-field produtc-price"><p class="price">{{ $item->product->selling_price }} LE</p></div>
+                    <div class="quantity">
+                        <div class="quantity-input">
+                            <input type="text" name="product-quatity" value="{{ $item->product_qty }}" data-max="120" pattern="[0-9]*" >
+                            <a class="btn btn-increase" href="#"></a>
+                            <a class="btn btn-reduce" href="#"></a>
                         </div>
-                        <div class="product-name">
-                            <a class="link-to-product" href="#">Radiant-360 R6 Wireless Omnidirectional Speaker [White]</a>
-                        </div>
-                        <div class="price-field produtc-price"><p class="price">$256.00</p></div>
-                        <div class="quantity">
-                            <div class="quantity-input">
-                                <input type="text" name="product-quatity" value="1" data-max="120" pattern="[0-9]*" >
-                                <a class="btn btn-increase" href="#"></a>
-                                <a class="btn btn-reduce" href="#"></a>
-                            </div>
-                        </div>
-                        <div class="price-field sub-total"><p class="price">$256.00</p></div>
-                        <div class="delete">
-                            <a href="#" class="btn btn-delete" title="">
-                                <span>Delete from your cart</span>
-                                <i class="fa fa-times-circle" aria-hidden="true"></i>
-                            </a>
-                        </div>
-                    </li>
-                    <li class="pr-cart-item">
-                        <div class="product-image">
-                            <figure><img src="assets/images/products/digital_20.jpg" alt=""></figure>
-                        </div>
-                        <div class="product-name">
-                            <a class="link-to-product" href="#">Radiant-360 R6 Wireless Omnidirectional Speaker [White]</a>
-                        </div>
-                        <div class="price-field produtc-price"><p class="price">$256.00</p></div>
-                        <div class="quantity">
-                            <div class="quantity-input">
-                                <input type="text" name="product-quatity" value="1" data-max="120" pattern="[0-9]*">
-                                <a class="btn btn-increase" href="#"></a>
-                                <a class="btn btn-reduce" href="#"></a>
-                            </div>
-                        </div>
-                        <div class="price-field sub-total"><p class="price">$256.00</p></div>
-                        <div class="delete">
-                            <a href="#" class="btn btn-delete" title="">
-                                <span>Delete from your cart</span>
-                                <i class="fa fa-times-circle" aria-hidden="true"></i>
-                            </a>
-                        </div>
-                    </li>
+                    </div>
+                    <div class="price-field sub-total"><p class="price">$256.00</p></div>
+                    <div class="delete">
+                        <a href="#" class="btn btn-delete" title="">
+                            <span>Delete from your cart</span>
+                            <i class="fa fa-times-circle" aria-hidden="true"></i>
+                        </a>
+                    </div>
+                </li>
+                  @endforeach
+
                 </ul>
             </div>
 
@@ -97,7 +81,7 @@
                 </div>
             </div>
 
-            {{-- <div class="wrap-show-advance-info-box style-1 box-in-site">
+            <div class="wrap-show-advance-info-box style-1 box-in-site">
                 <h3 class="title-box">Most Viewed Products</h3>
                 <div class="wrap-products">
                     <div class="products slide-carousel owl-carousel style-nav-1 equal-container" data-items="5" data-loop="false" data-nav="true" data-dots="false" data-responsive='{"0":{"items":"1"},"480":{"items":"2"},"768":{"items":"3"},"992":{"items":"3"},"1200":{"items":"5"}}' >
@@ -245,21 +229,21 @@
                         </div>
                     </div>
                 </div><!--End wrap-products-->
-            </div> --}}
+            </div>
 
         </div><!--end main content area-->
     </div><!--end container-->
 
-</main>
+{{-- </main> --}}
 <!--main area-->
 
 @endsection
 @section('js')
-    <script src="{{ asset('ecommerce') }}/js/jquery-1.12.4.minb8ff.js?ver=1.12.4"></script>
-	<script src="{{ asset('ecommerce') }}/js/bootstrap.min.js"></script>
-	<script src="{{ asset('ecommerce') }}/js/chosen.jquery.min.js"></script>
+    {{-- <script src="{{ asset('ecommerce') }}/js/jquery-1.12.4.minb8ff.js?ver=1.12.4"></script> --}}
+	{{-- <script src="{{ asset('ecommerce') }}/js/bootstrap.min.js"></script> --}}
+	{{-- <script src="{{ asset('ecommerce') }}/js/chosen.jquery.min.js"></script> --}}
 	<script src="{{ asset('ecommerce') }}/js/owl.carousel.min.js"></script>
-	<script src="{{ asset('ecommerce') }}/js/jquery.sticky.js"></script>
+	{{-- <script src="{{ asset('ecommerce') }}/js/jquery.sticky.js"></script> --}}
 	<script src="{{ asset('ecommerce') }}/js/functions.js"></script>
 @endsection
 

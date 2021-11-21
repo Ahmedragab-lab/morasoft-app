@@ -1,12 +1,11 @@
 
-<meta charset="UTF-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="author" content="Jozoor">
-<meta name="description" content="Joo - Niche Multi-Purpose HTML Template">
-<meta name="keywords" content="creative, niche, responsive, html5, css3, multipurpose, all in one, html, template">
-
-<title>mora soft company</title>
+ <meta charset="UTF-8">
+ <meta http-equiv="X-UA-Compatible" content="IE=edge">
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+ <meta name="author" content="Jozoor">
+ <meta name="description" content="Joo - Niche Multi-Purpose HTML Template">
+ <meta name="keywords" content="creative, niche, responsive, html5, css3, multipurpose, all in one, html, template">
+ <title>@yield('title')</title>
 
 @if (App::getLocale() == 'ar')
 @yield('css')

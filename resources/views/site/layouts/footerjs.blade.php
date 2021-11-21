@@ -1,17 +1,20 @@
 <script src="{{ asset('front/js/jquery-3.6.0.min') }}"></script>
-@yield('js')
+
 @if (App::getLocale() == 'ar')
 <script src="{{ asset('front/arabic/js/vendor.min.js?v=1557446391092') }}"></script>
 <script src="{{ asset('front/arabic/js/scripts.min.js?v=1557446391092') }}"></script>
 <script src="{{ asset('front/arabic/js/custom.js?v=1557446391092') }}"></script>
+@yield('js')
 
 @else
 <script src="{{ asset('front/english/js/vendor.min.js?v=1557446391092') }}"></script>
 <script src="{{ asset('front/english/js/scripts.min.js?v=1557446391092') }}"></script>
 <script src="{{ asset('front/english/js/custom.js?v=1557446391092') }}"></script>
+@yield('js')
 @endif
-<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
+
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 <script src="{{ asset('front/js/owl.carousel.min') }}"></script>
 <script>
     $('.owl-carousel').owlCarousel({

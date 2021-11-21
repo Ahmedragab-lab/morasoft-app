@@ -5,6 +5,8 @@ namespace App\Http\Controllers\Frontend;
 use App\Models\Cart;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
+
 class CartController extends Controller
 {
     /**
@@ -14,7 +16,8 @@ class CartController extends Controller
      */
     public function index()
     {
-        return view('site.pages.mycart');
+        $cartitems = Cart::where('user_id',Auth::id())->get();
+        return view('site.pages.mycart',compact('cartitems'));
     }
 
     /**

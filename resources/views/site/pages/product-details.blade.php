@@ -1,4 +1,5 @@
 @extends('site.layouts.master')
+@section('title') {{ $product->product_name }} @endsection
 @section('css')
    <meta name="csrf-token" content="{{ csrf_token() }}">
 @endsection
@@ -60,7 +61,7 @@
                         {{-- ==========/////////////////////////////////============================= --}}
                         <div class="control">
                             <input type="hidden" value="{{ $product->id }}" class="prod_id" name="prod_id">
-                            <input class="input has-text-centered qty_input" type="number" value="1" name="prod_qty">
+                            <input class="input has-text-centered qty_input" type="number" value="1" name="prod_qty" pattern="[0-9]*">
                         </div>
                     </div>
                   </div>
