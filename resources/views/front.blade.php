@@ -90,165 +90,6 @@
 
 
     </section> --}}
-    <div class="">
-        <div class="row pt-4 ">
-            <div class="col">
-                <div class="float-end pe-2 fav-offers">
-                    <p>عروضنا المفضلة</p>
-                </div>
-            </div>
-            <div class="col">
-                <div class="float-start ps-2">
-                    <button type="button" class="btn btn-outline-dark">تسوق الآن</button>
-
-                </div>
-            </div>
-
-        </div>
-    </div>
-
-
-
-    <div id="carouselExampleIndicators" class="carousel slide " data-bs-ride="carousel">
-        <div class="carousel-indicators container">
-            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
-                aria-current="true" aria-label="Slide 1"></button>
-            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
-                aria-label="Slide 2"></button>
-            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
-                aria-label="Slide 3"></button>
-        </div>
-        <div class="carousel-inner">
-            <div class="carousel-item active">
-                <section class="row gx-0  pt-3 px-1 bg-color">
-                    <div class="col">
-                        <div class=" ">
-                            <img src={{ asset('assets/images/N35285583A_1.png') }} width="150px">
-                            <p class="card-text">إتش بي طابعة ليزر جت برو</p>
-                            <img src="https://z.nooncdn.com/s/app/com/noon/images/fulfilment_express_v2-ar.svg"
-                                alt="noon-express" height="20px" width="80px">
-                        </div>
-                    </div>
-
-
-
-                    <div class="col">
-                        <div>
-                            <img src={{ asset('assets/images/N49461673A_1.jpg') }} width="150px">
-                            <p class="card-text">إتش بي طابعة ليزر جت برو</p>
-                            <img src="https://z.nooncdn.com/s/app/com/noon/images/fulfilment_express_v2-ar.svg"
-                                alt="noon-express" height="20px" width="80px">
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div>
-                            <img src={{ asset('assets/images/N13233168A_1.webp') }} width="150px">
-                            <p class="card-text">إتش بي طابعة ليزر جت برو</p>
-                            <img src="https://z.nooncdn.com/s/app/com/noon/images/fulfilment_express_v2-ar.svg"
-                                alt="noon-express" height="20px" width="80px">
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div>
-                            <img src={{ asset('assets/images/N46954808A_1.webp') }} width="150px">
-                            <p class="card-text">إتش بي طابعة ليزر جت برو</p>
-                            <img src="https://z.nooncdn.com/s/app/com/noon/images/fulfilment_express_v2-ar.svg"
-                                alt="noon-express" height="20px" width="80px">
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div>
-                            <img src={{ asset('assets/images/N43602546A_1.webp') }} width="150px">
-                            <p class="card-text">إتش بي طابعة ليزر جت برو</p>
-                            <img src="https://z.nooncdn.com/s/app/com/noon/images/fulfilment_express_v2-ar.svg"
-                                alt="noon-express" height="20px" width="80px">
-                        </div>
-                    </div>
-
-                </section>
-            </div>
-            <div class="carousel-item">
-                <section class="row gx-0  pt-3 px-1 bg-color">
-                    <div class="col">
-                        <div>
-                            <img src={{ asset('assets/images/N35285583A_1.png') }} width="150px">
-                            <p class="card-text">إتش بي طابعة ليزر جت برو</p>
-                            <img src="https://z.nooncdn.com/s/app/com/noon/images/fulfilment_express_v2-ar.svg"
-                                alt="noon-express" height="20px" width="80px">
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div>
-                            <img src={{ asset('assets/images/N38248671A_2.png') }} width="150px">
-                            <p class="card-text">إتش بي طابعة ليزر جت برو</p>
-                            <img src="https://z.nooncdn.com/s/app/com/noon/images/fulfilment_express_v2-ar.svg"
-                                alt="noon-express" height="20px" width="80px">
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div>
-                            <img src={{ asset('assets/images/N48060578A_2.png') }} width="150px">
-                            <p class="card-text">إتش بي طابعة ليزر جت برو</p>
-                            <img src="https://z.nooncdn.com/s/app/com/noon/images/fulfilment_express_v2-ar.svg"
-                                alt="noon-express" height="20px" width="80px">
-                        </div>
-                    </div>
-
-                    <div class="col">
-                        <div>
-                            <img src={{ asset('assets/images/N49461673A_1.jpg') }} width="150px">
-                            <p class="card-text">إتش بي طابعة ليزر جت برو</p>
-                            <img src="https://z.nooncdn.com/s/app/com/noon/images/fulfilment_express_v2-ar.svg"
-                                alt="noon-express" height="20px" width="80px">
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div>
-                            <img src={{ asset('assets/images/N13233168A_1.webp') }} width="150px">
-                            <p class="card-text">إتش بي طابعة ليزر جت برو</p>
-                            <img src="https://z.nooncdn.com/s/app/com/noon/images/fulfilment_express_v2-ar.svg"
-                                alt="noon-express" height="20px" width="80px">
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div>
-                            <img src={{ asset('assets/images/N46954808A_1.webp') }} width="150px">
-                            <p class="card-text">إتش بي طابعة ليزر جت برو</p>
-                            <img src="https://z.nooncdn.com/s/app/com/noon/images/fulfilment_express_v2-ar.svg"
-                                alt="noon-express" height="20px" width="80px">
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div>
-                            <img src={{ asset('assets/images/N43602546A_1.webp') }} width="150px">
-                            <p class="card-text">إتش بي طابعة ليزر جت برو</p>
-                            <img src="https://z.nooncdn.com/s/app/com/noon/images/fulfilment_express_v2-ar.svg"
-                                alt="noon-express" height="20px" width="80px">
-                        </div>
-                    </div>
-
-                </section>
-            </div>
-        </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
-            data-bs-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="false"></span>
-            <span class="visually-hidden">Previous</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
-            data-bs-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="false"></span>
-            <span class="visually-hidden">Next</span>
-        </button>
-    </div>
-
-
-
-
-
-
-    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-
     <section id="welcome" class="section welcome-section has-background-primary-light is-clearfix">
         <div class="container">
             <p class="heading-title-top has-text-centered">welcome logistics</p>
@@ -363,13 +204,10 @@
     <section id="tracking" class="section tracking-section is-clearfix">
         <div class="container">
             <p class="heading-title-top has-text-centered">المتابعة</p>
-
-
             <option selected>Open this select menu</option>
             <option value="1">One</option>
             <option value="2">Two</option>
             <option value="3">Three</option>
-            </select>
             <h1 class="heading-title style-3">متابعة شحنتك</h1>
             <div class="columns is-mobile is-centered">
                 <div class="column is-10" data-aos="fade-up">
@@ -708,116 +546,14 @@
             </div>
         </div>
     </section>
-
-
-
-
-
-
-
     <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
     {{-- end client feedback --}}
-    <section id="quote" class="section quote-section padding-bottom-none is-clearfix">
-        <div class="container">
-            <div class="columns is-variable is-2 is-multiline">
-                <div class="column is-6-desktop is-12-tablet">
-                    <h1 class="heading-title style-3 has-text-left"> طلب
-                        <span class="has-text-primary">عرض أسعار</span>
-                    </h1>
-                    <p class="heading-title-bottom">هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا
-                        النص من مولد النص العربى حيث يمكنك أن تولد.</p>
-                    <!-- successful form message -->
-                    <div class="overhang-message-content is-hidden success">
-                        <span class="icon">
-                            <i class="ion-md-notifications"></i>
-                        </span> شكرا جزيلا! لقد تم ارسال رسالتك بنجاح.
-                    </div>
-                    <!-- error form message -->
-                    <div class="overhang-message-content is-hidden error">
-                        <span class="icon">
-                            <i class="ion-md-notifications"></i>
-                        </span> ! حدث خطأ ما ، لم نتمكن من إرسال رسالتك.
-                    </div>
-                    <!-- ajax contact form -->
-
-                    <form accept-charset="UTF-8" class="ajax-contact-form" id="ajaxform" method="POST">
-                        {{ csrf_field() }}
-
-                        <div class="field is-horizontal">
-                          <div class="field-body">
-                              <div class="field">
-                                  <div class="control is-expanded">
-                                      <input class="input" type="text" name="fname" placeholder="الإسم" required>
-                                      <input class="input" type="hidden" name="user_id"
-                                          {{-- value="{{ auth()->user()->id }}"> --}}
-                                  </div>
-                              </div>
-                              <!-- .field -->
-                              <div class="field">
-                                  <div class="control is-expanded">
-                                      <input class="input" type="email" name="email" placeholder="الإيميل"
-                                          required>
-                                  </div>
-                              </div>
-                              <!-- .field -->
-                          </div>
-                          <!-- .field-body -->
-                      </div>
-                      <div class="field is-horizontal">
-                        <div class="field-body">
-                            <div class="field">
-                                <div class="control is-expanded">
-                                    <input class="input" type="text" name="phone" placeholder="رقم الهاتف" required>
-                                    <input class="input" type="hidden" name="user_id"
-                                        {{-- value="{{ auth()->user()->id }}"> --}}
-                                </div>
-                            </div>
-                            <!-- .field -->
-                            <div class="field">
-                                <div class="control is-expanded">
-                                    <input class="input" type="email" name="email" placeholder="طريقة الشحن/نوع الشحن"
-                                        required>
-                                </div>
-                            </div>
-                            <!-- .field -->
-                        </div>
-                        <!-- .field-body -->
-                    </div>
-                        <div class="field is-horizontal">
-                            <div class="field-body">
-                                <div class="field">
-                                    <div class="control is-expanded">
-                                        <input class="input" type="text" name="subject" placeholder="منطقتك"
-                                            required>
-                                    </div>
-                                </div>
-                                <!-- .field -->
-                                <div class="field">
-                                  <div class="control is-expanded">
-                                      <input class="input" type="input" name="to" placeholder=" إلي"
-                                          required>
-                                  </div>
-                              </div>
-                                <!-- .field-body -->
-                            </div>
-                        </div>
-                        <div class="field ">
-                            <div class="control">
-                                <button class="button save-data" type="submit">Order Now </button>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-                <div class="column is-6-desktop is-12-tablet" data-aos-delay="600">
-                    <br>
-                    <br>
-                    <br>
-                    <br>
-                    <img alt="Joo - Niche Multi-Purpose HTML Template" src="{{ asset('front/images/global/man.png') }}">
-                </div>
-            </div>
-        </div>
-    </section>
+  {{-- مسحت سكشن فورمه خالص ربجاء بشمهندسه اسماء عمل فورمه اتفسار عن السعر  --}}
+  {{-- 1-اسم الخدمه --}}
+  {{-- نوع الشحنه--}}
+  {{-- من --}}
+  {{-- الى --}}
+  {{-- رساله --}}
 
 @endsection
 @section('js')
