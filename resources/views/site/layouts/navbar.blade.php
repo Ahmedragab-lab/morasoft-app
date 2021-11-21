@@ -46,7 +46,7 @@
                                         <ul class="dropdown">
                                             <li><a href="#"><i class=" far fa-address-card"></i> Profile</a></li>
                                             <li><a href="#"><i class=" far fa-comment-dots"></i> my orders</a></li>
-                                            <li><a href="#"><i class="icon-basket"></i> my shopping cart</a></li>
+                                            <li><a href="{{ route('mycart.index')}}"><i class="icon-basket"></i> my cart</a></li>
                                             {{-- @if(auth()->user()->admin==1)
                                                <li><a href="{{ route('dashboard.index') }}">My Dashboard</a></li>
                                             @endif --}}
