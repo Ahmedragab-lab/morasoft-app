@@ -10,6 +10,7 @@ class section extends Model
     use HasFactory;
     use HasTranslations;
 
+    protected $table = 'sections';
     protected $guarded = [];
 
     public $translatable = ['section_name'];

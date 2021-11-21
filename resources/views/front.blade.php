@@ -1,5 +1,5 @@
 @extends('site.layouts.master')
-
+@section('title') mora soft company @endsection
 @section('css')
     <meta name="csrf-token" content="{{ csrf_token() }}">
 @endsection
@@ -821,10 +821,43 @@
     
 @endsection
 @section('js')
+<<<<<<< HEAD
     <script type="text/javascript">
         $.ajaxSetup({
             headers: {
                 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+=======
+<script type="text/javascript">
+    $.ajaxSetup({
+        headers: {
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        }
+        });
+    $(".save-data").click(function(event){
+        event.preventDefault();
+        // let name = $("input[name=name]").val();
+        // let email = $("input[name=email]").val();
+        // let subject = $("input[name=subject]").val();
+        // let user_id = $("select[name=user_id]").val();
+        let serv_id = $("select[name=serv_id]").val();
+        let sms = $("textarea[name=sms]").val();
+        console.log(serv_id);
+        $.ajax({
+          method:"POST",
+          url: "/sendrequest",
+          data:{
+            // name:name,
+            // email:email,
+            // subject:subject,
+            // user_id:user_id,
+            serv_id:serv_id,
+            sms:sms,
+          },
+          success:function(response){
+            if(response) {
+            swal(response.status);
+              $("#ajaxform")[0].reset();
+>>>>>>> f08024224d579b26c7efcad5cc9d1e828810a132
             }
         });
         $(".save-data").click(function(event) {

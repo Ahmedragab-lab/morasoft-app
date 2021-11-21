@@ -69,7 +69,7 @@
                                         <ul class="dropdown">
                                             <li><a href="#"><i class=" far fa-address-card"></i> Profile</a></li>
                                             <li><a href="#"><i class=" far fa-comment-dots"></i> my orders</a></li>
-                                            <li><a href="#"><i class="icon-basket"></i> my shopping cart</a></li>
+                                            <li><a href="{{ route('mycart.index')}}"><i class="icon-basket"></i> my cart</a></li>
                                             {{-- @if(auth()->user()->admin==1)
                                                <li><a href="{{ route('dashboard.index') }}">My Dashboard</a></li>
                                             @endif --}}
@@ -85,12 +85,14 @@
                                         </ul>
                                     </li>
                                 @endauth
+
+
                             </ul>
                         </nav>
                         <!-- #site-navigation -->
                     </div>
                     <!-- #nav-wrap -->
-                    <ul class="header-menu-icons default ">
+                    {{-- <ul class="header-menu-icons default ">
                         <li class="dropdown-search-form search-style-2">
                             <a href="javascript:void(0);">
                                 <span class="icon">
@@ -114,9 +116,9 @@
                                 </li>
                             </ul>
                         </li>
-                    </ul>
+                    </ul> --}}
                     <!-- .header-menu-icons -->
-                    <a href="#quote" class="button is-white">عرض أسعار</a>
+                    {{-- <a href="#quote" class="button is-white">عرض أسعار</a>
                     <div class="modal search-form-overlay">
                         <div class="modal-background"></div>
                         <div class="modal-content">
@@ -134,7 +136,7 @@
                             </form>
                         </div>
                         <button class="modal-close is-large" aria-label="close"></button>
-                    </div>
+                    </div> --}}
                     <!-- .modal.search-form-overlay -->
                 </div>
                 <!-- .level-right -->

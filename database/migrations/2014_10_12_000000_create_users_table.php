@@ -21,8 +21,8 @@ class CreateUsersTable extends Migration
             $table->string('password');
             $table->string('image')->default('default.jpg');
             $table->enum('status',array('active','unactive'))->default('unactive');
-            $table->string('phone');
-            $table->text('address');
+            $table->string('phone')->default(88880);
+            $table->text('address')->default('any where');
             $table->integer('admin')->default(0);
             $table->rememberToken();
             $table->timestamps();

@@ -1,6 +1,8 @@
 <?php
 
 namespace App\Http\Controllers\Admin;
+
+use App\DataTables\SectionDataTable;
 use App\Http\Controllers\Controller;
 use App\Models\section;
 use Illuminate\Http\Request;
@@ -9,10 +11,16 @@ use Illuminate\Support\Facades\File;
 class SectionController extends Controller
 {
 
+    // public function index(SectionDataTable $dataTable)
+    // {
+
+    //     return $dataTable->render('Admin.sections.index');
+    // }
     public function index()
     {
         $sections = Section::all();
         return view('Admin.sections.index',compact('sections'));
+
     }
 
 

@@ -2,6 +2,8 @@
 
 namespace Database\Seeders;
 
+use App\Models\User;
+use Faker\Factory;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -13,7 +15,6 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-
         $this->call(adminSeeder::class);
         $this->call(ServiceSeeder::class);
         $this->call(SectionSeeder::class);
@@ -21,6 +22,9 @@ class DatabaseSeeder extends Seeder
         $this->call(FeedbackSeeder::class);
         $this->call(EventSeeder::class);
         $this->call(AgreementSeeder::class);
+        // $users = User::factory()->create();
+
+
         // $this->call(OrderSeeder::class);
         // $this->call(ClientSeeder::class);
     }

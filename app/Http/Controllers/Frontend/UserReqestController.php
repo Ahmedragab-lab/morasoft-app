@@ -2,58 +2,16 @@
 
 namespace App\Http\Controllers\Frontend;
 use App\Http\Controllers\Controller;
+use App\Models\Cart;
+use App\Models\Product;
 use App\Models\Service;
+use App\Models\User;
 use App\Models\UserReqest;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
 class UserReqestController extends Controller
 {
-    public function sendrequestx(Request $request)
-    {
-        try {
-            // $validated = $request->validated();
-            // $req = new UserReqest();
-            // $req->name =$request->name ;
-            // $req->email = $request->email;
-            // $req->address = $request->subject;
-            // $req->service_id = $request->serv_id;
-            // $req->sms = $request->sms;
-            // $req->save();
-            // $input = $request->all();
-            // UserReqest::create($input);
-            // return response()->json(['success'=>'Ajax request submitted successfully']);
-            // return response()->json([
-            //     "status" => true,
-            //     "data" => $input
-            // ]);
-        }
-        catch (\Exception $e){
-            return redirect()->back()->withErrors(['error' => $e->getMessage()]);
-        }
-
-
-    }
-    public function servrequest(Request $request)
-    {
-        try {
-            // $validated = $request->validated();
-            $data = new UserReqest();
-            $data->name =$request->name ;
-            $data->email = $request->email;
-            $data->address = $request->subject;
-            $data->service_id = $request->serv_id;
-            $data->sms = $request->sms;
-            $data->save();
-            // $data = $request->all();
-            // UserReqest::create($data);
-            return response()->json(['success'=>'Ajax request submitted successfully']);
-        }
-        catch (\Exception $e){
-            return redirect()->back()->withErrors(['error' => $e->getMessage()]);
-        }
-    }
-
     public function sendrequest(Request $request){
          $service_id = $request->input('serv_id');
         if(Auth::check()){
@@ -68,10 +26,37 @@ class UserReqestController extends Controller
                 $req->sms = $request->input('sms');
                 $req->save();
                 return response()->json(['status'=>$req->name . ' request submitted successfully']);
+
+                // $user = User::get();
+                // $order = UserReqest::latest()->first();
+                // $user->notify(new \App\Notifications\Add_service_Order($order));
             }
         }else{
             return response()->json(['status'=>'Login to continue']);
         }
     }
 
+    //ajax request from  products page addtocart ================================\\//
+    public function addtocart(Request $request){
+        $product_id = $request->input('prod_id');
+        $product_qty = $request->input('prod_qty');
+        if(Auth::check()){
+            $prod_check = Product::where('id',$product_id)->first();
+            if($prod_check){
+                if(Cart::where('product_id',$product_id)->where('user_id',Auth::id())->exists()){
+                    return response()->json(['status'=> ' Already added to cart']);
+                }else{
+                    $cart = new Cart();
+                    $cart->product_id =  $product_id;
+                    $cart->product_qty = $product_qty;
+                    $cart->user_id = Auth::id();
+                    $cart->save();
+                    return response()->json(['status'=>$prod_check->product_name . ' Added to cart successfully']);
+                }
+            }
+        }else
+        {
+            return response()->json(['status'=>'Login to continue']);
+        }
+    }
 }

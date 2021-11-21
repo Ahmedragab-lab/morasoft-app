@@ -1,5 +1,5 @@
 @extends('site.layouts.master')
-
+@section('title') {{ __('site.services') }} @endsection
 
 @section('content')
     {{-- <section id="tracking-steps" class="section tracking-steps-section is-clearfix">
