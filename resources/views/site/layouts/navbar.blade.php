@@ -20,6 +20,8 @@
                     <div class="nav-wrap">
                         <nav class="main-navigation right">
                             <ul class="menu">
+                               
+                                
                                 <li>
                                     <a href="{{ route('front.index') }}">{{ __('front.home') }}</a>
                                 </li>
@@ -58,7 +60,9 @@
                                         </li>
                                     </ul>
                                 </li>
-
+                                
+                                   
+                               
                                 @guest
                                 <li class="btn-cta"><a href="/login"><span>Login</span></a></li>
                                 <li class="btn-cta"><a href="/register"><span>register</span></a></li>
@@ -82,10 +86,20 @@
                                                     @csrf
                                                 </form>
                                             </li>
+                                           
+                                        </ul>
+                                    </li>
+                                    <li class="has-dropdown">
+                                        <a href="#"> <i class="fas fa-bell "></i></a>
+                                        <ul class="dropdown">
+                                            <li><a href="#"><img src={{ asset('assets/images/profile_img.jpg') }} width="30" class="rounded-circle" ></i> Asmaa Hosny</a></li>
+                                            <li><a href="#"><img src={{ asset('assets/images/profile_img.jpg') }} width="30" class="rounded-circle" ></i> Asmaa Hosny</a></li>
+
+                                            
                                         </ul>
                                     </li>
                                 @endauth
-
+                               
 
                             </ul>
                         </nav>
