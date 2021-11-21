@@ -21,10 +21,10 @@ Route::group(
         Route::resource('allservices',Frontend\Allservices::class); // go to all services page
         Route::resource('allproducts',Frontend\AllProducts::class);
         
-        // go to all products page
-        Route::get('/reserveServ', function () {
-            return view('site.pages.reserveServ');
-        });
+         // go to all products page
+        // Route::get('/reserveServ', function () {
+       //return view('site.pages.reserveServ');
+      //  });
 
         Route::middleware(['auth'])->group(function () {
             Route::resource('mycart',Frontend\CartController::class); // go to my cart page

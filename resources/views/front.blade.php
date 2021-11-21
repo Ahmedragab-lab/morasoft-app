@@ -746,11 +746,11 @@
                         <div class="field is-horizontal">
                           <div class="field-body">
                               <div class="field">
-                                  <div class="control is-expanded">
+                                  <!-- <div class="control is-expanded">
                                       <input class="input" type="text" name="fname" placeholder="الإسم" required>
-                                      <input class="input" type="hidden" name="user_id"
-                                          value="{{ auth()->user()->id }}">
-                                  </div>
+                                      <!-- <input class="input" type="hidden" name="user_id"
+                                          value="{{ auth()->user()->id }}"> -->
+                                  </div> -->
                               </div>
                               <!-- .field -->
                               <div class="field">
