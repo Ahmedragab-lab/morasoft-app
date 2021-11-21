@@ -573,7 +573,7 @@
           },
           success:function(response){
             if(response) {
-            alert(response.status);
+            swal(response.status);
               $("#ajaxform")[0].reset();
             }
           },

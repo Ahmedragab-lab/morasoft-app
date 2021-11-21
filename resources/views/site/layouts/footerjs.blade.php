@@ -9,6 +9,7 @@
 <script src="{{ asset('front/english/js/scripts.min.js?v=1557446391092') }}"></script>
 <script src="{{ asset('front/english/js/custom.js?v=1557446391092') }}"></script>
 @endif
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 @yield('js')
 <script src="{{ asset('front/js/owl.carousel.min') }}"></script>
 <script>

@@ -1,109 +1,8 @@
 @extends('site.layouts.master')
-
-{{-- @section('navbar-slider')
-<div id="header-bottom-wrap" class="is-clearfix">
-    <div id="header-bottom" class="site-header-bottom">
-      <div id="header-bottom-inner" class="site-header-bottom-inner ">
-        <section class="hero slider is-clearfix ">
-          <h2 class="display-none">slider</h2>
-          <div class="rev_slider_wrapper fullscreen-container ">
-            <div id="rev_slider_1" class="rev_slider tp-overflow-hidden fullscreenbanner" data-version="5.4.7" style="display:none">
-              <a href="#welcome" class="slider-scroll-down">scroll down</a>
-              <ul>
-                <li data-transition="fade" data-thumb="{{ asset('front/images/icons/1.png') }}" data-title="warehousing" data-param1="Lorem ipsum dolor sit ultrices eleifend gravi." data-param2="{{ asset('front/images/icons/1.png') }}">
-                  <img alt="Joo - Niche Multi-Purpose HTML Template" class="rev-slidebg" src="{{ asset('front/images/slider/4.png') }}" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" data-kenburns="off" data-duration="30000" data-ease="Linear.easeNone"
-                    data-scalestart="100" data-scaleend="115" data-rotatestart="0" data-rotateend="0" data-offsetstart="0 0" data-offsetend="0 0" data-bgparallax="15">
-                  <div class="tp-caption tp-resizeme small_text top" data-x="left" data-hoffset="['-105','-105','0','0']" data-y="center" data-voffset="['-152','-152','-152','-152']" data-width="none" data-height="none" data-whitespace="nowrap" data-type="text"
-                    data-responsive-offset="on" data-frames='[{"from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;","mask":"x:0px;y:0px;s:inherit;e:inherit;","speed":1600,"to":"o:1;","delay":800,"ease":"Power3.easeInOut"},{"delay":"wait","speed":1000,"to":"opacity:0;","ease":"nothing"}]'
-                    data-textAlign="['left','left','left','left']" data-paddingtop="[0,0,0,0]" data-paddingright="[0,0,0,0]" data-paddingbottom="[0,0,0,0]" data-paddingleft="[0,0,0,0]"> logistics cargo </div>
-                  <div class="tp-caption tp-resizeme large_text" data-x="left" data-hoffset="['-105','-105','0','0']" data-y="center" data-voffset="['-56','-56','-56','-56']" data-width="none" data-height="none" data-whitespace="nowrap"
-                    data-type="text" data-responsive-offset="on" data-frames='[{"from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;","mask":"x:0px;y:0px;s:inherit;e:inherit;","speed":1600,"to":"o:1;","delay":1200,"ease":"Power3.easeInOut"},{"delay":"wait","speed":1000,"to":"opacity:0;","ease":"nothing"}]'
-                    data-textAlign="['left','left','left','left']" data-paddingtop="[0,0,0,0]" data-paddingright="[0,0,0,0]" data-paddingbottom="[0,0,0,0]" data-paddingleft="[0,0,0,0]"> local pickup and delivery
-                    <br> services of any cargo. </div>
-                  <a class="tp-caption tp-resizeme button is-primary" href="#" data-frames='[{"delay":1600,"speed":2000,"frame":"0","from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;","mask":"x:0px;y:[100%];s:inherit;e:inherit;","to":"o:1;","ease":"Power2.easeInOut"},{"delay":"wait","speed":800,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]'
-                    data-x="left" data-hoffset="['-102','-102','0','0']" data-y="center" data-voffset="['82','82','0','0']" data-type="button">
-                    <span>learn More</span>
-                    <span class="icon is-small">
-                      <i class="ion-ios-arrow-round-forward"></i>
-                    </span>
-                  </a>
-                </li>
-                <!-- slide -->
-                <li data-transition="fade" data-thumb="{{ asset('front/images/icons/2.png') }}" data-title="air freight" data-param1="Lorem ipsum dolor sit ultrices eleifend gravi." data-param2="{{ asset('front/images/icons/2.png') }}">
-                  <img alt="Joo - Niche Multi-Purpose HTML Template" class="rev-slidebg" src="{{ asset('front/images/slider/3.png') }}" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" data-kenburns="off" data-duration="30000" data-ease="Linear.easeNone"
-                    data-scalestart="100" data-scaleend="115" data-rotatestart="0" data-rotateend="0" data-offsetstart="0 0" data-offsetend="0 0" data-bgparallax="15">
-                  <div class="tp-caption tp-resizeme small_text top" data-x="left" data-hoffset="['-105','-105','0','0']" data-y="center" data-voffset="['-152','-152','-152','-152']" data-width="none" data-height="none" data-whitespace="nowrap" data-type="text"
-                    data-responsive-offset="on" data-frames='[{"from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;","mask":"x:0px;y:0px;s:inherit;e:inherit;","speed":1600,"to":"o:1;","delay":800,"ease":"Power3.easeInOut"},{"delay":"wait","speed":1000,"to":"opacity:0;","ease":"nothing"}]'
-                    data-textAlign="['left','left','left','left']" data-paddingtop="[0,0,0,0]" data-paddingright="[0,0,0,0]" data-paddingbottom="[0,0,0,0]" data-paddingleft="[0,0,0,0]"> logistics cargo </div>
-                  <div class="tp-caption tp-resizeme large_text" data-x="left" data-hoffset="['-105','-105','0','0']" data-y="center" data-voffset="['-56','-56','-56','-56']" data-width="none" data-height="none" data-whitespace="nowrap"
-                    data-type="text" data-responsive-offset="on" data-frames='[{"from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;","mask":"x:0px;y:0px;s:inherit;e:inherit;","speed":1600,"to":"o:1;","delay":1200,"ease":"Power3.easeInOut"},{"delay":"wait","speed":1000,"to":"opacity:0;","ease":"nothing"}]'
-                    data-textAlign="['left','left','left','left']" data-paddingtop="[0,0,0,0]" data-paddingright="[0,0,0,0]" data-paddingbottom="[0,0,0,0]" data-paddingleft="[0,0,0,0]"> local pickup and delivery
-                    <br> services of any cargo. </div>
-                  <a class="tp-caption tp-resizeme button is-primary" href="#" data-frames='[{"delay":1600,"speed":2000,"frame":"0","from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;","mask":"x:0px;y:[100%];s:inherit;e:inherit;","to":"o:1;","ease":"Power2.easeInOut"},{"delay":"wait","speed":800,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]'
-                    data-x="left" data-hoffset="['-102','-102','0','0']" data-y="center" data-voffset="['82','82','0','0']" data-type="button">
-                    <span>learn More</span>
-                    <span class="icon is-small">
-                      <i class="ion-ios-arrow-round-forward"></i>
-                    </span>
-                  </a>
-                </li>
-                <!-- slide -->
-                <li data-transition="fade" data-thumb="{{ asset('front/images/icons/3.png') }}" data-title="ocean freight" data-param1="Lorem ipsum dolor sit ultrices eleifend gravi." data-param2="{{ asset('front/images/icons/3.png') }}">
-                  <img alt="Joo - Niche Multi-Purpose HTML Template" class="rev-slidebg" src="{{ asset('front/images/slider/2.png') }}" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" data-kenburns="off" data-duration="30000" data-ease="Linear.easeNone"
-                    data-scalestart="100" data-scaleend="115" data-rotatestart="0" data-rotateend="0" data-offsetstart="0 0" data-offsetend="0 0" data-bgparallax="15">
-                  <div class="tp-caption tp-resizeme small_text top" data-x="left" data-hoffset="['-105','-105','0','0']" data-y="center" data-voffset="['-152','-152','-152','-152']" data-width="none" data-height="none" data-whitespace="nowrap" data-type="text"
-                    data-responsive-offset="on" data-frames='[{"from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;","mask":"x:0px;y:0px;s:inherit;e:inherit;","speed":1600,"to":"o:1;","delay":800,"ease":"Power3.easeInOut"},{"delay":"wait","speed":1000,"to":"opacity:0;","ease":"nothing"}]'
-                    data-textAlign="['left','left','left','left']" data-paddingtop="[0,0,0,0]" data-paddingright="[0,0,0,0]" data-paddingbottom="[0,0,0,0]" data-paddingleft="[0,0,0,0]"> logistics cargo </div>
-                  <div class="tp-caption tp-resizeme large_text" data-x="left" data-hoffset="['-105','-105','0','0']" data-y="center" data-voffset="['-56','-56','-56','-56']" data-width="none" data-height="none" data-whitespace="nowrap"
-                    data-type="text" data-responsive-offset="on" data-frames='[{"from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;","mask":"x:0px;y:0px;s:inherit;e:inherit;","speed":1600,"to":"o:1;","delay":1200,"ease":"Power3.easeInOut"},{"delay":"wait","speed":1000,"to":"opacity:0;","ease":"nothing"}]'
-                    data-textAlign="['left','left','left','left']" data-paddingtop="[0,0,0,0]" data-paddingright="[0,0,0,0]" data-paddingbottom="[0,0,0,0]" data-paddingleft="[0,0,0,0]"> local pickup and delivery
-                    <br> services of any cargo. </div>
-                  <a class="tp-caption tp-resizeme button is-primary" href="#" data-frames='[{"delay":1600,"speed":2000,"frame":"0","from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;","mask":"x:0px;y:[100%];s:inherit;e:inherit;","to":"o:1;","ease":"Power2.easeInOut"},{"delay":"wait","speed":800,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]'
-                    data-x="left" data-hoffset="['-102','-102','0','0']" data-y="center" data-voffset="['82','82','0','0']" data-type="button">
-                    <span>learn More</span>
-                    <span class="icon is-small">
-                      <i class="ion-ios-arrow-round-forward"></i>
-                    </span>
-                  </a>
-                </li>
-                <!-- slide -->
-                <li data-transition="fade" data-thumb="{{ asset('front/images/icons/4.png') }}" data-title="land transport" data-param1="Lorem ipsum dolor sit ultrices eleifend gravi." data-param2="{{ asset('front/images/icons/4.png') }}">
-                  <img alt="Joo - Niche Multi-Purpose HTML Template" class="rev-slidebg" src="{{ asset('front/images/slider/1.png') }}" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" data-kenburns="off" data-duration="30000" data-ease="Linear.easeNone"
-                    data-scalestart="100" data-scaleend="115" data-rotatestart="0" data-rotateend="0" data-offsetstart="0 0" data-offsetend="0 0" data-bgparallax="15">
-                  <div class="tp-caption tp-resizeme small_text top" data-x="left" data-hoffset="['-105','-105','0','0']" data-y="center" data-voffset="['-152','-152','-152','-152']" data-width="none" data-height="none" data-whitespace="nowrap" data-type="text"
-                    data-responsive-offset="on" data-frames='[{"from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;","mask":"x:0px;y:0px;s:inherit;e:inherit;","speed":1600,"to":"o:1;","delay":800,"ease":"Power3.easeInOut"},{"delay":"wait","speed":1000,"to":"opacity:0;","ease":"nothing"}]'
-                    data-textAlign="['left','left','left','left']" data-paddingtop="[0,0,0,0]" data-paddingright="[0,0,0,0]" data-paddingbottom="[0,0,0,0]" data-paddingleft="[0,0,0,0]"> logistics cargo </div>
-                  <div class="tp-caption tp-resizeme large_text" data-x="left" data-hoffset="['-105','-105','0','0']" data-y="center" data-voffset="['-56','-56','-56','-56']" data-width="none" data-height="none" data-whitespace="nowrap"
-                    data-type="text" data-responsive-offset="on" data-frames='[{"from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;","mask":"x:0px;y:0px;s:inherit;e:inherit;","speed":1600,"to":"o:1;","delay":1200,"ease":"Power3.easeInOut"},{"delay":"wait","speed":1000,"to":"opacity:0;","ease":"nothing"}]'
-                    data-textAlign="['left','left','left','left']" data-paddingtop="[0,0,0,0]" data-paddingright="[0,0,0,0]" data-paddingbottom="[0,0,0,0]" data-paddingleft="[0,0,0,0]"> local pickup and delivery
-                    <br> services of any cargo. </div>
-                  <a class="tp-caption tp-resizeme button is-primary" href="#" data-frames='[{"delay":1600,"speed":2000,"frame":"0","from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;","mask":"x:0px;y:[100%];s:inherit;e:inherit;","to":"o:1;","ease":"Power2.easeInOut"},{"delay":"wait","speed":800,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]'
-                    data-x="left" data-hoffset="['-102','-102','0','0']" data-y="center" data-voffset="['82','82','0','0']" data-type="button">
-                    <span>learn More</span>
-                    <span class="icon is-small">
-                      <i class="ion-ios-arrow-round-forward"></i>
-                    </span>
-                  </a>
-                </li>
-                <!-- slide -->
-              </ul>
-            </div>
-            <!-- .rev_slider -->
-          </div>
-          <!-- .rev_slider_wrapper -->
-        </section>
-        <!-- .slider -->
-      </div>
-      <!-- #header-bottom-inner -->
-    </div>
-    <!-- #header-bottom -->
-  </div>
-
-@endsection --}}
+@section('css')
+   <meta name="csrf-token" content="{{ csrf_token() }}">
+@endsection
 @section('content')
-
-
-
 <div id="content-main-wrap" class="is-clearfix">
     <div id="content-area" class="site-content-area">
       <div id="content-area-inner" class="site-content-area-inner">
@@ -154,20 +53,22 @@
                 <p class="has-text-primary"> Description :{{ $product->small_desc }}</p>
                 <p> {!! $product->desc !!}</p>
                 <br>
-                <input type="hidden" value="{{ $product->id }}" class="prod_id" name="prod_id">
                 <div class="columns is-multiline is-variable is-2">
                   <div class="column is-2">
                     <div class="field">
-                      <div class="control">
-
-                          <input class="input has-text-centered qty_input" type="number" value="1" name="prod_qty">
-
-                      </div>
+                        {{-- ==========/////////////////////////////////============================= --}}
+                        {{-- ==========/////////////////////////////////============================= --}}
+                        <div class="control">
+                            <input type="hidden" value="{{ $product->id }}" class="prod_id" name="prod_id">
+                            <input class="input has-text-centered qty_input" type="number" value="1" name="prod_qty">
+                        </div>
                     </div>
                   </div>
                   <div class="column is-10">
                     <button  class="button addtocartbtn"><i class="icon-basket mr-2"></i>&nbsp; add to cart</button>
                   </div>
+                  {{-- ==========/////////////////////////////////============================= --}}
+                  {{-- ==========/////////////////////////////////============================= --}}
                   <div class="column is-10">
                       @if($product->qty >0)
                         <label class="badge bg-success">In Stock</label>
@@ -180,23 +81,18 @@
                 <div class="widget widget-links">
                   <ul>
                     <li>
-                      <span class="icon">
-                        <i class="icon-folder"></i>
-                      </span>
+                      <span class="icon"><i class="icon-folder"></i></span>
                       <a href="#">{{ $product->product_name }}</a>,
                       <a href="#">Design</a>
                     </li>
                     <li>
-                      <span class="icon">
-                        <i class="icon-tag"></i>
-                      </span>
+                      <span class="icon"><i class="icon-tag"></i></span>
                       <a href="#">Typography</a>,
                       <a href="#">Coding</a>
                     </li>
                     <li>
-                      <span class="icon">
-                        <i class="icon-clock"></i>
-                      </span> April 5, 2018 </li>
+                      <span class="icon"><i class="icon-clock"></i></span> April 5, 2018
+                    </li>
                   </ul>
                 </div>
                 <br>
@@ -244,30 +140,17 @@
             <div class="tabs-list ">
               <div class="tabs is-boxed">
                 <ul>
-                  <li class="is-active">
-                    <a>Description</a>
-                  </li>
-                  <li>
-                    <a>More Info</a>
-                  </li>
-                  <li>
-                    <a>REVIEWS (2)</a>
-                  </li>
+                  <li class="is-active"><a>Description</a></li>
+                  <li><a>More Info</a></li>
+                  <li><a>REVIEWS (2)</a></li>
                 </ul>
               </div>
               <!-- .tabs -->
               <div class="tabs-content">
                 <div class="tab-block content">
                   <br>
-                  <p>
-                    {{ $product->desc }}
-                 </p>
-                  <ul>
-                    {{-- <li>{{ $product->meta_title }} </li>
-                    <li> {{ $product->meta_desc }} </li>
-                    <li> {{ $product->meta_keywords }} </li> --}}
-
-                  </ul>
+                  <p>{{ $product->desc }}</p>
+                  <ul>{{ $product->desc }}</ul>
                 </div>
                 <!-- .tab-block -->
                 <div class="tab-block">
@@ -282,14 +165,14 @@
                     </thead>
                     <tbody>
                       <tr>
-                        {{-- <td>{{ $product->cat->cat_name }}</td> --}}
+                        <td>{{ $product->section->section_name }}</td>
                         <td>{{ $product->product_name }}</td>
                         <td>{{ $product->selling_price }}</td>
                       </tr>
                     </tbody>
                   </table>
                 </div>
-                <!-- .tab-block -->
+                <!-- .feed back -->
                 <div class="tab-block">
                   <br>
                   <ul class="comment-list comments comments-box ">
@@ -436,7 +319,7 @@
           </div>
         </section>
         <!-- works section -->
-        <section class="section hero has-background-primary-light is-clearfix">
+        {{-- <section class="section hero has-background-primary-light is-clearfix">
           <div class="container">
             <h1 class="heading-title style-1">Related Products</h1>
             <br>
@@ -603,8 +486,8 @@
             </div>
             <!-- .works -->
           </div>
-        </section>
-        <section class="section  is-clearfix">
+        </section> --}}
+        {{-- <section class="section  is-clearfix">
           <div class="container">
             <nav class="level counterup ">
               <div class="level-item has-text-centered">
@@ -634,7 +517,7 @@
             </nav>
             <!-- .counterup -->
           </div>
-        </section>
+        </section> --}}
       </div>
       <!-- #content-area-inner -->
     </div>
@@ -642,7 +525,13 @@
   </div>
 @endsection
 @section('js')
-<script>
+
+<script type="text/javascript">
+$.ajaxSetup({
+    headers: {
+        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+    }
+});
     $(document).ready(function(){
         $('.addtocartbtn').click(function(e){
             e.preventDefault();
@@ -650,20 +539,15 @@
             var prod_qty = $('input[name="prod_qty"]').val();
             console.log(prod_id);
             console.log(prod_qty);
-            $.ajaxSetup({
-                headers: {
-                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-                }
-            });
             $.ajax({
-                method: "Get",
+                method:"POST",
                 url: "/addtocart",
                 data: {
                     'prod_id': prod_id,
                     'prod_qty': prod_qty,
                 },
                 success: function(response) {
-                alert(response.status);
+                swal(response.status);
                 }
             });
         });

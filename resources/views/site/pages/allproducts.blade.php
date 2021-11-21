@@ -1,8 +1,5 @@
 @extends('site.layouts.master')
-
-
 @section('content')
-
 <div id="content-main-wrap" class="is-clearfix">
     <div id="content-area" class="site-content-area">
       <div id="content-area-inner" class="site-content-area-inner">
