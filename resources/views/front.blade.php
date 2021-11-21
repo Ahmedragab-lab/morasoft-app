@@ -87,8 +87,6 @@
             </div>
         </div>
         <br> </div>
-
-
     </section> --}}
 
     {{-- ============================slider product======================================== --}}
@@ -216,9 +214,7 @@
             </div>
         </div>
         <br>
-
         <div class="columns is-variable is-4 is-multiline boxes-style-2">
-
             <div class="column is-4" >
                 <div class="box-item">
                 <a href="#">
@@ -261,8 +257,6 @@
             </div>
             <!-- .box-item -->
         </div>
-
-
         </div>
         </div>
     </section> --}}
@@ -523,56 +517,11 @@
                     </div>
                     <!-- .field-body -->
                     </div>
-
-                    <!-- ajax contact form -->
-
-                    <form accept-charset="UTF-8" class="ajax-contact-form" id="ajaxform" method="POST">
-                        {{ csrf_field() }}
-                       
-                        <div class="field is-horizontal">
-                          <div class="field-body">
-                              <div class="field">
-                                  <!-- <div class="control is-expanded">
-                                      <input class="input" type="text" name="fname" placeholder="الإسم" required>
-                                   <input class="input" type="hidden" name="user_id"
-                                          value="{{ auth()->user()->id }}"> -->
-                                  </div> 
-                              </div>
-                              <!-- .field -->
-                              <div class="field">
-                                  <div class="control is-expanded">
-                                      <input class="input" type="email" name="email" placeholder="الإيميل"
-                                          required>
-                                  </div>
-                              </div>
-                              <!-- .field -->
-                          </div>
-                          <!-- .field-body -->
-                      </div>
-                      <div class="field is-horizontal">
-                        <div class="field-body">
-                            <div class="field">
-                                <div class="control is-expanded">
-                                    <input class="input" type="text" name="phone" placeholder="رقم الهاتف" required>
-                                    <input class="input" type="hidden" name="user_id"
-                                        value="{{ auth()->user()->id }}">
-                                </div>
-                            </div>
-                            <!-- .field -->
-                            <div class="field">
-                                <div class="control is-expanded">
-                                    <input class="input" type="email" name="email" placeholder="طريقة الشحن/نوع الشحن"
-                                        required>
-                                </div>
-                            </div>
-                            <!-- .field -->
-
                     <div class="field is-horizontal">
                     <div class="field-body">
                         <div class="field">
                         <div class="control is-expanded">
                             <input class="input" type="text" name="subject" placeholder="Subject" required=""> </div>
-
                         </div>
                         <!-- .field -->
                         <div class="field">

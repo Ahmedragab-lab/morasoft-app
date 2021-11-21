@@ -9,7 +9,8 @@
               <div class="hero-body">
                 <div class="container">
                   <h1>testimonials</h1>
-                  <h3>Break Through Self Doubt And Fear</h3>
+                  <h class="heading-title-top has-text-centered">app feedback</h>
+                <p class="heading-title style-3">all reviews</p>
                 </div>
                 <!-- .hero-body -->
               </div>
@@ -23,15 +24,7 @@
       </div>
       <!-- #header-bottom-wrap -->
       <!-- import content layouts and modules -->
-      <div id="content-main-wrap" class="is-clearfix">
-        <div id="content-area" class="site-content-area">
-          <div id="content-area-inner" class="site-content-area-inner">
-            <section class="section hero has-background-primary-light is-clearfix">
-              <div class="container">
-                <p class="heading-title-top has-text-centered">app feedback</p>
-                <h1 class="heading-title style-3">all reviews</h1>
-               
-              </div>
+     
             </section>
             <div class="columns is-variable is-4 is-multiline">
                @foreach ( $feedbacks as $feedback)
