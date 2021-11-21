@@ -24,7 +24,7 @@
                                     <a href="{{ route('front.index') }}">{{ __('front.home') }}</a>
                                 </li>
                                 <li>
-                                    <a href="#">{{ __('front.sections') }}</a>
+                                    <a href="{{ route('allsections.index') }}">{{ __('front.sections') }}</a>
                                 </li>
                                 <li>
                                     <a href="{{ route('allservices.index') }}">{{ __('front.services') }}</a>
@@ -40,8 +40,8 @@
                                     <ul class="dropdown">
                                         <li><a href="#"><i class=" far fa-address-card"></i> قدم طلبك</a></li>
                                         <li><a href="#"><i class=" far fa-comment-dots"></i> تتبع الشحنة</a></li>
-                                        
-                                
+
+
                                         </li>
                                     </ul>
                                 </li>
@@ -53,8 +53,8 @@
                                         <li><a href="#"><i class=" far fa-comment-dots"></i> الشحن  البري</a></li>
                                         <li><a href="#"><i class=" far fa-address-card"></i>  تأمين  البضائع</a></li>
                                         <li><a href="#"><i class=" far fa-comment-dots"></i> النقل  البضائع</a></li>
-                                        
-                                
+
+
                                         </li>
                                     </ul>
                                 </li>
