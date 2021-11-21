@@ -19,11 +19,9 @@ Route::group(
         Route::post('/servrequest', [Frontend\UserReqestController::class,'servrequest'])->name('servrequest');   // send request from service page by ajax
 
         Route::resource('allservices',Frontend\Allservices::class); // go to all services page
-
         Route::resource('allproducts',Frontend\AllProducts::class); // go to all products page
+        Route::resource('allsections',Frontend\AllSections::class); // go to all Sections page
 
-        Route::resource('allproducts',Frontend\AllProducts::class);
-        
         // go to all products page
 //         Route::get('/reserveServ', function () {
 //             return view('site.pages.reserveServ');
