@@ -35,6 +35,29 @@
                                 <li>
                                     <a href="./blog/index.html">{{ __('front.contactus') }}</a>
                                 </li>
+                                <li class="has-dropdown">
+                                    <a href="#"> اشحن اونلاين</a>
+                                    <ul class="dropdown">
+                                        <li><a href="#"><i class=" far fa-address-card"></i> قدم طلبك</a></li>
+                                        <li><a href="#"><i class=" far fa-comment-dots"></i> تتبع الشحنة</a></li>
+                                        
+                                
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="has-dropdown">
+                                    <a href="#">  الخدمات</a>
+                                    <ul class="dropdown">
+                                        <li><a href="#"><i class=" far fa-address-card"></i>  الشحن الجوي</a></li>
+                                        <li><a href="#"><i class=" far fa-address-card"></i>  الشحن البحري</a></li>
+                                        <li><a href="#"><i class=" far fa-comment-dots"></i> الشحن  البري</a></li>
+                                        <li><a href="#"><i class=" far fa-address-card"></i>  تأمين  البضائع</a></li>
+                                        <li><a href="#"><i class=" far fa-comment-dots"></i> النقل  البضائع</a></li>
+                                        
+                                
+                                        </li>
+                                    </ul>
+                                </li>
 
                                 @guest
                                 <li class="btn-cta"><a href="/login"><span>Login</span></a></li>
@@ -42,7 +65,7 @@
                                 @endguest
                                 @auth
                                     <li class="has-dropdown">
-                                        <a href="#">welcome back : {{ \Str::limit(auth()->user()->name, 10) }}</a>
+                                        <a href="#"><img src={{ asset('assets/images/profile_img.jpg') }} width="30" class="rounded-circle" > {{ \Str::limit(auth()->user()->name, 10) }}</a>
                                         <ul class="dropdown">
                                             <li><a href="#"><i class=" far fa-address-card"></i> Profile</a></li>
                                             <li><a href="#"><i class=" far fa-comment-dots"></i> my orders</a></li>

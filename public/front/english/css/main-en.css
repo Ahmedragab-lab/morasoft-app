@@ -25,7 +25,7 @@
 /* end frame video */
 /* end frame video */
 body.header-transparent header {
-    background-color: #0063dd;
+    background-color: #cf5029;
     font-family: 'Cairo', sans-serif;
 }
 
@@ -33,4 +33,21 @@ body.header-transparent header {
 .page-title.services {
     background: #141212 url(../front/images/page-title/services.png) no-repeat top center;
     background-size: cover;
+}
+
+.bg-color{
+    background-color: #4b505d;
+}
+.reserve-Serv{
+
+}
+.personal-form{
+    width: 40%;
+}
+.service-form{
+    width: 40%;
+}
+h2{
+    font-size: 20px;
+   font-weight: bold;
 }
