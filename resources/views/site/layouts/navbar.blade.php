@@ -23,8 +23,13 @@
                                 <li>
                                     <a href="{{ route('front.index') }}">{{ __('front.home') }}</a>
                                 </li>
-                                <li>
-                                    <a href="{{ route('allsections.index') }}">{{ __('front.sections') }}</a>
+                                <li class="has-dropdown">
+                                    <a href="#"> {{ __('front.sections') }}</a>
+                                    <ul class="dropdown">
+                                        @foreach (\App\Models\Section::all() as $section)
+                                        <li><a href="{{ route('allsections.show',$section->id) }}">{{$section->section_name}}</a></li>
+                                        @endforeach
+                                    </ul>
                                 </li>
                                 <li>
                                     <a href="{{ route('allservices.index') }}">{{ __('front.services') }}</a>
@@ -40,9 +45,6 @@
                                     <ul class="dropdown">
                                         <li><a href="#"><i class=" far fa-address-card"></i> قدم طلبك</a></li>
                                         <li><a href="#"><i class=" far fa-comment-dots"></i> تتبع الشحنة</a></li>
-
-
-                                        </li>
                                     </ul>
                                 </li>
                                 <li class="has-dropdown">
