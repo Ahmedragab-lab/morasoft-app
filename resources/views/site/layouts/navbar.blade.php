@@ -21,13 +21,8 @@
                         <nav class="main-navigation right">
                             <ul class="menu">
                                 <li>
-
                                     <a  href="{{ route('front.index') }}">{{ __('front.home') }}</a>
-
                                 </li>
-
-
-
                                 <li class="has-dropdown">
                                     <a href="#"> {{ __('front.services') }}</a>
                                     <ul class="dropdown">
@@ -56,7 +51,7 @@
                                 <li class="has-dropdown">
                                     <a href="#"> اشحن اونلاين</a>
                                     <ul class="dropdown">
-                                        <li><a href="#"><i class=" far fa-address-card"></i> قدم طلبك</a></li>
+                                        <li><a href="{{ url('/reserveServ') }}"<i class=" far fa-address-card"></i> قدم طلبك</a></li>
                                         <li><a href="#"><i class=" far fa-comment-dots"></i> تتبع الشحنة</a></li>
                                     </ul>
                                 </li>
