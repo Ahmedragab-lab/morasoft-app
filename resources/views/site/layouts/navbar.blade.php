@@ -47,7 +47,9 @@
                                     <li class="has-dropdown">
                                         <a href="#">welcome back : {{ \Str::limit(auth()->user()->name, 10) }}</a>
                                         <ul class="dropdown">
-                                            <li><a href="#"><i class=" far fa-address-card"></i> Profile</a></li>
+                                            <li class="active">
+                                                <a href="../pages/userprofile">my profile</a>
+                                            </li>
                                             <li><a href="#"><i class=" far fa-comment-dots"></i> my orders</a></li>
                                             <li><a href="{{ route('mycart.index')}}"><i class="icon-basket"></i> my cart</a></li>
                                             {{-- @if(auth()->user()->admin==1)
