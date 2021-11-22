@@ -30,6 +30,7 @@
             <div class="wrap-iten-in-cart">
                 <h3 class="box-title">Products Name</h3>
                 <ul class="products-cart">
+                  @php $total = 0; @endphp
                   @foreach ( $cartitems as $item)
                     <li class="pr-cart-item">
                         <input type="hidden" value="{{ $item->product_id }}" name="prod_id" class="prod_id_delete">
@@ -47,7 +48,7 @@
                                 <a class="btn btn-reduce" href="#"></a>
                             </div>
                         </div>
-                        <div class="price-field sub-total"><p class="price">$256.00</p></div>
+                        <div class="price-field sub-total"><p class="price">{{ $item->product->selling_price * $item->product_qty }} LE</p></div>
                         {{-- ajax for delete ========================================== ajax============================================================--}}
                         <div class="delete">
                             <button href="#" class="btn btn-danger delete-item" title="delete" >
@@ -56,15 +57,16 @@
                         </div>
                         {{-- ajax for delete ==========================================ajax ============================================================--}}
                     </li>
+                    @php $total += $item->product->selling_price * $item->product_qty ; @endphp
                   @endforeach
                 </ul>
             </div>
             <div class="summary">
                 <div class="order-summary">
                     <h4 class="title-box">Order Summary</h4>
-                    <p class="summary-info"><span class="title">Subtotal</span><b class="index">$512.00</b></p>
-                    <p class="summary-info"><span class="title">Shipping</span><b class="index">Free Shipping</b></p>
-                    <p class="summary-info total-info "><span class="title">Total</span><b class="index">$512.00</b></p>
+                    {{-- <p class="summary-info"><span class="title">Subtotal</span><b class="index">$512.00</b></p>
+                    <p class="summary-info"><span class="title">Shipping</span><b class="index">Free Shipping</b></p> --}}
+                    <p class="summary-info total-info "><span class="title">Total</span><b class="index">{{ $total }} LE</b></p>
                 </div>
                 {{-- <div class="checkout-info">
                     <label class="checkbox-field">
@@ -121,33 +123,30 @@
 	<script src="{{ asset('ecommerce') }}/js/owl.carousel.min.js"></script>
 	{{-- <script src="{{ asset('ecommerce') }}/js/jquery.sticky.js"></script> --}}
 	<script src="{{ asset('ecommerce') }}/js/functions.js"></script>
-
-
     <script type="text/javascript">
-    $.ajaxSetup({
-        headers: {
-            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-        }
-    });
-    $(document).ready(function(){
-        $('.delete-item').click(function(e){
-            e.preventDefault();
-            var prod_id  = $('input[name="prod_id"]').val();
-            // var prod_id  = $(this).closest('.wrap-iten-in-cart').find('.prod_id_delete').val();
-            console.log(prod_id);
-            $.ajax({
-                method:"POST",
-                url: "/delete_item",
-                data: {
-                    'prod_id': prod_id,
-                },
-                success: function(response) {
-                    window.location.reload();
-                swal("",response.status,"success");
-                }
+        $.ajaxSetup({
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            }
+        });
+        $(document).ready(function(){
+            $('.delete-item').click(function(e){
+                e.preventDefault();
+                var prod_id  = $('input[name="prod_id"]').val();
+                console.log(prod_id);
+                $.ajax({
+                    method:"POST",
+                    url: "/delete_item",
+                    data: {
+                        'prod_id': prod_id,
+                    },
+                    success: function(response) {
+                        window.location.reload();
+                    swal("",response.status,"success");
+                    }
+                });
             });
         });
-    });
   </script>
 
 @endsection
