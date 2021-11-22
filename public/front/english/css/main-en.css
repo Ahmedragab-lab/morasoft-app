@@ -25,7 +25,7 @@
 /* end frame video */
 /* end frame video */
 body.header-transparent header {
-    background-color: #0063dd;
+    background-color: #cf5029;
     font-family: 'Cairo', sans-serif;
 }
 
@@ -33,4 +33,58 @@ body.header-transparent header {
 .page-title.services {
     background: #141212 url(../front/images/page-title/services.png) no-repeat top center;
     background-size: cover;
+}
+
+.bg-color{
+    background-color: #4b505d;
+}
+.reserve-Serv{
+
+}
+.personal-form{
+    width: 40%;
+    background-color: #4b505d;
+    color:#cf5029;
+    box-shadow: 10px 10px 5px rgb(202, 197, 197);
+    border-radius: 20px;
+}
+.service-form{
+    width: 40%;
+    background-color: #4b505d;
+    color:#cf5029;
+    box-shadow: 10px 10px 5px rgb(202, 197, 197);
+    border-radius: 20px;
+}
+h2{
+    font-size: 20px;
+   font-weight: bold;
+}
+a:hover{
+    background-color: #4b505d;
+}
+a::after{
+    background-color: #4b505d;
+}
+fa-bell{
+    font-size: 20px !important;
+}
+.feedback-container{
+    background-image: url("../../../assets/images/feedback_image.jpg");
+    
+    margin: auto;
+    color: #cf5029;
+    height: 300px;
+}
+.feedack-heading{
+    font-size: 30px;
+    font-weight: bold;
+    color: #cf5029;
+}
+.feedback-text{
+    color: white;
+    font-size: 20px;
+    overflow: hidden;
+}
+.order-btn{
+    text-align: center !important;
 }

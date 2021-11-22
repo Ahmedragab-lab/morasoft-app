@@ -33,7 +33,7 @@ class ProductSeeder extends Seeder
         $product->save();
 
         $product = new Product();
-        $product->section_id = 1;
+        $product->section_id = 2;
         $product->product_name = ['en'=>'laptop msi','ar'=>'لاب توب '];
         $product->slug = 'laptop';
         $product->small_desc = 'smart pc ';
@@ -46,8 +46,9 @@ class ProductSeeder extends Seeder
         $product->status = 1;
         $product->trending = 1;
         $product->save();
+        
         $product = new Product();
-        $product->section_id = 1;
+        $product->section_id = 3;
         $product->product_name = ['en'=>' tv samsung','ar'=>' شاشه سامسونج'];
         $product->slug = 'smart tv';
         $product->small_desc = 'smart tv ';
