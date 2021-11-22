@@ -32,6 +32,7 @@ class adminseeder extends Seeder
                 'password' => bcrypt('258258258'),
                 'phone' => '01021493036',
                 'address' => 'Egypt cairo',
+                'image'=>'wolf.jpg',
             ],
             [
                 'name' => 'dina',
@@ -39,6 +40,7 @@ class adminseeder extends Seeder
                 'password' => bcrypt('123456'),
                 'phone' => '01021493036',
                 'address' => 'Phalastin Gaza',
+                'image'=>'default.jpg',
             ],
              [
                 'name' => 'Asmaa',
@@ -46,6 +48,7 @@ class adminseeder extends Seeder
                 'password' => bcrypt('123456'),
                 'phone' => '01021493036',
                 'address' => 'Egypt alex',
+                'image'=>'default.jpg',
             ],
             // 'admin'    =>'0',
         ]);
