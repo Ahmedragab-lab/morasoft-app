@@ -21,8 +21,12 @@
                         <nav class="main-navigation right">
                             <ul class="menu">
                                 <li>
+
                                     <a  href="{{ route('front.index') }}">{{ __('front.home') }}</a>
+
                                 </li>
+
+
 
                                 <li class="has-dropdown">
                                     <a href="#"> {{ __('front.services') }}</a>
@@ -64,7 +68,7 @@
                                     <li class="has-dropdown">
                                         <a href="#"><img src={{ asset('uploads/user-img/'.Auth::user()->image) }} width="50" class="rounded-circle" > {{ \Str::limit(auth()->user()->name, 10) }}</a>
                                         <ul class="dropdown">
-                                            <li><a href="#"><i class=" far fa-address-card"></i> Profile</a></li>
+                                            <li><a href="{{ route('profile')}}"><i class=" far fa-address-card"></i> Profile</a></li>
                                             <li><a href="#"><i class=" far fa-comment-dots"></i> my orders</a></li>
                                             <li><a href="{{ route('mycart.index')}}"><i class="icon-basket"></i> my cart</a></li>
                                             <li>

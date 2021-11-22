@@ -43,9 +43,17 @@ body.header-transparent header {
 }
 .personal-form{
     width: 40%;
+    background-color: #4b505d;
+    color:#cf5029;
+    box-shadow: 10px 10px 5px rgb(202, 197, 197);
+    border-radius: 20px;
 }
 .service-form{
     width: 40%;
+    background-color: #4b505d;
+    color:#cf5029;
+    box-shadow: 10px 10px 5px rgb(202, 197, 197);
+    border-radius: 20px;
 }
 h2{
     font-size: 20px;
@@ -59,4 +67,24 @@ a::after{
 }
 fa-bell{
     font-size: 20px !important;
+}
+.feedback-container{
+    background-image: url("../../../assets/images/feedback_image.jpg");
+    
+    margin: auto;
+    color: #cf5029;
+    height: 300px;
+}
+.feedack-heading{
+    font-size: 30px;
+    font-weight: bold;
+    color: #cf5029;
+}
+.feedback-text{
+    color: white;
+    font-size: 20px;
+    overflow: hidden;
+}
+.order-btn{
+    text-align: center !important;
 }

@@ -26,8 +26,8 @@ Route::group(
         Route::resource('allservices',Frontend\Allservices::class); // go to all services page
         Route::resource('allproducts',Frontend\AllProducts::class); // go to all products page
         Route::resource('allsections',Frontend\AllSections::class); // go to all Sections page
-
-
+        //Route::resource('userprofile',Frontend\Userprofile::class);
+         Route::view('profile','site.pages.userprofile')->name('profile');
 
         Route::resource('allproducts',Frontend\AllProducts::class);
 
@@ -36,13 +36,13 @@ Route::group(
        return view('site.pages.reserveServ');
        });
 
-        
+
 
 
         // go to all products page
-//         Route::get('/reserveServ', function () {
-//             return view('site.pages.reserveServ');
-//         });
+        Route::get('/reserveServ', function () {
+            return view('site.pages.reserveServ');
+        });
 
 
 

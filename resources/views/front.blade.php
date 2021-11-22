@@ -90,8 +90,8 @@
     </section> --}}
 
     {{-- ============================slider product======================================== --}}
-        <section id="welcome" class="section welcome-section has-background-primary-light is-clearfix">
-            <div class="container">
+    <section id="welcome" class="section welcome-section has-background-primary-light is-clearfix">
+        <div class="container">
             <p class="heading-title-top has-text-centered">welcome logistics</p>
             <h1 class="heading-title style-3"> Our
                 {{-- <br> difference. --}}
@@ -101,38 +101,41 @@
             <br>
             <div class="blog-list style-2 columns is-variable is-4 is-multiline">
                 <div class="owl-carousel owl-theme">
-                    @foreach ( $products as $product)
-                        <div class=" item" >
+                    @foreach ($products as $product)
+                        <div class=" item">
                             <article class="blog-post">
-                            <figure class="post-image">
-                                <a href="{{route('front.show',$product->id)}}">
-                                <img alt="Joo - Niche Multi-Purpose HTML Template" src="{{ asset('uploads/product/'. $product->image) }}"> </a>
-                            </figure>
-                            <div class="entry-header">
-                                <h2 class="entry-title">
-                                <a href="#">{{ $product->product_name}}</a>
-                                </h2>
-                                <span class="float-start entry-title">{{ $product->selling_price }}</span>
-                                <span class="float-end "><s>{{ $product->original_price }}</s></span>
-                            </div>
-                            <!-- .entry-header -->
-                            <div class="entry-content">
-                                <p>{{ $product->desc }}</p>
+                                <figure class="post-image">
+                                    <a href="{{ route('front.show', $product->id) }}">
+                                        <img alt="Joo - Niche Multi-Purpose HTML Template"
+                                            src="{{ asset('uploads/product/' . $product->image) }}"> </a>
+                                </figure>
+                                <div class="entry-header">
+                                    <h2 class="entry-title">
+                                        <a href="#">{{ $product->product_name }}</a>
+                                    </h2>
+                                    <span class="float-start entry-title">{{ $product->selling_price }}</span>
+                                    <span class="float-end "><s>{{ $product->original_price }}</s></span>
+                                </div>
+                                <!-- .entry-header -->
+                                <div class="entry-content">
+                                    <p>{{ $product->desc }}</p>
 
-                            </div>
-                            <!-- .entry-content -->
-                            <div class="entry-footer">
-                                <a href="{{route('front.show',$product->id)}}" class="button">More details</a>
-                            </div>
+                                </div>
+                                <!-- .entry-content -->
+                                <div class="entry-footer">
+                                    <a href="{{ route('front.show', $product->id) }}" class="button">More
+                                        details</a>
+                                </div>
                             </article>
                             <!-- .blog-post -->
                         </div>
                     @endforeach
+                </div>
             </div>
-            </div>
-            <br> </div>
-        </section>
-{{-- ============================End slider product======================================== --}}
+            <br>
+        </div>
+    </section>
+    {{-- ============================End slider product======================================== --}}
 
     <section id="tracking" class="section tracking-section is-clearfix">
         <div class="container">
@@ -455,6 +458,67 @@
             </div>
         </div>
     </section>
+    {{-- Feedback Asmaa --}}
+
+    {{-- <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner feedback-container">
+
+            <div class="carousel-item container active " data-bs-interval="10000">
+                <div classs="text-center bg-warning  row">
+                    <div class="col mx-3 px-5">
+                        <img src={{ asset('assets/images/profile_img.jpg') }} width="200"
+                            class="rounded-circle  w-5 text-center" alt="...">
+                    </div>
+                    <div class="text-center col carousel-caption d-none d-md-block px-5 ms-5 ">
+                        mmmmmmmmmmmmmmmmmmm
+                        hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh
+                        cccccccccccccccccccccccccccccccccccccccccccccccccccccccccc
+                        gggggggggggggggggggggggggggggggggggmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmm
+                    </div>
+                </div>
+            </div>
+
+            <div class="carousel-item" data-bs-interval="2000">
+                <div classs="text-center   flex d-flex ">
+                    <div class=" mx-3 p-5">
+                        <img src={{ asset('assets/images/profile_img.jpg') }} width="200"
+                            class="rounded-circle  w-5 p-2" alt="...">
+                    </div>
+                    <div class="  carousel-caption  px-5 ms-5 ">
+                        <h1 class="feedack-heading">Ahmed Zeky</h1>
+                        <p class="feedback-text w-5"> hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh
+                        
+                            gggggggggggggggggggggggggggggggggggmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmm
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <div classs="text-center bg-warning  row">
+                    <div class="col mx-3 px-5">
+                        <img src={{ asset('assets/images/profile_img.jpg') }} width="200"
+                            class="rounded-circle  w-5 text-center" alt="...">
+                    </div>
+                    <div class="text-center col carousel-caption d-none d-md-block px-5 ms-5 ">
+                        <h1 class="feedack-heading">Ahmed Zeky</h1>
+                        <p class="feedback-text w-5"> hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh
+                        
+                            gggggggggggggggggggggggggggggggggggmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmm
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="false"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="false"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+
+    </div> --}}
 
     {{-- start client feedback --}}
     <section id="testimonials" class="section testimonials-section has-background-primary-light is-clearfix">
@@ -476,93 +540,133 @@
         </div>
     </section>
     {{-- end client feedback --}}
-  {{-- مسحت سكشن فورمه خالص ربجاء بشمهندسه اسماء عمل فورمه اتفسار عن السعر  --}}
-  {{-- 1-اسم الخدمه --}}
-  {{-- نوع الشحنه--}}
-  {{-- من --}}
-  {{-- الى --}}
-  {{-- رساله --}}
-        <section id="quote" class="section quote-section padding-bottom-none is-clearfix">
-            <div class="container">
+    {{-- مسحت سكشن فورمه خالص ربجاء بشمهندسه اسماء عمل فورمه اتفسار عن السعر --}}
+    {{-- 1-اسم الخدمه --}}
+    {{-- نوع الشحنه --}}
+    {{-- من --}}
+    {{-- الى --}}
+    {{-- رساله --}}
+
+
+
+    {{-- anthor form --}}
+    <section id="quote" class="section quote-section padding-bottom-none is-clearfix">
+        <div class="container">
             <div class="columns is-variable is-2 is-multiline">
-                <div class="column is-6-desktop is-12-tablet" >
-                <h1 class="heading-title style-3 has-text-left"> request a
-                    <span class="has-text-primary">quote</span>
-                </h1>
-                <p class="heading-title-bottom">Lorem ipsum dolor sit amet, consectetur adipiscing elit Nulla chronocrator accumsan, metus ultrices eleifend gravi.</p>
-                <!-- successful form message -->
-                <div class="overhang-message-content is-hidden success">
-                    <span class="icon">
-                    <i class="ion-md-notifications"></i>
-                    </span> Thank You! Your message was sent successfully. </div>
-                <!-- error form message -->
-                <div class="overhang-message-content is-hidden error">
-                    <span class="icon">
-                    <i class="ion-md-notifications"></i>
-                    </span> Oops! Something went wrong, we couldn't send your message. </div>
-                <!-- ajax contact form -->
-                <form accept-charset="UTF-8" class="ajax-contact-form" action="https://usebasin.com/f/3587049dbc33.json" method="POST">
-                    <div class="field is-horizontal">
-                    <div class="field-body">
-                        <div class="field">
-                        <div class="control is-expanded">
-                            <input class="input" type="text" name="name" placeholder="Name" required> </div>
-                        </div>
-                        <!-- .field -->
-                        <div class="field">
-                        <div class="control is-expanded">
-                            <input class="input" type="email" name="email" placeholder="Email" required=""> </div>
-                        </div>
-                        <!-- .field -->
+                <div class="column is-6-desktop is-12-tablet">
+                    <h1 class="heading-title style-3 has-text-left"> request a
+                        <span class="has-text-primary">quote</span>
+                    </h1>
+                    <p class="heading-title-bottom">Lorem ipsum dolor sit amet, consectetur adipiscing elit Nulla
+                        chronocrator accumsan, metus ultrices eleifend gravi.</p>
+                    <!-- successful form message -->
+                    <div class="overhang-message-content is-hidden success">
+                        <span class="icon">
+                            <i class="ion-md-notifications"></i>
+                        </span> Thank You! Your message was sent successfully.
                     </div>
-                    <!-- .field-body -->
+                    <!-- error form message -->
+                    <div class="overhang-message-content is-hidden error">
+                        <span class="icon">
+                            <i class="ion-md-notifications"></i>
+                        </span> Oops! Something went wrong, we couldn't send your message.
                     </div>
-                    <div class="field is-horizontal">
-                    <div class="field-body">
-                        <div class="field">
-                        <div class="control is-expanded">
-                            <input class="input" type="text" name="subject" placeholder="Subject" required=""> </div>
+                    <!-- ajax contact form -->
+                    <form accept-charset="UTF-8" class="ajax-contact-form"
+                        action="https://usebasin.com/f/3587049dbc33.json" method="POST">
+                        <div class="field is-horizontal">
+                            <div class="field-body">
+                                <div class="field">
+                                    <div class="control is-expanded">
+                                        <input class="input" type="text" name="fname" placeholder="الاسم"
+                                            required>
+                                    </div>
+                                </div>
+                                <!-- .field -->
+                                <div class="field">
+                                    <div class="control is-expanded">
+                                        <input class="input" type="email" name="email" placeholder="الايميل"
+                                            required="">
+                                    </div>
+                                </div>
+                                <!-- .field -->
+                            </div>
+                            <!-- .field-body -->
                         </div>
-                        <!-- .field -->
-                        <div class="field">
-                        <div class="control is-expanded">
-                            <div class="select">
-                            <select>
-                                <option>Air Freight</option>
-                                <option>Land Transport</option>
-                                <option>Ocean Freight</option>
-                                <option>Warehousing</option>
-                            </select>
+                        <div class="field is-horizontal">
+                            <div class="field-body">
+                                <div class="field">
+                                    <div class="control is-expanded">
+                                        <input class="input" type="text" name="address" placeholder="منطقتك"
+                                            required="">
+                                    </div>
+                                </div>
+                                <!-- .field -->
+                                <div class="field">
+                                    <div class="control is-expanded">
+                                        <div class="field">
+                                            <div class="control is-expanded">
+                                                <input class="input" type="text" name="tO" placeholder="إلي منطقة"
+                                                    required="">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- .field -->
+                                </div>
+                                <!-- .field-body -->
                             </div>
                         </div>
-                        <!-- .field -->
+                        <div class="field is-horizontal">
+                            <div class="field-body">
+                                <div class="field">
+                                    <div class="control is-expanded">
+                                        <input class="input" type="text" name="phone" placeholder="رقم الموبايل"
+                                            required="">
+                                    </div>
+                                </div>
+                                <!-- .field -->
+                                <div class="field">
+                                    <div class="control is-expanded">
+                                        <div class="field">
+                                            <div class="control is-expanded">
+                                                <input class="input" type="text" name="service_type" placeholder="طريقة الشحن /نوع الشحنة"
+                                                    required="">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- .field -->
+                                </div>
+                                <!-- .field-body -->
+                            </div>
                         </div>
-                        <!-- .field-body -->
-                    </div>
-                    </div>
-                    <div class="field ">
-                    <div class="control is-expanded">
-                        <textarea class="textarea" name="textarea" placeholder="Message" required=""></textarea>
-                    </div>
-                    </div>
-                    <div class="field ">
-                    <div class="control">
-                        <button class="button" type="submit">request a quote</button>
-                    </div>
-                    </div>
-                </form>
+
+                        {{-- <div class="field ">
+                            <div class="control is-expanded">
+                                <textarea class="textarea" name="textarea" placeholder="Message"
+                                    required=""></textarea>
+                            </div>
+                        </div> --}}
+                        <div class="field ">
+                            <div class="control">
+                                <button class="button" type="submit"> ارسل طلبك <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-send-fill" viewBox="0 0 16 16">
+                                    <path fill-rule="evenodd" d="M15.964.686a.5.5 0 0 0-.65-.65L.767 5.855H.766l-.452.18a.5.5 0 0 0-.082.887l.41.26.001.002 4.995 3.178 3.178 4.995.002.002.26.41a.5.5 0 0 0 .886-.083l6-15Zm-1.833 1.89.471-1.178-1.178.471L5.93 9.363l.338.215a.5.5 0 0 1 .154.154l.215.338 7.494-7.494Z"/>
+                                  </svg>  </button>
+                            </div>
+                        </div>
+                    </form>
                 </div>
-                <div class="column is-6-desktop is-12-tablet"  data-aos-delay="600">
-                <br>
-                <br>
-                <br>
-                <br>
-                <img alt="Joo - Niche Multi-Purpose HTML Template" src="{{ asset('front/images/global/man.png') }}">
+                <div class="column is-6-desktop is-12-tablet" data-aos-delay="600">
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <img alt="Joo - Niche Multi-Purpose HTML Template" src="{{ asset('front/images/global/man.png') }}">
                 </div>
             </div>
-            </div>
-        </section>
-        {{-- فورمه اجاكس --}}
+        </div>
+    </section>
+
+    {{-- فورمه اجاكس --}}
 @endsection
 @section('js')
 
