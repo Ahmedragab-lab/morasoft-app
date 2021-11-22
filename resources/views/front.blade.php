@@ -86,8 +86,6 @@
             </div>
         </div>
         <br> </div>
-
-
     </section> --}}
 
     {{-- ============================slider product======================================== --}}
@@ -219,9 +217,7 @@
             </div>
         </div>
         <br>
-
         <div class="columns is-variable is-4 is-multiline boxes-style-2">
-
             <div class="column is-4" >
                 <div class="box-item">
                 <a href="#">
@@ -264,8 +260,6 @@
             </div>
             <!-- .box-item -->
         </div>
-
-
         </div>
         </div>
     </section> --}}

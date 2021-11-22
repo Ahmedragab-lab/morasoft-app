@@ -19,17 +19,15 @@
                 <div class="level-right">
                     <div class="nav-wrap">
                         <nav class="main-navigation right">
-                            <ul class="menu"
+                            <ul class="menu">
                                 <li>
-                                    <a href="{{ route('front.index') }}">{{ __('front.home') }}</a>
+
+                                    <a  href="{{ route('front.index') }}">{{ __('front.home') }}</a>
+
                                 </li>
-                                <li class="has-dropdown">
-                                    <a href="#"> اشحن اونلاين</a>
-                                    <ul class="dropdown">
-                                        <li><a href="{{ url('/reserveServ') }}"<i class=" far fa-address-card"></i> قدم طلبك</a></li>
-                                        <li><a href="#"><i class=" far fa-comment-dots"></i> تتبع الشحنة</a></li>
-                                    </ul>
-                                </li>
+
+
+
                                 <li class="has-dropdown">
                                     <a href="#"> {{ __('front.services') }}</a>
                                     <ul class="dropdown">
@@ -55,6 +53,13 @@
                                 <li>
                                     <a href="./blog/index.html">{{ __('front.contactus') }}</a>
                                 </li>
+                                <li class="has-dropdown">
+                                    <a href="#"> اشحن اونلاين</a>
+                                    <ul class="dropdown">
+                                        <li><a href="#"><i class=" far fa-address-card"></i> قدم طلبك</a></li>
+                                        <li><a href="#"><i class=" far fa-comment-dots"></i> تتبع الشحنة</a></li>
+                                    </ul>
+                                </li>
                                 @guest
                                 <li class="btn-cta"><a href="/login"><span>Login</span></a></li>
                                 <li class="btn-cta"><a href="/register"><span>register</span></a></li>
@@ -63,7 +68,11 @@
                                     <li class="has-dropdown">
                                         <a href="#"><img src={{ asset('uploads/user-img/'.Auth::user()->image) }} width="50" class="rounded-circle" > {{ \Str::limit(auth()->user()->name, 10) }}</a>
                                         <ul class="dropdown">
-                                            <li><a href="#"><i class=" far fa-address-card"></i> Profile</a></li>
+
+                                            
+
+                                            <li><a href="{{ route('profile')}}"><i class=" far fa-address-card"></i> Profile</a></li>
+
                                             <li><a href="#"><i class=" far fa-comment-dots"></i> my orders</a></li>
                                             <li><a href="{{ route('mycart.index')}}"><i class="icon-basket"></i> my cart</a></li>
                                             <li>
