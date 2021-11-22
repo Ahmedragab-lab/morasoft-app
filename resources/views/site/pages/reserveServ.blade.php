@@ -8,13 +8,8 @@
             <div class="personal-form">
 
                 <h2 class="m-4"> البيانات الشخصية</h2>
-                <div class="mb-3">
-                    <input type="text" class="form-control" id="fname" name="fname" placeholder="الاسم الكامل">
-                </div>
-                <div class="mb-3">
-
-                    <input type="email" class="form-control" id="email" name="email" placeholder="البريد الالكتروني">
-                </div>
+               
+                
                 <div class="mb-3">
 
                     <input type="text" class="form-control" id="company_name" placeholder="اسم الشركة">
@@ -40,13 +35,21 @@
                 <h2 class="m-4"> تفاصيل الشحنة<h2>
 
                         <div class="mb-3">
-
-                            <input type="text" class="form-control" id="to" name="to" placeholder="من">
+                            <select class="form-select" aria-label="Default select example">
+                                <option selected>من</option>
+                                <option value="القاهرة">القاهرة</option>
+                                <option value="اسوان">اسوان</option>
+                                <option value="السعودية">السعودية</option>
+                              </select>
+                        
+                            <select class="form-select" aria-label="Default select example">
+                                <option selected>إلي</option>
+                                <option value="القاهرة">القاهرة</option>
+                                <option value="اسوان">اسوان</option>
+                                <option value="السعودية">السعودية</option>
+                              </select>
                         </div>
-                        <div class="mb-3">
-
-                            <input type="text" class="form-control" id="from" name="from" placeholder="الي">
-                        </div>
+                       
                         <div class="mb-3">
 
                             <input type="text" class="form-control" id="client_address" name="client_address"
@@ -55,17 +58,17 @@
                         <div class="mb-3">
 
                             <input type="text" class="form-control" id="service_city" name="service_city"
-                                placeholder="المدينة">
+                                placeholder="المدينة/الدولة">
                         </div>
+                        
                         <div class="mb-3">
 
-                            <input type="text" class="form-control" id="service_city" name="service_city"
-                                placeholder="الدولة">
-                        </div>
-                        <div class="mb-3">
-
-                            <input type="text" class="form-control" id="tans_way" name="tans_way"
-                                placeholder="طريقة الشحن">
+                            <select class="form-select" aria-label="Default select example">
+                                <option selected>طريقة الشحن</option>
+                                <option value="القاهرة">القاهرة</option>
+                                <option value="اسوان">اسوان</option>
+                                <option value="السعودية">السعودية</option>
+                              </select>
                         </div>
                         <div class="mb-3">
 
