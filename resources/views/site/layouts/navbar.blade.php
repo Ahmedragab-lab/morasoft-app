@@ -48,7 +48,7 @@
                                     <a href="{{ route('allproducts.index')}}">{{ __('front.products') }}</a>
                                 </li>
                                 <li>
-                                    <a href="{{ route('allfeedback.index')}}">{{ __('front.feedback') }}</a>
+                                    <a href="{{ route('allfeedback.index')}}">{{ __('front.feedback') }} </a>
                                 </li>
                                 <li>
                                     <a href="./blog/index.html">{{ __('front.contactus') }}</a>
@@ -69,7 +69,7 @@
                                         <a href="#"><img src={{ asset('uploads/user-img/'.Auth::user()->image) }} width="50" class="rounded-circle" > {{ \Str::limit(auth()->user()->name, 10) }}</a>
                                         <ul class="dropdown">
 
-                                            
+
 
                                             <li><a href="{{ route('profile')}}"><i class=" far fa-address-card"></i> Profile</a></li>
 
