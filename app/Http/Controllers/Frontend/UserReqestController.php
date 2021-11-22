@@ -59,4 +59,17 @@ class UserReqestController extends Controller
             return response()->json(['status'=>'Login to continue']);
         }
     }
+    //ajax request from  my cart page delete item from cart ================================\\//
+    public function delete_item(Request $request){
+        $product_id = $request->input('prod_id');
+        if(Auth::check()){
+            if(Cart::where('product_id',$product_id)->where('user_id',Auth::id())->exists()){
+                $cart = Cart::where('product_id',$product_id)->where('user_id',Auth::id())->first();
+                $cart->delete();
+                return response()->json(['status'=>' product deleted successfully']);
+            }
+        }else{
+            return response()->json(['status'=>'Login to continue']);
+        }
+    }
 }
