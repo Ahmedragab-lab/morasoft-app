@@ -68,7 +68,15 @@ fa-bell{
     height: 300px;
 }
 .feedack-heading{
-    font-size: 20px;
+    font-size: 30px;
     font-weight: bold;
     color: #cf5029;
+}
+.feedback-text{
+    color: white;
+    font-size: 20px;
+    overflow: hidden;
+}
+.order-btn{
+    text-align: center !important;
 }

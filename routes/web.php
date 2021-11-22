@@ -24,9 +24,9 @@ Route::group(
         Route::resource('allsections',Frontend\AllSections::class); // go to all Sections page
 
         // go to all products page
-//         Route::get('/reserveServ', function () {
-//             return view('site.pages.reserveServ');
-//         });
+        Route::get('/reserveServ', function () {
+            return view('site.pages.reserveServ');
+        });
 
 
         Route::middleware(['auth'])->group(function () {

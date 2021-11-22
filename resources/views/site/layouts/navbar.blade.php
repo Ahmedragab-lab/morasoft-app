@@ -26,7 +26,7 @@
                                 <li class="has-dropdown">
                                     <a href="#"> اشحن اونلاين</a>
                                     <ul class="dropdown">
-                                        <li><a href="#"><i class=" far fa-address-card"></i> قدم طلبك</a></li>
+                                        <li><a href="{{ url('/reserveServ') }}"<i class=" far fa-address-card"></i> قدم طلبك</a></li>
                                         <li><a href="#"><i class=" far fa-comment-dots"></i> تتبع الشحنة</a></li>
                                     </ul>
                                 </li>
