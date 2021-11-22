@@ -19,7 +19,7 @@
                 <div class="level-right">
                     <div class="nav-wrap">
                         <nav class="main-navigation right">
-                            <ul class="menu"                               
+                            <ul class="menu"
                                 <li>
                                     <a href="{{ route('front.index') }}">{{ __('front.home') }}</a>
                                 </li>
@@ -58,14 +58,11 @@
                                 @endguest
                                 @auth
                                     <li class="has-dropdown">
-                                        <a href="#"><img src={{ asset('assets/images/profile_img.jpg') }} width="30" class="rounded-circle" > {{ \Str::limit(auth()->user()->name, 10) }}</a>
+                                        <a href="#"><img src={{ asset('uploads/user-img/'.Auth::user()->image) }} width="50" class="rounded-circle" > {{ \Str::limit(auth()->user()->name, 10) }}</a>
                                         <ul class="dropdown">
                                             <li><a href="#"><i class=" far fa-address-card"></i> Profile</a></li>
                                             <li><a href="#"><i class=" far fa-comment-dots"></i> my orders</a></li>
                                             <li><a href="{{ route('mycart.index')}}"><i class="icon-basket"></i> my cart</a></li>
-                                            {{-- @if(auth()->user()->admin==1)
-                                               <li><a href="{{ route('dashboard.index') }}">My Dashboard</a></li>
-                                            @endif --}}
                                             <li>
                                                 <a href="{{ route('logout') }}"
                                                     onclick="event.preventDefault();document.getElementById('logout-form').submit();">
@@ -75,20 +72,17 @@
                                                     @csrf
                                                 </form>
                                             </li>
-                                           
                                         </ul>
                                     </li>
                                     <li class="has-dropdown">
                                         <a href="#"> <i class="fas fa-bell "></i></a>
                                         <ul class="dropdown">
-                                            <li><a href="#"><img src={{ asset('assets/images/profile_img.jpg') }} width="30" class="rounded-circle" ></i> Asmaa Hosny</a></li>
-                                            <li><a href="#"><img src={{ asset('assets/images/profile_img.jpg') }} width="30" class="rounded-circle" ></i> Asmaa Hosny</a></li>
-
-                                            
+                                            <li><a href="#"><img src={{ asset('assets/images/profile_img.jpg') }} width="30" class="rounded-circle" > Asmaa Hosny</a></li>
+                                            <li><a href="#"><img src={{ asset('assets/images/profile_img.jpg') }} width="30" class="rounded-circle" > Asmaa Hosny</a></li>
                                         </ul>
                                     </li>
                                 @endauth
-                               
+
 
                             </ul>
                         </nav>
