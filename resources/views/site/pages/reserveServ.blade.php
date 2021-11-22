@@ -73,7 +73,7 @@
                                 placeholder="نوع الشحنة">
                         </div>
 
-            </div>
+            </div> 
         </div>
         <div class="field my-4 mx-5  ">
             <div class="control order-btn">
