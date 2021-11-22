@@ -18,6 +18,7 @@ return [
    'permissions'=>'الصلاحيات',
    'clients'=>'العملاء',
    'component'=>'المكونات',
+   'comp'=>'الشركات',
    'categories'=>'الاقسام',
    'Products'=>'المنتجات',
    'serv'=>'الخدمات',
@@ -73,4 +74,27 @@ return [
 // user request page translation
 'orders'=>'طلبات العملاء',
 // end request page translation
+
+
+
+//*********************** */
+
+// start Company page translation
+'CompNameAR'=> ' اسم الشركة بالعربية',
+'CompNameEN'=> ' اسم الشركة بالانجليزية',
+'CompDescription' => 'نبذة ',
+'CompEmail' => 'الايميل',
+'CompPhone' => 'الهاتف',
+'CompAddress' => 'العنوان',
+'CompDetail' => 'بيانات حول الشركة',
+
+'CompUpdate' => 'تعديل بيانات الشركة',
+
+'CompAdd' => 'اضافة شركة ',
+
+
+
+// end Company page translation
+
+
 ];

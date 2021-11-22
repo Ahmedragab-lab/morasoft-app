@@ -20,9 +20,14 @@ Route::group(
 
         Route::resource('allservices',Frontend\Allservices::class); // go to all services page
         Route::resource('allproducts',Frontend\AllProducts::class); // go to all products page
+        Route::resource('events',Frontend\AlleventController::class); // go to all Events page
+        Route::resource('Last_event',Frontend\Allevents::class);// get last event
+
 
         Route::middleware(['auth'])->group(function () {
-            Route::resource('mycart',Frontend\CartController::class); // go to my cart page
+        Route::resource('mycart',Frontend\CartController::class); // go to my cart page
+
+         // ->last();  go to all Last_event page
         });
 
         require __DIR__.'/auth.php';

@@ -364,48 +364,59 @@
         </div>
         </div>
     </section>
+                {{-- ********** Start News ************ --}}
+
+
+
+
     <section id="news" class="section news-section is-clearfix">
         <div class="container">
         <div class="blog-list style-2 columns is-variable is-4 is-multiline">
             <div class="column is-4" >
-            <div class="blog-post-heading">
-                <p class="heading-title-top">أخر الاخبار</p>
-                <h1 class="heading-title style-3 has-text-left"> اتم نقل الباضائع
-                <span class="has-text-primary">بسهولة</span>
+                <div class="blog-post-heading">
+                <p class="heading-title-top">أخر الاتفاقيات</p>
+                <h1 class="heading-title style-3 has-text-left">
+                <span class="has-text-primary">{{ $Last_agreement->agreement_title }}</span>
                 </h1>
-                <p>هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد النص العربى حيث يمكنك أن تولد.</p>
-                <a href="./blog/index.html" class="button">أخبارنا
+                <p>{{ $Last_agreement->desc }}</p>
+                <a href="{{ route('Last_event.show',$Last_agreement->id) }}" class="button">إقرأ المزيد
                 <span class="icon">
+                     {{-- href="{{route('front.show',$product->id)}}" --}}
                     <i class="ion-ios-arrow-round-forward"></i>
                 </span>
                 </a>
-            </div>
+             </div>
             <!-- .blog-post -->
             </div>
             <div class="column is-4" >
-            <article class="blog-post">
-                <figure class="post-image">
-                <a href="./blog/single.html">
-                    <img alt="Joo - Niche Multi-Purpose HTML Template" src="{{ asset('front/images/blog/4.png') }}"> </a>
-                </figure>
-                <div class="entry-header">
-                <div class="post-meta">
-                    <ul>
-                    <li>
-                        <a href="#">
-                        <span>أبريل 5 ، 2018</span>
-                        </a>
-                    </li>
-                    </ul>
-                </div>
-                <h2 class="entry-title">
-                    <a href="./blog/single.html">اتفاقية عمل مشترك لنقل البضائع</a>
-                </h2>
-                </div>
-                <div class="entry-footer">
-                <a href="./blog/single.html" class="button">اقرأ المزيد</a>
-                </div>
-            </article>
+                <article class="blog-post">
+                    <figure class="post-image">
+                    <a href="./blog/single.html">
+                        <img alt="Joo - Niche Multi-Purpose HTML Template" src="{{ asset('uploads/event/'.$Last_event->image) }}">
+                    </figure>
+                    <div class="entry-header">
+                    <div class="post-meta">
+                        <ul>
+                        <li>
+                            <a href="#">
+                            <span>أبريل 5 ، 2018</span>
+                            </a>
+                        </li>
+                        </ul>
+                    </div>
+                    <h2 class="entry-title">
+                        {{-- <a href="./blog/single.html">{{ $Last_event->event_title }}</a> --}}
+                        <a href="{{ route('Last_event.show',$Last_event->id) }}">{{ $Last_event->event_title }}</a>
+
+                    </h2>
+                    <p>{{ $Last_event->desc }}</p>
+                    </div>
+                    <div class="entry-footer">
+                    <a href="{{ route('Last_event.show',$Last_event->id) }}" class="button"> </a>
+                    </div>
+                </article>
+
+                 {{-- ********** End News ************ --}}
             <!-- .blog-post -->
             </div>
             <div class="column is-4" >
