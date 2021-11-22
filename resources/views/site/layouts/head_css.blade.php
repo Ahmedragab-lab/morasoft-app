@@ -11,7 +11,7 @@
     @yield('css')
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-
+     <link rel="stylesheet" href="{{ asset('front/arabic/webfonts/all.min.css') }}">
     <link rel="stylesheet" href="{{ asset('front/arabic/css/vendor.css') }}">
     <link rel="stylesheet" href="{{ asset('front/arabic/css/styles.css') }}">
     <link rel="stylesheet" href="{{ asset('front/arabic/css/styles-rtl.min.css?v=1557447064956') }}">
@@ -81,7 +81,7 @@
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
             integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
-
+            <link rel="stylesheet" href="{{ asset('front/english/webfonts/all.min.css') }}">
         <link rel="stylesheet" href="{{ asset('front/english/css/vendor.css') }}">
         <link rel="stylesheet" href="{{ asset('front/english/css/styles.css') }}">
         <link rel="stylesheet" href="{{ asset('front/english/css/custom.css?v=1557446391092') }}">

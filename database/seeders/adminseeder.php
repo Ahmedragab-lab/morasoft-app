@@ -33,6 +33,7 @@ class adminseeder extends Seeder
                 'image' => 'default.jpg',
                 'phone' => '01021493036',
                 'address' => 'Egypt cairo',
+                'image'=>'wolf.jpg',
             ],
             [
                 'name' => 'dina',
@@ -41,6 +42,7 @@ class adminseeder extends Seeder
                   'image' => 'default2.jpg',
                 'phone' => '01021493036',
                 'address' => 'Phalastin Gaza',
+                'image'=>'default.jpg',
             ],
              [
                 'name' => 'Asmaa',
@@ -49,6 +51,7 @@ class adminseeder extends Seeder
                 'image' => 'default3.jpg',
                 'phone' => '01021493036',
                 'address' => 'Egypt alex',
+                'image'=>'default.jpg',
             ],
             // 'admin'    =>'0',
         ]);

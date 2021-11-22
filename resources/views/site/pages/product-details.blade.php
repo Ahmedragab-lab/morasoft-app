@@ -59,9 +59,9 @@
                     <div class="field">
                         {{-- ==========/////////////////////////////////============================= --}}
                         {{-- ==========/////////////////////////////////============================= --}}
-                        <div class="control">
+                        <div class="control quantity-input">
                             <input type="hidden" value="{{ $product->id }}" class="prod_id" name="prod_id">
-                            <input class="input has-text-centered qty_input" type="number" value="1" name="prod_qty" pattern="[0-9]*">
+                            <input class="input has-text-centered qty_input" type="number" value="1" name="prod_qty" data-max="120" pattern="[0-9]*">
                         </div>
                     </div>
                   </div>

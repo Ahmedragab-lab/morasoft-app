@@ -20,11 +20,13 @@ Route::group(
       //Route::post('/servrequest', [Frontend\UserReqestController::class,'servrequest'])->name('servrequest');   // send request from service page by ajax
 
         Route::post('/servrequest', [Frontend\UserReqestController::class,'servrequest'])->name('servrequest');   // send request from service page by ajax
+        Route::post('/delete_item', [Frontend\UserReqestController::class,'delete_item'])->name('delete_item');   // send request from mycart page by ajax to delete item
 
 
         Route::resource('allservices',Frontend\Allservices::class); // go to all services page
-
         Route::resource('allproducts',Frontend\AllProducts::class); // go to all products page
+        Route::resource('allsections',Frontend\AllSections::class); // go to all Sections page
+
 
 
         Route::resource('allproducts',Frontend\AllProducts::class);
@@ -35,6 +37,8 @@ Route::group(
        });
 
         
+
+
         // go to all products page
 //         Route::get('/reserveServ', function () {
 //             return view('site.pages.reserveServ');

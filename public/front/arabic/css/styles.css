@@ -10,6 +10,7 @@
  *
  */
  @import url('https://fonts.googleapis.com/css2?family=Cairo&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@300;400&display=swap');
 
 .breadcrumb {
     text-transform: capitalize;
@@ -67,9 +68,13 @@ img {
 }
 
 p {
-    font-family: 'Poppins', sans-serif;
+   font-family: 'Cairo', sans-serif;
     line-height: 2;
     color: rgba(75, 80, 93, 0.7);
+}
+
+a,h1,strong{
+    font-family: 'Cairo', sans-serif;
 }
 
 iframe {
@@ -163,7 +168,7 @@ code {
 
 .content-404.content h1,
 .content-404.content h2 {
-    font-family: 'Poppins', sans-serif;
+   font-family: 'Cairo', sans-serif;
 }
 
 .content-404.content h1 {
@@ -193,7 +198,7 @@ code {
 }
 
 .badge {
-    font-family: 'Poppins', sans-serif;
+   font-family: 'Cairo', sans-serif;
 }
 
 .badge:not([data-badge=""])::after {
@@ -259,7 +264,7 @@ body.boxed-layout #site-wrap {
 }
 
 .shop-rating {
-    font-family: 'Poppins', sans-serif;
+   font-family: 'Cairo', sans-serif;
     font-size: 14px;
 }
 
@@ -274,7 +279,7 @@ body.boxed-layout #site-wrap {
 }
 
 .notification {
-    font-family: 'Poppins', sans-serif;
+   font-family: 'Cairo', sans-serif;
     line-height: 1.8;
 }
 
@@ -345,15 +350,15 @@ body.boxed-layout #site-wrap {
 }
 
 .card .card-footer {
-    font-family: 'Poppins', sans-serif;
+   font-family: 'Cairo', sans-serif;
 }
 
 .dropdown .dropdown-content {
-    font-family: 'Poppins', sans-serif;
+   font-family: 'Cairo', sans-serif;
 }
 
 .menu {
-    font-family: 'Poppins', sans-serif;
+   font-family: 'Cairo', sans-serif;
 }
 
 .menu.vertical-navigation-content {
@@ -425,7 +430,7 @@ body.boxed-layout #site-wrap {
 }
 
 .message .message-body {
-    font-family: 'Poppins', sans-serif;
+   font-family: 'Cairo', sans-serif;
 }
 
 .floating_buttons .float {
@@ -794,7 +799,7 @@ body.boxed-layout #site-wrap {
 }
 
 #quickviewInfo .quickview-body footer .site-logo {
-    font-family: 'Poppins', sans-serif;
+   font-family: 'Cairo', sans-serif;
     margin-bottom: 0;
     margin-top: -11px;
 }
@@ -946,7 +951,7 @@ body.boxed-layout #site-wrap {
 }
 
 .table tbody {
-    font-family: 'Poppins', sans-serif;
+   font-family: 'Cairo', sans-serif;
     color: #424754;
 }
 
@@ -965,7 +970,7 @@ body.boxed-layout #site-wrap {
 }
 
 .breadcrumb {
-    font-family: 'Poppins', sans-serif;
+   font-family: 'Cairo', sans-serif;
     font-size: 13.8px;
     font-size: 0.8625rem;
 }
@@ -981,7 +986,7 @@ body.boxed-layout #site-wrap {
 }
 
 .tooltip {
-    font-family: 'Poppins', sans-serif;
+   font-family: 'Cairo', sans-serif;
 }
 
 .tooltip:before {
@@ -994,7 +999,7 @@ div.code-toolbar > .toolbar span {
     border-radius: 0;
     background-color: transparent;
     color: #A6A6A6;
-    font-family: 'Poppins', sans-serif;
+   font-family: 'Cairo', sans-serif;
     -webkit-box-shadow: none;
     box-shadow: none;
 }
@@ -1097,7 +1102,7 @@ pre[class*="language-"] {
 }
 
 .steps {
-    font-family: 'Poppins', sans-serif;
+   font-family: 'Cairo', sans-serif;
 }
 
 .mfp-bg {
@@ -1113,7 +1118,7 @@ pre[class*="language-"] {
 }
 
 .mfp-bottom-bar {
-    font-family: 'Poppins', sans-serif;
+   font-family: 'Cairo', sans-serif;
     margin-top: -28px;
 }
 
@@ -1132,7 +1137,7 @@ pre[class*="language-"] {
 }
 
 .mfp-arrow-right:before {
-    font-family: 'Ionicons';
+   font-family: 'Cairo', sans-serif;
     font-size: 45px;
     font-size: 2.8125rem;
     content: "\f119";
@@ -1144,7 +1149,7 @@ pre[class*="language-"] {
 }
 
 .mfp-arrow-left:before {
-    font-family: 'Ionicons';
+   font-family: 'Cairo', sans-serif;
     font-size: 45px;
     font-size: 2.8125rem;
     content: "\f117";
@@ -1271,7 +1276,7 @@ pre[class*="language-"] {
 }
 
 .barrating {
-    font-family: 'Poppins', sans-serif;
+   font-family: 'Cairo', sans-serif;
 }
 
 .barrating select {
@@ -1298,7 +1303,7 @@ pre[class*="language-"] {
 
 .barrating .br-theme-fontawesome-stars .br-widget a,
 .barrating .br-theme-fontawesome-stars-o .br-widget a {
-    font-family: 'Font Awesome 5 Free';
+ font-family: 'Cairo', sans-serif;
     font-weight: 400;
 }
 
@@ -1552,7 +1557,7 @@ canvas {
 
 .content blockquote,
 .entry-content blockquote {
-    font-family: 'Poppins', sans-serif;
+   font-family: 'Cairo', sans-serif;
     margin: 1.8em 0;
     color: #393e4b;
     font-size: 20px;
@@ -1564,7 +1569,7 @@ canvas {
 
 .content blockquote span,
 .entry-content blockquote span {
-    font-family: 'Poppins', sans-serif;
+   font-family: 'Cairo', sans-serif;
     font-size: 14px;
     font-size: 0.875rem;
     color: #cf5029;
@@ -1597,7 +1602,7 @@ canvas {
 
 .content blockquote.style-1:before,
 .entry-content blockquote.style-1:before {
-    font-family: 'Font Awesome 5 Free';
+ font-family: 'Cairo', sans-serif;
     font-size: 35px;
     font-size: 2.1875rem;
     content: "\f10d";
@@ -1630,7 +1635,7 @@ canvas {
 
 .content blockquote.style-2:before,
 .entry-content blockquote.style-2:before {
-    font-family: 'Font Awesome 5 Free';
+ font-family: 'Cairo', sans-serif;
     font-size: 33px;
     font-size: 2.0625rem;
     content: "\f10d";
@@ -1657,7 +1662,7 @@ canvas {
 
 .content blockquote.style-3:before,
 .entry-content blockquote.style-3:before {
-    font-family: 'Font Awesome 5 Free';
+ font-family: 'Cairo', sans-serif;
     font-size: 33px;
     font-size: 2.0625rem;
     content: "\f10d";
@@ -1670,7 +1675,7 @@ canvas {
 
 .content blockquote.style-3:after,
 .entry-content blockquote.style-3:after {
-    font-family: 'Font Awesome 5 Free';
+ font-family: 'Cairo', sans-serif;
     font-size: 33px;
     font-size: 2.0625rem;
     content: "\f10e";
@@ -1694,7 +1699,7 @@ canvas {
 
 .content blockquote.style-4:before,
 .entry-content blockquote.style-4:before {
-    font-family: 'Font Awesome 5 Free';
+ font-family: 'Cairo', sans-serif;
     font-size: 80px;
     font-size: 5rem;
     content: "\f10d";
@@ -2305,7 +2310,7 @@ canvas {
 }
 
 .box-item .button:after {
-    font-family: 'Ionicons';
+   font-family: 'Cairo', sans-serif;
     font-size: 25px;
     font-size: 1.5625rem;
     content: "\f119";
@@ -3536,7 +3541,7 @@ canvas {
 
 .button {
     text-transform: capitalize;
-    font-family: 'Poppins', sans-serif;
+   font-family: 'Cairo', sans-serif;
     border: none;
     -webkit-box-shadow: none;
     box-shadow: none;
@@ -3608,11 +3613,11 @@ canvas {
 }
 
 .calendar {
-    font-family: 'Poppins', sans-serif;
+   font-family: 'Cairo', sans-serif;
 }
 
 .calendar button {
-    font-family: 'Poppins', sans-serif;
+   font-family: 'Cairo', sans-serif;
 }
 
 .calendar button.button.is-text {
@@ -3908,7 +3913,7 @@ canvas {
 
 .is-divider:after,
 .is-divider-vertical:after {
-    font-family: 'Poppins', sans-serif;
+   font-family: 'Cairo', sans-serif;
     letter-spacing: 2px;
 }
 
@@ -4074,7 +4079,7 @@ textarea,
 select,
 .checkbox,
 .radio {
-    font-family: 'Poppins', sans-serif;
+   font-family: 'Cairo', sans-serif;
 }
 
 input[type="text"],
@@ -4315,7 +4320,7 @@ textarea:not([rows]),
 }
 
 .heading-title.style-1 {
-    font-family: 'Poppins', sans-serif;
+   font-family: 'Cairo', sans-serif;
     padding-bottom: 0;
     margin-bottom: 2rem !important;
     font-weight: 500;
@@ -4445,7 +4450,7 @@ textarea:not([rows]),
 
 .image-hover figure figcaption h5,
 .image-hover figure figcaption p {
-    font-family: 'Poppins', sans-serif;
+   font-family: 'Cairo', sans-serif;
     font-size: 13px;
     font-size: 0.8125rem;
     font-weight: normal;
@@ -5082,7 +5087,7 @@ textarea:not([rows]),
 
 .content ul.list-arrow-right li:before,
 .content ol.list-arrow-right li:before {
-    font-family: 'simple-line-icons';
+  font-family: 'Cairo', sans-serif;
     font-size: 8px;
     font-size: 0.5rem;
 }
@@ -5099,7 +5104,7 @@ textarea:not([rows]),
 .content ol.list-star li:before, .content ul.list-radio-button-on li:before,
 .content ol.list-radio-button-on li:before, .content ul.list-arrow-dropright-circle li:before,
 .content ol.list-arrow-dropright-circle li:before {
-    font-family: 'Ionicons';
+   font-family: 'Cairo', sans-serif;
     font-size: 20px;
     font-size: 1.25rem;
     line-height: 1;
@@ -5128,7 +5133,7 @@ textarea:not([rows]),
 
 .content ul,
 .content ol {
-    font-family: 'Poppins', sans-serif;
+   font-family: 'Cairo', sans-serif;
     font-size: 14px;
     font-size: 0.875rem;
     font-weight: 500;
@@ -5710,7 +5715,7 @@ textarea:not([rows]),
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
     border-bottom: 0 !important;
-    font-family: 'Poppins', sans-serif;
+   font-family: 'Cairo', sans-serif;
     background-color: #0063dd !important;
 }
 
@@ -5744,7 +5749,7 @@ textarea:not([rows]),
 }
 
 .overhang .overhang-close:after {
-    font-family: 'Ionicons';
+   font-family: 'Cairo', sans-serif;
     font-size: 30px;
     font-size: 1.875rem;
     content: "\f406";
@@ -5786,7 +5791,7 @@ body.overhang-danger .overhang {
 }
 
 .noty_layout .noty_body {
-    font-family: 'Poppins', sans-serif;
+   font-family: 'Cairo', sans-serif;
     letter-spacing: 1px;
     -webkit-font-smoothing: antialiased;
     line-height: 24px;
@@ -5818,7 +5823,7 @@ body.overhang-danger .overhang {
 }
 
 .pageloader .title {
-    font-family: 'Poppins', sans-serif;
+   font-family: 'Cairo', sans-serif;
     letter-spacing: 2px;
     font-size: 12px;
     font-size: 0.75rem;
@@ -5830,7 +5835,7 @@ body.overhang-danger .overhang {
 }
 
 .pagination {
-    font-family: 'Poppins', sans-serif;
+   font-family: 'Cairo', sans-serif;
     font-size: 16px;
     font-size: 1rem;
     margin: 4.5rem 0 0;
@@ -5879,7 +5884,7 @@ body.overhang-danger .overhang {
 }
 
 .pagination a.pagination-next:after {
-    font-family: 'simple-line-icons';
+  font-family: 'Cairo', sans-serif;
     font-size: 11px;
     font-size: 0.6875rem;
     content: "\e606";
@@ -5893,7 +5898,7 @@ body.overhang-danger .overhang {
 }
 
 .pagination a.pagination-previous:before {
-    font-family: 'simple-line-icons';
+  font-family: 'Cairo', sans-serif;
     font-size: 11px;
     font-size: 0.6875rem;
     content: "\e605";
@@ -6044,7 +6049,7 @@ body.overhang-danger .overhang {
     font-size: 18px;
     font-size: 1.125rem;
     margin-bottom: 5px;
-    font-family: 'Poppins', sans-serif;
+   font-family: 'Cairo', sans-serif;
     letter-spacing: 0;
     text-align: center;
     font-weight: 600;
@@ -6061,7 +6066,7 @@ body.overhang-danger .overhang {
     right: 0;
     position: absolute;
     color: #4b505d !important;
-    font-family: 'Poppins', sans-serif;
+   font-family: 'Cairo', sans-serif;
     font-size: 15px;
     font-size: 0.9375rem;
 }
@@ -6094,13 +6099,13 @@ body.overhang-danger .overhang {
 }
 
 .accordions.style-arrow .beefup .beefup__head:after, .accordions.style-arrow .beefup.is-open > .beefup__head:after {
-    font-family: 'simple-line-icons';
+  font-family: 'Cairo', sans-serif;
     font-size: 11px;
     font-size: 0.6875rem;
 }
 
 .accordions .beefup .beefup__head:after, .accordions .beefup.is-open > .beefup__head:after {
-    font-family: 'Ionicons';
+   font-family: 'Cairo', sans-serif;
     font-size: 16px;
     font-size: 1rem;
     line-height: 1;
@@ -7115,11 +7120,11 @@ body.overhang-danger .overhang {
 }
 
 .tags, .tag {
-    font-family: 'Poppins', sans-serif;
+   font-family: 'Cairo', sans-serif;
 }
 
 .tag.token {
-    font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+    font-family: 'Cairo', sans-serif;'Cairo', sans-serif;Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
     background-color: transparent;
     font-size: 14.5px;
     padding: 0;
@@ -7137,7 +7142,7 @@ body.overhang-danger .overhang {
 
 .content,
 .entry-content {
-    font-family: 'Poppins', sans-serif;
+   font-family: 'Cairo', sans-serif;
 }
 
 .content figure,
@@ -7178,7 +7183,7 @@ body.overhang-danger .overhang {
 .entry-content h4,
 .entry-content h5,
 .entry-content h6 {
-    font-family: 'Poppins', sans-serif;
+   font-family: 'Cairo', sans-serif;
 }
 
 .content pre,
@@ -7205,7 +7210,7 @@ body.overhang-danger .overhang {
     color: white;
     font-size: 45px;
     font-size: 2.8125rem;
-    font-family: 'Poppins', sans-serif;
+   font-family: 'Cairo', sans-serif;
     padding: 5px 12px 10px;
     float: left;
     margin: 6px 15px 0 0;
@@ -7786,7 +7791,7 @@ header,
     letter-spacing: 1.1px;
     -webkit-transition: all 0.4s ease;
     transition: all 0.4s ease;
-    font-family: 'Poppins', sans-serif;
+   font-family: 'Cairo', sans-serif;
     padding-right: 12px;
     padding-bottom: 5px;
     font-weight: 600;
@@ -7834,13 +7839,13 @@ header,
     transition: all 0.5s ease;
     font-size: 13.3px;
     font-size: 0.83125rem;
-    font-family: 'Poppins', sans-serif;
+   font-family: 'Cairo', sans-serif;
     background-color: transparent;
     height: 2.25em;
 }
 
 .blog-post .entry-footer .button:after {
-    font-family: 'Ionicons';
+   font-family: 'Cairo', sans-serif;
     font-size: 23px;
     font-size: 1.4375rem;
     content: "\f119";
@@ -8082,7 +8087,7 @@ header,
 }
 
 .blog-list.style-3 .blog-post .entry-footer .button {
-    font-family: 'Poppins', sans-serif;
+   font-family: 'Cairo', sans-serif;
     letter-spacing: 1px;
     font-weight: 600;
     color: #0063dd;
@@ -8236,7 +8241,7 @@ body.blog-list-style-3 .blog-list.style-3 .blog-post .entry-header .post-meta ul
 
 .blog-single .entry-footer {
     margin-top: 3.4em;
-    font-family: 'Poppins', sans-serif;
+   font-family: 'Cairo', sans-serif;
 }
 
 .blog-single .entry-footer .post-tags .icon {
@@ -8352,7 +8357,7 @@ body.blog-list-style-3 .blog-list.style-3 .blog-post .entry-header .post-meta ul
 
 .owl-carousel .owl-prev:before,
 .owl-carousel .owl-next:before {
-    font-family: 'Ionicons';
+   font-family: 'Cairo', sans-serif;
     font-size: 45px;
     font-size: 2.8125rem;
     color: white;
@@ -8663,7 +8668,7 @@ body.blog-list-style-3 .blog-list.style-3 .blog-post .entry-header .post-meta ul
 }
 
 .flexslider .flex-direction-nav a:before {
-    font-family: 'Ionicons';
+   font-family: 'Cairo', sans-serif;
     font-size: 30px;
     font-size: 1.875rem;
     color: white;
@@ -8934,7 +8939,7 @@ body.blog-list-style-3 .blog-list.style-3 .blog-post .entry-header .post-meta ul
 .comments .comment-date {
     display: inline-block;
     color: #A6A6A6;
-    font-family: 'Poppins', sans-serif;
+   font-family: 'Cairo', sans-serif;
     font-size: 11.5px;
     font-size: 0.71875rem;
     margin-top: 3px;
@@ -8958,7 +8963,7 @@ body.blog-list-style-3 .blog-list.style-3 .blog-post .entry-header .post-meta ul
     font-size: 0.78125rem;
     display: inline-block;
     letter-spacing: .8px;
-    font-family: 'Poppins', sans-serif;
+   font-family: 'Cairo', sans-serif;
     font-weight: 500;
 }
 
@@ -8969,7 +8974,7 @@ body.blog-list-style-3 .blog-list.style-3 .blog-post .entry-header .post-meta ul
 }
 
 .countdown-time {
-    font-family: 'Poppins', sans-serif;
+   font-family: 'Cairo', sans-serif;
     font-size: 0px;
     font-size: 0rem;
 }
@@ -9069,7 +9074,7 @@ body.blog-list-style-3 .blog-list.style-3 .blog-post .entry-header .post-meta ul
     color: #393e4b;
     font-size: 60px;
     font-size: 3.75rem;
-    font-family: 'Poppins', sans-serif;
+   font-family: 'Cairo', sans-serif;
     max-height: 100px;
     -webkit-transition: all 0.3s ease;
     transition: all 0.3s ease;
@@ -9114,7 +9119,7 @@ body.blog-list-style-3 .blog-list.style-3 .blog-post .entry-header .post-meta ul
 .counterup.with-icons .level-item > div .title {
     font-size: 36px;
     font-size: 2.25rem;
-    font-family: 'Poppins', sans-serif;
+   font-family: 'Cairo', sans-serif;
     margin-bottom: .6rem;
 }
 
@@ -9204,7 +9209,7 @@ body.blog-list-style-3 .blog-list.style-3 .blog-post .entry-header .post-meta ul
 .counterup.style-3 .level-item .title {
     font-size: 54px;
     font-size: 3.375rem;
-    font-family: 'Poppins', sans-serif;
+   font-family: 'Cairo', sans-serif;
     margin-right: 14px;
 }
 
@@ -9303,7 +9308,7 @@ body.blog-list-style-3 .blog-list.style-3 .blog-post .entry-header .post-meta ul
 }
 
 .counterup.style-5 .level-item > div .title {
-    font-family: 'Poppins', sans-serif;
+   font-family: 'Cairo', sans-serif;
     font-size: 54px;
     font-size: 3.375rem;
     margin-top: 0;
@@ -9750,7 +9755,7 @@ footer {
 }
 
 footer .widget-links ul li:before {
-    font-family: 'simple-line-icons';
+  font-family: 'Cairo', sans-serif;
     font-size: 7px;
     font-size: 0.4375rem;
 }
@@ -9783,7 +9788,7 @@ footer .site-logo img {
 }
 
 footer .footer-navigation {
-    font-family: 'Poppins', sans-serif;
+   font-family: 'Cairo', sans-serif;
     margin-bottom: 37px;
 }
 
@@ -9843,7 +9848,7 @@ footer .widget-title {
 }
 
 footer .widget-links {
-    font-family: 'Poppins', sans-serif;
+   font-family: 'Cairo', sans-serif;
 }
 
 footer .widget-links ul li {
@@ -9943,7 +9948,7 @@ body.footer-widgets footer {
 }
 
 body.footer-widgets footer .site-logo {
-    font-family: 'Poppins', sans-serif;
+   font-family: 'Cairo', sans-serif;
     margin-bottom: 0;
     margin-top: -17px;
 }
@@ -10240,7 +10245,7 @@ body.footer-reveal #footer-bottom-wrap {
 }
 
 .footer-bottom-content {
-    font-family: 'Poppins', sans-serif;
+   font-family: 'Cairo', sans-serif;
     text-align: center;
     color: #999999;
 }
@@ -10253,7 +10258,7 @@ body.footer-reveal #footer-bottom-wrap {
     font-size: 14px;
     font-size: 0.875rem;
     display: inline-block;
-    font-family: 'Poppins', sans-serif;
+   font-family: 'Cairo', sans-serif;
     text-transform: capitalize;
     letter-spacing: 1px;
 }
@@ -10349,7 +10354,7 @@ body.footer-reveal #footer-bottom-wrap {
 
 .image-content .content .text p {
     color: #A6A6A6;
-    font-family: 'Poppins', sans-serif;
+   font-family: 'Cairo', sans-serif;
     margin-bottom: 38px;
 }
 
@@ -12240,7 +12245,7 @@ body.footer-reveal #footer-bottom-wrap {
     transform: translate(-50%, -50%);
     width: auto;
     color: white;
-    font-family: 'Poppins', sans-serif;
+   font-family: 'Cairo', sans-serif;
     font-size: 17px;
     font-size: 1.0625rem;
 }
@@ -12516,7 +12521,7 @@ header .header-fullwidth.no-padding {
 }
 
 header .nav-menu-dropdown > li > a:after, body.menu-show-arrow-down header .main-navigation li.menu-down-icon > a:after, body.submenu-show-arrow-right header .main-navigation li ul li.menu-right-icon > a:after {
-    font-family: 'simple-line-icons';
+  font-family: 'Cairo', sans-serif;
     font-size: 9px;
     font-size: 0.5625rem;
 }
@@ -12658,7 +12663,7 @@ body.header-background-primary header .main-navigation > ul > li.active > a, bod
 }
 
 header .main-navigation {
-    font-family: 'Poppins', sans-serif;
+   font-family: 'Cairo', sans-serif;
 }
 
 header .main-navigation .icon {
@@ -12936,7 +12941,7 @@ header .site-logo img {
 }
 
 .nav-menu-dropdown {
-    font-family: 'Poppins', sans-serif;
+   font-family: 'Cairo', sans-serif;
 }
 
 .nav-menu-dropdown > li {
@@ -13477,7 +13482,7 @@ body.header-hamburger-menu.slide-left header .level:last-child .footer-copyright
     font-size: 12px;
     font-size: 0.75rem;
     display: inline-block;
-    font-family: 'Poppins', sans-serif;
+   font-family: 'Cairo', sans-serif;
     color: #999999;
 }
 
@@ -13820,7 +13825,7 @@ body .header-menu-icons li > ul {
     background: white;
     min-width: 250px;
     border: 1px solid #f5f5f5;
-    font-family: 'Poppins', sans-serif;
+   font-family: 'Cairo', sans-serif;
     margin-top: 29px;
     max-height: 310px;
     overflow-y: auto;
@@ -14313,7 +14318,7 @@ body.header-side-navigation header .footer-copyright {
     font-size: 13px;
     font-size: 0.8125rem;
     display: inline-block;
-    font-family: 'Poppins', sans-serif;
+   font-family: 'Cairo', sans-serif;
     color: #999999;
 }
 
@@ -15392,7 +15397,7 @@ body.header-transparent:not(.responsive-layout):not(.header-hamburger-menu).head
     color: #4b505d;
     font-size: 15px;
     font-size: 0.9375rem;
-    font-family: 'Poppins', sans-serif;
+   font-family: 'Cairo', sans-serif;
     font-weight: 400;
 }
 
@@ -15435,7 +15440,7 @@ body.header-transparent:not(.responsive-layout):not(.header-hamburger-menu).head
     font-size: 60px;
     font-size: 3.75rem;
     letter-spacing: 0;
-    color: white;
+    color: #cf5029;
 }
 
 .page-title.is-medium h3, .page-title.is-large h3, .page-title.is-fullheight h3 {
@@ -15443,7 +15448,7 @@ body.header-transparent:not(.responsive-layout):not(.header-hamburger-menu).head
     font-size: 1.25rem;
     letter-spacing: 0;
     margin-top: 15px !important;
-    font-family: 'Poppins', sans-serif;
+   font-family: 'Cairo', sans-serif;
     color: white;
 }
 
@@ -15841,7 +15846,7 @@ body.header-transparent:not(.responsive-layout):not(.header-hamburger-menu).head
 }
 
 .pricing-table .pricing-plan .plan-items .plan-item {
-    font-family: 'Poppins', sans-serif;
+   font-family: 'Cairo', sans-serif;
     font-size: 15px;
     font-size: 0.9375rem;
 }
@@ -16106,13 +16111,13 @@ section {
 .services-section .boxes-style-2 .box-item:hover img {
     -webkit-filter: brightness(0) invert(1);
     filter: brightness(1) invert(0);
-    
+
 }
 
 .services-section .boxes-style-2 .box-item:hover h3 a,
 .services-section .boxes-style-2 .box-item:hover p {
     color: white;
-   
+
 }
 
 .services-section .boxes-style-2 .box-item:hover .button:after {
@@ -16993,13 +16998,13 @@ a.tag:hover, .widget-tags .tagcloud a:hover {
     font-size: 19px;
     font-size: 1.1875rem;
     margin-bottom: 1.6rem;
-    font-family: 'Poppins', sans-serif;
+   font-family: 'Cairo', sans-serif;
     font-weight: 500;
 }
 
 .widget {
     margin-bottom: 2.6rem;
-    font-family: 'Poppins', sans-serif;
+   font-family: 'Cairo', sans-serif;
 }
 
 .widget:first-child .widget-title {
@@ -17180,7 +17185,7 @@ a.tag:hover, .widget-tags .tagcloud a:hover {
     color: #4b505d;
     font-size: 15px;
     font-size: 0.9375rem;
-    font-family: 'Poppins', sans-serif;
+   font-family: 'Cairo', sans-serif;
     letter-spacing: .5px;
 }
 
@@ -17218,7 +17223,7 @@ a.tag:hover, .widget-tags .tagcloud a:hover {
 }
 
 .tparrows.uranus:before {
-    font-family: 'Ionicons';
+   font-family: 'Cairo', sans-serif;
     font-size: 45px;
     font-size: 2.8125rem;
     width: 45px;
@@ -17259,7 +17264,7 @@ a.tag:hover, .widget-tags .tagcloud a:hover {
 }
 
 .tp-caption.large_text {
-    font-family: 'Poppins', sans-serif;
+   font-family: 'Cairo', sans-serif;
     text-transform: lowercase;
     text-align: center;
     font-size: 50px !important;
@@ -17507,7 +17512,7 @@ a.tag:hover, .widget-tags .tagcloud a:hover {
     box-shadow: none;
     border: none;
     background-color: white;
-    font-family: 'Poppins', sans-serif;
+   font-family: 'Cairo', sans-serif;
     font-size: 15px !important;
     height: 3.2em;
     padding-left: 20px;
@@ -17812,7 +17817,7 @@ a.tag:hover, .widget-tags .tagcloud a:hover {
     -webkit-transition: all 0.4s ease;
     transition: all 0.4s ease;
     color:#cf5029;
-    font-family: 'Poppins', sans-serif;
+   font-family: 'Cairo', sans-serif;
 }
 
 .team .team-member .team-member-meta h5:hover {
@@ -18165,7 +18170,7 @@ a.tag:hover, .widget-tags .tagcloud a:hover {
     font-size: 36px;
     font-size: 2.25rem;
     color: #2b303b;
-    font-family: 'Poppins', sans-serif;
+   font-family: 'Cairo', sans-serif;
     letter-spacing: 0;
     padding: .8rem 2rem 2.5rem;
     font-weight: normal;
@@ -18185,7 +18190,7 @@ a.tag:hover, .widget-tags .tagcloud a:hover {
 }
 
 .testimonials .testimonials-item h3 {
-    font-family: 'Poppins', sans-serif;
+   font-family: 'Cairo', sans-serif;
     font-size: 17px;
     font-size: 1.0625rem;
     text-transform: capitalize;
@@ -18224,7 +18229,7 @@ a.tag:hover, .widget-tags .tagcloud a:hover {
 }
 
 .testimonials.style-1:before {
-    font-family: 'Font Awesome 5 Free';
+ font-family: 'Cairo', sans-serif;
     font-size: 165px;
     font-size: 10.3125rem;
     content: "\f10d";
@@ -18343,7 +18348,7 @@ a.tag:hover, .widget-tags .tagcloud a:hover {
 }
 
 .testimonials.columns-style-1 .testimonials-item h3, .testimonials.columns-style-2 .testimonials-item h3 {
-    font-family: 'Poppins', sans-serif;
+   font-family: 'Cairo', sans-serif;
     font-size: 15px;
     font-size: 0.9375rem;
     color: #2b303b;
@@ -18358,7 +18363,7 @@ a.tag:hover, .widget-tags .tagcloud a:hover {
 }
 
 .testimonials.columns-style-1 .testimonials-item h3 span, .testimonials.columns-style-2 .testimonials-item h3 span {
-    font-family: 'Poppins', sans-serif;
+   font-family: 'Cairo', sans-serif;
     font-size: 13px;
     font-size: 0.8125rem;
     color: #0864d6;
@@ -18369,7 +18374,7 @@ a.tag:hover, .widget-tags .tagcloud a:hover {
     font-size: 15px;
     font-size: 0.9375rem;
     color: rgba(75, 80, 93, 0.8);
-    font-family: 'Poppins', sans-serif;
+   font-family: 'Cairo', sans-serif;
     letter-spacing: normal;
     padding: 0;
     padding-bottom: 48px;
@@ -18550,11 +18555,11 @@ a.tag:hover, .widget-tags .tagcloud a:hover {
 
 .site-header-top {
     padding: 7px 0 8px;
-    font-family: 'Poppins', sans-serif;
+   font-family: 'Cairo', sans-serif;
 }
 
 .site-header-top .nav-menu-dropdown.style-2 > li > a:after {
-    font-family: 'simple-line-icons';
+  font-family: 'Cairo', sans-serif;
     font-size: 9px;
     font-size: 0.5625rem;
 }
@@ -18965,7 +18970,7 @@ body.topbar-background.dark-color:not(.primary-color) .site-header-top .nav-menu
     transition: all 0.4s ease;
     color: white;
     opacity: .7;
-    font-family: 'Poppins', sans-serif;
+   font-family: 'Cairo', sans-serif;
 }
 
 .works-latest .works-latest-item .works-latest-item-meta h5:hover {
@@ -19242,7 +19247,7 @@ body.topbar-background.dark-color:not(.primary-color) .site-header-top .nav-menu
     -webkit-transition: all 0.4s ease;
     transition: all 0.4s ease;
     color: #0063dd;
-    font-family: 'Poppins', sans-serif;
+   font-family: 'Cairo', sans-serif;
 }
 
 .works .work-item .work-item-meta h5:hover {
@@ -19268,7 +19273,7 @@ body.topbar-background.dark-color:not(.primary-color) .site-header-top .nav-menu
 
 .works.isotope .isotope-filter {
     text-align: center;
-    font-family: 'Poppins', sans-serif;
+   font-family: 'Cairo', sans-serif;
     text-transform: capitalize;
     margin-bottom: 3.5rem;
 }
@@ -19965,11 +19970,15 @@ body.topbar-background.dark-color:not(.primary-color) .site-header-top .nav-menu
     body.header-side-navigation .get-in-touch .box-item p {
         font-size: 13px;
     }
+
+    body.span{
+        font-family: 'Cairo', sans-serif;
+    }
 }
 
 @media screen and (max-width: 1087px) {
     body.responsive-layout header .main-navigation li.menu-down-icon > span:before, body.responsive-layout header .main-navigation li.menu-right-icon > span:before, body.responsive-layout header .main-navigation li.menu-down-icon > span.opened:before, body.responsive-layout header .main-navigation li.menu-right-icon > span.opened:before {
-        font-family: 'simple-line-icons';
+      font-family: 'Cairo', sans-serif;
         font-size: 7px;
         font-size: 0.4375rem;
     }
@@ -20482,6 +20491,9 @@ body.topbar-background.dark-color:not(.primary-color) .site-header-top .nav-menu
     body .countdown-time.style-4 .item span {
         font-size: 40px;
     }
+
+
+
 
     body .countdown-time.style-4 .item span.label {
         font-size: 13px;
