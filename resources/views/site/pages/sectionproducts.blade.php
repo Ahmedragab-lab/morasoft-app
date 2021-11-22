@@ -1,5 +1,6 @@
 @extends('site.layouts.master')
 
+
 @section('content')
 <div id="content-main-wrap" class="is-clearfix">
     <div id="content-area" class="site-content-area">
@@ -10,27 +11,20 @@
             <br>
             <div class="works works-shop isotope style-1 image-hover effect-10">
                 <p class="heading-title-top has-text-centered">welcome logistics</p>
-                <h1 class="heading-title style-3"> Our Popular
-                  <span class="has-text-primary">sections</span>
+                <h1 class="heading-title style-3"> Our Trending
+                  <span class="has-text-primary">Products</span>
                 </h1>
               <div class="columns is-variable is-4 is-multiline">
-               @foreach ( $allsections as $section )
+               @foreach ( $sectionitems->products as $product )
                     <div class="column is-4" data-aos="fade">
                         <div class="work-item">
                         <figure>
-                            <a href="{{route('front.show',$section->id)}}">
-                            <img alt="Joo - Niche Multi-Purpose HTML Template" src="{{ asset('uploads/section/'. $section->image) }}"> </a>
+                            <a href="">
+                            <img alt="Joo - Niche Multi-Purpose HTML Template" src="{{ asset('uploads/product/'. $product->image) }}"> </a>
                             <figcaption>
                             <ul class="social">
-                                {{-- <li>
-                                <a href="../pages/shop-product.html" target="_blank">
-                                    <span class="icon">
-                                    <i class="icon-basket"></i>
-                                    </span>
-                                </a>
-                                </li> --}}
                                 <li>
-                                <a href="{{route('front.show',$section->id)}}">
+                                <a href="{{ route('front.show',$product->id) }}">
                                     <span class="icon">
                                     <i class="icon-link"></i>
                                     </span>
@@ -41,10 +35,10 @@
                         </figure>
                         <div class="work-item-meta">
                             <h3>
-                            <a href="{{route('front.show',$section->id)}}">{{ $section->section_name }}</a>
+                            <a href="">{{ $product->product_name }}</a>
                             </h3>
                             <h5>
-                            {{-- <a href="#">{{ $product->selling_price }} LE</a> --}}
+                            <a href="#">{{ $product->selling_price }} LE</a>
                             </h5>
                             <div class="shop-rating">
                             <span class="icon">

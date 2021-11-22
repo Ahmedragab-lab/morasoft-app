@@ -15,8 +15,7 @@ class AllSections extends Controller
      */
     public function index()
     {
-        $allsections = section::all();
-        return view('site.pages.allsections',compact('allsections'));
+
     }
 
     /**
@@ -48,7 +47,8 @@ class AllSections extends Controller
      */
     public function show($id)
     {
-        //
+        $sectionitems = Section::find($id);
+        return view('site.pages.sectionproducts',compact('sectionitems'));
     }
 
     /**
