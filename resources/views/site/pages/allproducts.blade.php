@@ -110,27 +110,27 @@
         <br>
         <div class="blog-list style-2 columns is-variable is-4 is-multiline">
         <div class="owl-carousel owl-theme">
-            @foreach ( $cats as $cat)
+            @foreach ( $sections as $section)
                 <div class=" item" >
                     <article class="blog-post">
                     <figure class="post-image">
-                        <a href="{{ route('allproducts.show',$cat->id) }}">
-                        <img alt="Joo - Niche Multi-Purpose HTML Template" src="{{ asset('uploads/section/'. $cat->image) }}"> </a>
+                        <a href="{{ route('allsections.show',$section->id) }}">
+                        <img alt="no photo" src="{{ asset('uploads/section/'. $section->image) }}"> </a>
                     </figure>
                     <div class="entry-header">
                         <h2 class="entry-title">
-                        <a href="#">{{ $cat->cat_name}}</a>
+                        <a href="#">{{ $section->section_name}}</a>
                         </h2>
 
                     </div>
                     <!-- .entry-header -->
                     <div class="entry-content">
-                        <p>{{ $cat->desc }}</p>
+                        <p>{{ $section->desc }}</p>
 
                     </div>
                     <!-- .entry-content -->
                     <div class="entry-footer">
-                        <a href="#" class="button">More details</a>
+                        <a href="#" class="button">Go to Section products</a>
                     </div>
                     </article>
                     <!-- .blog-post -->

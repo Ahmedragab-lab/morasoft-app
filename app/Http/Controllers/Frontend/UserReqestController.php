@@ -72,4 +72,6 @@ class UserReqestController extends Controller
             return response()->json(['status'=>'Login to continue']);
         }
     }
+   // End ajax request from  my cart page delete item from cart ================================\\//
+
 }
