@@ -17,13 +17,12 @@ Route::group(
         Route::post('/addtocart', [Frontend\UserReqestController::class,'addtocart'])->name('addtocart');   // send request from product-details page by ajax
         Route::post('/sendrequest', [Frontend\UserReqestController::class,'sendrequest'])->name('sendrequest');   // send request from front home page by ajax
         Route::post('/servrequest', [Frontend\UserReqestController::class,'servrequest'])->name('servrequest');   // send request from service page by ajax
+        Route::post('/delete_item', [Frontend\UserReqestController::class,'delete_item'])->name('delete_item');   // send request from mycart page by ajax to delete item
 
         Route::resource('allservices',Frontend\Allservices::class); // go to all services page
-
         Route::resource('allproducts',Frontend\AllProducts::class); // go to all products page
+        Route::resource('allsections',Frontend\AllSections::class); // go to all Sections page
 
-        Route::resource('allproducts',Frontend\AllProducts::class);
-        
         // go to all products page
 //         Route::get('/reserveServ', function () {
 //             return view('site.pages.reserveServ');
