@@ -12,6 +12,7 @@ class SectionSeeder extends Seeder
     public function run()
     {
         DB::table('sections')->delete();
+
         $section = new section();
         $section->section_name = ['en'=>'Mobile','ar'=>'هواتف محموله'];
         $section->slug = 'mobile';
@@ -22,7 +23,7 @@ class SectionSeeder extends Seeder
         $section->save();
         $section = new section();
         $section->section_name = ['en'=>'computer','ar'=>'كمبيوتر'];
-        $section->slug = 'mobile';
+        $section->slug = 'computer';
         $section->image = 'default3.jpg';
         $section->desc = 'يوجد لدينا منتجات متعدده';
         $section->status = 1;

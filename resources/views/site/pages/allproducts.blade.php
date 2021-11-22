@@ -130,7 +130,7 @@
                     </div>
                     <!-- .entry-content -->
                     <div class="entry-footer">
-                        <a href="#" class="button">Go to Section products</a>
+                        <a href="{{ route('allsections.show',$section->id) }}" class="button">Go to Section products</a>
                     </div>
                     </article>
                     <!-- .blog-post -->
