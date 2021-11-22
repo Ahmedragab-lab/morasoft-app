@@ -23,42 +23,44 @@
         <div class="wrap-breadcrumb">
             <ul>
                 <li class="item-link"><a href="{{ route('front.index') }}" class="link">home</a></li>
-                <li class="item-link"><span>login</span></li>
+                <li class="item-link"> <a href="{{ route('allproducts.index')}}" class="link">All Product</a></li>
             </ul>
         </div>
         <div class=" main-content-area">
             <div class="wrap-iten-in-cart">
                 <h3 class="box-title">Products Name</h3>
                 <ul class="products-cart">
-                  @php $total = 0; @endphp
-                  @foreach ( $cartitems as $item)
-                    <li class="pr-cart-item">
-                        <input type="hidden" value="{{ $item->product_id }}" name="prod_id" class="prod_id_delete">
-                        <div class="product-image">
-                            <figure><img src="{{ asset('uploads/product/'.$item->product->image) }}" alt=""></figure>
-                        </div>
-                        <div class="product-name">
-                            <a class="link-to-product" href="#">{{ $item->product->product_name }}</a>
-                        </div>
-                        <div class="price-field produtc-price"><p class="price">{{ $item->product->selling_price }} LE</p></div>
-                        <div class="quantity">
-                            <div class="quantity-input">
-                                <input type="text" name="product-quatity" value="{{ $item->product_qty }}" data-max="120" pattern="[0-9]*" >
-                                <a class="btn btn-increase" href="#"></a>
-                                <a class="btn btn-reduce" href="#"></a>
+                {{-- ajax for  ==========================================  count total & ajax increment decrement counter ==--}}
+                    @php $total = 0; @endphp
+                    @foreach ( $cartitems as $item)
+                        <li class="pr-cart-item">
+                            <input type="hidden" value="{{ $item->product_id }}" name="prod_id" class="prod_id_delete">
+                            <div class="product-image">
+                                <figure><img src="{{ asset('uploads/product/'.$item->product->image) }}" alt=""></figure>
                             </div>
-                        </div>
-                        <div class="price-field sub-total"><p class="price">{{ $item->product->selling_price * $item->product_qty }} LE</p></div>
-                        {{-- ajax for delete ========================================== ajax============================================================--}}
-                        <div class="delete">
-                            <button href="#" class="btn btn-danger delete-item" title="delete" >
-                                <i class="fa fa-trash" ></i> Remove
-                            </button>
-                        </div>
-                        {{-- ajax for delete ==========================================ajax ============================================================--}}
-                    </li>
+                            <div class="product-name">
+                                <a class="link-to-product" href="#">{{ $item->product->product_name }}</a>
+                            </div>
+                            <div class="price-field produtc-price"><p class="price">{{ $item->product->selling_price }} LE</p></div>
+                            <div class="quantity">
+                                <div class="quantity-input">
+                                    <input type="text" name="product-quatity" value="{{ $item->product_qty }}" data-max="120" pattern="[0-9]*" >
+                                    <a class="btn btn-increase" href="#"></a>
+                                    <a class="btn btn-reduce" href="#"></a>
+                                </div>
+                            </div>
+                            <div class="price-field sub-total"><p class="price">{{ $item->product->selling_price * $item->product_qty }} LE</p></div>
+                            {{-- ajax for  ==========================================  count total & ajax increment decrement counter ==--}}
+                            {{-- ajax for delete ========================================== ajax============================================================--}}
+                            <div class="delete">
+                                <button href="#" class="btn btn-danger delete-item" title="delete" >
+                                    <i class="fa fa-trash" ></i> Remove
+                                </button>
+                            </div>
+                        </li>
                     @php $total += $item->product->selling_price * $item->product_qty ; @endphp
-                  @endforeach
+                    @endforeach
+                {{-- ajax for delete ==========================================ajax ============================================================--}}
                 </ul>
             </div>
             <div class="summary">
