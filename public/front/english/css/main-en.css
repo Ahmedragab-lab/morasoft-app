@@ -51,3 +51,12 @@ h2{
     font-size: 20px;
    font-weight: bold;
 }
+a:hover{
+    background-color: #4b505d;
+}
+a::after{
+    background-color: #4b505d;
+}
+fa-bell{
+    font-size: 20px !important;
+}

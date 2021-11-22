@@ -29,3 +29,8 @@ body.header-transparent header {
     background: #1d1c1c url(../images/page-title/services.png) no-repeat top center;
     background-size: cover;
 }
+
+a:hover{
+    background-color: #4b505d;
+    border-radius: 20px;
+}
