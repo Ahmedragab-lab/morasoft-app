@@ -50,6 +50,9 @@
                                     <a href="{{ route('allproducts.index')}}">{{ __('front.products') }}</a>
                                 </li>
                                 <li>
+                                    <a href="{{ route('allfeedback.index')}}">{{ __('front.feedback') }}</a>
+                                </li>
+                                <li>
                                     <a href="./blog/index.html">{{ __('front.contactus') }}</a>
                                 </li>
                                 @guest
