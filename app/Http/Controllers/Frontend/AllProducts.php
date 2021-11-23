@@ -11,12 +11,12 @@ class AllProducts extends Controller
 {
    public function index(){
     $products = Product::all();
-    $cats = section::all();
-    return view('site.pages.allproducts',compact('products','cats'));
+    $sections = section::all();
+    return view('site.pages.allproducts',compact('products','sections'));
    }
    public function show($id){
-    $catproducts = Section::find($id);
-    return view('site.pages.allcatproducts',compact('catproducts'));
+    $products = Section::find($id);
+    return view('site.pages.allproducts',compact('products'));
    }
    public function create()
     {
