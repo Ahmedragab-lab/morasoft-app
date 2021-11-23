@@ -73,5 +73,22 @@ class UserReqestController extends Controller
         }
     }
    // End ajax request from  my cart page delete item from cart ================================\\//
+   // update quantity from my cart page by ajax ================================\\//
+    public function update_qty(Request $request){
+        $product_id = $request->input('prod_id');
+        $product_qty = $request->input('prod_qty');
+        if(Auth::check()){
+            if(Cart::where('product_id',$product_id)->where('user_id',Auth::id())->exists()){
+                $cart = Cart::where('product_id',$product_id)->where('user_id',Auth::id())->first();
+                $cart->product_qty = $product_qty;
+                $cart->update();
+                return response()->json(['status'=>' Quantity updated successfully']);
+            }
+        }else{
+            return response()->json(['status'=>'Login to continue']);
+        }
+     }
+   // End update quantity from my cart page by ajax ================================\\//
+
 
 }
