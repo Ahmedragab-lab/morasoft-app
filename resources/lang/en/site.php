@@ -18,6 +18,7 @@ return [
    'permissions'=>'Permissions',
    'clients'=>'clients',
    'component'=>'Component',
+   'comp'=>'Companies',
    'clients'=>'clients',
    'categories'=>'Categories',
    'Products'=>'Products',
@@ -72,4 +73,24 @@ return [
 // user request page translation
 'orders'=>'Orders',
 // end request page translation
+
+
+
+// start Company page translation
+'CompNameAR'=> 'Company Name AR ',
+'CompNameEN'=> 'Company Name EN ',
+'CompDescription' => ' CompDescription ',
+'CompEmail' => 'Email',
+'CompPhone' => 'Phone',
+'CompAddress' => 'Address',
+'CompDetail' => 'Company Details',
+'CompAdd' => 'Add Company',
+'CompUpdate' => 'Company Update',
+
+
+
+
+// end Company page translation
+
+
 ];

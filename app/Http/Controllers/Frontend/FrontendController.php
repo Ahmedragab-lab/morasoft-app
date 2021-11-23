@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller;
 use App\Models\Agreement;
+use App\Models\Company;
 use App\Models\Event;
 use App\Models\Feedback;
 use App\Models\Service;
@@ -18,7 +19,7 @@ class FrontendController extends Controller
 
     public function index()
     {
-        
+
         $servs = Service::orderBy('id','DESC')->limit(4)->get();
         $products = Product::orderBy('id','DESC')->limit(4)->get();
         $services = Service::orderBy('id','DESC')->limit(3)->get();
@@ -27,7 +28,13 @@ class FrontendController extends Controller
         $events=Event::all()->last();
         $Last_service = Service::orderBy('id','DESC')->first();
         $Last_agreement=Agreement::orderBy('id','DESC')->first();
-        return view('/front',compact('servs','services','feedbacks','events','Last_service','Last_agreement','allservices','products'));
+        $Last_event=Event::orderBy('id','DESC')->first();
+        $Last_comp=Company::orderBy('id','DESC')->first();
+        $Last_product=Product::orderBy('id','DESC')->first();
+        $allevents = Event::orderBy('id','DESC')->get();
+
+
+        return view('/front',compact('servs','services','feedbacks','events','Last_service','Last_agreement','allservices','products','Last_comp','Last_product','Last_event'));
     }
 
     /**

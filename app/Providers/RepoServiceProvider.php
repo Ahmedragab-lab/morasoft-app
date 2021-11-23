@@ -15,6 +15,7 @@ class RepoServiceProvider extends ServiceProvider
     {
         $this->app->bind(Repo\UsersInterface::class, Repo\UsersRepo::class);
         $this->app->bind(Repo\ServicesInterface::class, Repo\ServicesRepo::class);
+        $this->app->bind(Repo\CompaniesInterface::class, Repo\CompaniesRepo::class);
     }
 
     /**

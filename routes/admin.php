@@ -25,6 +25,7 @@ Route::group(
         Route::resource('/events',Admin\EventController::class);
         Route::resource('/agreements',Admin\AgreementController::class);
         Route::resource('/orders',Admin\OrderController::class);
+        Route::resource('/companies',Admin\CompanyController::class);
     });
 
 require __DIR__ . '/auth.php';

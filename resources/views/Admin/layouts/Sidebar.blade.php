@@ -89,6 +89,15 @@
                     </a>
                 </li>
 
+                <li>
+                    <a href="{{ route('companies.index') }}" class="waves-effect">
+                        <i class="dripicons-home"></i>
+                        <span>{{ trans('site.comp') }}
+                            <span class="badge badge-success badge-pill float-right"></span>
+                        </span>
+                    </a>
+                </li>
+
                 </li>
 
                 <li>
