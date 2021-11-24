@@ -61,7 +61,7 @@
                                 @endguest
                                 @auth
                                     <li class="has-dropdown">
-                                        <a href="#"><img src={{ asset('uploads/user-img/'.Auth::user()->image) }} width="50" class="rounded-circle" > {{ \Str::limit(auth()->user()->name, 10) }}</a>
+                                        <a href="#"><img src={{ asset('uploads/user-img/'.Auth::user()->image) }} width="50" class="rounded-circle" > {{ \Str::limit(auth()->user()->fname, 10) }}</a>
                                         <ul class="dropdown">
                                             <li><a href="{{ route('profile')}}"><i class=" far fa-address-card"></i> Profile</a></li>
                                             <li><a href="#"><i class=" far fa-comment-dots"></i> my orders</a></li>

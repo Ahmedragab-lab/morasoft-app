@@ -27,14 +27,14 @@ Route::group(
         Route::resource('Last_event',Frontend\Allevents::class);// get last event
         Route::resource('allsections',Frontend\AllSections::class); // go to all Sections page
         Route::resource('allfeedback',Frontend\Allfeedback::class); // go to all feedback page
-        Route::resource('checkout',Frontend\CheckoutController::class); // go to checkout page to make order
         //Route::resource('userprofile',Frontend\Userprofile::class);
         Route::view('profile','site.pages.userprofile')->name('profile');
         Route::get('/reserveServ', function () {
-       return view('site.pages.reserveServ');
-       });
+            return view('site.pages.reserveServ');
+        });
         Route::middleware(['auth'])->group(function () {
-          Route::resource('mycart',Frontend\CartController::class); // go to my cart page
+            Route::resource('mycart',Frontend\CartController::class); // go to my cart page
+            Route::resource('checkout',Frontend\CheckoutController::class); // go to checkout page to make order
         });
 
         require __DIR__.'/auth.php';

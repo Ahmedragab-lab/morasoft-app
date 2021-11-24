@@ -15,11 +15,12 @@ class storedata extends FormRequest
     public function rules()
     {
         return [
-            'name' => ['required','min:3'],
+            'fname' => ['required','min:3'],
+            'lname' => ['required','min:3'],
             'email' => ['required'],
             'image' => 'image',
             'status' => 'required|in:active,unactive',
-            'password' => 'required|same:confirm-password',
+            // 'password' => 'required|same:confirm-password',
             // 'email' => ['required','email', Rule::unique('users')->ignore($this->user)],
             // 'password' => [
             //     $this->route()->user ? 'nullable':'required','confirmed','min:6'

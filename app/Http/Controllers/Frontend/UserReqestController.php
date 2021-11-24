@@ -77,12 +77,18 @@ class UserReqestController extends Controller
     public function update_qty(Request $request){
         $product_id = $request->input('prod_id');
         $product_qty = $request->input('prod_qty');
+        $prod_price = $request->input('prod_price');
+        // $product_tax = $request->input('cart_tax');
+        // $product_total = $request->input('cart_total');
         if(Auth::check())
         {
             if(Cart::where('product_id',$product_id)->where('user_id',Auth::id())->exists())
             {
                 $cart = Cart::where('product_id',$product_id)->where('user_id',Auth::id())->first();
                 $cart->product_qty = $product_qty;
+                $cart->product_price = $prod_price;
+                // $cart->tax = $product_tax;
+                // $cart->total = $product_total;
                 $cart->update();
                 return response()->json(['status'=>' Quantity updated successfully']);
             }
