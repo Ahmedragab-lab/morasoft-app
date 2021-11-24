@@ -123,9 +123,9 @@
                                                 <td><img src="{{ asset('uploads/product/'.$item->product->image) }}" alt="" width="50px"></td>
                                                 <td>{{ $item->product->product_name }}</td>
                                                 <td>{{ $item->product_qty }}</td>
-                                                <td>{{ $item->product->selling_price}}</td>
-                                                <td>{{ $item->sum}}</td>
-                                                <td>{{ $item->tax }}</td>
+                                                <td>{{ number_format($item->product->selling_price)}}</td>
+                                                <td>{{ number_format($item->sum)}}</td>
+                                                <td>{{ number_format($item->tax) }}</td>
                                             </tr>
                                             @php
                                                 $total_price += $item->sum;
@@ -145,9 +145,9 @@
                                         </thead>
                                         <tbody>
                                             <tr>
-                                               <td>{{ $total_price }}</td>
-                                               <td>{{ $total_tax }}</td>
-                                               <td>{{ $total_price+$total_tax  }}</td>
+                                               <td>{{ number_format($total_price) }} LE</td>
+                                               <td>{{ number_format($total_tax) }} LE</td>
+                                               <td>{{ number_format($total_price+$total_tax) }} LE</td>
                                             </tr>
                                         </tbody>
                                     </table>
