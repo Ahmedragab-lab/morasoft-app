@@ -18,7 +18,10 @@ class CreateOrderItemsTable extends Migration
             $table->foreignId('order_id')->references('id')->on('orders')->cascadeOnDelete();
             $table->foreignId('prod_id')->references('id')->on('products')->cascadeOnDelete();
             $table->tinyInteger('qty');
-            $table->double('price');
+            $table->double('price',2);
+            $table->double('priceqty',2);
+            $table->double('priceqtytax',2);
+            $table->double('total',2);
             $table->timestamps();
         });
     }
