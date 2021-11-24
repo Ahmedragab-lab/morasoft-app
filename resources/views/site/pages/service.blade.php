@@ -102,111 +102,117 @@
             </div>
           </div>
         </section>
-        <section class="section  is-clearfix">
-          <div class="container">
-            <div class="testimonials  owl-carousel dots carousel-items-  ">
-              <div class="testimonials-item">
-                <img alt="Joo - Niche Multi-Purpose HTML Template" src="../assets/images/testimonials/1.png">
-                <p>Any time we start something new it is exciting and we are very motivated and committed. As time goes by</p>
-                <h3>Christina & Sandro</h3>
-              </div>
-              <div class="testimonials-item">
-                <img alt="Joo - Niche Multi-Purpose HTML Template" src="../assets/images/testimonials/2.png">
-                <p>Any time we start something new it is exciting and we are very motivated and committed. As time goes by</p>
-                <h3>Christina & Sandro</h3>
-              </div>
-              <div class="testimonials-item">
-                <img alt="Joo - Niche Multi-Purpose HTML Template" src="../assets/images/testimonials/3.png">
-                <p>Any time we start something new it is exciting and we are very motivated and committed. As time goes by</p>
-                <h3>Christina & Sandro</h3>
-              </div>
+        <section id="testimonials" class="section testimonials-section has-background-primary-light is-clearfix">
+            <div class="container">
+                <p class="heading-title-top has-text-centered">آراء العملاء</p>
+                <h1 class="heading-title style-3">قالوا عنا</h1>
+                <div class="testimonials  owl-carousel dots carousel-items-3 columns-style-1 ">
+                    @foreach (\App\Models\Feedback::orderBy('id','DESC')->limit(3)->get() as $feedback)
+                        <div class="testimonials-item">
+                            <p>{{ $feedback->feedback }}</p>
+                            <img alt="no photo" src="{{ asset('uploads/user-img/' . $feedback->users->image) }}">
+                            <h3>{{ $feedback->users->name }}
+                                <br>
+                                <span>{{ $feedback->services->serve_name }} Services</span>
+                            </h3>
+                        </div>
+                    @endforeach
+                </div>
             </div>
-          </div>
         </section>
         <section id="quote" class="section quote-section padding-bottom-none is-clearfix">
             <div class="container">
-            <div class="columns is-variable is-2 is-multiline">
-                <div class="column is-6-desktop is-12-tablet" >
-                <h1 class="heading-title style-3 has-text-left"> طلب
-                    <span class="has-text-primary">عرض أسعار</span>
-                </h1>
-                <p class="heading-title-bottom">هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد النص العربى حيث يمكنك أن تولد.</p>
-                <!-- successful form message -->
-                <div class="overhang-message-content is-hidden success">
-                    <span class="icon">
-                    <i class="ion-md-notifications"></i>
-                    </span> شكرا جزيلا! لقد تم ارسال رسالتك بنجاح. </div>
-                <!-- error form message -->
-                <div class="overhang-message-content is-hidden error">
-                    <span class="icon">
-                    <i class="ion-md-notifications"></i>
-                    </span> ! حدث خطأ ما ، لم نتمكن من إرسال رسالتك. </div>
-                <!-- ajax contact form -->
-                <span class="success" style="color:green; margin-top:10px; margin-bottom: 10px;"></span>
-                <form accept-charset="UTF-8" class="ajax-contact-form" id="ajaxform" >
-                    {{-- @csrf --}}
-                    <div class="field is-horizontal">
-                    <div class="field-body">
-                        <div class="field">
-                        <div class="control is-expanded">
-                            <input class="input" type="text" name="name" placeholder="الإسم" required>
+                <div class="columns is-variable is-2 is-multiline">
+                    <div class="column is-6-desktop is-12-tablet">
+                        <h1 class="heading-title style-3 has-text-left"> request a
+                            <span class="has-text-primary">quote</span>
+                        </h1>
+                        <p class="heading-title-bottom">Lorem ipsum dolor sit amet, consectetur adipiscing elit Nulla
+                            chronocrator accumsan, metus ultrices eleifend gravi.</p>
+                        <!-- successful form message -->
+                        <div class="overhang-message-content is-hidden success">
+                            <span class="icon">
+                                <i class="ion-md-notifications"></i>
+                            </span> Thank You! Your message was sent successfully.
                         </div>
+                        <!-- error form message -->
+                        <div class="overhang-message-content is-hidden error">
+                            <span class="icon">
+                                <i class="ion-md-notifications"></i>
+                            </span> Oops! Something went wrong, we couldn't send your message.
                         </div>
-                        <!-- .field -->
-                        <div class="field">
-                        <div class="control is-expanded">
-                            <input class="input" type="email" name="email" placeholder="الإيميل" required>
-                        </div>
-                        </div>
-                        <!-- .field -->
+                        <!-- ajax contact form -->
+                        <form accept-charset="UTF-8" class="ajax-contact-form"
+                            action="https://usebasin.com/f/3587049dbc33.json" method="POST">
+                            <div class="field is-horizontal">
+                                <div class="field-body">
+                                    <div class="field">
+                                        <div class="control is-expanded">
+                                          <div class="select">
+                                            <select>
+                                              <option>Air Freight</option>
+                                              <option>Land Transport</option>
+                                              <option>Ocean Freight</option>
+                                              <option>Warehousing</option>
+                                            </select>
+                                          </div>
+                                        </div>
+                                    </div>
+                                    <div class="field">
+                                        <div class="control is-expanded">
+                                          <div class="select">
+                                            <select>
+                                              <option>Air Freight</option>
+                                              <option>Land Transport</option>
+                                              <option>Ocean Freight</option>
+                                              <option>Warehousing</option>
+                                            </select>
+                                          </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="field is-horizontal">
+                                <div class="field-body">
+                                    <div class="field">
+                                        <div class="control is-expanded">
+                                            <input type="hidden"  value="{{ $service->id }}" name="serv_id">
+                                            <input type="text" readonly value="{{ $service->serve_name }}">
+                                            {{-- <div class="select" name="serv_id"> --}}
+                                            {{-- <select>
+                                                <option readonly >--Chosse Your Services--</option>
+                                                @foreach ($allservices as $serv )
+                                                <option value="{{ $serv->id }}">{{ $serv->serve_name }}</option>
+                                                @endforeach
+                                            </select> --}}
+                                            {{-- </div> --}}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="field ">
+                                <div class="control is-expanded">
+                                    <textarea class="textarea" name="textarea" placeholder="Message"
+                                        required=""></textarea>
+                                </div>
+                            </div>
+                            <div class="field ">
+                                <div class="control">
+                                    <button class="button" type="submit"> ارسل طلبك <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-send-fill" viewBox="0 0 16 16">
+                                        <path fill-rule="evenodd" d="M15.964.686a.5.5 0 0 0-.65-.65L.767 5.855H.766l-.452.18a.5.5 0 0 0-.082.887l.41.26.001.002 4.995 3.178 3.178 4.995.002.002.26.41a.5.5 0 0 0 .886-.083l6-15Zm-1.833 1.89.471-1.178-1.178.471L5.93 9.363l.338.215a.5.5 0 0 1 .154.154l.215.338 7.494-7.494Z"/>
+                                      </svg>  </button>
+                                </div>
+                            </div>
+                        </form>
                     </div>
-                    <!-- .field-body -->
+                    <div class="column is-6-desktop is-12-tablet" data-aos-delay="600">
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <img alt="Joo - Niche Multi-Purpose HTML Template" src="{{ asset('front/images/global/man.png') }}">
                     </div>
-                    <div class="field is-horizontal">
-                    <div class="field-body">
-                        <div class="field">
-                        <div class="control is-expanded">
-                            <input class="input" type="text" name="subject" placeholder="العنوان" required>
-                        </div>
-                        </div>
-                        <!-- .field -->
-                        <div class="field">
-                        <div class="control is-expanded">
-                            <input type="hidden"  value="{{ $service->id }}" name="serv_id">
-                            <input type="text" readonly value="{{ $service->serve_name }}">
-                            {{-- <div class="select" name="serv_id"> --}}
-                            {{-- <select>
-                                <option readonly >--Chosse Your Services--</option>
-                                @foreach ($allservices as $serv )
-                                <option value="{{ $serv->id }}">{{ $serv->serve_name }}</option>
-                                @endforeach
-                            </select> --}}
-                            {{-- </div> --}}
-                        </div>
-                        <!-- .field -->
-                        </div>
-                        <!-- .field-body -->
-                    </div>
-                    </div>
-                    <div class="field ">
-                    <div class="control is-expanded">
-                        <textarea class="textarea" name="sms" placeholder="رسالتك" required></textarea>
-                    </div>
-                    </div>
-                    <div class="field ">
-                    <div class="control">
-                        <button class="button save-data" id="send-data" type="submit">Order Now</button>
-                    </div>
-                    </div>
-                </form>
                 </div>
-                <div class="column is-6-desktop is-12-tablet"  data-aos-delay="600">
-                <br>
-                <br>
-                <br>
-                <br>
-                <img alt="Joo - Niche Multi-Purpose HTML Template" src="{{ asset('front/images/global/man.png') }}"> </div>
-            </div>
             </div>
         </section>
       </div>
