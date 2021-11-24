@@ -5,7 +5,7 @@
     <div class="col-lg-12">
         <div class="card m-b-30">
             <div class="card-body">
-                <h4 class="mt-0 header-title">{{ __('site.order') }}</h4>
+                <h4 class="mt-0 header-title">{{ __('site.orderdetails') }}</h4>
                 <div class="table-responsive">
                     <table class="table table-striped mb-0">
                         <thead>
