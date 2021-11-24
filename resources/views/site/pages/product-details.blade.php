@@ -55,22 +55,27 @@
                 <p> {!! $product->desc !!}</p>
                 <br>
                 <div class="columns is-multiline is-variable is-2">
-                  <div class="column is-2">
-                    <div class="field">
-                        {{-- ==========/////////////////////////////////============================= --}}
-                        {{-- ==========/////////////////////////////////============================= --}}
-                        <div class="control quantity-input">
-                            <input type="hidden" value="{{ $product->id }}" class="prod_id" name="prod_id">
-                            <input class="input has-text-centered qty_input " type="number" min="1" value="1" name="prod_qty" data-max="120" pattern="[0-9]*">
+                    {{-- ==========/////////////////////////////////============================= --}}
+                    {{-- ==========////////////////////////ajaxxxxxxxxx/////////============================= --}}
+                    @if($product->qty >0)
+                    <div class="column is-2">
+                        <div class="field">
+                            <div class="control quantity-input">
+                                <input type="hidden" value="{{ $product->id }}" class="prod_id" name="prod_id">
+                                <input class="input has-text-centered qty_input " type="number" min="1" value="1" name="prod_qty" data-max="120" pattern="[0-9]*">
+                            </div>
                         </div>
-
                     </div>
-                  </div>
-                  <div class="column is-10">
-                    <button  class="button addtocartbtn"><i class="icon-basket mr-2"></i>&nbsp; add to cart</button>
-                  </div>
+                    <div class="column is-10">
+                        <button  class="button addtocartbtn" ><i class="icon-basket mr-2"></i>&nbsp; add to cart</button>
+                    </div>
+                    @else
+                    <div class="column is-10">
+                        <button  class="button addtocartbtn" disabled ><i class="icon-basket mr-2"></i>&nbsp; add to cart</button>
+                    </div>
+                    @endif
                   {{-- ==========/////////////////////////////////============================= --}}
-                  {{-- ==========/////////////////////////////////============================= --}}
+                  {{-- ==========////////////////////ajaxxxxxxxxxxxxx/////////////============================= --}}
                   <div class="column is-10">
                       @if($product->qty >0)
                         <label class="badge bg-success">In Stock</label>
