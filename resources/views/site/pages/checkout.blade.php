@@ -101,6 +101,11 @@
                                 <div class="column is-10">
                                     <h1 class="heading-title style-1">Order Details</h1>
                                     <br>
+                                    @php
+                                      $total_price = 0;
+                                      $total_tax = 0;
+                                      $total = 0;
+                                    @endphp
                                     <table class="table is-fullwidth is-hoverable">
                                         <thead>
                                         <tr>
@@ -108,6 +113,8 @@
                                             <th>Name</th>
                                             <th>Qty</th>
                                             <th>Price</th>
+                                            <th>Total Price</th>
+                                            <th>Tax (14%)</th>
                                         </tr>
                                         </thead>
                                         <tbody>
@@ -117,8 +124,31 @@
                                                 <td>{{ $item->product->product_name }}</td>
                                                 <td>{{ $item->product_qty }}</td>
                                                 <td>{{ $item->product->selling_price}}</td>
+                                                <td>{{ $item->sum}}</td>
+                                                <td>{{ $item->tax }}</td>
                                             </tr>
+                                            @php
+                                                $total_price += $item->sum;
+                                                $total_tax += $item->tax;
+                                                $total += $item->product->selling_price;
+                                            @endphp
                                             @endforeach
+                                        </tbody>
+                                    </table>
+                                    <table class="table is-fullwidth is-hoverable">
+                                        <thead>
+                                        <tr>
+                                            <th>total price</th>
+                                            <th>total tax</th>
+                                            <th>total </th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                               <td>{{ $total_price }}</td>
+                                               <td>{{ $total_tax }}</td>
+                                               <td>{{ $total_price+$total_tax  }}</td>
+                                            </tr>
                                         </tbody>
                                     </table>
                                     <button type="submit" class="btn btn-warning float-end">Order Now</button>
