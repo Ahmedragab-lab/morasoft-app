@@ -34,18 +34,18 @@ class CheckoutController extends Controller
 
     public function store(Request $request)
     {
-        // DB::beginTransaction();
+        DB::beginTransaction();
 
-        // try
-        // {
+        try
+        {
             // $users = User::get();
             // foreach ($users as $user) {
             //     $ids[] = $user->id;
             // }
             // if(Order::whereNotIn('order_id',$ids )){
                 // $order = Order::whereNotIn('order_id',$ids )->get();
-                $order = Order::where('order_id',Auth::id() )->exists();
-                // $order = new Order();
+                // $order = Order::where('order_id',Auth::id() )->exists();
+                $order = new Order();
                 $order->order_id = Auth::id();
                 $order->fname = $request->fname;
                 $order->lname = $request->lname;
@@ -65,6 +65,9 @@ class CheckoutController extends Controller
                     'prod_id'=> $item->product_id,
                     'qty'=> $item->product_qty,
                     'price'=> $item->product->selling_price,
+                    'priceqty'=>$item->sum,
+                    'priceqtytax'=>$item->tax,
+                    'total'=>$item->sum + $item->tax,
                 ]);
                 $product = Product::where('id',$item->product_id)->first();
                 $product->qty = $product->qty - $item->product_qty;
@@ -84,12 +87,12 @@ class CheckoutController extends Controller
             }
             $cartitems= Cart::where('user_id',Auth::id())->get();
             Cart::destroy($cartitems);
-            // DB::commit();
+            DB::commit();
             return redirect('/mycart')->with('status',"your order done ");
-        // } catch (\Exception $e) {
-            // DB::rollback();
-            // return redirect()->back()->withErrors(['error' => $e->getMessage()]);
-        // }
+        } catch (\Exception $e) {
+            DB::rollback();
+            return redirect()->back()->withErrors(['error' => $e->getMessage()]);
+        }
 
     }
 

@@ -118,6 +118,14 @@
                     </a>
                 </li>
                 <li>
+                    <a href="{{ route('cartitems.index') }}" class="waves-effect">
+                        <i class="far fa-comment-dots"></i>
+                        <span>{{ trans('site.cartorder') }}
+                            <span class="badge badge-success badge-pill float-right"></span>
+                        </span>
+                    </a>
+                </li>
+                <li>
                     <a href="{{ route('orders.index') }}" class="waves-effect">
                         <i class="far fa-comment-dots"></i>
                         <span>{{ trans('site.orders') }}
