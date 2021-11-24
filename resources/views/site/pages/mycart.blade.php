@@ -151,7 +151,6 @@
                     value++ ;
                     // $('.qty-input').val(value);
                     var inc = $(this).closest('.product_data').find('.qty-input').val(value);
-
                 }
             });
             $('.decrement').click(function(e){
@@ -163,7 +162,6 @@
                     value-- ;
                     var inc = $(this).closest('.product_data').find('.qty-input').val(value);
                 }
-
             });
             $('.delete-item').click(function(e){
                 e.preventDefault();
