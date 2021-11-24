@@ -120,7 +120,7 @@
                 <li>
                     <a href="{{ route('cartitems.index') }}" class="waves-effect">
                         <i class="far fa-comment-dots"></i>
-                        <span>{{ trans('site.cartorder') }}
+                        <span>{{ trans('site.orderdetails') }}
                             <span class="badge badge-success badge-pill float-right"></span>
                         </span>
                     </a>
