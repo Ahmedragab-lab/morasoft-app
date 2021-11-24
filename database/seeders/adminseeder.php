@@ -42,7 +42,7 @@ class adminseeder extends Seeder
                   'image' => 'default2.jpg',
                 'phone' => '01021493036',
                 'address' => 'Phalastin Gaza',
-                'image'=>'default.jpg',
+                'image'=>'Dina.jpg',
             ],
              [
                 'name' => 'Asmaa',

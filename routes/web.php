@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Frontend\UserprofileController;
 use Illuminate\Support\Facades\Route;
 use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 use App\Http\Controllers\Frontend;
@@ -29,7 +30,8 @@ Route::group(
         Route::resource('allfeedback',Frontend\Allfeedback::class); // go to all feedback page
         Route::resource('checkout',Frontend\CheckoutController::class); // go to checkout page to make order
         //Route::resource('userprofile',Frontend\Userprofile::class);
-        Route::view('profile','site.pages.userprofile')->name('profile');
+        //Route::view('profile','site.pages.userprofile')->name('profile');
+        Route::resource('userprofile',UserprofileController::class);
         Route::get('/reserveServ', function () {
        return view('site.pages.reserveServ');
        });
