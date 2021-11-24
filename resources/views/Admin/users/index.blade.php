@@ -14,12 +14,16 @@
                         <thead>
                             <tr>
                                 <th>#</th>
-                                <th>{{ __('site.name') }}</th>
+                                <th>{{ __('site.fname') }}</th>
+                                <th>{{ __('site.lname') }}</th>
                                 <th>{{ __('site.email') }}</th>
                                 <th>{{ __('site.image') }}</th>
                                 <th>{{ __('site.status') }}</th>
                                 <th>{{ __('site.phone') }}</th>
-                                <th>{{ __('site.address') }}</th>
+                                <th>{{ __('site.address1') }}</th>
+                                <th>{{ __('site.address2') }}</th>
+                                <th>{{ __('site.city') }}</th>
+                                <th>{{ __('site.country') }}</th>
                                 <th>{{ __('site.action') }}</th>
                             </tr>
                         </thead>
@@ -27,7 +31,8 @@
                             @foreach ( $users as $index=>$user )
                             <tr>
                                 <th scope="row">{{ $index +1 }}</th>
-                                <td>{{ $user->name }}</td>
+                                <td>{{ $user->fname }}</td>
+                                <td>{{ $user->lname }}</td>
                                 <td>{{ $user->email }}</td>
                                 <td>
                                     <img src="{{ asset('uploads/user-img/'.$user->image) }}" class="img-thumbnail" width="70" alt="">
@@ -40,7 +45,10 @@
                                     @endif
                                 </td>
                                 <td>{{ $user->phone }}</td>
-                                <td>{{ $user->address }}</td>
+                                <td>{{ $user->address1 }}</td>
+                                <td>{{ $user->address2 }}</td>
+                                <td>{{ $user->city }}</td>
+                                <td>{{ $user->country }}</td>
                                 <td>
                                     <form action="{{ route('users.destroy', $user->id) }}" method="post">
                                         @csrf
