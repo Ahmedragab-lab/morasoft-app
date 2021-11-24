@@ -33,7 +33,9 @@
                                     <a href="{{ route('allproducts.index')}}">{{ __('front.products') }}</a>
                                 </li>
                                 <li>
-                                    <a href="./blog/index.html">{{ __('front.contactus') }}</a>
+                                    {{-- <form action ={{url('/contact')}} method = "post" class="form_horezintal"> --}}
+                                    <a href="{{ route('contact.index')}}">{{ __('front.contactus') }}</a>
+
                                 </li>
 
                                 @guest

@@ -8,5 +8,7 @@ interface ServicesInterface{
     public function edit($id);
     public function update($request,$id);
     public function destroy($id);
+    // public function show_last($id);
+
     // public function show($id);
 }

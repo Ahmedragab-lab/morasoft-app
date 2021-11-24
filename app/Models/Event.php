@@ -10,12 +10,13 @@ class Event extends Model
 {
     use HasFactory;
     use HasTranslations;
-    
+
     public $translatable = ['event_title'];
     protected $fillable = [
 
         'event_title',
         'desc',
+        'limit',
         'status',
         'updated_at',
          'created_at'

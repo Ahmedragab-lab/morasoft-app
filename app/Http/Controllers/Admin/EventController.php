@@ -39,8 +39,8 @@ class EventController extends Controller
      *
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
-     * 
-     * 
+     *
+     *
      */
     public function store(StoreEvent $request )
     {
@@ -56,6 +56,7 @@ class EventController extends Controller
             }
             $event->event_title = ['en'=>$request->event_title_en ,'ar'=>$request->event_title];
             $event->desc = $request->desc;
+            $event->limit = $request->limit;
             $event->status = $request->status==true?'1':'0';
             $event->save();
             toastr()->success(__('events create successfully'));
@@ -98,7 +99,7 @@ class EventController extends Controller
      */
     public function update(StoreEvent $request, $id)
     {
-        
+
         try{
             $validated = $request->validated();
             $event = Event::find($id);
@@ -115,6 +116,7 @@ class EventController extends Controller
             }
             $event->event_title = ['en'=>$request->event_title_en ,'ar'=>$request->event_title];
             $event->desc = $request->desc;
+            $event->limit = $request->limit;
             $event->status = $request->status==true?'1':'0';
             $event->update();
             toastr()->success(__('Event update successfully'));

@@ -364,9 +364,8 @@
         </div>
         </div>
     </section>
-                {{-- ********** Start News ************ --}}
 
-
+                {{-- ********** Start Events ************ --}}
 
 
     <section id="news" class="section news-section is-clearfix">
@@ -374,12 +373,14 @@
         <div class="blog-list style-2 columns is-variable is-4 is-multiline">
             <div class="column is-4" >
                 <div class="blog-post-heading">
-                <p class="heading-title-top">أخر الاتفاقيات</p>
+                <p class="heading-title-top">أخر الاخبار</p>
                 <h1 class="heading-title style-3 has-text-left">
-                <span class="has-text-primary">{{ $Last_agreement->agreement_title }}</span>
+                    <img alt="Joo - Niche Multi-Purpose HTML Template" src="{{ asset('uploads/event/'.$Last_event->image) }}">
+
+                <span class="has-text-primary">{{ $Last_event->event_title }}</span>
                 </h1>
-                <p>{{ $Last_agreement->desc }}</p>
-                <a href="{{ route('Last_event.show',$Last_agreement->id) }}" class="button">إقرأ المزيد
+                <p>{{ $Last_event->limit }}</p>
+                <a href="{{ route('Last_event.show',$Last_event->id) }}" class="button">إقرأ المزيد
                 <span class="icon">
                      {{-- href="{{route('front.show',$product->id)}}" --}}
                     <i class="ion-ios-arrow-round-forward"></i>
@@ -388,59 +389,90 @@
              </div>
             <!-- .blog-post -->
             </div>
+
+        {{-- ********** End Events ************ --}}
+
+          {{-- ********** Start Service ************ --}}
+
+
             <div class="column is-4" >
                 <article class="blog-post">
                     <figure class="post-image">
-                    <a href="./blog/single.html">
-                        <img alt="Joo - Niche Multi-Purpose HTML Template" src="{{ asset('uploads/event/'.$Last_event->image) }}">
+                        <p class="heading-title-top">أخر الخدمات</p>
+                    {{-- <a href="./blog/single.html"> --}}
+                        <img alt="Joo - Niche Multi-Purpose HTML Template" src="{{ asset('uploads/serv/'.$Last_service->image) }}">
                     </figure>
                     <div class="entry-header">
                     <div class="post-meta">
                         <ul>
                         <li>
-                            <a href="#">
-                            <span>أبريل 5 ، 2018</span>
-                            </a>
+                            {{-- <a href="#"> <span>أبريل 5 ، 2018</span>  </a> --}}
                         </li>
                         </ul>
                     </div>
+                    <span class="has-text-primary">{{ $Last_service->serve_name }}</span>
                     <h2 class="entry-title">
                         {{-- <a href="./blog/single.html">{{ $Last_event->event_title }}</a> --}}
-                        <a href="{{ route('Last_event.show',$Last_event->id) }}">{{ $Last_event->event_title }}</a>
-
+                        {{-- <a href="{{ route('Last_service.show_last',$Last_service->id) }}">{{ $Last_service->serve_name }}</a> --}}
+                        {{-- <a href="{{ route('allservices.show',$Last_service->id) }}" class="button">إقرأ المزيد --}}
                     </h2>
-                    <p>{{ $Last_event->desc }}</p>
+                    <p>{{ $Last_service->desc }}</p>
                     </div>
                     <div class="entry-footer">
-                    <a href="{{ route('Last_event.show',$Last_event->id) }}" class="button"> </a>
+                        {{-- <a href="{{ route('allservices.showlast',$Last_service->id) }}" class="button">إقرأ المزيد
+                            <span class="icon">
+
+                                <i class="ion-ios-arrow-round-forward"></i>
+                            </span>
+                        </a> --}}
+
+                    <a href="{{ route('lastservice.showlast',$Last_service->id) }}" class="button"> إقرأ المزيد </a>
+
+
+                    {{-- <a href="" class="button"> إقرأ المزيد </a> --}}
                     </div>
                 </article>
 
-                 {{-- ********** End News ************ --}}
+
+
             <!-- .blog-post -->
             </div>
+                            {{-- ********** End Service ************ --}}
+
             <div class="column is-4" >
             <article class="blog-post">
                 <figure class="post-image">
+                    <p class="heading-title-top">أخر الاتفاقيات</p>
                 <a href="./blog/single.html">
-                    <img alt="Joo - Niche Multi-Purpose HTML Template" src="{{ asset('front/images/blog/5.png') }}"> </a>
+                    <img alt="Joo - Niche Multi-Purpose HTML Template" src="{{ asset('uploads/agreement/'.$Last_agreement->image) }}"> </a>
                 </figure>
                 <div class="entry-header">
                 <div class="post-meta">
                     <ul>
                     <li>
                         <a href="#">
-                        <span>أبريل 5 ، 2018</span>
+                        {{-- <span>أبريل 5 ، 2018</span> --}}
                         </a>
                     </li>
                     </ul>
                 </div>
                 <h2 class="entry-title">
-                    <a href="./blog/single.html">كمية كبيرة للنقل الجوى المستمر</a>
+                    {{-- <a href="./blog/single.html">{{ $Last_agreement->agreement_title }}</a> --}}
+
                 </h2>
+                <span class="has-text-primary">{{ $Last_agreement->agreement_title }}</span>
+
+                {{-- <h2 class="entry-title">
+                    <a href="./blog/single.html">{{ $Last_agreement->desc }}</a>
+                </h2> --}}
+                <p>{{ $Last_agreement->desc }}</p>
+
                 </div>
                 <div class="entry-footer">
-                <a href="./blog/single.html" class="button">اقرأ المزيد</a>
+                {{-- <a href="./blog/single.html" class="button">اقرأ المزيد</a> --}}
+
+                <a href="{{ route('Last_agrement.show',$Last_agreement->id) }}" class="button">اقرأ المزيد</a>
+
                 </div>
             </article>
             <!-- .blog-post -->
@@ -448,6 +480,10 @@
         </div>
         </div>
     </section>
+
+
+
+
 
     {{-- start client feedback --}}
     <section id="testimonials" class="section testimonials-section has-background-primary-light is-clearfix">
@@ -556,6 +592,7 @@
     </section>
 @endsection
 @section('js')
+
 <script type="text/javascript">
     $.ajaxSetup({
         headers: {
@@ -592,6 +629,54 @@
            console.log(error);
           }
          });
+
     });
   </script>
+
+{{-- *************************بداية JS************************** --}}
+
+<script type="text/javascript">
+    $.ajaxSetup({
+        headers: {
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        }
+        });
+    $(".save-data").click(function(event){
+        event.preventDefault();
+        // let name = $("input[name=name]").val();
+        // let email = $("input[name=email]").val();
+        // let subject = $("input[name=subject]").val();
+        // let user_id = $("select[name=user_id]").val();
+        let serv_id = $("select[name=serv_id]").val();
+      //  let sms = $("textarea[name=sms]").val();
+        console.log(serv_id);
+        $.ajax({
+          method:"POST",
+          url: "/showlast",
+          data:{
+            // name:name,
+            // email:email,
+            // subject:subject,
+            // user_id:user_id,
+            serv_id:serv_id,
+       //     sms:sms,
+          },
+          success:function(response){
+            if(response) {
+            swal(response.status);
+              $("#ajaxform")[0].reset();
+            }
+          },
+          error: function(error) {
+           console.log(error);
+          }
+         });
+
+    });
+  </script>
+
+{{-- *************************نهاية JS************************** --}}
+
+
+
 @endsection

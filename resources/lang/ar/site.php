@@ -35,6 +35,7 @@ return [
 'Add_Service'=>'اضف خدمه',
 'Service_name'=>'اسم الخدمه',
 'event_title'=>'عنوان الخبر',
+'event_limit'=>'مختصر الخبر',
 'description'=>'الوصف',
 'status'=>'الحاله',
 'image'=>' صوره',

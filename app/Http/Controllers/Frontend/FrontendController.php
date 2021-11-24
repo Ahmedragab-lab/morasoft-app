@@ -31,7 +31,7 @@ class FrontendController extends Controller
         $Last_event=Event::orderBy('id','DESC')->first();
         $Last_comp=Company::orderBy('id','DESC')->first();
         $Last_product=Product::orderBy('id','DESC')->first();
-        $allevents = Event::orderBy('id','DESC')->get();
+        // $allevents = Event::orderBy('id','DESC')->get();
 
 
         return view('/front',compact('servs','services','feedbacks','events','Last_service','Last_agreement','allservices','products','Last_comp','Last_product','Last_event'));
