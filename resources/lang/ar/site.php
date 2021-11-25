@@ -97,4 +97,21 @@ return [
 // end Company page translation
 
 
+// cartorder page==================================================================
+
+'orderdetails' => 'تفاصيل الطلب',
+'tracking_no' => 'رقم الطلب',
+'userfname' => 'الاسم الاول',
+'userlname' => 'اسم العائله',
+'useremail' => 'الايميل',
+'address1' => 'عنوان1',
+'address2' => 'عنوان2',
+'city' => 'المدينه',
+'country' => 'البلد',
+'productname' => 'اسم المنتج',
+'productprice' => 'سعر المنتج',
+'sumprice' => 'سعر الكميه',
+'sumtax' => 'ضريبه',
+'total' => 'الاجمالى',
+// End cartorder page===============================================================
 ];

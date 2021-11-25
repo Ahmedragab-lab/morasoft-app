@@ -18,40 +18,23 @@ class ServiceSeeder extends Seeder
         DB::table('services')->delete();
         $serv = new Service();
         $serv->serve_name = ['en'=>'warehousing','ar'=>'نقل برى'];
-        $serv->image = 'default_1.jpg';
+        $serv->image = '1.jpg';
         $serv->desc = 'يوجد لدينا خدمات متعدده';
         $serv->status = 1;
         $serv->save();
         $serv = new Service();
         $serv->serve_name = ['en'=>'Air Freight','ar'=>'نقل جوى'];
-        $serv->image = 'default_2.jpg';
+        $serv->image = '2.jpg';
         $serv->desc = 'we have multi services';
         $serv->status = 1;
         $serv->save();
         $serv = new Service();
         $serv->serve_name = ['en'=>'Ocean Freight','ar'=>'نقل بحرى'];
-        $serv->image = 'default_3.jpeg';
+        $serv->image = '3.jpeg';
         $serv->desc = 'we make best offers for you';
         $serv->status = 1;
         $serv->save();
-        $serv = new Service();
-        $serv->serve_name = ['en'=>'warehousing','ar'=>'نقل برى'];
-        $serv->image = 'default_2.jpg';
-        $serv->desc = 'يوجد لدينا خدمات متعدده';
-        $serv->status = 1;
-        $serv->save();
-        $serv = new Service();
-        $serv->serve_name = ['en'=>'Air Freight','ar'=>'نقل جوى'];
-        $serv->image = 'default_4.jpg';
-        $serv->desc = 'we have multi services';
-        $serv->status = 1;
-        $serv->save();
-        $serv = new Service();
-        $serv->serve_name = ['en'=>'Ocean Freight','ar'=>'نقل بحرى'];
-        $serv->image = 'default_1.jpg';
-        $serv->desc = 'we make best offers for you';
-        $serv->status = 1;
-        $serv->save();
+       
         // $services = [
         //     ['en'=> 'xxxxxxxxxxx', 'ar'=> 'نقل برى','default.jpg','desc1',1],
         //     ['en'=> 'ccccccccccccc', 'ar'=> 'نقل جوى','default.jpg','desc1',1],

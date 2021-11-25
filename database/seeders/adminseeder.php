@@ -27,32 +27,42 @@ class adminseeder extends Seeder
         DB::table('users')->delete();
         DB::table('users')->insert([
             [
-                'name' => 'ahmed',
+                'fname' => 'ahmed',
+                'lname' => 'ragab',
                 'email' => 'ahmed@gmail.com',
                 'password' => bcrypt('258258258'),
-                'image' => 'default.jpg',
                 'phone' => '01021493036',
-                'address' => 'Egypt cairo',
+                'address1' => 'Cairo',
+                'address2' => 'Hurghada',
+                'city' => 'Cairo',
+                'country' => 'Egypt',
                 'image'=>'wolf.jpg',
             ],
+
+           
+
             [
                 'name' => 'dina',
+                'lname' => 'salem',
                 'email' => 'dina@gmail.com',
                 'password' => bcrypt('123456'),
-                  'image' => 'default2.jpg',
                 'phone' => '01021493036',
-                'address' => 'Phalastin Gaza',
-                'image'=>'Dina.jpg',
-            ],
-             [
-                'name' => 'Asmaa',
-                'email' => 'asmaahosnyaly@gmail.com',
-                'password' => bcrypt('123456'),
-                'image' => 'default3.jpg',
-                'phone' => '01021493036',
-                'address' => 'Egypt alex',
+                'address1' => 'palestine',
+                'address2' => 'gaza',
+                'city' => 'Gaza',
+                'country' => 'palestine',
                 'image'=>'default.jpg',
             ],
+            //  [
+            //     'name' => 'Asmaa',
+            //     'email' => 'asmaahosnyaly@gmail.com',
+            //     'password' => bcrypt('123456'),
+            //     'image' => 'default3.jpg',
+            //     'phone' => '01021493036',
+            //     'address' => 'Egypt alex',
+            //     'image'=>'default.jpg',
+            // ],
+
             // 'admin'    =>'0',
         ]);
     }
