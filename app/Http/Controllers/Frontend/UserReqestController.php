@@ -13,17 +13,22 @@ use Illuminate\Support\Facades\Auth;
 class UserReqestController extends Controller
 {
     public function sendrequest(Request $request){
+         $from = $request->input('from');
+         $to = $request->input('to');
          $service_id = $request->input('serv_id');
+         $sms = $request->input('sms');
         if(Auth::check()){
             $serv_check = Service::where('id',$service_id);
             if($serv_check){
                 $req = new UserReqest();
-                $req->name =auth()->user()->name;
+                $req->name =auth()->user()->fname;
                 $req->email = auth()->user()->email;
-                $req->address = auth()->user()->address;
+                $req->address = auth()->user()->address1;
+                $req->from =  $from;
+                $req->to = $to;
                 $req->user_id = Auth::id();
-                $req->service_id = $request->input('serv_id');
-                $req->sms = $request->input('sms');
+                $req->service_id = $service_id;
+                $req->sms = $sms;
                 $req->save();
                 return response()->json(['status'=>$req->name . ' request submitted successfully']);
 

@@ -23,6 +23,7 @@ class DatabaseSeeder extends Seeder
         $this->call(EventSeeder::class);
         $this->call(AgreementSeeder::class);
         $this->call(CompaniesTableSeeder::class);
+        $this->call(CountryTableSeeder::class);
 
         // $users = User::factory()->create();
 
