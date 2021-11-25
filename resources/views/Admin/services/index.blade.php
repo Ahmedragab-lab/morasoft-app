@@ -10,7 +10,7 @@
                     <a href="{{ route('services.create') }}"  class="btn btn-primary btn-block"><i class="fa fa-user-circle"></i> Add service</a>
                 </div>
                 <div class="table-responsive">
-                    <table class="table table-striped mb-0">
+                    <table id="datatable" class="table table-bordered dt-responsive nowrap" style="border-collapse: collapse; border-spacing: 0; width: 100%;">
                         <thead>
                             <tr>
                                 <th>#</th>

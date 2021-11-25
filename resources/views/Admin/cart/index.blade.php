@@ -7,7 +7,7 @@
             <div class="card-body">
                 <h4 class="mt-0 header-title">{{ __('site.orderdetails') }}</h4>
                 <div class="table-responsive">
-                    <table class="table table-striped mb-0">
+                    <table id="datatable" class="table table-bordered dt-responsive nowrap" style="border-collapse: collapse; border-spacing: 0; width: 100%;">
                         <thead>
                             <tr>
                                 <th>#</th>

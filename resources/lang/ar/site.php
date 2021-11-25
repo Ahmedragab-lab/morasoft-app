@@ -72,7 +72,7 @@ return [
 'products'=>' المنتجات',
 
 // user request page translation
-'orders'=>'طلبات العملاء',
+'orders'=>'طلبات الخدمات',
 // end request page translation
 
 
@@ -99,7 +99,7 @@ return [
 
 // cartorder page==================================================================
 
-'orderdetails' => 'تفاصيل الطلب',
+'orderdetails' => 'طلبات المنتجات',
 'tracking_no' => 'رقم الطلب',
 'userfname' => 'الاسم الاول',
 'userlname' => 'اسم العائله',
