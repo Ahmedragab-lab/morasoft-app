@@ -12,6 +12,7 @@ use Illuminate\Support\Facades\Auth;
 
 class UserReqestController extends Controller
 {
+    //ajax request from  front page price ask ================================\\//
     public function sendrequest(Request $request){
          $from = $request->input('from');
          $to = $request->input('to');
@@ -40,7 +41,37 @@ class UserReqestController extends Controller
             return response()->json(['status'=>'Login to continue']);
         }
     }
+ //End ajax request from  front page price ask ================================\\//
+  //ajax request from  service page price ask ================================\\//
+  public function servrequest(Request $request){
+    $from = $request->input('from');
+    $to = $request->input('to');
+    $service_id = $request->input('serv_id');
+    $sms = $request->input('sms');
+   if(Auth::check()){
+       $serv_check = Service::where('id',$service_id);
+       if($serv_check){
+           $req = new UserReqest();
+           $req->name =auth()->user()->fname;
+           $req->email = auth()->user()->email;
+           $req->address = auth()->user()->address1;
+           $req->from_id =  $from;
+           $req->to_id = $to;
+           $req->user_id = Auth::id();
+           $req->service_id = $service_id;
+           $req->sms = $sms;
+           $req->save();
+           return response()->json(['status'=>$req->name . ' request submitted successfully']);
 
+           // $user = User::get();
+           // $order = UserReqest::latest()->first();
+           // $user->notify(new \App\Notifications\Add_service_Order($order));
+       }
+   }else{
+       return response()->json(['status'=>'Login to continue']);
+   }
+}
+  //End ajax request from  service page price ask ================================\\//
     //ajax request from  products page addtocart ================================\\//
     public function addtocart(Request $request){
         $product_id = $request->input('prod_id');
