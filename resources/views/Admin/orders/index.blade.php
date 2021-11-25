@@ -1,4 +1,8 @@
 @extends('Admin.layouts.master')
+@section('css')
+<link href="{{ URL::asset('plugins/datatables/dataTables.bootstrap4.min.css')}}" rel="stylesheet" type="text/css" />
+  <link href="{{ URL::asset('plugins/datatables/buttons.bootstrap4.min.css')}}" rel="stylesheet" type="text/css" />
+@endsection
 @section('content')
 @include('partial.error')
 <div class="row">
@@ -10,7 +14,7 @@
                     {{-- <a href="{{ route('users.create') }}"  class="btn btn-primary btn-block"><i class="fa fa-user-circle"></i> {{ __('site.add-user') }}</a> --}}
                 </div>
                 <div class="table-responsive">
-                    <table class="table table-striped mb-0">
+                    <table  id="datatable" class="table table-bordered dt-responsive nowrap" style="border-collapse: collapse; border-spacing: 0; width: 100%;">
                         <thead>
                             <tr>
                                 <th>#</th>
@@ -71,7 +75,13 @@
 
 @endsection
 @section('js')
-
+{{-- <script src="{{ URL::asset('plugins/datatables/jquery.dataTables.min.js')}}"></script> --}}
+<script src="{{ URL::asset('plugins/datatables/jquery.dataTables.min.js')}}"></script>
+<script src="{{ URL::asset('plugins/datatables/dataTables.bootstrap4.min.js')}}"></script>
+<!-- Datatable init js -->
+<script src="{{ URL::asset('admin/en/assets/pages/datatables.init.js')}}"></script>
+<!-- App js -->
+<script src="{{ URL::asset('admin/en/assets/js/app.js')}}"></script>
 @endsection
 
 

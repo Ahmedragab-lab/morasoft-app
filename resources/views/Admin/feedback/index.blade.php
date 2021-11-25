@@ -10,7 +10,7 @@
                     <a href="{{ route('feedbacks.create') }}"  class="btn btn-primary btn-block"><i class="fa fa-user-circle"></i> Add feedback</a>
                 </div>
                 <div class="table-responsive">
-                    <table class="table table-striped mb-0">
+                    <table id="datatable" class="table table-bordered dt-responsive nowrap" style="border-collapse: collapse; border-spacing: 0; width: 100%;">
                         <thead>
                             <tr>
                                 <th>#</th>
@@ -24,7 +24,7 @@
                             @foreach ( $feedbacks as $index=>$feedback )
                             <tr>
                                 <th scope="row">{{ $index +1 }}</th>
-                                <td>{{ $feedback->users->name  }}</td>
+                                <td>{{ $feedback->users->fname . ' ' .$feedback->users->lname }}</td>
                                 <td>{{ $feedback->services->serve_name}}</td>
                                 <td>{{ $feedback->feedback }}</td>
                                 <td>
