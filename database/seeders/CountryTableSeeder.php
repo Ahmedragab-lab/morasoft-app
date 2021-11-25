@@ -17,7 +17,7 @@ class CountryTableSeeder extends Seeder
     {
         DB::table('countries')->delete();
 
-        $nationals = [
+        $countries  = [
 
             [
                 'en'=> 'Afghan',
@@ -1250,7 +1250,7 @@ class CountryTableSeeder extends Seeder
             ]
         ];
 
-        foreach ($nationals as $n) {
+        foreach ($countries as $n) {
             Country::create(['Name' => $n]);
         }
     }
