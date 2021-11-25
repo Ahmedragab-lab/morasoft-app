@@ -14,6 +14,7 @@
                         <thead>
                             <tr>
                                 <th>#</th>
+                                <th>{{ __('site.order_no') }}</th>
                                 <th>{{ __('site.fname') }}</th>
                                 <th>{{ __('site.email') }}</th>
                                 <th>{{ __('site.phone') }}</th>
@@ -31,7 +32,7 @@
                             @foreach ( $orders as $index=>$order )
                                 <tr>
                                     <th scope="row">{{ $index +1 }}</th>
-                                    {{-- <td>{{ $order->id }}</td> --}}
+                                    <td>{{ $order->order_no }}</td>
                                     <td>{{ $order->name }}</td>
                                     <td>{{ $order->email }}</td>
                                     <td>{{ $order->user->phone }}</td>
@@ -43,35 +44,29 @@
                                     <td>{{ $order->from->Name }}</td>
                                     <td>{{ $order->to->Name }}</td>
                                     <td>{{ Str::limit($order->sms,20)}}</td>
-                                    <td></td>
-                                    {{-- <td></td> --}}
-                                    {{-- <td>{{ $order->price}}</td> --}}
-                                    {{-- <td>
-                                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" >
-                                            {{ __('site.add_price') }}
-                                        </button>
+                                    <td>{{ $order->price}}</td>
+                                    <td>
+                                        <form action="{{ route('orders.destroy', $order->id) }}" method="post">
+                                            @csrf
+                                            @method('delete')
+                                            {{-- <a href="{{ route('orders.update', $order->id) }}" class="btn btn-info">{{ __('site.edit') }}</a> --}}
+                                            <button type="button" class="btn btn-primary waves-effect waves-light" data-toggle="modal" data-target="#addprice{{ $order->id }}">
+                                                {{ __('site.add_price') }}
+                                            </button>
+                                            <button type="button" class="btn btn-danger"
+                                            onclick="confirm('{{ __('Are you sure you want to delete this order '.$order->id.'?') }}') ? this.parentElement.submit() : ''">
+                                            {{ __('site.delete') }}
+                                            </button>
+                                        </form>
                                     </td>
                                 </tr>
-                                @include('Admin.orders.create-price') --}}
-                                <td>
-                                    <form action="{{ route('orders.destroy', $order->id) }}" method="post">
-                                        @csrf
-                                        @method('delete')
-                                        <a href="{{ route('orders.edit', $order->id) }}" class="btn btn-info">{{ __('site.edit') }}</a>
-                                        <button type="button" class="btn btn-danger"
-                                        onclick="confirm('{{ __('Are you sure you want to delete this order?') }}') ? this.parentElement.submit() : ''">
-                                            {{ __('site.delete') }}
-                                        </button>
-                                    </form>
-                                </td>
+                                @include('Admin.orders.create-price')
                             @endforeach
-
                         </tbody>
                     </table>
                 </div>
             </div>
         </div>
-
     </div> <!-- end col -->
 
 @endsection

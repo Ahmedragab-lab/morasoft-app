@@ -15,6 +15,7 @@ class CreateUserReqestsTable extends Migration
     {
         Schema::create('user_reqests', function (Blueprint $table) {
             $table->id();
+            $table->string('order_no');
             $table->string('name');
             $table->string('email');
             $table->text('address');

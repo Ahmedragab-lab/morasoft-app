@@ -25,7 +25,8 @@ Route::group(
         Route::resource('/events',Admin\EventController::class);
         Route::resource('/agreements',Admin\AgreementController::class);
         Route::resource('/companies',Admin\CompanyController::class);
-        Route::resource('/orders',Admin\OrderController::class); 
+        Route::resource('/orders',Admin\OrderController::class);
+        // Route::put('addprice',[Admin\OrderController::class,'addprice'])->name('addprice');  // admin can add price to serice
         Route::resource('/cartitems',Admin\CartOrderController::class); // to show orders from checkout my cart page
     });
 
