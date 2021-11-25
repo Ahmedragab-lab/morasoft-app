@@ -214,55 +214,6 @@
 
 @endsection
 @section('js')
-{{-- <script type="text/javascript">
-   $.ajaxSetup({
-        headers: {
-            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-        }
-   });
-    $("#send-data").click(function(event){
-        event.preventDefault();
-        let name = $("input[name=name]").val();
-        let email = $("input[name=email]").val();
-        let subject = $("input[name=subject]").val();
-        let serv_id = $("input[name=serv_id]").val();
-        let sms = $("input[name=sms]").val();
-        let _token   = $('meta[name="csrf-token"]').attr('content');
-        console.log(name);
-        $.ajax({
-          type:"POST",
-        //   url: "{{ route('servrequest') }}",
-          dataType: "json",
-          cache: false,
-          data:{
-            name:name,
-            email:email,
-            subject:subject,
-            serv_id:serv_id,
-            sms:sms,
-            _token: _token
-          },
-        //   success:function(data){
-        //       alert(data.success);
-        //    }
-        //   success:function(response){
-        //     console.log(response);
-        //     if(response) {
-        //       $('.success').text(response.success);
-        //       $("#ajaxform")[0].reset();
-        //     }
-        //   },
-        if (response.status === true) {
-            console.log(response.message);
-        } else {
-            alert('Issue');
-        },
-          error: function(error) {
-           console.log(error);
-          }
-         });
-    });
-</script> --}}
 <script type="text/javascript">
     $.ajaxSetup({
         headers: {
