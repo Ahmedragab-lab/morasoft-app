@@ -311,11 +311,10 @@
         <div class="container">
             <div class="columns is-variable is-2 is-multiline">
                 <div class="column is-6-desktop is-12-tablet">
-                    <h1 class="heading-title style-3 has-text-left"> request a
-                        <span class="has-text-primary">quote</span>
+                    <h1 class="heading-title style-3 has-text-left"> Ask for
+                        <span class="has-text-primary">price</span>
                     </h1>
-                    <p class="heading-title-bottom">Lorem ipsum dolor sit amet, consectetur adipiscing elit Nulla
-                        chronocrator accumsan, metus ultrices eleifend gravi.</p>
+                    <p class="heading-title-bottom"> Always do our best for you thank you</p>
                     <!-- successful form message -->
                     <div class="overhang-message-content is-hidden success">
                         <span class="icon">
@@ -337,10 +336,10 @@
                                     <div class="control is-expanded">
                                       <div class="select">
                                         <select>
-                                          <option>Air Freight</option>
-                                          <option>Land Transport</option>
-                                          <option>Ocean Freight</option>
-                                          <option>Warehousing</option>
+                                            <option value="" readonly > ---from ---</option>
+                                            @foreach ( \App\Models\Country::all() as $country)
+                                            <option value="{{ $country->id }}">{{ $country->Name }}</option>
+                                            @endforeach
                                         </select>
                                       </div>
                                     </div>
@@ -349,10 +348,10 @@
                                     <div class="control is-expanded">
                                       <div class="select">
                                         <select>
-                                          <option>Air Freight</option>
-                                          <option>Land Transport</option>
-                                          <option>Ocean Freight</option>
-                                          <option>Warehousing</option>
+                                            <option value="" readonly > ---to ---</option>
+                                            @foreach ( \App\Models\Country::all() as $country)
+                                            <option value="{{ $country->id }}">{{ $country->Name }}</option>
+                                            @endforeach
                                         </select>
                                       </div>
                                     </div>
@@ -375,12 +374,12 @@
                                 </div>
                             </div>
                         </div>
-                        {{-- <div class="field ">
+                        <div class="field ">
                             <div class="control is-expanded">
                                 <textarea class="textarea" name="textarea" placeholder="Message"
                                     required=""></textarea>
                             </div>
-                        </div> --}}
+                        </div>
                         <div class="field ">
                             <div class="control">
                                 <button class="button" type="submit"> ارسل طلبك <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-send-fill" viewBox="0 0 16 16">
