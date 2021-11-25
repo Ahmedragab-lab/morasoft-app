@@ -24,8 +24,8 @@ class UserReqestController extends Controller
                 $req->name =auth()->user()->fname;
                 $req->email = auth()->user()->email;
                 $req->address = auth()->user()->address1;
-                $req->from =  $from;
-                $req->to = $to;
+                $req->from_id =  $from;
+                $req->to_id = $to;
                 $req->user_id = Auth::id();
                 $req->service_id = $service_id;
                 $req->sms = $sms;

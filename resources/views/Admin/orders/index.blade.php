@@ -14,12 +14,14 @@
                         <thead>
                             <tr>
                                 <th>#</th>
-                                <th>{{ __('site.name') }}</th>
+                                <th>{{ __('site.fname') }}</th>
                                 <th>{{ __('site.email') }}</th>
                                 <th>{{ __('site.phone') }}</th>
-                                <th>{{ __('site.address') }}</th>
+                                <th>{{ __('site.address1') }}</th>
                                 <th>{{ __('site.image') }}</th>
                                 <th>{{ __('site.service') }}</th>
+                                <th>{{ __('site.from') }}</th>
+                                <th>{{ __('site.to') }}</th>
                                 <th>{{ __('site.sms') }}</th>
                                 <th>{{ __('site.price') }}</th>
                                 <th>{{ __('site.action') }}</th>
@@ -38,6 +40,8 @@
                                         <img src="{{ asset('uploads/user-img/'.$order->user->image) }}" class="img-thumbnail" width="70" alt="">
                                     </td>
                                     <td>{{ $order->service->serve_name }}</td>
+                                    <td>{{ $order->from->Name }}</td>
+                                    <td>{{ $order->to->Name }}</td>
                                     <td>{{ Str::limit($order->sms,20)}}</td>
                                     <td></td>
                                     {{-- <td></td> --}}
