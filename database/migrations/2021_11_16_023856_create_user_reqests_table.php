@@ -18,6 +18,8 @@ class CreateUserReqestsTable extends Migration
             $table->string('name');
             $table->string('email');
             $table->text('address');
+            $table->text('from');
+            $table->text('to');
             $table->foreignId('user_id')->references('id')->on('users')->cascadeOnDelete();
             $table->foreignId('service_id')->references('id')->on('services')->cascadeOnDelete();
             $table->longText('sms');

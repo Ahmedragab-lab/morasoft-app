@@ -328,14 +328,14 @@
                         </span> Oops! Something went wrong, we couldn't send your message.
                     </div>
                     <!-- ajax contact form -->
-                    <form accept-charset="UTF-8" class="ajax-contact-form"
-                        action="https://usebasin.com/f/3587049dbc33.json" method="POST">
+                    {{-- <form accept-charset="UTF-8" class="ajax-contact-form" action="https://usebasin.com/f/3587049dbc33.json" method="POST"> --}}
+                    <form accept-charset="UTF-8" class="ajax-contact-form" action="https://usebasin.com/f/3587049dbc33.json" method="POST">
                         <div class="field is-horizontal">
                             <div class="field-body">
                                 <div class="field">
                                     <div class="control is-expanded">
-                                      <div class="select">
-                                        <select>
+                                      <div class="select" >
+                                        <select name="from">
                                             <option value="" readonly > ---from ---</option>
                                             @foreach ( \App\Models\Country::all() as $country)
                                             <option value="{{ $country->id }}">{{ $country->Name }}</option>
@@ -347,7 +347,7 @@
                                 <div class="field">
                                     <div class="control is-expanded">
                                       <div class="select">
-                                        <select>
+                                        <select name="to">
                                             <option value="" readonly > ---to ---</option>
                                             @foreach ( \App\Models\Country::all() as $country)
                                             <option value="{{ $country->id }}">{{ $country->Name }}</option>
@@ -363,10 +363,10 @@
                                 <div class="field">
                                     <div class="control is-expanded">
                                       <div class="select">
-                                        <select>
+                                        <select name="serv_id">
                                             <option value="" readonly > ---select your service---</option>
                                             @foreach ( \App\Models\Service::all() as $service)
-                                            <option>{{ $service->serve_name }}</option>
+                                            <option value="{{ $service->id }}">{{ $service->serve_name }}</option>
                                             @endforeach
                                         </select>
                                       </div>
@@ -376,13 +376,13 @@
                         </div>
                         <div class="field ">
                             <div class="control is-expanded">
-                                <textarea class="textarea" name="textarea" placeholder="Message"
+                                <textarea class="textarea" name="sms" placeholder="Message"
                                     required=""></textarea>
                             </div>
                         </div>
                         <div class="field ">
                             <div class="control">
-                                <button class="button" type="submit"> ارسل طلبك <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-send-fill" viewBox="0 0 16 16">
+                                <button class="button save-data" type="submit"> ارسل طلبك <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-send-fill" viewBox="0 0 16 16">
                                     <path fill-rule="evenodd" d="M15.964.686a.5.5 0 0 0-.65-.65L.767 5.855H.766l-.452.18a.5.5 0 0 0-.082.887l.41.26.001.002 4.995 3.178 3.178 4.995.002.002.26.41a.5.5 0 0 0 .886-.083l6-15Zm-1.833 1.89.471-1.178-1.178.471L5.93 9.363l.338.215a.5.5 0 0 1 .154.154l.215.338 7.494-7.494Z"/>
                                   </svg>  </button>
                             </div>
@@ -402,38 +402,41 @@
     {{-- فورمه اجاكس --}}
 @endsection
 @section('js')
-
     <script type="text/javascript">
-        // $.ajaxSetup({
-        //     headers: {
-        //         'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-        //     }
-        //     });
-        // $(".save-data").click(function(event){
-        //     event.preventDefault();
-        //     // let name = $("input[name=name]").val();
-        //     // let email = $("input[name=email]").val();
-        //     // let subject = $("input[name=subject]").val();
-        //     // let user_id = $("select[name=user_id]").val();
-        //     let serv_id = $("select[name=serv_id]").val();
-        //     let sms = $("textarea[name=sms]").val();
-        //     console.log(serv_id);
-        //     $.ajax({
-        //     method:"POST",
-        //     url: "/sendrequest",
-        //     data:{
-        //         // name:name,
-        //         // email:email,
-        //         // subject:subject,
-        //         // user_id:user_id,
-        //         serv_id:serv_id,
-        //         sms:sms,
-        //     },
-        //     success:function(response){
-        //         if(response) {
-        //         swal(response.status);
-        //         $("#ajaxform")[0].reset();
-        //         }
-        //     });
+        $.ajaxSetup({
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            }
+        });
+        $(document).ready(function(){
+            $(".save-data").click(function(e){
+                e.preventDefault();
+                let from = $("select[name=from]").val();
+                let to = $("select[name=to]").val();
+                let serv_id = $("select[name=serv_id]").val();
+                let sms = $("textarea[name=sms]").val();
+                console.log(from);
+                console.log(to);
+                console.log(serv_id);
+                console.log(sms);
+                $.ajax({
+                    method:"POST",
+                    url: "/sendrequest",
+                    data:{
+                        from:from,
+                        to:to,
+                        serv_id:serv_id,
+                        sms:sms,
+                    },
+                    success: function(response)
+                    {
+                        if(response) {
+                            swal(response.status);
+                            $("#ajaxform")[0].reset();
+                        }
+                    }
+                });
+            });
+        });
     </script>
 @endsection
