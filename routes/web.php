@@ -3,7 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 use App\Http\Controllers\Frontend;
-use App\Models\Contact;
+
 
 Route::group(
     [
@@ -26,11 +26,13 @@ Route::group(
         Route::get('lastservice/{id}',[Frontend\Allservices::class,'showlast'])->name('lastservice.showlast');// get last service
 
      //    Route::get('X/{id}', [controllerName, 'functionName'])->name('routeName');
-        Route::resource('contact',Frontend\ContactController::class);// Contact us Page
+     //   Route::resource('contact',Frontend\ContactController::class);// Contact us Page
 
         // Contact Page
+        Route::get('/contact-us',[ContactController::class,'contact']);
         // Route::match(['GET','POST'],'/contact','CmsController@contact');
-
+        // Route::get('/contact-us',  ['as' => 'frontend.contact','uses' => 'Frontend\FrontendController@contact']);
+        // Route::post('/contact-us', ['as' => 'frontend.do_contact', 'uses' => 'Frontend\FrontendController@do_contact']);
 
         Route::middleware(['auth'])->group(function () {
         Route::resource('mycart',Frontend\CartController::class); // go to my cart page

@@ -5,12 +5,14 @@ namespace App\Http\Controllers\Frontend;
 use App\Http\Controllers\Controller;
 use App\Models\Agreement;
 use App\Models\Company;
+use App\Models\Contact;
 use App\Models\Event;
 use App\Models\Feedback;
 use App\Models\Service;
 use Illuminate\Http\Request;
 use App\Models\navbar_details;
 use App\Models\Product;
+use Dotenv\Validator;
 
 class FrontendController extends Controller
 {
@@ -37,70 +39,76 @@ class FrontendController extends Controller
         return view('/front',compact('servs','services','feedbacks','events','Last_service','Last_agreement','allservices','products','Last_comp','Last_product','Last_event'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+
     public function create()
     {
         //
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
+
     public function store(Request $request)
     {
         //
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+
     public function show($id)
     {
         $product = Product::find($id);
         return view('site.pages.product-details',compact('product'));
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+
     public function edit($id)
     {
         //
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+
     public function update(Request $request, $id)
     {
         //
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function destroy($id)
     {
         //
     }
+
+
+    // public function contact()
+    // {
+    //     return view('frontend.contact');
+    // }
+
+    // public function do_contact(Request $request)
+    // {
+        // $validation = Validator::make($request->all(), [
+        //     'name'      => 'required',
+        //     'email'     => 'required|email',
+        //     'mobile'    => 'nullable|numeric',
+        //     'title'     => 'required|min:5',
+        //     'message'   => 'required|min:10',
+        // ]);
+        // if ($validation->fails()){
+        //     return redirect()->back()->withErrors($validation)->withInput();
+        // }
+
+    //     $data['name']       = $request->name;
+    //     $data['title']      = $request->title;
+    //     $data['phone']      = $request->phone;
+    //     $data['email']      = $request->email;
+    //     $data['message']    = $request->message;
+
+    //     Contact::create($data);
+
+    //     return redirect()->back()->with([
+    //         'message' => 'Message sent successfully',
+    //         'alert-type' => 'success'
+    //     ]);
+
+    // }
+
+
+
 }

@@ -17,47 +17,47 @@
               <div class="global-social-links style-1">
                 <ul>
                   <li>
-                    <a href="#">
+                    <a href="https://www.facebook.com/samir.gamal77">
                       <span class="icon">
                         <i class="fab fa-facebook-f"></i>
                       </span>
                     </a>
                   </li>
                   <li>
-                    <a href="#">
+                    <a href="https://www.linkedin.com/in/samir-gamal-8ab68ba0/">
                       <span class="icon">
-                        <i class="fab fa-twitter"></i>
+                        <i class="fab fa-linkedin"></i>
                       </span>
                     </a>
                   </li>
                   <li>
-                    <a href="#">
+                    <a href="https://www.youtube.com/channel/UCwT_14y87y3tgR8AqMCxrRA">
                       <span class="icon">
-                        <i class="fab fa-instagram"></i>
+                        <i class="fab fa-youtube"></i>
                       </span>
                     </a>
                   </li>
-                  <li>
+                  {{-- <li>
                     <a href="#">
                       <span class="icon">
                         <i class="fab fa-pinterest-p"></i>
                       </span>
                     </a>
-                  </li>
+                  </li> --}}
                   <li>
-                    <a href="#">
+                    <a href="https://www.morasoft.net/">
                       <span class="icon">
                         <i class="fab fa-google"></i>
                       </span>
                     </a>
                   </li>
-                  <li>
+                  {{-- <li>
                     <a href="#">
                       <span class="icon">
                         <i class="fab fa-dribbble"></i>
                       </span>
                     </a>
-                  </li>
+                  </li> --}}
                 </ul>
               </div>
             </div>
@@ -81,8 +81,8 @@
                         <h3>
                           <a href="../pages/contact.html">Address</a>
                         </h3>
-                        <p>295 Witting Streets Suite 666,
-                          <br> Melbourne, Australia</p>
+                        <p>مخرج 14 , طريق عمر بن عبدالعزيز , الرياض,
+                          <br> المملكة العربية السعودية</p>
                       </div>
                     </div>
                     <!-- .box-item -->
@@ -100,8 +100,8 @@
                         <h3>
                           <a href="../pages/contact.html">Phone</a>
                         </h3>
-                        <p>+ 123 5456 789 01
-                          <br> + 123 5456 789 01</p>
+                        <p>+ 0500699206
+                          <br> + 0560032681</p>
                       </div>
                     </div>
                     <!-- .box-item -->
@@ -119,8 +119,8 @@
                         <h3>
                           <a href="../pages/contact.html">Email</a>
                         </h3>
-                        <p>welcome@website.com
-                          <br> hello@site.co</p>
+                        <p>admin@morasoft.net
+                          <br> www.morasoft.net</p>
                       </div>
                     </div>
                     <!-- .box-item -->
@@ -140,7 +140,7 @@
                     <i class="ion-md-notifications"></i>
                   </span> Oops! Something went wrong, we couldn't send your message. </div>
                 <!-- ajax contact form -->
-                <form accept-charset="UTF-8" class="ajax-contact-form" action="https://usebasin.com/f/3587049dbc33.json" method="POST">
+                <form accept-charset="UTF-8" class="ajax-contact-form" action="{{ route('contact.us') }}" method="POST">
                   <div class="field is-horizontal">
                     <div class="field-body">
                       <div class="field">

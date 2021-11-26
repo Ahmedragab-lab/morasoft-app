@@ -34,7 +34,6 @@
                                 </li>
                                 <li>
                                     {{-- <form action ={{url('/contact')}} method = "post" class="form_horezintal"> --}}
-                                    <a href="{{ route('contact.index')}}">{{ __('front.contactus') }}</a>
 
                                 </li>
 
