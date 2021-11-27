@@ -12,9 +12,6 @@ Route::group(
         'prefix' => LaravelLocalization::setLocale(),
         'middleware' => ['auth:admin','localeSessionRedirect', 'localizationRedirect', 'localeViewPath']
     ],function () {
-
-
-        // Route::get('adminlogin', [AdminAuthController::class, 'showLoginForm'])->name('admin.login');
         Route::resource('/dashboard', Admin\AdminsController::class);
         Route::resource('/users', Admin\UsersController::class);
         Route::resource('/services',Admin\ServiceController::class);
@@ -26,8 +23,8 @@ Route::group(
         Route::resource('/agreements',Admin\AgreementController::class);
         Route::resource('/companies',Admin\CompanyController::class);
         Route::resource('/orders',Admin\OrderController::class);
-        // Route::put('addprice',[Admin\OrderController::class,'addprice'])->name('addprice');  // admin can add price to serice
         Route::resource('/cartitems',Admin\CartOrderController::class); // to show orders from checkout my cart page
+        // Route::put('addprice',[Admin\OrderController::class,'addprice'])->name('addprice');  // admin can add price to serice
     });
 
 require __DIR__ . '/auth.php';
