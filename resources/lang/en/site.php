@@ -94,4 +94,22 @@ return [
 // end Company page translation
 
 
+// cartorder page==================================================================
+
+'orderdetails' => 'Order Details',
+'tracking_no' => 'Order_No',
+'userfname' => 'First Name',
+'userlname' => 'Last Name',
+'useremail' => 'Email',
+'address1' => 'Address1',
+'address2' => 'Address2',
+'city' => 'City',
+'country' => 'Country',
+'productname' => 'Product Name',
+'productprice' => 'Product Price',
+'sumprice' => 'Total Price',
+'sumtax' => 'Tax',
+'total' => 'Total',
+// End cartorder page===============================================================
+
 ];

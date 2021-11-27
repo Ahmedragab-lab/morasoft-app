@@ -14,9 +14,12 @@ Route::group(
         //========================================================================================================================================================
         Route::resource('/front', Frontend\FrontendController::class);      // as a auth user
 
-        Route::post('/addtocart', [Frontend\UserReqestController::class,'addtocart'])->name('addtocart');   // send request from product-details page by ajax
         Route::post('/sendrequest', [Frontend\UserReqestController::class,'sendrequest'])->name('sendrequest');   // send request from front home page by ajax
-        // Route::post('/servrequest', [Frontend\UserReqestController::class,'servrequest'])->name('servrequest');   // send request from service page by ajax
+        Route::post('/servrequest', [Frontend\UserReqestController::class,'servrequest'])->name('servrequest');   // send request from service page by ajax
+        Route::post('/addtocart', [Frontend\UserReqestController::class,'addtocart'])->name('addtocart');         // send request from product-details page by ajax
+        Route::post('/delete_item', [Frontend\UserReqestController::class,'delete_item'])->name('delete_item');   // send request from mycart page by ajax to delete item
+        Route::post('/update_qty',  [Frontend\UserReqestController::class,'update_qty'])->name('update_qty');     // send request from mycart to update item quantity
+
 
         Route::resource('allservices',Frontend\Allservices::class); // go to all services page
         Route::resource('allproducts',Frontend\AllProducts::class); // go to all products page
@@ -34,10 +37,18 @@ Route::group(
         // Route::get('/contact-us',  ['as' => 'frontend.contact','uses' => 'Frontend\FrontendController@contact']);
         // Route::post('/contact-us', ['as' => 'frontend.do_contact', 'uses' => 'Frontend\FrontendController@do_contact']);
 
-        Route::middleware(['auth'])->group(function () {
-        Route::resource('mycart',Frontend\CartController::class); // go to my cart page
 
-         // ->last();  go to all Last_event page
+        Route::resource('allsections',Frontend\AllSections::class); // go to all Sections page
+        Route::resource('allfeedback',Frontend\Allfeedback::class); // go to all feedback page
+        //Route::resource('userprofile',Frontend\Userprofile::class);
+        Route::view('profile','site.pages.userprofile')->name('profile');
+        Route::get('/reserveServ', function () {
+            return view('site.pages.reserveServ');
+        });
+
+        Route::middleware(['auth'])->group(function () {
+            Route::resource('mycart',Frontend\CartController::class); // go to my cart page
+            Route::resource('checkout',Frontend\CheckoutController::class); // go to checkout page to make order
         });
 
         require __DIR__.'/auth.php';

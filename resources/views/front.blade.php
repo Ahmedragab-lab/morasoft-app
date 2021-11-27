@@ -1,597 +1,453 @@
 @extends('site.layouts.master')
 @section('title') mora soft company @endsection
 @section('css')
-<meta name="csrf-token" content="{{ csrf_token() }}">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
 @endsection
 @section('navslider')
-@include('site.layouts.navslider')
+    @include('site.layouts.navslider')
 @endsection
 @section('content')
-
-    <!-- start adding page content -->
-    {{-- <section id="welcome" class="section welcome-section has-background-primary-light is-clearfix">
-        <div class="container">
-        <p class="heading-title-top has-text-centered">الخدمات اللوجستية</p>
-        <h1 class="heading-title style-3"> شركة الشحن مع الخدمات اللوجستية
-            <br> أمان.
-            <span class="has-text-primary">تطور مستمر</span>
-        </h1>
-        <br>
-        <br>
-        <div class="blog-list style-2 columns is-variable is-4 is-multiline">
-            <div class="column is-4" data-aos="fade">
-            <article class="blog-post">
-                <figure class="post-image">
-                <a href="./pages/about.html">
-                    <img alt="Joo - Niche Multi-Purpose HTML Template" src="{{ asset('front/images/blog/1.png') }}"> </a>
-                </figure>
-                <div class="entry-header">
-                <h2 class="entry-title">
-                    <a href="./pages/about.html">موظفينا الخبراء</a>
-                </h2>
-                </div>
-                <!-- .entry-header -->
-                <div class="entry-content">
-                <p>هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد النص العربى أنه مازال نصاً..</p>
-                </div>
-                <!-- .entry-content -->
-                <div class="entry-footer">
-                <a href="./pages/about.html" class="button">اقرأ المزيد</a>
-                </div>
-            </article>
-            <!-- .blog-post -->
-            </div>
-            <div class="column is-4" data-aos="fade">
-            <article class="blog-post">
-                <figure class="post-image">
-                <a href="./pages/about.html">
-                    <img alt="Joo - Niche Multi-Purpose HTML Template" src="{{ asset('front/images/blog/2.png') }}"> </a>
-                </figure>
-                <div class="entry-header">
-                <h2 class="entry-title">
-                    <a href="./pages/about.html">الخدمات اللوجستية</a>
-                </h2>
-                </div>
-                <!-- .entry-header -->
-                <div class="entry-content">
-                <p>هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد النص العربى أنه مازال نصاً..</p>
-                </div>
-                <!-- .entry-content -->
-                <div class="entry-footer">
-                <a href="./pages/about.html" class="button">اقرأ المزيد</a>
-                </div>
-            </article>
-            <!-- .blog-post -->
-            </div>
-            <div class="column is-4" data-aos="fade">
-            <article class="blog-post">
-                <figure class="post-image">
-                <a href="./pages/about.html">
-                    <img alt="Joo - Niche Multi-Purpose HTML Template" src="{{ asset('front/images/blog/3.png') }}"> </a>
-                </figure>
-                <div class="entry-header">
-                <h2 class="entry-title">
-                    <a href="./pages/about.html">الشحن البري</a>
-                </h2>
-                </div>
-                <!-- .entry-header -->
-                <div class="entry-content">
-                <p>هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد النص العربى أنه مازال نصاً..</p>
-                </div>
-                <!-- .entry-content -->
-                <div class="entry-footer">
-                <a href="./pages/about.html" class="button">اقرأ المزيد</a>
-                </div>
-            </article>
-            <!-- .blog-post -->
-            </div>
-        </div>
-        <br> </div>
-    </section> --}}
+    {{-- ============================slider product======================================== --}}
     <section id="welcome" class="section welcome-section has-background-primary-light is-clearfix">
         <div class="container">
-          <p class="heading-title-top has-text-centered">welcome logistics</p>
-          <h1 class="heading-title style-3"> Our
-            {{-- <br> difference. --}}
-            <span class="has-text-primary">Products</span>
-          </h1>
-          <br>
-          <br>
-          <div class="blog-list style-2 columns is-variable is-4 is-multiline">
-            <div class="owl-carousel owl-theme">
-                @foreach ( $products as $product)
-                    <div class=" item" >
-                        <article class="blog-post">
-                        <figure class="post-image">
-                            <a href="{{route('front.show',$product->id)}}">
-                            <img alt="Joo - Niche Multi-Purpose HTML Template" src="{{ asset('uploads/product/'. $product->image) }}"> </a>
-                        </figure>
-                        <div class="entry-header">
-                            <h2 class="entry-title">
-                            <a href="#">{{ $product->product_name}}</a>
-                            </h2>
-                            <span class="float-start entry-title">{{ $product->selling_price }}</span>
-                            <span class="float-end "><s>{{ $product->original_price }}</s></span>
+            <p class="heading-title-top has-text-centered">welcome logistics</p>
+            <h1 class="heading-title style-3"> Our
+                {{-- <br> difference. --}}
+                <span class="has-text-primary">Products</span>
+            </h1>
+            <br>
+            <br>
+            <div class="blog-list style-2 columns is-variable is-4 is-multiline">
+                <div class="owl-carousel owl-theme">
+                    @foreach (\App\Models\Product::orderBy('id','DESC')->limit(5)->get() as $product)
+                        <div class=" item">
+                            <article class="blog-post">
+                                <figure class="post-image">
+                                    <a href="{{ route('front.show', $product->id) }}">
+                                      <img alt="Joo" src="{{ asset('uploads/product/' . $product->image) }}" width="50px">
+                                    </a>
+                                </figure>
+                                <div class="entry-header">
+                                    <h2 class="entry-title">
+                                        <a href="#">{{ $product->product_name }}</a>
+                                    </h2>
+                                    <span class="float-start entry-title">{{ $product->selling_price }}</span>
+                                    <span class="float-end "><s>{{ $product->original_price }}</s></span>
+                                </div>
+                                <!-- .entry-header -->
+                                <div class="entry-content">
+                                    <p>{{ $product->desc }}</p>
+                                </div>
+                                <!-- .entry-content -->
+                                <div class="entry-footer">
+                                    <a href="{{ route('front.show', $product->id) }}" class="button">More
+                                        details</a>
+                                </div>
+                            </article>
+                            <!-- .blog-post -->
                         </div>
-                        <!-- .entry-header -->
-                        <div class="entry-content">
-                            <p>{{ $product->desc }}</p>
-
-                        </div>
-                        <!-- .entry-content -->
-                        <div class="entry-footer">
-                            <a href="{{route('front.show',$product->id)}}" class="button">More details</a>
-                        </div>
-                        </article>
-                        <!-- .blog-post -->
-                    </div>
-                @endforeach
-           </div>
-          </div>
-          <br> </div>
-      </section>
-    <section id="tracking" class="section tracking-section is-clearfix">
-        <div class="container">
-        <p class="heading-title-top has-text-centered">المتابعة</p>
-        <h1 class="heading-title style-3">متابعة شحنتك</h1>
-        <div class="columns is-mobile is-centered">
-            <div class="column is-10" data-aos="fade-up">
-            <div class="subscribe-form style-1">
-                <form>
-                <div class="field has-addons has-addons-centered is-grouped">
-                    <div class="control">
-                    <input class="input" type="text" placeholder="ادخل رقم متابعة شحنتك"> </div>
-                    <div class="control">
-                    <a href="#" class="button">
-                        <span>تتبع الشحنة</span>
-                        <span class="icon is-small">
-                        <i class="icon-target"></i>
-                        </span>
-                    </a>
-                    </div>
+                    @endforeach
                 </div>
-                </form>
             </div>
-            <p class="help"> افصل أرقام التتبع المتعددة بمسافة أو فاصلة.
-                <a href="#">تتبع متقدم</a>
-            </p>
-            </div>
-        </div>
+            <br>
         </div>
     </section>
-    {{-- services section  --}}
+    {{-- ============================End slider product======================================== --}}
+
+    <section id="tracking" class="section tracking-section is-clearfix">
+        <div class="container">
+          <p class="heading-title-top has-text-centered">tracking</p>
+          <h1 class="heading-title style-3">track your shipment</h1>
+          <div class="columns is-mobile is-centered">
+            <div class="column is-10" data-aos="fade-up">
+              <div class="subscribe-form style-1">
+                <form>
+                  <div class="field has-addons has-addons-centered is-grouped">
+                    <div class="control">
+                      <input class="input" type="text" placeholder="Type your tracking number"> </div>
+                    <div class="control">
+                      <a href="#" class="button">
+                        <span>Track it</span>
+                        <span class="icon is-small">
+                          <i class="icon-target"></i>
+                        </span>
+                      </a>
+                    </div>
+                  </div>
+                </form>
+              </div>
+              <p class="help"> separate multiple tracking numbers with a space or comma.
+                <a href="#">Advanced Tracking</a>
+              </p>
+            </div>
+          </div>
+        </div>
+    </section>
+    {{-- services section --}}
     <section id="services" class="section services-section has-background-primary-light is-clearfix">
         <div class="container">
             <div class="columns is-variable is-multiline is-4">
-            <div class="column is-5-desktop is-12-tablet">
-                <p class="heading-title-top">الخدمات اللوجستية</p>
-                <h1 class="heading-title style-3 has-text-left">خدماتنا الخاصة</h1>
-            </div>
-            <div class="column is-7-desktop is-12-tablet">
-                <p class="heading-title-bottom">خدمتنا تتحدث عننا ونحتاج الى ارائكم واقتراحتكم شكرااا جزيلا لكم فريق <strong style="color:rgb(240, 29, 29);font-size:30px;font-weight:bold;">مورا سوفت</strong></p>
-            </div>
+
+                <div class="column is-5-desktop is-12-tablet">
+                    <p class="heading-title-top">الخدمات اللوجستية</p>
+                    <h1 class="heading-title style-3 has-text-left">خدماتنا الخاصة</h1>
+                </div>
+                <div class="column is-7-desktop is-12-tablet">
+                    <p class="heading-title-bottom">خدمتنا تتحدث عننا ونحتاج الى ارائكم واقتراحتكم شكرااا جزيلا لكم فريق
+                        <strong style="color:rgb(240, 29, 29);font-size:30px;font-weight:bold;">مورا سوفت</strong>
+                    </p>
+                </div>
             </div><br>
             <div class="columns is-variable is-4 is-multiline boxes-style-2">
-            @foreach ( $services as $serv)
-                <div class="column is-4" >
-                    <div class="box-item">
-                    {{-- <a href="#"><img alt="no photo" src="{{ asset('uploads/serv/'.$serv->image) }}" style="max-height: 344px ;"></a> --}}
-                    <a href="{{ route('allservices.show',$serv->id) }}"><img alt="no photo" src="{{ asset('front/images/icons/3.png') }}" style="max-height: 344px ;"></a>
-                    <h3><a href="{{ route('allservices.show',$serv->id) }}">{{ $serv->serve_name }}</a></h3>
-                    <p>{{ $serv->desc }}</p>
-                    <p>{{ $serv->status == 1 ?'Available':'Unavialable' }}</p>
-                    <a href="{{ route('allservices.show',$serv->id) }}" class="button"> Make Order</a>
+                @foreach ( \App\Models\Service::orderBy('id','DESC')->limit(3)->get() as $serv)
+                    <div class="column is-4">
+                        <div class="box-item">
+                            {{-- <a href="#"><img alt="no photo" src="{{ asset('uploads/serv/'.$serv->image) }}" style="max-height: 344px ;"></a> --}}
+                            <a href="{{ route('allservices.show', $serv->id) }}"><img alt="no photo"
+                                    src="{{ asset('front/images/icons/3.png') }}" style="max-height: 344px ;"></a>
+                            <h3><a href="{{ route('allservices.show', $serv->id) }}">{{ $serv->serve_name }}</a></h3>
+                            <p>{{ $serv->desc }}</p>
+                            <p>{{ $serv->status == 1 ? 'Available' : 'Unavialable' }}</p>
+                            <a href="{{ route('allservices.show', $serv->id) }}" class="button"> Make Order</a>
+                        </div>
                     </div>
-                </div>
-             @endforeach
+                @endforeach
             </div>
         </div>
     </section>
     {{-- End services section --}}
-
-    {{-- start Event && agreement and service section --}}
-    {{-- <section id="services" class="section services-section has-background-primary-light is-clearfix">
-        <div class="container">
-        <div class="columns is-variable is-multiline is-4">
-            <div class="column is-5-desktop is-12-tablet">
-            <p class="heading-title-top">الخدمات اللوجستية</p>
-            <h1 class="heading-title style-3 has-text-left">خدماتنا الخاصة</h1>
-            </div>
-            <div class="column is-7-desktop is-12-tablet">
-            <p class="heading-title-bottom">خدمتنا تتحدث عننا ونحتاج الى ارائكم واقتراحتكم شكرااا جزيلا لكم فريق <strong style="color:rgb(240, 29, 29);font-size:30px;font-weight:bold;">مورا سوفت</strong></p>
-            </div>
-        </div>
-        <br>
-
-        <div class="columns is-variable is-4 is-multiline boxes-style-2">
-
-            <div class="column is-4" >
-                <div class="box-item">
-                <a href="#">
-                    <img alt="no photo" src="{{ asset('uploads/event/'.$events->image) }}" style="max-height: 344px ;">
-                </a>
-                <h3>
-                <a href="#">{{ $events->event_title }}</a>
-                </h3>
-                <p>{{ $events->desc }}</p>
-                <p>{{ $events->status == 1 ?'Available':'Unavialable' }}</p>
-                <a href="#" class="button"> see More</a>
-                </div>
-                <!-- .box-item -->
-            </div>
-            <div class="column is-4" >
-            <div class="box-item">
-            <a href="#">
-                <img alt="no photo" src="{{ asset('uploads/agreement/'.$Last_agreement->image) }}" style="max-height: 344px ;">
-            </a>
-            <h3>
-                <a href="#">{{ $Last_agreement->agreement_title }}</a>
-            </h3>
-            <p>{{ $Last_agreement->desc }}</p>
-            <p>{{ $Last_agreement->status == 1 ?'Available':'Unavialable' }}</p>
-            <a href="#" class="button"> see more</a>
-            </div>
-            <!-- .box-item -->
-        </div>
-            <div class="column is-4" >
-            <div class="box-item">
-            <a href="#">
-                <img alt="no photo" src="{{ asset('uploads/event/'.$Last_service->image) }}" style="max-height: 344px ;">
-            </a>
-            <h3>
-                <a href="#">{{ $Last_service->service_name }}</a>
-            </h3>
-            <p>{{ $Last_service->desc }}</p>
-            <p>{{ $Last_service->status == 1 ?'Available':'Unavialable' }}</p>
-            <a href="#" class="button"> Make Order</a>
-            </div>
-            <!-- .box-item -->
-        </div>
-
-
-        </div>
-        </div>
-    </section> --}}
-    {{-- End Event && agreement and service section --}}
-    {{-- video section  --}}
+    {{-- video section --}}
     <section class="section watch-video is-clearfix">
         <div class="container">
             <br>
             <br>
             <div class="columns is-variable is-8 is-multiline">
-            <div class="column is-6-desktop is-12-tablet has-text-centered" >
-                <div class="works-latest">
-                <div class="works-latest-item">
-                    <div class="works-latest-item-icon style-2">
-                        <iframe class="mfp-lightbox mfp-iframe " width="500" height="200" src="https://www.youtube.com/embed/v5Ub1zgyItc"
-                                frameborder="0" allow="autoplay; encrypted-media;" allowfullscreen>
-                        </iframe>
-                    </a>
+                <div class="column is-6-desktop is-12-tablet has-text-centered">
+                    <div class="works-latest">
+                        <div class="works-latest-item">
+                            <div class="works-latest-item-icon style-2">
+                                <iframe class="mfp-lightbox mfp-iframe " width="500" height="200"
+                                    src="https://www.youtube.com/embed/v5Ub1zgyItc" frameborder="0"
+                                    allow="autoplay; encrypted-media;" allowfullscreen>
+                                </iframe>
+                                </a>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                </div>
-            </div>
-            <div class="column is-6-desktop is-12-tablet" >
-                <br>
-                <h1 class="heading-title style-3 has-text-left"> خدمات النقل المحلية اللوجستية
-                <br> لانواع الشحن
-                <span class="has-text-primary">والنقل.</span>
-                </h1>
-                <p>هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد النص العربى حيث يمكنك أن تولد.</p>
-                <p>هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد النص العربى أنه مازال نصاً.</p>
-                <br>
-                <div class="level">
-                <div class="level-left">
-                    <h4> Eng :Samir Gamal <strong style="color:rgb(240, 29, 29);font-size:30px;font-weight:bold;">مورا سوفت</strong>
+                <div class="column is-6-desktop is-12-tablet">
                     <br>
-                    <span>المدير التنفيذى</span>
-                    </h4>
+                    <h1 class="heading-title style-3 has-text-left"> خدمات النقل المحلية اللوجستية
+                        <br> لانواع الشحن
+                        <span class="has-text-primary">والنقل.</span>
+                    </h1>
+                    <p>هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد النص العربى حيث
+                        يمكنك أن تولد.</p>
+                    <p>هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد النص العربى أنه
+                        مازال نصاً.</p>
+                    <br>
+                    <div class="level">
+                        <div class="level-left">
+                            <h4> Eng :Samir Gamal <strong
+                                    style="color:rgb(240, 29, 29);font-size:30px;font-weight:bold;">مورا سوفت</strong>
+                                <br>
+                                <span>المدير التنفيذى</span>
+                            </h4>
+                        </div>
+                        <div class="level-right">
+                            <img alt="Joo - Niche Multi-Purpose HTML Template"
+                                src="{{ asset('front/images/global/mark.png') }}">
+                        </div>
+                    </div>
                 </div>
-                <div class="level-right">
-                    <img alt="Joo - Niche Multi-Purpose HTML Template" src="{{ asset('front/images/global/mark.png') }}"> </div>
-                </div>
-            </div>
 
-        <br> </div>
+                <br>
+            </div>
     </section>
-    {{-- End video section  --}}
+    {{-- End video section --}}
     <section class="hero fun-facts is-clearfix">
         <div class="hero-body">
-        <h2 class="display-none">funfacts</h2>
-        <nav class="level counterup style-5">
+          <h2 class="display-none">funfacts</h2>
+          <nav class="level counterup style-5">
             <div class="level-item has-text-centered">
-            <div>
+              <div>
                 <p class="title counter">340</p>
-                <p class="heading">سنوات من الخبرة</p>
-            </div>
+                <p class="heading">years of experience</p>
+              </div>
             </div>
             <div class="level-item has-text-centered">
-            <div>
+              <div>
                 <p class="title counter">120</p>
-                <p class="heading">فروع حول العالم</p>
-            </div>
+                <p class="heading">branches over world</p>
+              </div>
             </div>
             <div class="level-item has-text-centered">
-            <div>
+              <div>
                 <p class="title counter">230</p>
-                <p class="heading">طن نقل</p>
-            </div>
+                <p class="heading">tonnes transported</p>
+              </div>
             </div>
             <div class="level-item has-text-centered">
-            <div>
+              <div>
                 <p class="title counter">110</p>
-                <p class="heading">البلدان المغطاة</p>
+                <p class="heading">countries covered</p>
+              </div>
             </div>
-            </div>
-        </nav>
+          </nav>
         </div>
     </section>
+
     <section id="tracking-steps" class="section tracking-steps-section is-clearfix">
         <div class="container">
-        <p class="heading-title-top has-text-centered">متابعة الشحنات</p>
-        <h1 class="heading-title style-3">كيف يتم النقل</h1>
-        <br>
-        <br>
-        <div class="steps" data-aos="fade-right">
+          <p class="heading-title-top has-text-centered">tracking</p>
+          <h1 class="heading-title style-3">how we work</h1>
+          <br>
+          <br>
+          <div class="steps" data-aos="fade-right">
             <div class="step-item" data-step-id="0">
-            <div class="step-marker"> 1 </div>
-            <div class="step-details">
-                <p class="step-title">نقل البضائع</p>
-                <p>هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة.</p>
-            </div>
+              <div class="step-marker"> 1 </div>
+              <div class="step-details">
+                <p class="step-title">lorem ipsum dolor</p>
+                <p>Lorem ipsum dolor sit amet nulla varius lectus.</p>
+              </div>
             </div>
             <div class="step-item active" data-step-id="1">
-            <div class="step-marker">2</div>
-            <div class="step-details">
-                <p class="step-title">التجهيز للنقل</p>
-                <p>هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة.</p>
-            </div>
+              <div class="step-marker">2</div>
+              <div class="step-details">
+                <p class="step-title">lorem ipsum dolor</p>
+                <p>Lorem ipsum dolor sit amet nulla varius lectus.</p>
+              </div>
             </div>
             <div class="step-item" data-step-id="2">
-            <div class="step-marker">3</div>
-            <div class="step-details">
-                <p class="step-title">عملية المتابعة</p>
-                <p>هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة.</p>
-            </div>
+              <div class="step-marker">3</div>
+              <div class="step-details">
+                <p class="step-title">lorem ipsum dolor</p>
+                <p>Lorem ipsum dolor sit amet nulla varius lectus.</p>
+              </div>
             </div>
             <div class="step-item" data-step-id="3">
-            <div class="step-marker"> 4 </div>
-            <div class="step-details">
-                <p class="step-title">التسليم النهائى</p>
-                <p>هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة.</p>
+              <div class="step-marker"> 4 </div>
+              <div class="step-details">
+                <p class="step-title">lorem ipsum dolor</p>
+                <p>Lorem ipsum dolor sit amet nulla varius lectus.</p>
+              </div>
             </div>
-            </div>
-        </div>
+          </div>
         </div>
     </section>
+
 
                 {{-- ********** Start Events ************ --}}
 
-
-    <section id="news" class="section news-section is-clearfix">
-        <div class="container">
-        <div class="blog-list style-2 columns is-variable is-4 is-multiline">
-            <div class="column is-4" >
-                <div class="blog-post-heading">
-                <p class="heading-title-top">أخر الاخبار</p>
-                <h1 class="heading-title style-3 has-text-left">
-                    <img alt="Joo - Niche Multi-Purpose HTML Template" src="{{ asset('uploads/event/'.$Last_event->image) }}">
-
-                <span class="has-text-primary">{{ $Last_event->event_title }}</span>
-                </h1>
-                <p>{{ $Last_event->limit }}</p>
-                <a href="{{ route('Last_event.show',$Last_event->id) }}" class="button">إقرأ المزيد
-                <span class="icon">
-                     {{-- href="{{route('front.show',$product->id)}}" --}}
-                    <i class="ion-ios-arrow-round-forward"></i>
-                </span>
-                </a>
-             </div>
-            <!-- .blog-post -->
-            </div>
-
-        {{-- ********** End Events ************ --}}
-
-          {{-- ********** Start Service ************ --}}
-
-
-            <div class="column is-4" >
-                <article class="blog-post">
-                    <figure class="post-image">
-                        <p class="heading-title-top">أخر الخدمات</p>
-                    {{-- <a href="./blog/single.html"> --}}
-                        <img alt="Joo - Niche Multi-Purpose HTML Template" src="{{ asset('uploads/serv/'.$Last_service->image) }}">
-                    </figure>
-                    <div class="entry-header">
-                    <div class="post-meta">
-                        <ul>
-                        <li>
-                            {{-- <a href="#"> <span>أبريل 5 ، 2018</span>  </a> --}}
-                        </li>
-                        </ul>
-                    </div>
-                    <span class="has-text-primary">{{ $Last_service->serve_name }}</span>
-                    <h2 class="entry-title">
-                        {{-- <a href="./blog/single.html">{{ $Last_event->event_title }}</a> --}}
-                        {{-- <a href="{{ route('Last_service.show_last',$Last_service->id) }}">{{ $Last_service->serve_name }}</a> --}}
-                        {{-- <a href="{{ route('allservices.show',$Last_service->id) }}" class="button">إقرأ المزيد --}}
-                    </h2>
-                    <p>{{ $Last_service->desc }}</p>
-                    </div>
-                    <div class="entry-footer">
-                        {{-- <a href="{{ route('allservices.showlast',$Last_service->id) }}" class="button">إقرأ المزيد
-                            <span class="icon">
-
+                <section id="news" class="section news-section is-clearfix">
+                    <div class="container">
+                      <div class="blog-list style-2 columns is-variable is-4 is-multiline">
+                        <div class="column is-4" data-aos="fade">
+                          <div class="blog-post-heading">
+                            <p class="heading-title-top">أخر الاخبار</p>
+                            <h1 class="heading-title style-3 has-text-left">
+                                {{-- <img alt="Joo - Niche Multi-Purpose HTML Template" src="{{ asset('uploads/event/'.$Last_event->image) }}"> --}}
+                            <h1 class="heading-title style-3 has-text-left">
+                              <span class="has-text-primary">{{ $Last_event->event_title }}</span>
+                            </h1>
+                            <p>{{ $Last_agreement->desc }}</p>
+                            <a href="{{ route('Last_event.show',$Last_event->id) }}" class="button">   أخبارنا...
+                              <span class="icon">
                                 <i class="ion-ios-arrow-round-forward"></i>
-                            </span>
-                        </a> --}}
+                              </span>
+                            </a>
+                          </div>
+                        </div>
+                        <div class="column is-4" data-aos="fade">
+                            <p class="heading-title-top">أخر الاتفاقيات</p>
+                          <article class="blog-post">
+                            <figure class="post-image">
+                              <a href="">
+                                <img alt="Joo - Niche Multi-Purpose HTML Template" src="{{ asset('uploads/event/'.$Last_event->image) }}"> </a>
+                            </figure>
+                            <div class="entry-header">
+                              <div class="post-meta">
+                                <ul>
+                                  <li>
+                                    {{-- <a href="#">
+                                      <span>أبريل 5 ، 2018</span>
+                                    </a> --}}
+                                  </li>
+                                </ul>
+                              </div>
+                              <h2 class="entry-title">
 
-                    <a href="{{ route('lastservice.showlast',$Last_service->id) }}" class="button"> إقرأ المزيد </a>
+                                <a href="">{{ $Last_agreement->agreement_title }}</a>
+                              </h2>
 
 
-                    {{-- <a href="" class="button"> إقرأ المزيد </a> --}}
+                              <p>{{ $Last_agreement->desc }}</p>
+                            </div>
+                            <div class="entry-footer">
+                              <a href="{{ route('Last_agrement.show',$Last_agreement->id) }}" class="button">اقرأ المزيد</a>
+                            </div>
+                          </article>
+                          <!-- .blog-post -->
+                        </div>
+
+
+                        <div class="column is-4" data-aos="fade">
+                            <p class="heading-title-top">أخر الخدمات</p>
+                          <article class="blog-post">
+                            <figure class="post-image">
+                              <a href="./blog/single.html">
+                                <img alt="Joo - Niche Multi-Purpose HTML Template" src="{{ asset('uploads/serv/'.$Last_service->image) }}"> </a>
+                            </figure>
+                            <div class="entry-header">
+                              <div class="post-meta">
+                                <ul>
+                                  <li>
+                                    {{-- <a href="#">
+                                      <span>أبريل 5 ، 2018</span>
+                                    </a> --}}
+                                  </li>
+                                </ul>
+                              </div>
+                              <h2 class="entry-title">
+                                <a href="./blog/single.html">{{ $Last_service->serve_name }}</a>
+                              </h2>
+                              <p>{{ $Last_service->desc }}</p>
+                            </div>
+                            <div class="entry-footer">
+                              <a href="{{ route('lastservice.showlast',$Last_service->id) }}"  class="button">اقرأ المزيد</a>
+                            </div>
+                          </article>
+                          <!-- .blog-post -->
+                        </div>
+                      </div>
                     </div>
-                </article>
+                  </section>
+
+                {{-- ********** Start News ************ --}}
 
 
 
-            <!-- .blog-post -->
-            </div>
-                            {{-- ********** End Service ************ --}}
-
-            <div class="column is-4" >
-            <article class="blog-post">
-                <figure class="post-image">
-                    <p class="heading-title-top">أخر الاتفاقيات</p>
-                <a href="./blog/single.html">
-                    <img alt="Joo - Niche Multi-Purpose HTML Template" src="{{ asset('uploads/agreement/'.$Last_agreement->image) }}"> </a>
-                </figure>
-                <div class="entry-header">
-                <div class="post-meta">
-                    <ul>
-                    <li>
-                        <a href="#">
-                        {{-- <span>أبريل 5 ، 2018</span> --}}
-                        </a>
-                    </li>
-                    </ul>
-                </div>
-                <h2 class="entry-title">
-                    {{-- <a href="./blog/single.html">{{ $Last_agreement->agreement_title }}</a> --}}
-
-                </h2>
-                <span class="has-text-primary">{{ $Last_agreement->agreement_title }}</span>
-
-                {{-- <h2 class="entry-title">
-                    <a href="./blog/single.html">{{ $Last_agreement->desc }}</a>
-                </h2> --}}
-                <p>{{ $Last_agreement->desc }}</p>
-
-                </div>
-                <div class="entry-footer">
-                {{-- <a href="./blog/single.html" class="button">اقرأ المزيد</a> --}}
-
-                <a href="{{ route('Last_agrement.show',$Last_agreement->id) }}" class="button">اقرأ المزيد</a>
-
-                </div>
-            </article>
-            <!-- .blog-post -->
-            </div>
-        </div>
-        </div>
-    </section>
-
-
+                {{-- ********** End Service ************ --}}
 
 
 
     {{-- start client feedback --}}
     <section id="testimonials" class="section testimonials-section has-background-primary-light is-clearfix">
         <div class="container">
-        <p class="heading-title-top has-text-centered">آراء العملاء</p>
-        <h1 class="heading-title style-3">قالوا عنا</h1>
-        <div class="testimonials  owl-carousel dots carousel-items-3 columns-style-1 ">
-            @foreach ($feedbacks as $feedback)
-            <div class="testimonials-item">
-                <p>{{ $feedback->feedback }}</p>
-                <img alt="no photo" src="{{ asset('uploads/user-img/'. $feedback->users->image) }}">
-                <h3>{{ $feedback->users->name }}
-                <br>
-                <span>{{ $feedback->services->serve_name}} Services</span>
-                </h3>
+            <p class="heading-title-top has-text-centered">آراء العملاء</p>
+            <h1 class="heading-title style-3">قالوا عنا</h1>
+            <div class="testimonials  owl-carousel dots carousel-items-3 columns-style-1 ">
+                @foreach (\App\Models\Feedback::orderBy('id','DESC')->limit(3)->get() as $feedback)
+                    <div class="testimonials-item">
+                        <p>{{ $feedback->feedback }}</p>
+                        <img alt="no photo" src="{{ asset('uploads/user-img/' . $feedback->users->image) }}">
+                        <h3>{{ $feedback->users->name }}
+                            <br>
+                            <span>{{ $feedback->services->serve_name }} Services</span>
+                        </h3>
+                    </div>
+                @endforeach
             </div>
-            @endforeach
-        </div>
         </div>
     </section>
     {{-- end client feedback --}}
+    {{-- anthor form --}}
     <section id="quote" class="section quote-section padding-bottom-none is-clearfix">
         <div class="container">
-        <div class="columns is-variable is-2 is-multiline">
-            <div class="column is-6-desktop is-12-tablet" >
-            <h1 class="heading-title style-3 has-text-left"> طلب
-                <span class="has-text-primary">عرض أسعار</span>
-            </h1>
-            <p class="heading-title-bottom">هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد النص العربى حيث يمكنك أن تولد.</p>
-            <!-- successful form message -->
-            <div class="overhang-message-content is-hidden success">
-                <span class="icon">
-                <i class="ion-md-notifications"></i>
-                </span> شكرا جزيلا! لقد تم ارسال رسالتك بنجاح. </div>
-            <!-- error form message -->
-            <div class="overhang-message-content is-hidden error">
-                <span class="icon">
-                <i class="ion-md-notifications"></i>
-                </span> ! حدث خطأ ما ، لم نتمكن من إرسال رسالتك. </div>
-            <!-- ajax contact form -->
-
-            <form accept-charset="UTF-8" class="ajax-contact-form" id="ajaxform" method="POST">
-                {{csrf_field()}}
-                <div class="field is-horizontal">
-                <div class="field-body">
-                    <div class="field">
-                    <div class="control is-expanded">
-                        {{-- <input class="input" type="text" name="name" placeholder="الإسم" required> --}}
-                        {{-- <input class="input" type="hidden" name="user_id" value="{{ auth()->user()->id }}"> --}}
+            <div class="columns is-variable is-2 is-multiline">
+                <div class="column is-6-desktop is-12-tablet">
+                    <h1 class="heading-title style-3 has-text-left"> Ask for
+                        <span class="has-text-primary">price</span>
+                    </h1>
+                    <p class="heading-title-bottom"> Always do our best for you thank you</p>
+                    <!-- successful form message -->
+                    <div class="overhang-message-content is-hidden success">
+                        <span class="icon">
+                            <i class="ion-md-notifications"></i>
+                        </span> Thank You! Your message was sent successfully.
                     </div>
+                    <!-- error form message -->
+                    <div class="overhang-message-content is-hidden error">
+                        <span class="icon">
+                            <i class="ion-md-notifications"></i>
+                        </span> Oops! Something went wrong, we couldn't send your message.
                     </div>
-                    <!-- .field -->
-                    {{-- <div class="field">
-                    <div class="control is-expanded">
-                        <input class="input" type="email" name="email" placeholder="الإيميل" required>
-                    </div>
-                    </div> --}}
-                    <!-- .field -->
-                </div>
-                <!-- .field-body -->
-                </div>
-                <div class="field is-horizontal">
-                <div class="field-body">
-                    {{-- <div class="field">
-                    <div class="control is-expanded">
-                        <input class="input" type="text" name="subject" placeholder="العنوان" required>
-                    </div>
-                    </div> --}}
-                    <!-- .field -->
-                    <div class="field">
-                    <div class="control is-expanded">
-                        <div class="select" >
-                        <select name="serv_id">
-                            <option readonly >--Chosse Your Services--</option>
-                            @foreach ($allservices as $serv )
-                            <option value="{{ $serv->id }}">{{ $serv->serve_name }}</option>
-                            @endforeach
-                        </select>
+                    <!-- ajax contact form -->
+                    {{-- <form accept-charset="UTF-8" class="ajax-contact-form" action="https://usebasin.com/f/3587049dbc33.json" method="POST"> --}}
+                    <form accept-charset="UTF-8" class="ajax-contact-form" action="https://usebasin.com/f/3587049dbc33.json" method="POST">
+                        <div class="field is-horizontal">
+                            <div class="field-body">
+                                <div class="field">
+                                    <div class="control is-expanded">
+                                      <div class="select" >
+                                        <select name="from">
+                                            <option value="" readonly > ---from ---</option>
+                                            @foreach ( \App\Models\Country::all() as $country)
+                                            <option value="{{ $country->id }}">{{ $country->Name }}</option>
+                                            @endforeach
+                                        </select>
+                                      </div>
+                                    </div>
+                                </div>
+                                <div class="field">
+                                    <div class="control is-expanded">
+                                      <div class="select">
+                                        <select name="to">
+                                            <option value="" readonly > ---to ---</option>
+                                            @foreach ( \App\Models\Country::all() as $country)
+                                            <option value="{{ $country->id }}">{{ $country->Name }}</option>
+                                            @endforeach
+                                        </select>
+                                      </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                    <!-- .field -->
-                    </div>
-                    <!-- .field-body -->
+                        <div class="field is-horizontal">
+                            <div class="field-body">
+                                <div class="field">
+                                    <div class="control is-expanded">
+                                      <div class="select">
+                                        <select name="serv_id">
+                                            <option value="" readonly > ---select your service---</option>
+                                            @foreach ( \App\Models\Service::all() as $service)
+                                            <option value="{{ $service->id }}">{{ $service->serve_name }}</option>
+                                            @endforeach
+                                        </select>
+                                      </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="field ">
+                            <div class="control is-expanded">
+                                <textarea class="textarea" name="sms" placeholder="Message"
+                                    required=""></textarea>
+                            </div>
+                        </div>
+                        <div class="field ">
+                            <div class="control">
+                                <button class="button save-data" type="submit"> ارسل طلبك <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-send-fill" viewBox="0 0 16 16">
+                                    <path fill-rule="evenodd" d="M15.964.686a.5.5 0 0 0-.65-.65L.767 5.855H.766l-.452.18a.5.5 0 0 0-.082.887l.41.26.001.002 4.995 3.178 3.178 4.995.002.002.26.41a.5.5 0 0 0 .886-.083l6-15Zm-1.833 1.89.471-1.178-1.178.471L5.93 9.363l.338.215a.5.5 0 0 1 .154.154l.215.338 7.494-7.494Z"/>
+                                  </svg>  </button>
+                            </div>
+                        </div>
+                    </form>
                 </div>
+                <div class="column is-6-desktop is-12-tablet" data-aos-delay="600">
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <img alt="Joo - Niche Multi-Purpose HTML Template" src="{{ asset('front/images/global/man.png') }}">
                 </div>
-                <div class="field ">
-                <div class="control is-expanded">
-                    <textarea class="textarea" name="sms" placeholder="رسالتك" required></textarea>
-                </div>
-                </div>
-                <div class="field ">
-                <div class="control">
-                    <button class="button save-data" type="submit">Order Now </button>
-                </div>
-                </div>
-            </form>
             </div>
-            <div class="column is-6-desktop is-12-tablet"  data-aos-delay="600">
-            <br>
-            <br>
-            <br>
-            <br>
-            <img alt="Joo - Niche Multi-Purpose HTML Template" src="{{ asset('front/images/global/man.png') }}"> </div>
-        </div>
         </div>
     </section>
+    {{-- فورمه اجاكس --}}
 @endsection
 @section('js')
+
 
 <script type="text/javascript">
     $.ajaxSetup({
@@ -634,7 +490,7 @@
   </script>
 
 {{-- *************************بداية JS************************** --}}
-
+{{--
 <script type="text/javascript">
     $.ajaxSetup({
         headers: {
@@ -672,11 +528,50 @@
           }
          });
 
-    });
-  </script>
+    }); --}}
+  {{-- </script> --}}
 
 {{-- *************************نهاية JS************************** --}}
 
 
+
+
+    <script type="text/javascript">
+        $.ajaxSetup({
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            }
+        });
+        $(document).ready(function(){
+            $(".save-data").click(function(e){
+                e.preventDefault();
+                let from = $("select[name=from]").val();
+                let to = $("select[name=to]").val();
+                let serv_id = $("select[name=serv_id]").val();
+                let sms = $("textarea[name=sms]").val();
+                console.log(from);
+                console.log(to);
+                console.log(serv_id);
+                console.log(sms);
+                $.ajax({
+                    method:"POST",
+                    url: "/sendrequest",
+                    data:{
+                        from:from,
+                        to:to,
+                        serv_id:serv_id,
+                        sms:sms,
+                    },
+                    success: function(response)
+                    {
+                        if(response) {
+                            swal(response.status);
+                            $("#ajaxform")[0].reset();
+                        }
+                    }
+                });
+            });
+        });
+    </script>
 
 @endsection

@@ -16,7 +16,7 @@ class Allagrements extends Controller
 
     public function show($id)
     {
-        $Last_agreement = Agreement::find($id);
+        $Last_agreement = Agreement::findorfail($id);
         $agreements =Agreement::orderBy('id','DESC')->get();
 
         return view('site.pages.last_agre',compact('Last_agreement','agreements'));

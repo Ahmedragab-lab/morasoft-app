@@ -21,36 +21,56 @@
                         <nav class="main-navigation right">
                             <ul class="menu">
                                 <li>
-                                    <a href="{{ route('front.index') }}">{{ __('front.home') }}</a>
+                                    <a  href="{{ route('front.index') }}">{{ __('front.home') }}</a>
                                 </li>
-                                <li>
-                                    <a href="#">{{ __('front.sections') }}</a>
+                                <li class="has-dropdown">
+                                    <a href="#"> {{ __('front.services') }}</a>
+                                    <ul class="dropdown">
+                                        @foreach ( \App\Models\Service::all() as $service)
+                                           <li><a href="{{ route('allservices.show',$service->id) }}"> {{ $service->serve_name }}</a></li>
+                                        @endforeach
+                                    </ul>
                                 </li>
-                                <li>
-                                    <a href="{{ route('allservices.index') }}">{{ __('front.services') }}</a>
+                                <li class="has-dropdown">
+                                    <a href="#"> {{ __('front.sections') }}</a>
+                                    <ul class="dropdown">
+                                        @foreach (\App\Models\Section::all() as $section)
+                                        <li><a href="{{ route('allsections.show',$section->id) }}">{{$section->section_name}}</a></li>
+                                        @endforeach
+                                    </ul>
                                 </li>
                                 <li>
                                     <a href="{{ route('allproducts.index')}}">{{ __('front.products') }}</a>
                                 </li>
                                 <li>
+
                                     {{-- <form action ={{url('/contact')}} method = "post" class="form_horezintal"> --}}
 
-                                </li>
 
+                                    <a href="{{ route('allfeedback.index')}}">{{ __('front.feedback') }} </a>
+                                </li>
+                                <li>
+                                    <a href="./blog/index.html">{{ __('front.contactus') }}</a>
+
+                                </li>
+                                <li class="has-dropdown">
+                                    <a href="#"> اشحن اونلاين</a>
+                                    <ul class="dropdown">
+                                        <li><a href="{{ url('/reserveServ') }}"<i class=" far fa-address-card"></i> قدم طلبك</a></li>
+                                        <li><a href="#"><i class=" far fa-comment-dots"></i> تتبع الشحنة</a></li>
+                                    </ul>
+                                </li>
                                 @guest
                                 <li class="btn-cta"><a href="/login"><span>Login</span></a></li>
                                 <li class="btn-cta"><a href="/register"><span>register</span></a></li>
                                 @endguest
                                 @auth
                                     <li class="has-dropdown">
-                                        <a href="#">welcome back : {{ \Str::limit(auth()->user()->name, 10) }}</a>
+                                        <a href="#"><img src={{ asset('uploads/user-img/'.Auth::user()->image) }} width="50" class="rounded-circle" > {{ \Str::limit(auth()->user()->fname, 10) }}</a>
                                         <ul class="dropdown">
-                                            <li><a href="#"><i class=" far fa-address-card"></i> Profile</a></li>
+                                            <li><a href="{{ route('profile')}}"><i class=" far fa-address-card"></i> Profile</a></li>
                                             <li><a href="#"><i class=" far fa-comment-dots"></i> my orders</a></li>
                                             <li><a href="{{ route('mycart.index')}}"><i class="icon-basket"></i> my cart</a></li>
-                                            {{-- @if(auth()->user()->admin==1)
-                                               <li><a href="{{ route('dashboard.index') }}">My Dashboard</a></li>
-                                            @endif --}}
                                             <li>
                                                 <a href="{{ route('logout') }}"
                                                     onclick="event.preventDefault();document.getElementById('logout-form').submit();">
@@ -60,6 +80,13 @@
                                                     @csrf
                                                 </form>
                                             </li>
+                                        </ul>
+                                    </li>
+                                    <li class="has-dropdown">
+                                        <a href="#"> <i class="fas fa-bell "></i></a>
+                                        <ul class="dropdown">
+                                            <li><a href="#"><img src={{ asset('assets/images/profile_img.jpg') }} width="30" class="rounded-circle" > Asmaa Hosny</a></li>
+                                            <li><a href="#"><img src={{ asset('assets/images/profile_img.jpg') }} width="30" class="rounded-circle" > Asmaa Hosny</a></li>
                                         </ul>
                                     </li>
                                 @endauth

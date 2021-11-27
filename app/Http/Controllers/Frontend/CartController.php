@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Frontend;
 use App\Models\Cart;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Models\Product;
 use Illuminate\Support\Facades\Auth;
 
 class CartController extends Controller
@@ -16,8 +17,9 @@ class CartController extends Controller
      */
     public function index()
     {
+        $products = Product::all();
         $cartitems = Cart::where('user_id',Auth::id())->get();
-        return view('site.pages.mycart',compact('cartitems'));
+        return view('site.pages.mycart',compact('cartitems','products'));
     }
 
     /**
@@ -85,4 +87,5 @@ class CartController extends Controller
     {
         //
     }
+    
 }
