@@ -76,7 +76,7 @@
                     <div class="form-group">
                         <label>{{ __('site.image') }}</label>
                         <div>
-                            <input class="form-control img" name="image"  type="file">
+                            <input class="form-control img" name="image"  type="file" accept="image/*">
                             <img src="{{ asset('uploads/user-img/' . $user->image ) }}" class="img-thumbnail img-preview" width="100" alt="">
                         </div>
                     </div>

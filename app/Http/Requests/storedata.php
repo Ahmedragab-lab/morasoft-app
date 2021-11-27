@@ -15,13 +15,13 @@ class storedata extends FormRequest
     public function rules()
     {
         return [
-            'fname' => ['required','min:3'],
-            'lname' => ['required','min:3'],
-            'email' => ['required'],
-            'image' => 'image',
+            'fname' => ['required','min:3','max:100'],
+            'lname' => ['required','min:3','max:100'],
+            'email' => ['required','email', Rule::unique('users')->ignore($this->user)],
+            'image' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
             'status' => 'required|in:active,unactive',
+            // 'email' => ['required','email','unique:users'],
             // 'password' => 'required|same:confirm-password',
-            // 'email' => ['required','email', Rule::unique('users')->ignore($this->user)],
             // 'password' => [
             //     $this->route()->user ? 'nullable':'required','confirmed','min:6'
             // ],
@@ -38,13 +38,8 @@ class storedata extends FormRequest
     public function messages()
     {
         return [
+            // 'image.mimes' => 'صيغة المرفق يجب ان تكون   jpeg,png,jpg,gif,svg',
             // 'serve_name.required' => trans('validation.required'),
-            // 'serve_name.unique' => trans('validation.unique'),
-            // 'serve_name_en.required' => trans('validation.required'),
-            // 'serve_name_en.unique' => trans('validation.unique'),
-            // 'serve_name_en.regex' => trans('site.required_en'),
-            // 'serve_name.regex' => trans('site.required_ar'),
-            // 'desc.required'=>trans('site.desc_required'),
         ];
     }
 }
