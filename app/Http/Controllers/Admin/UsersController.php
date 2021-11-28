@@ -46,7 +46,7 @@ class UsersController extends Controller
     {
         // return $this->users->update( $request, $id);
         try{
-            $data = User::find($id);
+            $data = User::findorfail($id);
 
             if($request->hasFile('image')){
                 $path = 'uploads/user-img/' . $data->image;

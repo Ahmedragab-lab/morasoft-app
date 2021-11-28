@@ -13,7 +13,7 @@
                   <span class="has-text-primary">Products</span>
                 </h1>
               <div class="columns is-variable is-4 is-multiline">
-               @foreach ( $products as $product )
+               @foreach (  \App\Models\Product::where('status','1')->orderBy('id','DESC')->get() as $product )
                     <div class="column is-4" data-aos="fade">
                         <div class="work-item">
                         <figure>
@@ -39,12 +39,9 @@
                             </figcaption>
                         </figure>
                         <div class="work-item-meta">
-                            <h3>
-                            <a href="#">{{ $product->product_name }}</a>
-                            </h3>
-                            <h5>
-                            <a href="#">{{ $product->selling_price }} LE</a>
-                            </h5>
+                            <h3><a href="#">{{ $product->product_name }}</a></h3>
+                            <h4><a href="#">{{ $product->selling_price }} LE</a></h4>
+                            <h5><a href="#">{{ $product->trending==1?'Trending':'' }} </a></h5>
                             <div class="shop-rating">
                             <span class="icon">
                                 <i class="ion-md-star"></i>
@@ -110,7 +107,7 @@
         <br>
         <div class="blog-list style-2 columns is-variable is-4 is-multiline">
         <div class="owl-carousel owl-theme">
-            @foreach ( $sections as $section)
+            @foreach ( \App\Models\Section::where('status','1')->where('popular','1')->orderBy('id','DESC')->get() as $section)
                 <div class=" item" >
                     <article class="blog-post">
                     <figure class="post-image">
@@ -118,14 +115,12 @@
                         <img alt="no photo" src="{{ asset('uploads/section/'. $section->image) }}"> </a>
                     </figure>
                     <div class="entry-header">
-                        <h2 class="entry-title">
-                        <a href="#">{{ $section->section_name}}</a>
-                        </h2>
-
+                        <h2 class="entry-title"><a href="#">{{ $section->section_name}}</a></h2>
+                        <h5><a href="#">{{ $section->popular==1?'Popular':'' }} </a></h5>
                     </div>
                     <!-- .entry-header -->
                     <div class="entry-content">
-                        <p>{{ $section->desc }}</p>
+                        <p>{{ Str::limit($section->desc,25) }}</p>
 
                     </div>
                     <!-- .entry-content -->

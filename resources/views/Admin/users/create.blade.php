@@ -64,7 +64,7 @@
                                    class="form-control" placeholder="Enter only digits" name="address1"/>
                         </div>
                     </div>
-                   
+
                     <div class="form-group">
                         <label>{{ __('site.status') }}</label>
                         <select name="status"  class="form-control " style="height: calc(2.8rem + 7px); " >
@@ -76,7 +76,7 @@
                     <div class="form-group">
                         <label>{{ __('site.image') }}</label>
                         <div>
-                            <input class="form-control img" name="image"  type="file">
+                            <input class="form-control img" name="image"  type="file" accept="image/*">
                             <img src="{{ asset('uploads/user-img/default.jpg') }}" class="img-thumbnail img-preview" width="100" alt="">
                         </div>
                     </div>

@@ -10,7 +10,7 @@
       <div id="content-area-inner" class="site-content-area-inner">
         <section class="section  is-clearfix hero has-background-primary-light">
             <div class="container">
-                {{-- <div class="col-12">
+                <div class="col-12">
                     @if (session('status'))
                         <div class="alert alert-success alert-dismissible fade show" role="alert">
                             {{ session('status') }}
@@ -19,8 +19,9 @@
                             </button>
                         </div>
                     @endif
-                </div> --}}
-                <form accept-charset="UTF-8" class="ajax-contact-form" action="{{ route('checkout.store') }}" method="POST" autocomplete="off">
+                </div>
+                <form accept-charset="UTF-8" class="ajax-contact-form" action="{{ route('checkout.store') }}"
+                      method="POST" autocomplete="off">
                     @csrf
                     <div class="row">
                         <dive class="col-md-7">
@@ -33,11 +34,11 @@
                                     <span class="icon">
                                         <i class="ion-md-notifications"></i>
                                     </span> Thank You! Your message was sent successfully. </div>
-                                    <!-- error form message -->
-                                    <div class="overhang-message-content is-hidden error">
+                                    <div class="overhang-message-content is-hidden error" >
                                     <span class="icon">
                                         <i class="ion-md-notifications"></i>
-                                    </span> Oops! Something went wrong, we couldn't send your message. </div>
+                                    </span> Thank You! Your message was sent successfully.
+                                    </div>
                                     <!-- ajax contact form -->
 
                                         <div class="field is-horizontal">
@@ -45,11 +46,11 @@
                                             <div class="field">
                                                 <div class="control is-expanded">
                                                     {{-- <input type="text" value="{{ Auth::user()->id }}" name="user_id"> --}}
-                                                <input class="input" type="text" name="fname" placeholder="First Name" value="{{ Auth::user()->fname }}" required> </div>
+                                                <input class="input" type="text" name="fname" placeholder="First Name" value="{{ Auth::user()->fname }}" readonly> </div>
                                             </div>
                                             <div class="field">
                                                 <div class="control is-expanded">
-                                                <input class="input" type="text" name="lname" placeholder="Last Name" value="{{ Auth::user()->lname }}" required> </div>
+                                                <input class="input" type="text" name="lname" placeholder="Last Name" value="{{ Auth::user()->lname }}" readonly> </div>
                                             </div>
                                             </div>
                                         </div>
@@ -57,11 +58,11 @@
                                             <div class="field-body">
                                             <div class="field">
                                                 <div class="control is-expanded">
-                                                <input class="input" type="tel" name="phone" placeholder="Your Phone" value="{{ Auth::user()->phone }}" required> </div>
+                                                <input class="input" type="email" name="email" placeholder="Your Email" value="{{ Auth::user()->email }}" readonly> </div>
                                             </div>
                                             <div class="field">
                                                 <div class="control is-expanded">
-                                                <input class="input" type="email" name="email" placeholder="Your Email" value="{{ Auth::user()->email }}" required> </div>
+                                                <input class="input" type="tel" name="phone" placeholder="Your Phone" value="{{ Auth::user()->phone }}" required> </div>
                                             </div>
                                             </div>
                                         </div>
@@ -170,11 +171,13 @@
 
 @endsection
 @section('js')
-{{-- <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 @if(session('status'))
     <script>
           swal("{{ session('status') }}");
     </script>
-@endif --}}
-<script src="https://unpkg.com/sweetalert2@7.18.0/dist/sweetalert2.all.js"></script>
+@endif
+{{-- <script src="https://unpkg.com/sweetalert2@7.18.0/dist/sweetalert2.all.js"></script> --}}
+
+
 @endsection
