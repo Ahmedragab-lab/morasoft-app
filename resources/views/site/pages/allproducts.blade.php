@@ -122,6 +122,7 @@
                     <div class="entry-content">
                         <p>{{ Str::limit($section->desc,25) }}</p>
 
+
                     </div>
                     <!-- .entry-content -->
                     <div class="entry-footer">

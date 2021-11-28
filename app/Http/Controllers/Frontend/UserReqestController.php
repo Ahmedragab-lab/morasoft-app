@@ -30,6 +30,7 @@ class UserReqestController extends Controller
                 $req->user_id = Auth::id();
                 $req->service_id = $service_id;
                 $req->sms = $sms;
+
                 $req->order_no = 'morasoft'.rand(1000000000, 9999999999);
                 $req->save();
                 return response()->json(['status'=>$req->name . ' request submitted successfully']);
@@ -61,6 +62,7 @@ class UserReqestController extends Controller
            $req->user_id = Auth::id();
            $req->service_id = $service_id;
            $req->sms = $sms;
+
            $req->order_no = 'morasoft'.rand(1000000000, 9999999999);
            $req->save();
            return response()->json(['status'=>$req->name . ' request submitted successfully']);

@@ -75,6 +75,7 @@ class ProductController extends Controller
     {
         try {
             $validated = $request->validated();
+
             $product = Product::findorfail($id);
             if($request->hasFile('image')){
                 $path = 'uploads/product/' . $product->image;

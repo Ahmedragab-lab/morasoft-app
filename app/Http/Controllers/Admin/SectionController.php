@@ -75,6 +75,7 @@ class SectionController extends Controller
     {
         try{
             $validated = $request->validated();
+
             $section = Section::findorfail($id);
             if($request->hasFile('image')){
                 $path = 'uploads/section/' . $section->image;
