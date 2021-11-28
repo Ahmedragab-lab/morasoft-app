@@ -36,13 +36,13 @@
                     </div>
                     <!-- .work-item -->
                 </div>
-<<<<<<< HEAD
 
                     <!-- .work-item -->
                 </div>
 
                 <!-- .columns -->
             </div>
+<<<<<<< HEAD
         </div>
     </div>
 </section>
@@ -66,7 +66,7 @@
 
 =======
               </div>
-            </div>
+=======
           </div>
         </section>
         <section id="testimonials" class="section testimonials-section has-background-primary-light is-clearfix">
@@ -85,8 +85,30 @@
                         </div>
                     @endforeach
                 </div>
+>>>>>>> 5f7a6b31d91d2d8b47d2942fb2619f082d966481
             </div>
         </section>
+<<<<<<< HEAD
+        <section id="testimonials" class="section testimonials-section has-background-primary-light is-clearfix">
+            <div class="container">
+                <p class="heading-title-top has-text-centered">آراء العملاء</p>
+                <h1 class="heading-title style-3">قالوا عنا</h1>
+                <div class="testimonials  owl-carousel dots carousel-items-3 columns-style-1 ">
+                    @foreach (\App\Models\Feedback::orderBy('id','DESC')->limit(3)->get() as $feedback)
+                        <div class="testimonials-item">
+                            <p>{{ $feedback->feedback }}</p>
+                            <img alt="no photo" src="{{ asset('uploads/user-img/' . $feedback->users->image) }}">
+                            <h3>{{ $feedback->users->name }}
+                                <br>
+                                <span>{{ $feedback->services->serve_name }} Services</span>
+                            </h3>
+                        </div>
+                    @endforeach
+                </div>
+            </div>
+        </section>
+=======
+>>>>>>> 5f7a6b31d91d2d8b47d2942fb2619f082d966481
         {{-- anthor form --}}
     <section id="quote" class="section quote-section padding-bottom-none is-clearfix">
         <div class="container">
@@ -175,7 +197,10 @@
         </div>
     </section>
     {{-- فورمه اجاكس --}}
+<<<<<<< HEAD
 >>>>>>> 8ebb1e6c8d0af14a182a251cf6343177d3883627
+=======
+>>>>>>> 5f7a6b31d91d2d8b47d2942fb2619f082d966481
       </div>
     </div>
 </div>
@@ -189,9 +214,12 @@
         }
     });
 <<<<<<< HEAD
+<<<<<<< HEAD
   </script>
 @endsection
 =======
+=======
+>>>>>>> 5f7a6b31d91d2d8b47d2942fb2619f082d966481
     $(document).ready(function(){
         $(".save-data").click(function(e){
             e.preventDefault();
@@ -227,4 +255,7 @@
 {{--
 
     --}}
+<<<<<<< HEAD
 >>>>>>> 8ebb1e6c8d0af14a182a251cf6343177d3883627
+=======
+>>>>>>> 5f7a6b31d91d2d8b47d2942fb2619f082d966481

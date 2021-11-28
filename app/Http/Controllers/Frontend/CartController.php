@@ -87,5 +87,5 @@ class CartController extends Controller
     {
         //
     }
-    
+
 }

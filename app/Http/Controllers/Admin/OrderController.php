@@ -68,7 +68,11 @@ class OrderController extends Controller
     {
         try
         {
+<<<<<<< HEAD
             $order_price = UserReqest::find($id);
+=======
+            $order_price = UserReqest::findorfail($id);
+>>>>>>> 5f7a6b31d91d2d8b47d2942fb2619f082d966481
             $order_price->price = $request->price;
             $order_price->save();
             toastr()->success(__('price added successfully'));
