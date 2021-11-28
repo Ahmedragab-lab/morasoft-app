@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Frontend\ContactController;
 use App\Http\Controllers\Frontend\UserprofileController;
 use Illuminate\Support\Facades\Route;
 use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
@@ -28,7 +29,8 @@ Route::group(
         Route::resource('Last_event',Frontend\Allevents::class);// get last event
         Route::resource('allsections',Frontend\AllSections::class); // go to all Sections page
         Route::resource('allfeedback',Frontend\Allfeedback::class); // go to all feedback page
-        Route::view('contact','site.pages.contact')->name('contact');
+//        Route::view('contact','site.pages.contact')->name('contact');
+        Route::resource('contact',ContactController::class);
         //Route::resource('userprofile',Frontend\Userprofile::class);
         //Route::view('profile','site.pages.userprofile')->name('profile');
         Route::resource('userprofile',UserprofileController::class);

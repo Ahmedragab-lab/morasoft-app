@@ -11,12 +11,12 @@ class Allfeedback extends Controller
 {
    public function index(){
     $feedbacks = Feedback::all();
- 
+
     return view('site.pages.feedback',compact('feedbacks'));
    }
    public function show($id){
     $feedbacks = Feedback::findorfail($id);
-    return view('site.pages.feedback',compact('feedback'));
+    return view('site.pages.feedback',compact('feedbacks'));
    }
-  
+
 }

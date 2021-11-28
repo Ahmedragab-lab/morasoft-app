@@ -46,7 +46,7 @@
                                     <a href="{{ route('allfeedback.index')}}">{{ __('front.feedback') }} </a>
                                 </li>
                                 <li>
-                                    <a href="{{ route('contact')}}">{{ __('front.contactus') }}</a>
+                                    <a href="{{ route('contact.index')}}">{{ __('front.contactus') }}</a>
                                 </li>
                                 <li class="has-dropdown">
                                     <a href="#"> اشحن اونلاين</a>
