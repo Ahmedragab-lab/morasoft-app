@@ -18,55 +18,88 @@
       </div>
     </div>
 </div>
-
-<section class="section works-list is-clearfix">
-    <div class="container">
-        <h1 class="heading-title style-1">{{ $service->serve_name }}</h1>
-        <h2 class="has-text-centered">{{ $service->desc }}</h2>
-        <br>
-<br>
-        <div class="works">
-            <div class="columns is-variable is-4 is-multiline">
-                <div class="column is-4" data-aos="fade-up">
-                    <div class="work-item">
-                        <figure class="work-item-img">
-                            <img alt="Joo - Niche Multi-Purpose HTML Template" src="{{asset('uploads/serv/'.$service->image)}} ">
-                        </figure>
-
-                    </div>
-                    <!-- .work-item -->
-                </div>
-
-                    <!-- .work-item -->
-                </div>
-
-                <!-- .columns -->
-            </div>
-<<<<<<< HEAD
-        </div>
-    </div>
-</section>
-<!-- .works-list -->
-<!-- testimonials section -->
-<section class="section hero has-background-primary-light is-clearfix">
-    <div class="container">
-        <div class="testimonials  owl-carousel dots carousel-items-  ">
-            <div class="testimonials-item">
-                <img alt="Joo - Niche Multi-Purpose HTML Template" src="{{asset('uploads/user-img/' .Auth::user()->image )}}">
-                <a href="{{route('allservices.show',$service->id)}}">
-                <p>#</p>
-                <h3>#</h3>
-            </div>
-
-        </div>
-    </div>
-</section>
-<!-- .testimonials-list -->
-
-
-=======
+<div id="content-main-wrap" class="is-clearfix">
+    <div id="content-area" class="site-content-area">
+      <div id="content-area-inner" class="site-content-area-inner">
+        <section class="section hero has-background-primary-light padding-bottom-none padding-top-none is-clearfix">
+          <div>
+            <div class="columns is-multiline is-variable is-8">
+              <div class="column is-6-desktop is-12-tablet">
+                <figure>
+                  <img alt="Joo - Niche Multi-Purpose HTML Template" src="{{ asset('uploads/serv/'.$service->image) }}" class="is-block">
+                </figure>
               </div>
-=======
+              <div class="column is-6-desktop is-12-tablet" data-aos="fade-up">
+                <div style="padding: 30px 30% 100px 0;">
+                  <br>
+                  <br>
+                  <br>
+                  <br>
+                  <h1 class="heading-title style-1 has-text-left">{{ $service->serve_name }}</h1>
+                  <p class="heading-title-bottom has-text-left">{{ $service->desc }}
+                    <br> accumsan, metus ultrices eleifend gravi.</p>
+                  <div class="columns is-variable is-4 is-multiline boxes-style-3">
+                    <div class="column is-12 aos-init aos-animate" data-aos="fade">
+                      <div class="box-item media padding-bottom-none">
+                        <div class="media-left">
+                          <a href="../features/index.html">
+                            <span class="icon">
+                              <i class="ion-ios-briefcase-outline"></i>
+                            </span>
+                          </a>
+                        </div>
+                        <div class="media-content">
+                          <h3>
+                            <a href="../features/index.html">Prototyping</a>
+                          </h3>
+                          <p>Climatology chronocrator puppysnatch leacher unrived tomentum insignia harmoniousness rule.</p>
+                          <a href="../features/index.html" class="button">More</a>
+                        </div>
+                      </div>
+                      <!-- .box-item -->
+                    </div>
+                    <div class="column is-12 aos-init aos-animate" data-aos="fade">
+                      <div class="box-item media padding-bottom-none">
+                        <div class="media-left">
+                          <a href="../features/index.html">
+                            <span class="icon">
+                              <i class="ion-ios-browsers-outline"></i>
+                            </span>
+                          </a>
+                        </div>
+                        <div class="media-content">
+                          <h3>
+                            <a href="../features/index.html">Branding</a>
+                          </h3>
+                          <p>Climatology chronocrator puppysnatch leacher unrived tomentum insignia harmoniousness rule.</p>
+                          <a href="../features/index.html" class="button">More</a>
+                        </div>
+                      </div>
+                      <!-- .box-item -->
+                    </div>
+                    <div class="column is-12 aos-init aos-animate" data-aos="fade">
+                      <div class="box-item media padding-bottom-none">
+                        <div class="media-left">
+                          <a href="../features/index.html">
+                            <span class="icon">
+                              <i class="ion-ios-paper-outline"></i>
+                            </span>
+                          </a>
+                        </div>
+                        <div class="media-content">
+                          <h3>
+                            <a href="../features/index.html">Development</a>
+                          </h3>
+                          <p>Climatology chronocrator puppysnatch leacher unrived tomentum insignia harmoniousness rule.</p>
+                          <a href="../features/index.html" class="button">More</a>
+                        </div>
+                      </div>
+                      <!-- .box-item -->
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </section>
         <section id="testimonials" class="section testimonials-section has-background-primary-light is-clearfix">
@@ -85,30 +118,8 @@
                         </div>
                     @endforeach
                 </div>
->>>>>>> 5f7a6b31d91d2d8b47d2942fb2619f082d966481
             </div>
         </section>
-<<<<<<< HEAD
-        <section id="testimonials" class="section testimonials-section has-background-primary-light is-clearfix">
-            <div class="container">
-                <p class="heading-title-top has-text-centered">آراء العملاء</p>
-                <h1 class="heading-title style-3">قالوا عنا</h1>
-                <div class="testimonials  owl-carousel dots carousel-items-3 columns-style-1 ">
-                    @foreach (\App\Models\Feedback::orderBy('id','DESC')->limit(3)->get() as $feedback)
-                        <div class="testimonials-item">
-                            <p>{{ $feedback->feedback }}</p>
-                            <img alt="no photo" src="{{ asset('uploads/user-img/' . $feedback->users->image) }}">
-                            <h3>{{ $feedback->users->name }}
-                                <br>
-                                <span>{{ $feedback->services->serve_name }} Services</span>
-                            </h3>
-                        </div>
-                    @endforeach
-                </div>
-            </div>
-        </section>
-=======
->>>>>>> 5f7a6b31d91d2d8b47d2942fb2619f082d966481
         {{-- anthor form --}}
     <section id="quote" class="section quote-section padding-bottom-none is-clearfix">
         <div class="container">
@@ -197,10 +208,6 @@
         </div>
     </section>
     {{-- فورمه اجاكس --}}
-<<<<<<< HEAD
->>>>>>> 8ebb1e6c8d0af14a182a251cf6343177d3883627
-=======
->>>>>>> 5f7a6b31d91d2d8b47d2942fb2619f082d966481
       </div>
     </div>
 </div>
@@ -213,13 +220,6 @@
             'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
         }
     });
-<<<<<<< HEAD
-<<<<<<< HEAD
-  </script>
-@endsection
-=======
-=======
->>>>>>> 5f7a6b31d91d2d8b47d2942fb2619f082d966481
     $(document).ready(function(){
         $(".save-data").click(function(e){
             e.preventDefault();
@@ -253,9 +253,4 @@
 </script>
 @endsection
 {{--
-
     --}}
-<<<<<<< HEAD
->>>>>>> 8ebb1e6c8d0af14a182a251cf6343177d3883627
-=======
->>>>>>> 5f7a6b31d91d2d8b47d2942fb2619f082d966481
