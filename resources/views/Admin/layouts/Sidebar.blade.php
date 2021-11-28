@@ -89,6 +89,15 @@
                     </a>
                 </li>
 
+                <li>
+                    <a href="{{ route('companies.index') }}" class="waves-effect">
+                        <i class="dripicons-home"></i>
+                        <span>{{ trans('site.comp') }}
+                            <span class="badge badge-success badge-pill float-right"></span>
+                        </span>
+                    </a>
+                </li>
+
                 </li>
 
                 <li>
@@ -104,6 +113,14 @@
                     <a href="{{ route('tracking_steps.index') }}" class="waves-effect">
                         <i class=" far fa-bell"></i>
                         <span>{{ trans('site.tracking-steps') }}
+                            <span class="badge badge-success badge-pill float-right"></span>
+                        </span>
+                    </a>
+                </li>
+                <li>
+                    <a href="{{ route('cartitems.index') }}" class="waves-effect">
+                        <i class="far fa-comment-dots"></i>
+                        <span>{{ trans('site.orderdetails') }}
                             <span class="badge badge-success badge-pill float-right"></span>
                         </span>
                     </a>

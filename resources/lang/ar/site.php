@@ -18,6 +18,7 @@ return [
    'permissions'=>'الصلاحيات',
    'clients'=>'العملاء',
    'component'=>'المكونات',
+   'comp'=>'الشركات',
    'categories'=>'الاقسام',
    'Products'=>'المنتجات',
    'serv'=>'الخدمات',
@@ -71,6 +72,46 @@ return [
 'products'=>' المنتجات',
 
 // user request page translation
-'orders'=>'طلبات العملاء',
+'orders'=>'طلبات الخدمات',
 // end request page translation
+
+
+
+//*********************** */
+
+// start Company page translation
+'CompNameAR'=> ' اسم الشركة بالعربية',
+'CompNameEN'=> ' اسم الشركة بالانجليزية',
+'CompDescription' => 'نبذة ',
+'CompEmail' => 'الايميل',
+'CompPhone' => 'الهاتف',
+'CompAddress' => 'العنوان',
+'CompDetail' => 'بيانات حول الشركة',
+
+'CompUpdate' => 'تعديل بيانات الشركة',
+
+'CompAdd' => 'اضافة شركة ',
+
+
+
+// end Company page translation
+
+
+// cartorder page==================================================================
+
+'orderdetails' => 'طلبات المنتجات',
+'tracking_no' => 'رقم الطلب',
+'userfname' => 'الاسم الاول',
+'userlname' => 'اسم العائله',
+'useremail' => 'الايميل',
+'address1' => 'عنوان1',
+'address2' => 'عنوان2',
+'city' => 'المدينه',
+'country' => 'البلد',
+'productname' => 'اسم المنتج',
+'productprice' => 'سعر المنتج',
+'sumprice' => 'سعر الكميه',
+'sumtax' => 'ضريبه',
+'total' => 'الاجمالى',
+// End cartorder page===============================================================
 ];

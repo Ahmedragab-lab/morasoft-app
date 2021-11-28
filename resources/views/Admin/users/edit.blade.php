@@ -11,9 +11,16 @@
                     {{csrf_field()}}
                     @method('PUT')
                     <div class="form-group">
-                        <label>{{ __('site.name') }}</label>
-                        <input type="text" class="form-control" required placeholder="Enter User Name" name="name" value="{{ $user->name }}" />
-                        @error('name')
+                        <label>{{ __('site.fname') }}</label>
+                        <input type="text" class="form-control" required placeholder="Enter User Name" name="fname" value="{{ $user->fname }}" />
+                        @error('fname')
+                        <div class="text-warning">{{ $message }}</div>
+                        @enderror
+                    </div>
+                    <div class="form-group">
+                        <label>{{ __('site.lname') }}</label>
+                        <input type="text" class="form-control" required placeholder="Enter User Name" name="lname" value="{{ $user->lname }}" />
+                        @error('lname')
                         <div class="text-warning">{{ $message }}</div>
                         @enderror
                     </div>
@@ -52,10 +59,10 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <label>{{ __('site.address') }}</label>
+                        <label>{{ __('site.address1') }}</label>
                         <div>
                             <input  type="text"
-                                   class="form-control" placeholder="Enter only digits" name="address" value="{{ $user->address }}"/>
+                                   class="form-control" placeholder="Enter only digits" name="address1" value="{{ $user->address1 }}"/>
                         </div>
                     </div>
                     <div class="form-group">
@@ -69,7 +76,7 @@
                     <div class="form-group">
                         <label>{{ __('site.image') }}</label>
                         <div>
-                            <input class="form-control img" name="image"  type="file">
+                            <input class="form-control img" name="image"  type="file" accept="image/*">
                             <img src="{{ asset('uploads/user-img/' . $user->image ) }}" class="img-thumbnail img-preview" width="100" alt="">
                         </div>
                     </div>

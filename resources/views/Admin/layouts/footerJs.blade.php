@@ -43,4 +43,10 @@
     });
 </script>
 {{-- end image preview --}}
-
+{{-- <script src="{{ URL::asset('plugins/datatables/jquery.dataTables.min.js')}}"></script> --}}
+<script src="{{ URL::asset('plugins/datatables/jquery.dataTables.min.js')}}"></script>
+<script src="{{ URL::asset('plugins/datatables/dataTables.bootstrap4.min.js')}}"></script>
+<!-- Datatable init js -->
+<script src="{{ URL::asset('admin/en/assets/pages/datatables.init.js')}}"></script>
+<!-- App js -->
+<script src="{{ URL::asset('admin/en/assets/js/app.js')}}"></script>

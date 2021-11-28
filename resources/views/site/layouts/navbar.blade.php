@@ -21,13 +21,8 @@
                         <nav class="main-navigation right">
                             <ul class="menu">
                                 <li>
-
                                     <a  href="{{ route('front.index') }}">{{ __('front.home') }}</a>
-
                                 </li>
-
-
-
                                 <li class="has-dropdown">
                                     <a href="#"> {{ __('front.services') }}</a>
                                     <ul class="dropdown">
@@ -48,7 +43,7 @@
                                     <a href="{{ route('allproducts.index')}}">{{ __('front.products') }}</a>
                                 </li>
                                 <li>
-                                    <a href="{{ route('allfeedback.index')}}">{{ __('front.feedback') }}</a>
+                                    <a href="{{ route('allfeedback.index')}}">{{ __('front.feedback') }} </a>
                                 </li>
                                 <li>
                                     <a href="./blog/index.html">{{ __('front.contactus') }}</a>
@@ -56,7 +51,7 @@
                                 <li class="has-dropdown">
                                     <a href="#"> اشحن اونلاين</a>
                                     <ul class="dropdown">
-                                        <li><a href="#"><i class=" far fa-address-card"></i> قدم طلبك</a></li>
+                                        <li><a href="{{ url('/reserveServ') }}"<i class=" far fa-address-card"></i> قدم طلبك</a></li>
                                         <li><a href="#"><i class=" far fa-comment-dots"></i> تتبع الشحنة</a></li>
                                     </ul>
                                 </li>
@@ -66,13 +61,9 @@
                                 @endguest
                                 @auth
                                     <li class="has-dropdown">
-                                        <a href="#"><img src={{ asset('uploads/user-img/'.Auth::user()->image) }} width="50" class="rounded-circle" > {{ \Str::limit(auth()->user()->name, 10) }}</a>
+                                        <a href="#"><img src={{ asset('uploads/user-img/'.Auth::user()->image) }} width="50" class="rounded-circle" > {{ \Str::limit(auth()->user()->fname, 10) }}</a>
                                         <ul class="dropdown">
-
-                                            
-
                                             <li><a href="{{ route('profile')}}"><i class=" far fa-address-card"></i> Profile</a></li>
-
                                             <li><a href="#"><i class=" far fa-comment-dots"></i> my orders</a></li>
                                             <li><a href="{{ route('mycart.index')}}"><i class="icon-basket"></i> my cart</a></li>
                                             <li>

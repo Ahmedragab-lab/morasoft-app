@@ -46,14 +46,14 @@ class ServicesRepo implements ServicesInterface{
     }
     public function edit($id)
     {
-        $serv = Service::find($id);
+        $serv = Service::findorfail($id);
         return view('admin.services.edit',compact('serv'));
     }
     public function update( $request, $id)
     {
         try{
             $validated = $request->validated();
-            $serv = Service::find($id);
+            $serv = Service::findorfail($id);
             if($request->hasFile('image')){
                 $path = 'uploads/serv/' . $serv->image;
                 if(File::exists($path)){
@@ -79,7 +79,7 @@ class ServicesRepo implements ServicesInterface{
     public function destroy($id)
     {
         try{
-            $serv = Service::find($id);
+            $serv = Service::findorfail($id);
             if($serv->image != 'default.jpg'){
                 $path = 'uploads/serv/' . $serv->image;
                 if(File::exists($path)){

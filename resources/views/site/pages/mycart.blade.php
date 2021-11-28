@@ -27,64 +27,68 @@
             </ul>
         </div>
         <div class=" main-content-area">
-            <div class="wrap-iten-in-cart">
-                <h3 class="box-title">Products Name</h3>
-                <ul class="products-cart">
-                {{-- ajax for  ==========================================  count total & ajax increment decrement counter ==--}}
-                    @php $total = 0; $tax = 14/100; @endphp
-                    @foreach ( $cartitems as $item)
-                        <li class="pr-cart-item">
-                            <input type="hidden" value="{{ $item->product_id }}" name="prod_id" class="prod_id_delete">
-                            <div class="product-image">
-                                <figure><img src="{{ asset('uploads/product/'.$item->product->image) }}" alt=""></figure>
-                            </div>
-                            <div class="product-name">
-                                <a class="link-to-product" href="#">{{ $item->product->product_name }}</a>
-                            </div>
-                            <div class="price-field produtc-price"><p class="price">{{ $item->product->selling_price }} LE</p></div>
-                            <div class="quantity">
-                                <div class="quantity-input">
-                                    <input type="text" name="product-quatity" value="{{ $item->product_qty }}" data-max="120" pattern="[0-9]*" >
-                                    <a class="btn btn-increase" href="#"></a>
-                                    <a class="btn btn-reduce" href="#"></a>
+            @if($cartitems->count() > 0)
+                <div class="wrap-iten-in-cart">
+                    <h3 class="box-title">Products Name</h3>
+                    <ul class="products-cart">
+                    {{-- ajax for  ==========================================  count total & ajax increment decrement counter ==--}}
+                        @php $total = 0; $tax = 14/100; @endphp
+                        @foreach ( $cartitems as $item)
+                            <li class="pr-cart-item product_data">
+                                <input type="hidden" value="{{ $item->product_id }}" name="prod_id" class="prod_id_delete prod_id">
+                                <input type="hidden" value="{{ $item->product->selling_price }}" name="prod_price" class="prod_price">
+                                <div class="product-image">
+                                    <figure><img src="{{ asset('uploads/product/'.$item->product->image) }}" alt=""></figure>
                                 </div>
-                            </div>
-                            <div class="price-field sub-total"><p class="price">{{ $item->product->selling_price * $item->product_qty }} LE</p></div>
-                            {{-- ajax for  ==========================================  count total & ajax increment decrement counter ==--}}
-                            {{-- ajax for delete ========================================== ajax============================================================--}}
-                            <div class="delete">
-                                <button href="#" class="btn btn-danger delete-item" title="delete" >
-                                    <i class="fa fa-trash" ></i> Remove
-                                </button>
-                            </div>
-                        </li>
-                    @php $total += $item->product->selling_price * $item->product_qty ; @endphp
-                    @endforeach
-                {{-- ajax for delete ==========================================ajax ============================================================--}}
-                </ul>
-            </div>
-            <div class="summary">
-                <div class="order-summary">
-                    <h4 class="title-box">Order Summary</h4>
-                  <p class="summary-info"><span class="title">Subtotal Shipping 14%</span><b class="index">
-                   {{ $total * $tax}}
-                  </b></p>
-                    <!-- <p class="summary-info"><span class="title">Shipping</span><b class="index">Free Shipping</b></p>  -->
-                    <p class="summary-info total-info "><span class="title">Total</span><b class="index">{{ $total + ( $total * $tax) }} LE</b></p>
+                                <div class="product-name">
+                                    <a class="link-to-product " href="#">{{ $item->product->product_name }}</a>
+                                </div>
+                                <div class="price-field "><p class="price product-price "  >{{ $item->product->selling_price }} LE</p></div>
+                                <div class="quantity">
+                                    <div class="quantity-input">
+                                        <input type="number"  min="1" name="prod_qty" value="{{ $item->product_qty }}" data-max="120" pattern="[0-9]*" class="qty-input">
+                                        <a class="btn btn-increase changeqty increment" href="#"></a>
+                                        <a class="btn btn-reduce changeqty decrement" href="#"></a>
+                                    </div>
+                                </div>
+                                <div class="price-field sub-total"><p class="price subprice">{{ $item->product->selling_price * $item->product_qty }} LE</p></div>
+                                {{-- ajax for  ==========================================  count total & ajax increment decrement counter ==--}}
+                                {{-- ajax for delete ========================================== ajax============================================================--}}
+                                <div class="delete">
+                                    <button href="#" class="btn btn-danger delete-item" title="delete" >
+                                        <i class="fa fa-trash" ></i> Remove
+                                    </button>
+                                </div>
+                            </li>
+                        @php $total += $item->product->selling_price * $item->product_qty ; @endphp
+                        @endforeach
+                    {{-- ajax for delete ==========================================ajax ============================================================--}}
+                    </ul>
                 </div>
-               <div class="checkout-info">
-                    <label class="checkbox-field">
-                        <input class="frm-input " name="have-code" id="have-code" value="" type="checkbox"><span>I have promo code</span>
-                    </label>
-                    <a class="btn btn-checkout" href="checkout.html">Check out</a>
-                    <a class="link-to-shop" href="{{ route('allproducts.index')}}">Continue Shopping<i class="fa fa-arrow-circle-right" aria-hidden="true"></i></a>
+                <div class="summary">
+                    <div class="order-summary">
+                        <h4 class="title-box">Order Summary</h4>
+                    <p class="summary-info" name="cart_tax"><span class="title">Subtotal Shipping 14%</span><b class="index  cart_tax" id="cart_tax">
+                    {{ $total * $tax}} LE
+                    </b></p>
+                        <!-- <p class="summary-info"><span class="title">Shipping</span><b class="index">Free Shipping</b></p>  -->
+                        <p class="summary-info total-info "><span class="title">Total</span><b class="index total-price cart_total">{{ $total + ( $total * $tax) }} LE</b></p>
+                    </div>
+                <div class="checkout-info">
+                        <label class="checkbox-field">
+                            {{-- <input class="frm-input " name="have-code" id="have-code" value="" type="checkbox"><span>I have promo code</span> --}}
+                        </label>
+                        <a class="btn btn-warning float end" href="{{ route('checkout.index') }}">Check out</a>
+            @else
+                        <h2>Your Cart is empty</h2>
+                        <a class="btn btn-warning link-to-shop float end" href="{{ route('allproducts.index')}}">Continue Shopping<i class="fa fa-arrow-circle-right" aria-hidden="true"></i></a>
+                    </div>
+                    {{-- <div class="update-clear">
+                        <a class="btn btn-clear" href="#">Clear Shopping Cart</a>
+                        <a class="btn btn-update" href="#">Update Shopping Cart</a>
+                    </div> --}}
                 </div>
-                {{-- <div class="update-clear">
-                    <a class="btn btn-clear" href="#">Clear Shopping Cart</a>
-                    <a class="btn btn-update" href="#">Update Shopping Cart</a>
-                </div> --}}
-            </div>
-
+            @endif
             <div class="wrap-show-advance-info-box style-1 box-in-site">
                 <h3 class="title-box">Most Viewed Products</h3>
                 <div class="wrap-products">
@@ -127,6 +131,8 @@
 	<script src="{{ asset('ecommerce') }}/js/owl.carousel.min.js"></script>
 	{{-- <script src="{{ asset('ecommerce') }}/js/jquery.sticky.js"></script> --}}
 	<script src="{{ asset('ecommerce') }}/js/functions.js"></script>
+
+
     <script type="text/javascript">
         $.ajaxSetup({
             headers: {
@@ -134,6 +140,29 @@
             }
         });
         $(document).ready(function(){
+
+            $('.increment').click(function(e){
+                e.preventDefault();
+                // var inc = $('.qty-input').val();
+                var inc = $(this).closest('.product_data').find('.qty-input').val();
+                var value = parseInt(inc,10);
+                value = isNaN(value) ? 0 : value;
+                if(value < 10){
+                    value++ ;
+                    // $('.qty-input').val(value);
+                    var inc = $(this).closest('.product_data').find('.qty-input').val(value);
+                }
+            });
+            $('.decrement').click(function(e){
+                e.preventDefault();
+                var dec = $(this).closest('.product_data').find('.qty-input').val();
+                var value = parseInt(dec,10);
+                value = isNaN(value) ? 0 : value;
+                if(value > 1){
+                    value-- ;
+                    var inc = $(this).closest('.product_data').find('.qty-input').val(value);
+                }
+            });
             $('.delete-item').click(function(e){
                 e.preventDefault();
                 var prod_id  = $('input[name="prod_id"]').val();
@@ -150,8 +179,54 @@
                     }
                 });
             });
+            $('.changeqty').click(function(e){
+                e.preventDefault();
+                // var prod_id  = $('input[name="prod_id"]').val();
+                var prod_id  =  $(this).closest('.product_data').find('.prod_id').val();
+                var prod_qty  =  $(this).closest('.product_data').find('.qty-input').val();
+                var prod_price =  $(this).closest('.product_data').find('.prod_price').val();
+                // var cart_tax  =  prod_qty * prod_price;
+                // var cart_total  =  $('input[name="cart_total"]').val();
+                // var prod_qty = $('input[name="prod_qty"]').val();
+                console.log(prod_qty);
+                console.log(prod_price);
+                // console.log(cart_tax);
+                // console.log(cart_total);
+                $.ajax({
+                    method:"POST",
+                    url: "/update_qty",
+                    data: {
+                        'prod_id': prod_id,
+                        'prod_qty': prod_qty,
+                        'prod_price': prod_price,
+                        // 'cart_tax': cart_tax,
+                        // 'cart_total': cart_total,
+                    },
+                    success: function(response) {
+                        window.location.reload();
+                    }
+                });
+            });
         });
   </script>
+  {{-- <script>
+        $(document).ready(function(){
+            $('.qty-input').click(function(e){
+                e.preventDefault();
+                var price = $(this).closest('.product_data').find('.product-price').val();
+                console.log(price);
+                calc_total();
+            });
+        });
+       function calc_total(){
+            var price = 0;
+            $('.product-price').each(function(){
+            price += parseInt($(this).html());
+            });
+            $('.total-price').html(price);
+            // console.log(price);
+         }
+  </script> --}}
 
 @endsection
 

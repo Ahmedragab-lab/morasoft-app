@@ -46,7 +46,7 @@ class UsersController extends Controller
     {
         // return $this->users->update( $request, $id);
         try{
-            $data = User::find($id);
+            $data = User::findorfail($id);
 
             if($request->hasFile('image')){
                 $path = 'uploads/user-img/' . $data->image;
@@ -59,7 +59,8 @@ class UsersController extends Controller
                 $file->move('uploads/user-img',$filename);
                 $data->image = $filename;
             }
-            $data->name = $request->name;
+            $data->fname = $request->fname;
+            $data->lname = $request->lname;
             if($data->email != $request->email){
                 $this->validate($request,[
                     'email' => ['required','unique:users'],
@@ -69,7 +70,7 @@ class UsersController extends Controller
             $data->password = Hash::make($request->password);
             $data->status = $request->status;
             $data->phone = $request->phone;
-            $data->address = $request->address;
+            $data->address1 = $request->address1;
             $data->update();
             toastr()->success(__('user update successfully'));
             return redirect()->route('users.index');

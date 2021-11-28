@@ -10,9 +10,16 @@
                 <form class="" action="{{route('users.store')}}" method="post" enctype="multipart/form-data">
                     {{csrf_field()}}
                     <div class="form-group">
-                        <label>{{ __('site.name') }}</label>
-                        <input type="text" class="form-control" required placeholder="Enter User Name" name="name" />
-                        @error('name')
+                        <label>{{ __('site.fname') }}</label>
+                        <input type="text" class="form-control" required placeholder="Enter User Name" name="fname" />
+                        @error('fname')
+                        <div class="text-warning">{{ $message }}</div>
+                        @enderror
+                    </div>
+                    <div class="form-group">
+                        <label>{{ __('site.lname') }}</label>
+                        <input type="text" class="form-control" required placeholder="Enter User Name" name="lname" />
+                        @error('lname')
                         <div class="text-warning">{{ $message }}</div>
                         @enderror
                     </div>
@@ -51,12 +58,13 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <label>{{ __('site.address') }}</label>
+                        <label>{{ __('site.address1') }}</label>
                         <div>
                             <input  type="text"
-                                   class="form-control" placeholder="Enter only digits" name="address"/>
+                                   class="form-control" placeholder="Enter only digits" name="address1"/>
                         </div>
                     </div>
+
                     <div class="form-group">
                         <label>{{ __('site.status') }}</label>
                         <select name="status"  class="form-control " style="height: calc(2.8rem + 7px); " >
@@ -68,7 +76,7 @@
                     <div class="form-group">
                         <label>{{ __('site.image') }}</label>
                         <div>
-                            <input class="form-control img" name="image"  type="file">
+                            <input class="form-control img" name="image"  type="file" accept="image/*">
                             <img src="{{ asset('uploads/user-img/default.jpg') }}" class="img-thumbnail img-preview" width="100" alt="">
                         </div>
                     </div>

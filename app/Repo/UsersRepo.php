@@ -34,12 +34,13 @@ class UsersRepo implements UsersInterface{
                     $file->move('uploads/user-img/', $filename);
                     $data->image = $filename;
                 }
-                $data->name = $request->name;
+                $data->fname = $request->fname;
+                $data->lname = $request->lname;
                 $data->email = $request->email;
                 $data->password = Hash::make($request->password);
                 $data->status = $request->status;
                 $data->phone = $request->phone;
-                $data->address = $request->address;
+                $data->address1 = $request->address1;
                 $data->save();
                 toastr()->success(__('user create successfully'));
                 return redirect()->route('users.index');
@@ -58,7 +59,7 @@ class UsersRepo implements UsersInterface{
     public function update( $request, $id)
     {
         try{
-            $data = User::find($id);
+            $data = User::findorfail($id);
 
             if($request->hasFile('image')){
                 $path = 'uploads/user-img/' . $data->image;
@@ -71,15 +72,16 @@ class UsersRepo implements UsersInterface{
                 $file->move('uploads/user-img',$filename);
                 $data->image = $filename;
             }
-            $data->name = $request->name;
 
+            $data->fname = $request->fname;
+            $data->lname = $request->lname;
             $data->email = $request->email;
             $data->password = Hash::make($request->password);
             // $data->password = Hash::make($request->password)?'':'password';
 
             $data->status = $request->status;
             $data->phone = $request->phone;
-            $data->address = $request->address;
+            $data->address1 = $request->address1;
             $data->update();
             toastr()->success(__('user update successfully'));
             return redirect()->route('users.index');
@@ -91,7 +93,7 @@ class UsersRepo implements UsersInterface{
     public function destroy($id)
     {
         try{
-            $data = User::find($id);
+            $data = User::findorfail($id);
             if($data->image != 'default.jpg'){
                 $path = 'uploads/user-img/' . $data->image;
                 if(File::exists($path)){

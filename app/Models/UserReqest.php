@@ -16,4 +16,10 @@ class UserReqest extends Model
     public function service(){
         return $this->belongsTo(Service::class,'service_id');
     }
+    public function from(){
+        return $this->belongsTo(Country::class,'from_id');
+    }
+    public function to(){
+        return $this->belongsTo(Country::class,'to_id');
+    }
 }
