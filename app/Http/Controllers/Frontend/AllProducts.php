@@ -10,9 +10,9 @@ use Illuminate\Http\Request;
 class AllProducts extends Controller
 {
    public function index(){
-    $products = Product::all();
-    $sections = section::all();
-    return view('site.pages.allproducts',compact('products','sections'));
+    // $products = Product::all();
+    // $sections = section::all();
+    return view('site.pages.allproducts');
    }
    public function show($id){
     $products = Section::find($id);

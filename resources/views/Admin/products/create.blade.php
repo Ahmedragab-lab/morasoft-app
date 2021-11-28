@@ -69,7 +69,7 @@
                     <div class="form-group">
                         <label>{{ __('site.add-image') }} :</label>
                         <div>
-                            <input class="form-control img" name="image"  type="file">
+                            <input class="form-control img" name="image"  type="file" accept="image/*">
                             <img src="{{ asset('uploads/product/default.jpg') }}" class="img-thumbnail img-preview" width="100" alt="no photo">
                         </div>
                     </div>

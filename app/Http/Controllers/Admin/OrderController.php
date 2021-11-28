@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\Order;
 use App\Models\UserReqest;
 use Illuminate\Http\Request;
 
@@ -15,7 +16,7 @@ class OrderController extends Controller
      */
     public function index()
     {
-        $orders = UserReqest::all();
+        $orders = UserReqest::orderBy('id','DESC')->get();
         return view('Admin.orders.index',compact('orders'));
     }
 
@@ -62,37 +63,31 @@ class OrderController extends Controller
         //
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+
     public function update(Request $request, $id)
     {
-        // dd($request->id);
-        // try {
-        //     // $order_id = $request->order_id;
-        //     $price = $request->price;
-        //     $order_price = UserReqest::find($id);
-        //     $order_price->price = $price;
-        //     $order_price->update();
-        //     toastr()->success(__('price added successfully'));
-        //     return redirect()->route('orders.index');
-        // }catch (\Exception $e){
-        //     return redirect()->back()->withErrors(['error' => $e->getMessage()]);
-        // }
+        try
+        {
+            $order_price = UserReqest::find($id);
+            $order_price->price = $request->price;
+            $order_price->save();
+            toastr()->success(__('price added successfully'));
+            return redirect()->route('orders.index');
+        }catch (\Exception $e){
+            return redirect()->back()->withErrors(['error' => $e->getMessage()]);
+        }
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function destroy($id)
     {
-        //
+        try{
+            $section = UserReqest::find($id);
+            $section->delete();
+            toastr()->error(__('section delete successfully'));
+            return redirect()->route('orders.index');
+        }catch (\Exception $e){
+                return redirect()->back()->withErrors(['error' => $e->getMessage()]);
+            }
     }
 }
+

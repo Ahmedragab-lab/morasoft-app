@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\DataTables\SectionDataTable;
 use App\Http\Controllers\Controller;
+use App\Http\Requests\StoreSection;
 use App\Models\section;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\File;
@@ -30,9 +31,10 @@ class SectionController extends Controller
     }
 
 
-    public function store(Request $request)
+    public function store(StoreSection $request)
     {
         try {
+            $validated = $request->validated();
             $section = new Section();
             if($request->hasfile('image')){
                 $file = $request->file('image');
@@ -46,9 +48,6 @@ class SectionController extends Controller
             $section->desc = $request->desc;
             $section->status = $request->status==true?'1':'0';
             $section->popular = $request->popular==true?'1':'0';
-            // $section->meta_title = $request->meta_title;
-            // $section->meta_disc = $request->meta_disc;
-            // $section->meta_keywords = $request->meta_keywords;
             $section->save();
             toastr()->success(__('section create successfully'));
             return redirect()->route('sections.index');
@@ -72,9 +71,10 @@ class SectionController extends Controller
     }
 
 
-    public function update(Request $request, $id)
+    public function update(StoreSection $request, $id)
     {
         try{
+            $validated = $request->validated();
             $section = Section::find($id);
             if($request->hasFile('image')){
                 $path = 'uploads/section/' . $section->image;
@@ -92,9 +92,6 @@ class SectionController extends Controller
             $section->desc = $request->desc;
             $section->status = $request->status==true?'1':'0';
             $section->popular = $request->popular==true?'1':'0';
-            // $section->meta_title = $request->meta_title;
-            // $section->meta_disc = $request->meta_disc;
-            // $section->meta_keywords = $request->meta_keywords;
             $section->update();
             toastr()->success(__('sections update successfully'));
             return redirect()->route('sections.index');

@@ -73,7 +73,6 @@ class CheckoutController extends Controller
                 $product->qty = $product->qty - $item->product_qty;
                 $product->update();
             }
-
             if(Auth::user()->address1 == NULL){
                 $user = User::where('id',Auth::id())->first();
                 $user->fname = $request->fname;

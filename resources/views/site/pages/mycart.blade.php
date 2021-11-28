@@ -46,7 +46,7 @@
                                 <div class="price-field "><p class="price product-price "  >{{ $item->product->selling_price }} LE</p></div>
                                 <div class="quantity">
                                     <div class="quantity-input">
-                                        <input type="text" name="prod_qty" value="{{ $item->product_qty }}" data-max="120" pattern="[0-9]*" class="qty-input">
+                                        <input type="number" min="1" name="prod_qty" value="{{ $item->product_qty }}" data-max="120" pattern="[0-9]*" class="qty-input">
                                         <a class="btn btn-increase changeqty increment" href="#"></a>
                                         <a class="btn btn-reduce changeqty decrement" href="#"></a>
                                     </div>
@@ -151,7 +151,6 @@
                     value++ ;
                     // $('.qty-input').val(value);
                     var inc = $(this).closest('.product_data').find('.qty-input').val(value);
-
                 }
             });
             $('.decrement').click(function(e){
@@ -163,7 +162,6 @@
                     value-- ;
                     var inc = $(this).closest('.product_data').find('.qty-input').val(value);
                 }
-
             });
             $('.delete-item').click(function(e){
                 e.preventDefault();

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
+use App\Http\Requests\StoreProduct;
 use App\Models\Product;
 use App\Models\section;
 use Illuminate\Http\Request;
@@ -23,9 +24,10 @@ class ProductController extends Controller
     }
 
 
-    public function store(Request $request)
+    public function store(StoreProduct $request)
     {
         try {
+            $validated = $request->validated();
             $product = new Product();
             if($request->hasfile('image')){
                 $file = $request->file('image');
@@ -46,9 +48,6 @@ class ProductController extends Controller
             $product->qty = $request->qty;
             $product->status = $request->status==true?'1':'0';
             $product->trending = $request->trending==true?'1':'0';
-            // $product->meta_title = $request->meta_title;
-            // $product->meta_desc = $request->meta_desc;
-            // $product->meta_keywords = $request->meta_keywords;
             $product->save();
             toastr()->success(__('product create successfully'));
             return redirect()->route('products.index');
@@ -72,9 +71,10 @@ class ProductController extends Controller
     }
 
 
-    public function update(Request $request, $id)
+    public function update(StoreProduct $request, $id)
     {
         try {
+            $validated = $request->validated();
             $product = Product::find($id);
             if($request->hasFile('image')){
                 $path = 'uploads/product/' . $product->image;
@@ -99,9 +99,6 @@ class ProductController extends Controller
             $product->qty = $request->qty;
             $product->status = $request->status==true?'1':'0';
             $product->trending = $request->trending==true?'1':'0';
-            // $product->meta_title = $request->meta_title;
-            // $product->meta_desc = $request->meta_desc;
-            // $product->meta_keywords = $request->meta_keywords;
             $product->save();
             toastr()->success(__('product update successfully'));
             return redirect()->route('products.index');

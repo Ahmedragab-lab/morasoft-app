@@ -21,9 +21,6 @@ class CreateSectionsTable extends Migration
             $table->tinyInteger('status')->default(0);
             $table->tinyInteger('popular')->default(0);
             $table->string('image')->default('default.jpg');
-            // $table->string('meta_title');
-            // $table->string('meta_disc');
-            // $table->string('meta_keywords');
             $table->timestamps();
         });
     }

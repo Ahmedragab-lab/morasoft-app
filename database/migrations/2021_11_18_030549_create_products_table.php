@@ -27,9 +27,6 @@ class CreateProductsTable extends Migration
             $table->string('tax');
             $table->tinyInteger('status')->default('0');
             $table->tinyInteger('trending')->default('0');
-            // $table->mediumText('meta_title')->nullable();
-            // $table->mediumText('meta_desc')->nullable();
-            // $table->mediumText('meta_keywords')->nullable();
             $table->timestamps();
         });
     }
