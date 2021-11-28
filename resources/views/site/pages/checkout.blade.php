@@ -58,11 +58,11 @@
                                             <div class="field-body">
                                             <div class="field">
                                                 <div class="control is-expanded">
-                                                <input class="input" type="tel" name="phone" placeholder="Your Phone" value="{{ Auth::user()->phone }}" readonly> </div>
+                                                <input class="input" type="email" name="email" placeholder="Your Email" value="{{ Auth::user()->email }}" readonly> </div>
                                             </div>
                                             <div class="field">
                                                 <div class="control is-expanded">
-                                                <input class="input" type="email" name="email" placeholder="Your Email" value="{{ Auth::user()->email }}" readonly> </div>
+                                                <input class="input" type="tel" name="phone" placeholder="Your Phone" value="{{ Auth::user()->phone }}" required> </div>
                                             </div>
                                             </div>
                                         </div>

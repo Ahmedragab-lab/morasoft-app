@@ -87,7 +87,7 @@ class CheckoutController extends Controller
             $cartitems= Cart::where('user_id',Auth::id())->get();
             Cart::destroy($cartitems);
             DB::commit();
-            return redirect('/mycart')->with('status',"your order done ");
+            return redirect('/')->with('status',"your order done ");
         } catch (\Exception $e) {
             DB::rollback();
             return redirect()->back()->withErrors(['error' => $e->getMessage()]);
