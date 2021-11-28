@@ -68,6 +68,7 @@ class OrderController extends Controller
     {
         try
         {
+
             $order_price = UserReqest::findorfail($id);
             $order_price->price = $request->price;
             $order_price->save();

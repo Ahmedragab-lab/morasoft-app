@@ -46,7 +46,7 @@
                                     <a href="{{ route('allfeedback.index')}}">{{ __('front.feedback') }} </a>
                                 </li>
                                 <li>
-                                    <a href="./blog/index.html">{{ __('front.contactus') }}</a>
+                                    <a href="{{ route('contact.index')}}">{{ __('front.contactus') }}</a>
                                 </li>
                                 <li class="has-dropdown">
                                     <a href="#"> اشحن اونلاين</a>
@@ -63,7 +63,7 @@
                                     <li class="has-dropdown">
                                         <a href="#"><img src={{ asset('uploads/user-img/'.Auth::user()->image) }} width="50" class="rounded-circle" > {{ \Str::limit(auth()->user()->fname, 10) }}</a>
                                         <ul class="dropdown">
-                                            <li><a href="{{ route('profile')}}"><i class=" far fa-address-card"></i> Profile</a></li>
+                                            <li><a href="{{ route('userprofile.show',Auth::user()->id)}}"><i class=" far fa-address-card"></i> Profile</a></li>
                                             <li><a href="#"><i class=" far fa-comment-dots"></i> my orders</a></li>
                                             <li><a href="{{ route('mycart.index')}}"><i class="icon-basket"></i> my cart</a></li>
                                             <li>
