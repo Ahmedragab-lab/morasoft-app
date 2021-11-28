@@ -120,7 +120,7 @@
                     </div>
                     <!-- .entry-header -->
                     <div class="entry-content">
-                        <p>{{ Str::limit($section->desc,20) }}</p>
+                        <p>{{ Str::limit($section->desc,25) }}</p>
 
                     </div>
                     <!-- .entry-content -->
