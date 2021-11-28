@@ -19,7 +19,7 @@
             <br>
             <div class="blog-list style-2 columns is-variable is-4 is-multiline">
                 <div class="owl-carousel owl-theme">
-                    @foreach (\App\Models\Product::orderBy('id','DESC')->limit(5)->get() as $product)
+                    @foreach(\App\Models\Product::where('status','1')->where('trending','1')->orderBy('id','DESC')->limit(5)->get() as $product)
                         <div class=" item">
                             <article class="blog-post">
                                 <figure class="post-image">
