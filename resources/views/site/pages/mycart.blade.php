@@ -48,7 +48,9 @@
                                     <div class="quantity-input">
 
 
+
                                         <input type="number"  min="1" name="prod_qty" value="{{ $item->product_qty }}" data-max="120" pattern="[0-9]*" class="qty-input">
+
 
                                         <a class="btn btn-increase changeqty increment" href="#"></a>
                                         <a class="btn btn-reduce changeqty decrement" href="#"></a>
