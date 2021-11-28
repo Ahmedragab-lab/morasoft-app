@@ -9,9 +9,17 @@ return [
    'edit'=>'تعديل',
    'delete'=>'حذف',
    'back'=>'رجوع',
-//    sidebar
+   'active'=> 'فعال',
+   'unactive'=> 'غير فعال',
+
+
+
+
+ //    sidebar
    'dashboard'=>'الرئيسيه',
    //admin
+   'add-admin'=> 'إضافة ادمن',
+   'edit-admin'=> 'تعديل بيانات الادمن',
    'admins'=>'الادمن',
     'Navbar Data'=>'بيانات الصفحات',
    //end admin
@@ -38,6 +46,11 @@ return [
 'event_limit'=>'مختصر الخبر',
 'description'=>'الوصف',
 'status'=>'الحاله',
+'checkstatus'=>'إختر الحاله',
+'enterName'=>'أدخل الاسم',
+'enterEmail'=>'أدخل الايميل',
+'enterPass'=>'أدخل كلمة المرور',
+'enterRePass'=>'أعد كتابة كلمة المرور',
 'image'=>' صوره',
 'action'=>'خصائص',
 'Avilable'=>'متاح',
@@ -52,13 +65,22 @@ return [
 'required_en'=>'يرجي ادخال اسم الخدمه باللغة الانجليزية',
 'desc_required'=>'يرجى كتابه وصف الخدمه',
 // end dashboard service page translatio
+
 // start users page translation
+'fname'=>' الاسم الاول',
+'lname'=>' اسم العائلة',
+
+'enterFname'=>'ادخل الاسم الاول',
+'enterLname'=>'ادخل اسم العائلة',
+'enterPhone'=>'ادخل رقم الهاتف',
+'enterAdress'=>'ادخل العنوان',
+
 'name'=>'الاسم',
 'email'=>'الايميل',
-'status'=>'الحاله',
 'phone'=>'الهاتف',
 'password'=>'باسورد',
 'address'=>'العنوان',
+
 'users-data'=>'بيانات العملاء',
 'add-user'=>'اضف عميل',
 
@@ -105,8 +127,8 @@ return [
 'userfname' => 'الاسم الاول',
 'userlname' => 'اسم العائله',
 'useremail' => 'الايميل',
-'address1' => 'عنوان1',
-'address2' => 'عنوان2',
+'address1' => 'عنوان 1 ',
+'address2' => 'عنوان 2 ',
 'city' => 'المدينه',
 'country' => 'البلد',
 'productname' => 'اسم المنتج',

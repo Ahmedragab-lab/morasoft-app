@@ -9,9 +9,21 @@ return [
    'edit'=>'Edit',
    'delete'=>'Delete',
    'back'=>'Back',
+
+   'active'=> 'Active',
+   'unactive'=> 'Un Active',
+
+   'enterName'=>'Enter The Name',
+   'enterEmail'=>'Enter a valid e-mail',
+   'enterPass'=>'Enter the Password',
+   'enterRePass'=>'Re-Type Password',
    //    sidebar
    'dashboard'=>'Dashboard',
    //admin
+
+
+   'add-admin'=> 'Add Admin ',
+   'edit-admin'=> 'Edit Admin',
    'admins'=>'Admins',
    'Navbar Data'=>'Navbar Data',
    //end admin
@@ -39,6 +51,13 @@ return [
 'Service_name'=>'Service Name',
 'description'=>'Description',
 'status'=>'Status',
+'checkstatus'=>'Select Status',
+'active'=> 'Active',
+'unactive'=> 'Un Active',
+'enterName'=>'Enter The Name',
+'enterEmail'=>'Enter a valid e-mail',
+'enterPass'=>'Enter the Password',
+'enterRePass'=>'Re-Type Password',
 'image'=>'Image',
 'action'=>'Action',
 'Avilable'=>'Avilable',
@@ -54,16 +73,28 @@ return [
 'desc_required'=>'please enter services description',
 // end dashboard service page translation
 // start users page translation
+
+'fname'=>'First Name',
+'lname'=>'Last Name',
+'enterFname'=>'Enter First Name',
+'enterLname'=>'Enter Last Name',
+'enterPhone'=>'Enter Phone Number',
+'enterAdress'=>'Enter The Address',
+
+
 'name'=>'Name',
 'email'=>'Email',
 'status'=>'Status',
 'phone'=>'Phone',
 'password'=>'Password',
 'address'=>'Address',
+
 'users-data'=>'Users Data',
 'add-user'=>'Add New User',
 'edit-user'=>' Edit User',
 // end users page translation
+
+
 //  section  page translation
 'sections'=>' Sections',
 'section_name'=>' Section Name',
@@ -101,8 +132,8 @@ return [
 'userfname' => 'First Name',
 'userlname' => 'Last Name',
 'useremail' => 'Email',
-'address1' => 'Address1',
-'address2' => 'Address2',
+'address1' => 'Address 1',
+'address2' => 'Address 2',
 'city' => 'City',
 'country' => 'Country',
 'productname' => 'Product Name',

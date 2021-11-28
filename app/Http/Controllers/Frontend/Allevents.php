@@ -18,7 +18,7 @@ class Allevents extends Controller
     {
         $Last_event = Event::find($id);
         // $events = Event::all();
-        $events =Event::orderBy('id','DESC')->get();
+        $events =Event::where('status','1')->orderBy('id','DESC')->get();
 
 
         return view('site.pages.last_Event',compact('Last_event','events'));
