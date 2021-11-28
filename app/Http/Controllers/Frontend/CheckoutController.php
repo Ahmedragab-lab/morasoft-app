@@ -55,7 +55,7 @@ class CheckoutController extends Controller
                 $order->address2 = $request->address2;
                 $order->city = $request->city;
                 $order->country = $request->country;
-                $order->tracking_no = 'morasoft'.rand(1111,9999);
+                $order->tracking_no = 'morasoft'.rand(1000000000, 9999999999);
                 $order->save();
             // };
             $cartitems= Cart::where('user_id',Auth::id())->get();

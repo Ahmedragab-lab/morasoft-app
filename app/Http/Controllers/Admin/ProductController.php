@@ -75,7 +75,7 @@ class ProductController extends Controller
     {
         try {
             $validated = $request->validated();
-            $product = Product::find($id);
+            $product = Product::findorfail($id);
             if($request->hasFile('image')){
                 $path = 'uploads/product/' . $product->image;
                 if(File::exists($path)){
@@ -111,7 +111,7 @@ class ProductController extends Controller
     public function destroy($id)
     {
         try{
-            $product = Product::find($id);
+            $product = Product::findorfail($id);
             if($product->image){
                 $path = 'uploads/product/' . $product->image;
                 if(File::exists($path)){
