@@ -44,7 +44,7 @@ class AdminPrice extends Notification
             'order_no'=>$this->userrequest->order_no,
             'price'=>$this->userrequest->price,
             'user'=>$this->userrequest->name,
-            'title'=>'added price by morasoft',
+            'title'=>'price by morasoft',
 
         ];
     }

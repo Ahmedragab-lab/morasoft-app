@@ -39,6 +39,8 @@ Route::group(
             Route::resource('mycart',Frontend\CartController::class); // go to my cart page
             Route::resource('checkout',Frontend\CheckoutController::class); // go to checkout page to make order
             Route::resource('userprofile',Frontend\UserprofileController::class); //go to my profile
+
+            Route::resource('order_details',Frontend\OrderDetailController::class); //go to my service order details
         });
 
         require __DIR__.'/auth.php';
