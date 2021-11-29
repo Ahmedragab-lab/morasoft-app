@@ -15,6 +15,9 @@ class CreateOrderDetailsTable extends Migration
     {
         Schema::create('order_details', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('order_id')->references('id')->on('user_reqests')->cascadeOnDelete();
+            $table->double('tax',2);
+            $table->double('total',2);
             $table->timestamps();
         });
     }
