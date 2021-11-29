@@ -21,7 +21,8 @@
                                 <img alt="Joo - Niche Multi-Purpose HTML Template"
                                      src={{ asset('uploads/user-img/'.Auth::user()->image) }}
                                      style="border-radius: 50%;padding: 5px;background: white;display: inline-block;
-                                     margin-bottom: 12px;max-width:100px;"> </p>
+                                     margin-bottom: 12px;max-width:100px;">
+                            </p>
 
                             <li>
                                 <a href="{{route('userprofile.show',$user->id)}}">
@@ -30,8 +31,7 @@
                                     </span>
                                 </a>
                             </li>
-                            <h3 class="subtitle">{{Auth::user()->name }}</h3>
-
+                            <h3 class="subtitle">{{Auth::user()->fname }} {{Auth::user()->lname }}</h3>
                             <h2 class="subtitle">{{ Auth::user()->email }}</h2>
                             <ul class="header-menu-icons social">
                                 <li>

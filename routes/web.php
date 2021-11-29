@@ -1,7 +1,5 @@
 <?php
 
-use App\Http\Controllers\Frontend\ContactController;
-use App\Http\Controllers\Frontend\UserprofileController;
 use Illuminate\Support\Facades\Route;
 use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 use App\Http\Controllers\Frontend;
@@ -26,20 +24,21 @@ Route::group(
         Route::resource('allservices',Frontend\Allservices::class); // go to all services page
         Route::resource('allproducts',Frontend\AllProducts::class); // go to all products page
         Route::resource('events',Frontend\AlleventController::class); // go to all Events page
-        Route::resource('Last_event',Frontend\Allevents::class);// get last event
         Route::resource('allsections',Frontend\AllSections::class); // go to all Sections page
         Route::resource('allfeedback',Frontend\Allfeedback::class); // go to all feedback page
-//        Route::view('contact','site.pages.contact')->name('contact');
-        Route::resource('contact',ContactController::class);
-        //Route::resource('userprofile',Frontend\Userprofile::class);
-        //Route::view('profile','site.pages.userprofile')->name('profile');
-        Route::resource('userprofile',UserprofileController::class);
+
+        Route::resource('Last_event',Frontend\Allevents::class);// get last event
+        Route::resource('contact',Frontend\ContactController::class);  //go to contact page
+
         Route::get('/reserveServ', function () {
             return view('site.pages.reserveServ');
         });
+
+
         Route::middleware(['auth'])->group(function () {
             Route::resource('mycart',Frontend\CartController::class); // go to my cart page
             Route::resource('checkout',Frontend\CheckoutController::class); // go to checkout page to make order
+            Route::resource('userprofile',Frontend\UserprofileController::class); //go to my profile
         });
 
         require __DIR__.'/auth.php';
