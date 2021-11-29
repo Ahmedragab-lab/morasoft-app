@@ -39,7 +39,7 @@ class adminseeder extends Seeder
                 'image'=>'default.jpg',
             ],
             [
-                'name' => 'dina',
+                'fname' => 'dina',
                 'lname' => 'salem',
                 'email' => 'dina@gmail.com',
                 'password' => bcrypt('123456'),
