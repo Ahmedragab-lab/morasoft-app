@@ -65,8 +65,8 @@
                                              {{ \Str::limit(auth()->user()->fname, 10) }}
                                         </a>
                                         <ul class="dropdown">
-                                            <li><a href="{{ route('userprofile.show',Auth::user()->id)}}"><i class=" far fa-address-card"></i> Profile</a></li>
-                                            <li><a href="#"><i class=" far fa-comment-dots"></i> my orders</a></li>
+                                            <li><a href="{{ route('userprofile.show',Auth::user()->id)}}"><i class=" far fa-address-card"></i> My Profile</a></li>
+                                            {{-- <li><a href="#"><i class=" far fa-comment-dots"></i> my orders</a></li> --}}
                                             <li><a href="{{ route('mycart.index')}}"><i class="icon-basket"></i> my cart</a></li>
                                             <li>
                                                 <a href="{{ route('logout') }}"
@@ -80,10 +80,26 @@
                                         </ul>
                                     </li>
                                     <li class="has-dropdown">
-                                        <a href="#"> <i class="fas fa-bell "></i></a>
+                                        <a href="#"> <i class="fas fa-bell "></i>
+                                            <span class="badge badge-danger badge-pill noti-icon-badge">
+                                                {{ auth()->user()->unreadNotifications->count() }}
+                                            </span>
+                                        </a>
                                         <ul class="dropdown">
-                                            <li><a href="#"><img src={{ asset('assets/images/profile_img.jpg') }} width="30" class="rounded-circle" > Asmaa Hosny</a></li>
-                                            <li><a href="#"><img src={{ asset('assets/images/profile_img.jpg') }} width="30" class="rounded-circle" > Asmaa Hosny</a></li>
+                                            @foreach(auth()->user()->unreadNotifications as $notification)
+                                                <li>
+                                                    <a href="#">
+                                                        <h3 style="color:rgb(0, 0, 0); font-size:15px;">
+                                                        {{ $notification->data['title'] }}
+                                                        <span style="color: rgb(226, 33, 33); font-size:20px; font-weight:bold;">
+                                                            {{ $notification->data['price'] }} LE
+                                                        </span>  of order number
+                                                        {{ $notification->data['order_no'] }} thank you
+                                                        {{ $notification->data['user'] }}
+                                                        </h3>
+                                                    </a>
+                                                </li>
+                                            @endforeach
                                         </ul>
                                     </li>
                                 @endauth
