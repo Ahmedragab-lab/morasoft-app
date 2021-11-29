@@ -16,14 +16,12 @@ class adminseeder extends Seeder
     public function run()
     {
         DB::table('admins')->delete();
-
         Admin::create([
             'name' => 'wolf',
             'email' => 'ahmedragabyasin2020@gmail.com',
             'password' => bcrypt('258258258'),
-            // 'admin'    =>'1',
         ]);
 
-        
+
     }
 }
