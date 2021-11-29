@@ -50,3 +50,9 @@
     }
 })
 </script>
+<script>
+    // setInterval(function(){
+    //     $('#noticount').load(window.location.href + "#noticount");
+    //     $('#unread').load(window.location.href + "#unread");
+    // }, 5000);
+</script>

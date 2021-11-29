@@ -81,31 +81,33 @@
                                     </li>
                                     <li class="has-dropdown">
                                         <a href="#"> <i class="fas fa-bell "></i>
-                                            <span class="badge badge-danger badge-pill noti-icon-badge">
+                                            <span class="badge badge-danger badge-pill noti-icon-badge" id="noticount">
                                                 {{ auth()->user()->unreadNotifications->count() }}
                                             </span>
                                         </a>
                                         <ul class="dropdown">
-                                            @foreach(auth()->user()->unreadNotifications as $notification)
-                                                <li>
-                                                    <a href="{{ route('order_details.show',$notification->data['id']) }}">
-                                                        <h4 style="color:rgb(0, 0, 0); font-size:15px;">
-                                                            {{ $notification->data['title'] }}
-                                                            <span style="color: rgb(226, 33, 33); font-size:20px; font-weight:bold;">
-                                                                {{ (number_format($notification->data['price'] ,2)) }} LE
-                                                            </span>
-                                                            of order number
-                                                            <span style="color: rgb(33, 117, 226); font-size:15px;">
-                                                                 {{ $notification->data['order_no'] }}
-                                                            </span>
-                                                            thank you
-                                                            <span style="color: rgb(33, 123, 226); font-size:15px;">
-                                                               {{ $notification->data['user'] }}
-                                                            </span>
-                                                        </h4>
-                                                    </a>
-                                                </li>
-                                            @endforeach
+                                            <div id="unread">
+                                                @foreach(auth()->user()->unreadNotifications as $notification)
+                                                    <li>
+                                                        <a href="{{ route('order_details.show',$notification->data['id']) }}">
+                                                            <h4 style="color:rgb(0, 0, 0); font-size:15px;">
+                                                                {{ $notification->data['title'] }}
+                                                                <span style="color: rgb(226, 33, 33); font-size:20px; font-weight:bold;">
+                                                                    {{ (number_format($notification->data['price'] ,2)) }} LE
+                                                                </span>
+                                                                of order number
+                                                                <span style="color: rgb(33, 117, 226); font-size:15px;">
+                                                                    {{ $notification->data['order_no'] }}
+                                                                </span>
+                                                                thank you
+                                                                <span style="color: rgb(33, 123, 226); font-size:15px;">
+                                                                {{ $notification->data['user'] }}
+                                                                </span>
+                                                            </h4>
+                                                        </a>
+                                                    </li>
+                                                @endforeach
+                                            </div>
                                         </ul>
                                     </li>
                                 @endauth
