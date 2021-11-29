@@ -109,7 +109,7 @@
                                         <tbody>
                                             @foreach ($order_details as $item)
                                             <tr>
-                                                <td>{{ $item->order_no }}</td>
+                                                <td >{{ $item->order_no }}</td>
                                                 <td>{{ $item->name }}</td>
                                                 <td>{{ $item->service->serve_name }}</td>
                                                 <td>{{ $item->from->Name}}</td>
@@ -135,14 +135,13 @@
                                                 $total_tax=$total_price * 14/100;
                                             @endphp
                                             <tr>
-
                                                <td>{{ number_format($total_price) }} LE</td>
                                                <td>{{ $total_tax }} LE</td>
                                                <td>{{ number_format($total_price+$total_tax) }} LE</td>
                                             </tr>
                                         </tbody>
                                     </table>
-                                    <button type="submit" class="btn btn-warning float-end">Order Now</button>
+                                    <button type="submit" class="btn btn-warning float-end save-data">Order Now</button>
                                     <br>
                                     <br>
                                     <br>
@@ -169,5 +168,7 @@
 @endif
 {{-- <script src="https://unpkg.com/sweetalert2@7.18.0/dist/sweetalert2.all.js"></script> --}}
 
+<script type="text/javascript">
 
+</script>
 @endsection
