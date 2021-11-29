@@ -36,11 +36,8 @@ class adminseeder extends Seeder
                 'address2' => 'Hurghada',
                 'city' => 'Cairo',
                 'country' => 'Egypt',
-                'image'=>'wolf.jpg',
+                'image'=>'default.jpg',
             ],
-
-           
-
             [
                 'name' => 'dina',
                 'lname' => 'salem',
@@ -53,17 +50,6 @@ class adminseeder extends Seeder
                 'country' => 'palestine',
                 'image'=>'default.jpg',
             ],
-            //  [
-            //     'name' => 'Asmaa',
-            //     'email' => 'asmaahosnyaly@gmail.com',
-            //     'password' => bcrypt('123456'),
-            //     'image' => 'default3.jpg',
-            //     'phone' => '01021493036',
-            //     'address' => 'Egypt alex',
-            //     'image'=>'default.jpg',
-            // ],
-
-            // 'admin'    =>'0',
         ]);
     }
 }
