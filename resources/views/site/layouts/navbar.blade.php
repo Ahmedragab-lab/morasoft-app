@@ -25,8 +25,9 @@
                                 </li>
                                 <li class="has-dropdown">
                                     <a href="#"> {{ __('front.services') }}</a>
+
                                     <ul class="dropdown">
-                                        @foreach ( \App\Models\Service::all() as $service)
+                                        @foreach ( \App\Models\Service::where('status','1')->get() as $service)
                                            <li><a href="{{ route('allservices.show',$service->id) }}"> {{ $service->serve_name }}</a></li>
                                         @endforeach
                                     </ul>
@@ -34,7 +35,7 @@
                                 <li class="has-dropdown">
                                     <a href="#"> {{ __('front.sections') }}</a>
                                     <ul class="dropdown">
-                                        @foreach (\App\Models\Section::all() as $section)
+                                        @foreach (\App\Models\Section::where('status','1')->get() as $section)
                                         <li><a href="{{ route('allsections.show',$section->id) }}">{{$section->section_name}}</a></li>
                                         @endforeach
                                     </ul>
