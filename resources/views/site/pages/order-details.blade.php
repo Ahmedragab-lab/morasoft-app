@@ -201,7 +201,8 @@
                     if(response) {
                         swal(response.status);
                     }
-                    $('.save_data').removeClass('btn-warning ').addClass('btn-success disabled');
+                    $('.save-data').removeClass('btn-warning ').addClass('btn-success disabled').html('done thank you for your choice');
+                    // $('.save-data').hide();
                 }
             });
         });
