@@ -95,6 +95,22 @@ return [
 // end users page translation
 
 
+// start feedback translation
+
+'feedback-user'=>'Feedbacks of Users',
+'add-feedback'=>'Add Feedback',
+'edit-feedback'=>'Edit Feedbacks',
+'selectservice'=>'Select your Servise ',
+'selectclient'=>'Select Client ',
+'Your-Feedback'=>'Your Feedback',
+
+
+
+// end feedback translation
+
+
+
+
 //  section  page translation
 'sections'=>' Sections',
 'section_name'=>' Section Name',

@@ -88,6 +88,22 @@ return [
 
 
 // end users page translation
+
+// start feedback translation
+'feedback-user'=>'تعليقات الزوار',
+'add-feedback'=>'  اضافة تعليق  ',
+'edit-feedback'=>'تعديل التعليق',
+'selectservice'=>'اختر الخدمة ',
+'selectclient'=>'اختر الزبون ',
+'Your-Feedback'=>' تعليقك ',
+
+
+
+// end feedback translation
+
+
+
+
 'sections'=>' الاقسام',
 'section_name'=>' اسم القسم',
 'add_section'=>' اضف قسم',

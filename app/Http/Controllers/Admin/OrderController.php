@@ -17,7 +17,6 @@ class OrderController extends Controller
     public function index()
     {
         $orders = UserReqest::orderBy('id','DESC')->get();
-        // $orders = UserReqest::all();
         return view('Admin.orders.index',compact('orders'));
     }
 
@@ -64,18 +63,9 @@ class OrderController extends Controller
         //
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+
     public function update(Request $request, $id)
     {
-        // $order->update($request->price);
-        // return ' hi';
-        // dd($id);
         try
         {
             $order_price = UserReqest::find($id);
@@ -98,12 +88,6 @@ class OrderController extends Controller
         }catch (\Exception $e){
                 return redirect()->back()->withErrors(['error' => $e->getMessage()]);
             }
-        }
-
-
-        // public function addprice(Request $request, $id)
-        // {
-        //     return ' hi';
-        // }
     }
+}
 

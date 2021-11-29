@@ -1,7 +1,6 @@
 @extends('Admin.layouts.master')
 @section('css')
-<link href="{{ URL::asset('plugins/datatables/dataTables.bootstrap4.min.css')}}" rel="stylesheet" type="text/css" />
-  <link href="{{ URL::asset('plugins/datatables/buttons.bootstrap4.min.css')}}" rel="stylesheet" type="text/css" />
+
 @endsection
 @section('content')
 @include('partial.error')
@@ -9,7 +8,7 @@
     <div class="col-lg-12">
         <div class="card m-b-30">
             <div class="card-body">
-                <h4 class="mt-0 header-title">{{ __('site.order') }}</h4>
+                <h4 class="mt-0 header-title">{{ __('site.orders') }}</h4>
                 <div class="col-md-6 mb-3">
                     {{-- <a href="{{ route('users.create') }}"  class="btn btn-primary btn-block"><i class="fa fa-user-circle"></i> {{ __('site.add-user') }}</a> --}}
                 </div>
@@ -75,13 +74,7 @@
 
 @endsection
 @section('js')
-{{-- <script src="{{ URL::asset('plugins/datatables/jquery.dataTables.min.js')}}"></script> --}}
-<script src="{{ URL::asset('plugins/datatables/jquery.dataTables.min.js')}}"></script>
-<script src="{{ URL::asset('plugins/datatables/dataTables.bootstrap4.min.js')}}"></script>
-<!-- Datatable init js -->
-<script src="{{ URL::asset('admin/en/assets/pages/datatables.init.js')}}"></script>
-<!-- App js -->
-<script src="{{ URL::asset('admin/en/assets/js/app.js')}}"></script>
+
 @endsection
 
 

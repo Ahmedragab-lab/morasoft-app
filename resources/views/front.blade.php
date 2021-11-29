@@ -19,7 +19,7 @@
             <br>
             <div class="blog-list style-2 columns is-variable is-4 is-multiline">
                 <div class="owl-carousel owl-theme">
-                    @foreach (\App\Models\Product::orderBy('id','DESC')->limit(5)->get() as $product)
+                    @foreach(\App\Models\Product::where('status','1')->where('trending','1')->orderBy('id','DESC')->limit(5)->get() as $product)
                         <div class=" item">
                             <article class="blog-post">
                                 <figure class="post-image">
@@ -250,7 +250,7 @@
                             <h1 class="heading-title style-3 has-text-left">
                               <span class="has-text-primary">{{ $Last_event->event_title }}</span>
                             </h1>
-                            <p>{{ $Last_agreement->desc }}</p>
+                            <p>{{ $Last_event->desc }}</p>
                             <a href="{{ route('Last_event.show',$Last_event->id) }}" class="button">   أخبارنا...
                               <span class="icon">
                                 <i class="ion-ios-arrow-round-forward"></i>

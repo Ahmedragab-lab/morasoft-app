@@ -27,12 +27,13 @@ class storeservices extends FormRequest
         return [
             'serve_name' => 'required|regex:/^[0-9-أ-ي-pL\s\-]+$/u',
             'serve_name_en' => 'required|regex:/^[A-Za-z0-9-pL\s\-]+$/u',
+            'image' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'desc'=>'required|regex:/^[A-Za-z0-9-أ-ي-pL\s\-]+$/u',
             // 'serve_name' => 'required|regex:/^[0-9-أ-ي-pL\s\-]+$/u|unique:services,serve_name->ar,'.$this->id,
             // 'serve_name_en' => 'required|regex:/^[A-Za-z0-9-pL\s\-]+$/u|unique:services,serve_name->en,'.$this->id,
             // 'serve_name' => 'required|regex:/(^([ا-ى]+)(\d+)?$)/u|unique:services,serve_name->ar,'.$this->id,
             // 'serve_name' => ['required','regex:/(^([ا-ى]+)(\d+)?$)/u',Rule::unique('services','serve_name->ar')->ignore($this->id),],
             // 'serve_name_en' => 'required|regex:/(^([a-zA-Z]+)(\d+)?$)/u|unique:services,serve_name->en,'.$this->id,
-            'desc'=>'required|regex:/^[A-Za-z0-9-أ-ي-pL\s\-]+$/u',
         ];
     }
     public function messages()
