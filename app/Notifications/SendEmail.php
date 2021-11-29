@@ -6,19 +6,22 @@ use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Notifications\Messages\MailMessage;
 use Illuminate\Notifications\Notification;
+use App\Models\contact;
 
 class SendEmail extends Notification
 {
+
     use Queueable;
+    private $contacts;
 
     /**
      * Create a new notification instance.
      *
      * @return void
      */
-    public function __construct()
+    public function __construct(contact $contacts)
     {
-        //
+       $this->$contacts = $contacts;
     }
 
     /**
@@ -62,7 +65,15 @@ class SendEmail extends Notification
     public function toDatabase($notifiable)
     {
         return [
-            'order_id' => $this->details['order_id']
+            'id'=>$this->contacts->id,
+            'user_id'=>$this->contacts->user_id,
+            'phone'=>$this->contacts->phone,
+            'email'=>$this->contacts->email,
+            'message'=>$this->contacts->message,
+            'title'=>'email from admin',
+
+
+
         ];
     }
 }

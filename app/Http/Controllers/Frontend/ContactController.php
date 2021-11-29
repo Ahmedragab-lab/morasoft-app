@@ -4,7 +4,9 @@ namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller;
 use App\Models\contact;
+use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Notification;
 
 class ContactController extends Controller
 {
@@ -41,7 +43,19 @@ class ContactController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        contact::create([
+            'user_id' => $request->user_id,
+            'phone' => $request->phone,
+            'email' => $request->email,
+            'message' => $request->message,
+        ]);
+
+        $user = User::get();
+        $contacts = contact::latest()->first();
+        Notification::send($user, new \App\Notifications\SendEmail($contacts));
+
+        session()->flash('Send', 'تم  ارسال الرسالة  ');
+        return redirect('/contacts');
     }
 
     /**
