@@ -66,7 +66,7 @@ class SectionController extends Controller
 
     public function edit($id)
     {
-        $section=Section::find($id);
+        $section=Section::findorfail($id);
         return view('Admin.sections.edit',compact('section'));
     }
 
