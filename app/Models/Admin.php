@@ -17,7 +17,7 @@ class Admin extends Authenticatable
     //     'password',
     //     'admin',
     // ];
-    protected $table = 'admins';
+    // protected $table = 'admins';
     protected $guarded = [];
 
     protected $hidden = [

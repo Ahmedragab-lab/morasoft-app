@@ -21,40 +21,16 @@ class ContactController extends Controller
         return view('site.pages.contact',compact('contacts'));
     }
 
-
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
+    public function contact(Request $request)
     {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-
-        $contacts = contact::findorfail($id);
-        return view('site.pages.contact',compact('contacts'));
+        $userid = $request->input('userid');
+        $sms = $request->input('sms');
+       $contact = new Contact();
+       $contact->user_id = $userid;
+       $contact->sms =$sms;
+       $contact->save();
+       
+       return response()->json(['status'=> ' Email submitted successfully']);
     }
 
 

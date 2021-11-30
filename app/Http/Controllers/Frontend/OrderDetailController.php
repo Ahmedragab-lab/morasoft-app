@@ -23,7 +23,7 @@ class OrderDetailController extends Controller
       $total = $request->input('total');
 
       $order = new OrderDetail();
-      $order->order_no =  $order_id;
+      $order->order_id =  $order_id;
       $order->tax =  $tax;
       $order->total =  $total;
       $order->save();
