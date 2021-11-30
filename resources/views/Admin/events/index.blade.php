@@ -15,9 +15,10 @@
                             <tr>
                                 <th>#</th>
                                 <th>{{ __('site.event_title') }}</th>
+                                <th>{{ __('site.event_limit') }}</th>
+                                <th>{{ __('site.description') }}</th>
                                 <th>{{ __('site.image') }}</th>
                                 <th>{{ __('site.status') }}</th>
-                                <th>{{ __('site.description') }}</th>
                                 <th>{{ __('site.action') }}</th>
                             </tr>
                         </thead>
@@ -26,13 +27,19 @@
                             <tr>
                                 <th scope="row">{{ $index +1 }}</th>
                                 <td>{{ $event->event_title }}</td>
+                                <td>{{ $event->limit }}</td>
+                                <td>{{ $event->desc }}</td>
                                 <td>
                                     <img src="{{ asset('uploads/event/'.$event->image) }}" class="img-thumbnail" width="70" alt="">
                                 </td>
                                 <td>
                                     {{ $event->status ==1 ?  __('site.Avilable'): __('site.Unavilable') }}
+
                                 </td>
-                                <td>{{ $event->desc }}</td>
+
+
+                            <td>
+
                                 <td>
                                     <form action="{{ route('events.destroy', $event->id) }}" method="post">
                                         @csrf

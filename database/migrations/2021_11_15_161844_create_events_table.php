@@ -18,6 +18,7 @@ class CreateEventsTable extends Migration
             $table->string('event_title');
             $table->string('image')->default('default.jpg');
             $table->longText('desc');
+            $table->string('limit');
             $table->tinyInteger('status')->default('0');
             $table->timestamps();
         });

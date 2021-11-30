@@ -25,7 +25,7 @@
                 <li class="menu-title"><h5>{{ trans('site.component') }}</h5></li>
                {{-- route Admin  --}}
                <li>
-                <a href="#" class="waves-effect">
+                <a href="{{ route('admins.index') }}" class="waves-effect">
                     <i class="ion ion-md-contacts"></i>
                     <span>{{ trans('site.admins') }}
                         <span class="badge badge-success badge-pill float-right"></span>

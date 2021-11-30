@@ -6,49 +6,36 @@ use App\Models\OrderDetail;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\UserReqest;
+use Illuminate\Support\Facades\Auth;
 
 class OrderDetailController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+
     public function index()
     {
         //
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
+    public function order_details(Request $request)
     {
-        //
+      $order_id = $request->input('orderid');
+      $tax = $request->input('tax');
+      $total = $request->input('total');
+
+      $order = new OrderDetail();
+      $order->order_no =  $order_id;
+      $order->tax =  $tax;
+      $order->total =  $total;
+      $order->save();
+    //   $userReq = UserReqest::where('user_id',Auth::id())->get();
+    //   UserReqest::destroy($userReq);
+      return response()->json(['status'=> ' order submitted successfully']);
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
-    }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\OrderDetail  $orderDetail
-     * @return \Illuminate\Http\Response
-     */
     public function show($id)
     {
-        $order_details = UserReqest::where('id',$id)->get();
+        $order_details = UserReqest::where('id',$id)->first();
         return view('site.pages.order-details',compact('order_details'));
     }
 

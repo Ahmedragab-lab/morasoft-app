@@ -65,9 +65,10 @@ class AgreementController extends Controller
      * @param  \App\Models\Agreement  $agreement
      * @return \Illuminate\Http\Response
      */
-    public function show(Agreement $agreement)
+    public function show($id)
     {
-        //
+        // $Last_agrement = Agreement::find($id);
+        // return view('site.pages.last_agre',compact('Last_agrement'));
     }
 
     /**

@@ -2,6 +2,7 @@
 @section('title') order details @endsection
 @section('css')
 <link href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.css">
+<meta name="csrf-token" content="{{ csrf_token() }}">
 @endsection
 @section('content')
 <br><br><br>
@@ -107,19 +108,19 @@
                                         </tr>
                                         </thead>
                                         <tbody>
-                                            @foreach ($order_details as $item)
+                                            {{-- @foreach ($order_details as $item) --}}
                                             <tr>
-                                                <td>{{ $item->order_no }}</td>
-                                                <td>{{ $item->name }}</td>
-                                                <td>{{ $item->service->serve_name }}</td>
-                                                <td>{{ $item->from->Name}}</td>
-                                                <td>{{ $item->to->Name}}</td>
-                                                <td>{{ number_format($item->price) }} LE</td>
+                                                <td >{{ $order_details->order_no }}</td>
+                                                <td>{{ $order_details->name }}</td>
+                                                <td>{{ $order_details->service->serve_name }}</td>
+                                                <td>{{ $order_details->from->Name}}</td>
+                                                <td>{{ $order_details->to->Name}}</td>
+                                                <td>{{ number_format($order_details->price) }} LE</td>
                                             </tr>
                                             @php
-                                                $total_price += $item->price;
+                                                // $total_price += $item->price;
                                             @endphp
-                                            @endforeach
+                                            {{-- @endforeach --}}
                                         </tbody>
                                     </table>
                                     <table class="table is-fullwidth is-hoverable">
@@ -132,17 +133,19 @@
                                         </thead>
                                         <tbody>
                                             @php
-                                                $total_tax=$total_price * 14/100;
+                                                $total_tax= $order_details->price * 14/100;
                                             @endphp
                                             <tr>
-
-                                               <td>{{ number_format($total_price) }} LE</td>
+                                               <td>{{ number_format($order_details->price) }} LE</td>
                                                <td>{{ $total_tax }} LE</td>
-                                               <td>{{ number_format($total_price+$total_tax) }} LE</td>
+                                               <td>{{ number_format($order_details->price+$total_tax) }} LE</td>
                                             </tr>
+                                            <input type="hidden" value="{{ $order_details->id }} " name="orderid">
+                                            <input type="hidden" value="{{ $total_tax }} " name="tax">
+                                            <input type="hidden" value="{{ $order_details->price+$total_tax }}" name="total">
                                         </tbody>
                                     </table>
-                                    <button type="submit" class="btn btn-warning float-end">Order Now</button>
+                                    <button type="submit" class="btn btn-warning float-end save-data">Order Now</button>
                                     <br>
                                     <br>
                                     <br>
@@ -169,5 +172,41 @@
 @endif
 {{-- <script src="https://unpkg.com/sweetalert2@7.18.0/dist/sweetalert2.all.js"></script> --}}
 
+
+<script type="text/javascript">
+    $.ajaxSetup({
+        headers: {
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        }
+    });
+    $(document).ready(function(){
+        $(".save-data").click(function(e){
+            e.preventDefault();
+            let orderid = $("input[name=orderid]").val();
+            let tax = $("input[name=tax]").val();
+            let total = $("input[name=total]").val();
+            console.log(orderid);
+            console.log(tax);
+            console.log(total);
+            $.ajax({
+                method:"POST",
+                url: "/order_details",
+                data:{
+                    orderid:orderid,
+                    tax:tax,
+                    total:total,
+                },
+                success: function(response)
+                {
+                    if(response) {
+                        swal(response.status);
+                    }
+                    $('.save-data').removeClass('btn-warning ').addClass('btn-success disabled').html('done thank you for your choice');
+                    // $('.save-data').hide();
+                }
+            });
+        });
+    });
+</script>
 
 @endsection

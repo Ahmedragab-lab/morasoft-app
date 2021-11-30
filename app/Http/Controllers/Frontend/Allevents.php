@@ -17,6 +17,12 @@ class Allevents extends Controller
     public function show($id)
     {
         $Last_event = Event::find($id);
-        return view('site.pages.allevents',compact('Last_event'));
+        // $events = Event::all();
+        $events =Event::where('status','1')->orderBy('id','DESC')->get();
+
+
+        return view('site.pages.last_Event',compact('Last_event','events'));
     }
+
+
 }

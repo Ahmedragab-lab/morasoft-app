@@ -19,13 +19,15 @@ class EventSeeder extends Seeder
         $event = new Event();
         $event->event_title = ['en'=>'warehousing','ar'=>'حدث هام'];
         $event->image = 'default.jpg';
-        $event->desc = 'يوجد لدينا احداث متعدده';
+        $event->desc = ' يوجد لدينا احداث متعدده يوجد لدينا احداث متعدده يوجد لدينا احداث متعدده يوجد لدينا احداث متعدده يوجد لدينا احداث متعدده يوجد لدينا احداث متعدده';
+        $event->limit = 'يوجد لدينا احداث متعدده';
         $event->status = 1;
         $event->save();
         $event = new Event();
         $event->event_title = ['en'=>'warehousing','ar'=>'جدا حدث هام'];
         $event->image = 'default.jpg';
-        $event->desc = 'يوجد لدينا احداث متعدده';
+        $event->desc = ' يوجد لدينا احداث متعدده يوجد لدينا احداث متعدده يوجد لدينا احداث متعدده يوجد لدينا احداث متعدده يوجد لدينا احداث متعدده يوجد لدينا احداث متعدده';
+        $event->limit = 'يوجد لدينا احداث متعدده';
         $event->status = 1;
         $event->save();
 

@@ -24,6 +24,13 @@ Route::group(
         Route::resource('allservices',Frontend\Allservices::class); // go to all services page
         Route::resource('allproducts',Frontend\AllProducts::class); // go to all products page
         Route::resource('events',Frontend\AlleventController::class); // go to all Events page
+
+        Route::resource('Last_event',Frontend\Allevents::class);// get last event
+        Route::resource('Last_agrement',Frontend\Allagrements::class);// get last Agrement
+        Route::get('lastservice/{id}',[Frontend\Allservices::class,'showlast'])->name('lastservice.showlast');// get last service
+        Route::get('/contact-us',[ContactController::class,'contact']);
+
+
         Route::resource('allsections',Frontend\AllSections::class); // go to all Sections page
         Route::resource('allfeedback',Frontend\Allfeedback::class); // go to all feedback page
 
@@ -33,14 +40,13 @@ Route::group(
         Route::get('/reserveServ', function () {
             return view('site.pages.reserveServ');
         });
-
-
         Route::middleware(['auth'])->group(function () {
             Route::resource('mycart',Frontend\CartController::class); // go to my cart page
             Route::resource('checkout',Frontend\CheckoutController::class); // go to checkout page to make order
             Route::resource('userprofile',Frontend\UserprofileController::class); //go to my profile
 
             Route::resource('order_details',Frontend\OrderDetailController::class); //go to my service order details
+            Route::post('order_details',[Frontend\OrderDetailController::class , 'order_details'])->name('order_details'); //go to add service order from order details page
         });
 
         require __DIR__.'/auth.php';

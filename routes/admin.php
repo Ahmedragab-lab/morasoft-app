@@ -12,7 +12,15 @@ Route::group(
         'prefix' => LaravelLocalization::setLocale(),
         'middleware' => ['auth:admin','localeSessionRedirect', 'localizationRedirect', 'localeViewPath']
     ],function () {
-        Route::resource('/dashboard', Admin\AdminsController::class);
+
+
+
+        // Route::get('adminlogin', [AdminAuthController::class, 'showLoginForm'])->name('admin.login');
+        Route::resource('/admins', Admin\AdminsController::class);
+        Route::resource('/dashboard', Admin\DashBoardController::class);
+
+      //  Route::resource('/dashboard', Admin\AdminsController::class);
+
         Route::resource('/users', Admin\UsersController::class);
         Route::resource('/services',Admin\ServiceController::class);
         Route::resource('/sections',Admin\SectionController::class);

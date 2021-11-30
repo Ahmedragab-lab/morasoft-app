@@ -11,11 +11,11 @@
                     {{csrf_field()}}
                     <div class="form-group">
                         <label>{{ __('site.service_name_ar') }}</label>
-                        <input type="text" class="form-control" required placeholder="ادخل اسم الخدمه" name="serve_name" />
+                        <input type="text" class="form-control" required placeholder="{{ __('site.Enter_Service_name_ar') }}" name="serve_name" />
                     </div>
                     <div class="form-group">
                         <label>{{ __('site.service_name_en') }}</label>
-                        <input type="text" class="form-control" required placeholder="Enter service name " name="serve_name_en" />
+                        <input type="text" class="form-control" required placeholder="{{ __('site.Enter_Service_name_en') }} " name="serve_name_en" />
                     </div>
                     <div class="form-group">
                         <label>{{ __('site.description') }}</label>
