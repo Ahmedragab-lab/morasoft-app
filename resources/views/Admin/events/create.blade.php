@@ -18,6 +18,11 @@
                         <input type="text" class="form-control" required placeholder="Enter Event Title " name="event_title_en" />
                     </div>
                     <div class="form-group">
+                        <label>{{ __('site.event_limit') }}</label>
+                        <input type="text" class="form-control" required placeholder="Enter Event Limit " name="limit" />
+                    </div>
+
+                    <div class="form-group">
                         <label>{{ __('site.description') }}</label>
                         <div>
                             <textarea required class="form-control" rows="5" name="desc"></textarea>

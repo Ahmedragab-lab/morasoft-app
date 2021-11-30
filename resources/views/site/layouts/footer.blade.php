@@ -72,34 +72,36 @@
             <div class="widget widget-html">
               <div class="textwidget">
                 <div id="footer-logo" class="site-logo ">
-                  <a href="./index.html">
+                  <a href="{{ route('front.index') }}">
                     <img alt="Joo - Niche Multi-Purpose HTML Template" src="{{ asset('front/images/logo/logo2.png') }}">
-                    <span class="logo-text">خدمات النقل</span>
+                    <span class="logo-text">حول الشركة</span>
                   </a>
                 </div>
                 <!-- #footer-logo -->
                 <br>
-                <p>لوريم إيبسوم هو ببساطة نص شكلي بمعنى أن الغاية هي الشكل وليس المحتوى ويُستخدم في صناعات المطابع ودور النشر.</p>
+                <p>شركة مورا سوفت لخدمات النقل والشحن بمختلف الطرق ..
+                    تعمل الشركة على خدمتك على مدار الساعة ونقل شحناتك وتوصيلها عبر أأمن الطرق وافضل الاسعار
+                </p>
                 <div class="footer-social-links ">
                   <ul>
                     <li>
-                      <a href="#" target="_blank">
+                      <a href="https://www.facebook.com/samir.gamal77" target="_blank">
                         <span class="icon">
                           <i class="fab fa-facebook-f"></i>
                         </span>
                       </a>
                     </li>
                     <li>
-                      <a href="#" target="_blank">
+                      <a href="https://www.linkedin.com/in/samir-gamal-8ab68ba0" target="_blank">
                         <span class="icon">
-                          <i class="fab fa-twitter"></i>
+                          <i class="fab fa-linkedin"></i>
                         </span>
                       </a>
                     </li>
                     <li>
-                      <a href="#" target="_blank">
+                      <a href="https://www.youtube.com/channel/UCwT_14y87y3tgR8AqMCxrRA" target="_blank">
                         <span class="icon">
-                          <i class="fab fa-linkedin-in"></i>
+                          <i class="fab fa-youtube"></i>
                         </span>
                       </a>
                     </li>
@@ -110,35 +112,37 @@
             </div>
           </div>
           <!-- .column -->
+
           <div class="column">
-            <div class="widget widget-links">
-              <h3 class="widget-title ">الخدمات</h3>
-              <ul>
-                <li>
-                  <a href="./index.html">الشحن الجوى</a>
-                </li>
-                <li>
-                  <a href="./index.html">النقل البحرى</a>
-                </li>
-                <li>
-                  <a href="./index.html">النقل البرلى</a>
-                </li>
-                <li>
-                  <a href="./index.html">البضائع</a>
-                </li>
-                <li>
-                  <a href="./index.html">الاستشارات</a>
-                </li>
-              </ul>
+            <div class="widget widget-links" >
+              <h3  class="widget-title ">{{ __('front.services') }}</h3>
+                <ul list-style: none>
+
+                    <li >
+                        @foreach (\App\Models\Service::where('status','1')->get() as $service)
+
+                        <li ><a href="{{ route('allservices.show',$service->id) }}"> {{$service->serve_name }} </a></li>
+
+                        @endforeach
+                    </li>
+                </ul>
+
+              </h3>
+
             </div>
             <!-- .widget -->
           </div>
           <!-- .column -->
           <div class="column">
             <div class="widget widget-links">
-              <h3 class="widget-title ">معلومات</h3>
+              <h3 class="widget-title ">{{ __('front.sections') }}</h3>
               <ul>
-                <li>
+                <li list-style:none>
+                    @foreach (\App\Models\Section::where('status','1')->get() as $section)
+                        <li ><a href="{{ route('allsections.show',$section->id) }}"> {{$section->section_name}} </a></li>
+                    @endforeach
+                </li>
+                {{-- <li>
                   <a href="./index.html">التخزين</a>
                 </li>
                 <li>
@@ -152,7 +156,7 @@
                 </li>
                 <li>
                   <a href="./index.html"> بضائع وحدات</a>
-                </li>
+                </li> --}}
               </ul>
             </div>
             <!-- .widget -->
@@ -160,10 +164,29 @@
           <!-- .column -->
           <div class="column is-4">
             <div class="widget widget-form">
-              <h3 class="widget-title ">القائمة البريدية</h3>
-              <p>لوريم إيبسوم هو ببساطة نص شكلي بمعنى أن الغاية هي الشكل وليس المحتوى.</p>
-              <br>
-              <form>
+              <h3 class="widget-title ">contact us</h3>
+
+                <a href="../pages/contact.html">Address</a>
+                </h3>
+                <p>مخرج 14 , طريق عمر بن عبدالعزيز , الرياض,
+                <br> المملكة العربية السعودية</p>
+
+              {{-- <div class="media-content"> --}}
+                <h3>
+                  <a>Phone</a>
+                </h3>
+                <p>+ 0500699206
+                  <br> + 0560032681</p>
+            </div>
+
+            <h3>
+                <a>Email</a>
+              </h3>
+              <p>admin@morasoft.net
+                <br>www.morasoft.net</p>
+              {{-- <p></p> --}}
+              {{-- <br> --}}
+              {{-- <form>
                 <div class="field">
                   <div class="control is-expanded">
                     <input class="input" type="text" placeholder="your@email.com">
@@ -174,8 +197,8 @@
                     </button>
                   </div>
                 </div>
-              </form>
-            </div>
+              </form> --}}
+            {{-- </div> --}}
           </div>
           <!-- .column -->
         </div>

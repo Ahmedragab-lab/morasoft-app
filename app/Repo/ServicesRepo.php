@@ -94,4 +94,12 @@ class ServicesRepo implements ServicesInterface{
             }
         }
 
+
+
+        // public function show_last($id)
+        // {
+        //     $Last_service = service::find($id);
+        //     return view('site.pages.Last_service',compact('service'));
+        // }
+
  }

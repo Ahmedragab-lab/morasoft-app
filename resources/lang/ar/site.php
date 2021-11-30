@@ -9,9 +9,17 @@ return [
    'edit'=>'تعديل',
    'delete'=>'حذف',
    'back'=>'رجوع',
-//    sidebar
+   'active'=> 'فعال',
+   'unactive'=> 'غير فعال',
+
+
+
+
+ //    sidebar
    'dashboard'=>'الرئيسيه',
    //admin
+   'add-admin'=> 'إضافة ادمن',
+   'edit-admin'=> 'تعديل بيانات الادمن',
    'admins'=>'الادمن',
     'Navbar Data'=>'بيانات الصفحات',
    //end admin
@@ -28,15 +36,24 @@ return [
    'feedback'=>'تقييم العملاء',
 //    end sidebar
 // start dashboard service page translation
-'service_name_ar'=>'اسم الخدمه',
+'service_name_ar'=>'اسم الخدمه بالعربية',
+'service_name_en'=>'اسم الخدمه بالانجليزية',
 'event_title_ar'=>'عنوان الخبر',
 'services'=>'الخدمات',
 'services_page'=>'صفحه الخدمات',
 'Add_Service'=>'اضف خدمه',
 'Service_name'=>'اسم الخدمه',
+'Enter_Service_name_ar'=>' أدخل اسم الخدمه بالعربية',
+'Enter_Service_name_en'=>' أدخل اسم الخدمه بالانجليزية',
 'event_title'=>'عنوان الخبر',
+'event_limit'=>'مختصر الخبر',
 'description'=>'الوصف',
 'status'=>'الحاله',
+'checkstatus'=>'إختر الحاله',
+'enterName'=>'أدخل الاسم',
+'enterEmail'=>'أدخل الايميل',
+'enterPass'=>'أدخل كلمة المرور',
+'enterRePass'=>'أعد كتابة كلمة المرور',
 'image'=>' صوره',
 'action'=>'خصائص',
 'Avilable'=>'متاح',
@@ -51,13 +68,22 @@ return [
 'required_en'=>'يرجي ادخال اسم الخدمه باللغة الانجليزية',
 'desc_required'=>'يرجى كتابه وصف الخدمه',
 // end dashboard service page translatio
+
 // start users page translation
+'fname'=>' الاسم الاول',
+'lname'=>' اسم العائلة',
+
+'enterFname'=>'ادخل الاسم الاول',
+'enterLname'=>'ادخل اسم العائلة',
+'enterPhone'=>'ادخل رقم الهاتف',
+'enterAdress'=>'ادخل العنوان',
+
 'name'=>'الاسم',
 'email'=>'الايميل',
-'status'=>'الحاله',
 'phone'=>'الهاتف',
 'password'=>'باسورد',
 'address'=>'العنوان',
+
 'users-data'=>'بيانات العملاء',
 'add-user'=>'اضف عميل',
 
@@ -65,8 +91,27 @@ return [
 
 
 // end users page translation
+
+// start feedback translation
+'feedback-user'=>'تعليقات الزوار',
+'add-feedback'=>'  اضافة تعليق  ',
+'edit-feedback'=>'تعديل التعليق',
+'selectservice'=>'اختر الخدمة ',
+'selectclient'=>'اختر الزبون ',
+'Your-Feedback'=>' تعليقك ',
+
+
+
+// end feedback translation
+
+
+
+
 'sections'=>' الاقسام',
-'section_name'=>' اسم القسم',
+'section_name_ar'=>' اسم القسم بالعربية',
+'section_name_en'=>' اسم القسم بالانجليزية',
+'Enter_section_name_ar'=>'  أدخل اسم القسم بالعربية',
+'Enter_section_name_en'=>'  أدخل اسم القسم بالانجليزية',
 'add_section'=>' اضف قسم',
 'popular'=>' الاكثر شهره',
 'products'=>' المنتجات',
@@ -104,8 +149,8 @@ return [
 'userfname' => 'الاسم الاول',
 'userlname' => 'اسم العائله',
 'useremail' => 'الايميل',
-'address1' => 'عنوان1',
-'address2' => 'عنوان2',
+'address1' => 'عنوان 1 ',
+'address2' => 'عنوان 2 ',
 'city' => 'المدينه',
 'country' => 'البلد',
 'productname' => 'اسم المنتج',

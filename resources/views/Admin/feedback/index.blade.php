@@ -5,9 +5,9 @@
     <div class="col-lg-12">
         <div class="card m-b-30">
             <div class="card-body">
-                <h4 class="mt-0 header-title">table feedbacks of users</h4>
+                <h4 class="mt-0 header-title">{{ __('site.feedback-user') }}</h4>
                 <div class="col-md-6 mb-3">
-                    <a href="{{ route('feedbacks.create') }}"  class="btn btn-primary btn-block"><i class="fa fa-user-circle"></i> Add feedback</a>
+                    <a href="{{ route('feedbacks.create') }}"  class="btn btn-primary btn-block"><i class="fa fa-user-circle"></i>{{ __('site.add-feedback') }}</a>
                 </div>
                 <div class="table-responsive">
                     <table id="datatable" class="table table-bordered dt-responsive nowrap" style="border-collapse: collapse; border-spacing: 0; width: 100%;">

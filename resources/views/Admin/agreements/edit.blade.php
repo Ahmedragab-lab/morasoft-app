@@ -12,12 +12,12 @@
                     @method('PUT')
                     <div class="form-group">
                         <label>{{ __('site.agreement_title_ar') }}</label>
-                        <input type="text" class="form-control" required placeholder="ادخل عنوان الخبره" name="agreement_title"
+                        <input type="text" class="form-control" required  name="agreement_title"
                         value="{{ $agreements->getTranslation('agreement_title','ar') }}" />
                     </div>
                     <div class="form-group">
                         <label>{{ __('site.event_title_en') }}</label>
-                        <input type="text" class="form-control" required placeholder="Enter agreement title " name="agreement_title_en"
+                        <input type="text" class="form-control" required  name="agreement_title_en"
                         value="{{ $agreements->getTranslation('agreement_title','en') }}" />
                     </div>
                     <div class="form-group">

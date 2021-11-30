@@ -235,57 +235,102 @@
           </div>
         </div>
     </section>
+
+
+                {{-- ********** Start Events ************ --}}
+
+                <section id="news" class="section news-section is-clearfix">
+                    <div class="container">
+                      <div class="blog-list style-2 columns is-variable is-4 is-multiline">
+                        <div class="column is-4" data-aos="fade">
+                          <div class="blog-post-heading">
+                            <p class="heading-title-top">أخر الاخبار</p>
+                            <h1 class="heading-title style-3 has-text-left">
+                                {{-- <img alt="Joo - Niche Multi-Purpose HTML Template" src="{{ asset('uploads/event/'.$Last_event->image) }}"> --}}
+                            <h1 class="heading-title style-3 has-text-left">
+                              <span class="has-text-primary">{{ $Last_event->event_title }}</span>
+                            </h1>
+                            <p>{{ $Last_event->desc }}</p>
+                            <a href="{{ route('Last_event.show',$Last_event->id) }}" class="button">   أخبارنا...
+                              <span class="icon">
+                                <i class="ion-ios-arrow-round-forward"></i>
+                              </span>
+                            </a>
+                          </div>
+                        </div>
+                        <div class="column is-4" data-aos="fade">
+                            <p class="heading-title-top">أخر الاتفاقيات</p>
+                          <article class="blog-post">
+                            <figure class="post-image">
+                              <a href="">
+                                <img alt="Joo - Niche Multi-Purpose HTML Template" src="{{ asset('uploads/event/'.$Last_event->image) }}"> </a>
+                            </figure>
+                            <div class="entry-header">
+                              <div class="post-meta">
+                                <ul>
+                                  <li>
+                                    {{-- <a href="#">
+                                      <span>أبريل 5 ، 2018</span>
+                                    </a> --}}
+                                  </li>
+                                </ul>
+                              </div>
+                              <h2 class="entry-title">
+
+                                <a href="">{{ $Last_agreement->agreement_title }}</a>
+                              </h2>
+
+
+                              <p>{{ $Last_agreement->desc }}</p>
+                            </div>
+                            <div class="entry-footer">
+                              <a href="{{ route('Last_agrement.show',$Last_agreement->id) }}" class="button">اقرأ المزيد</a>
+                            </div>
+                          </article>
+                          <!-- .blog-post -->
+                        </div>
+
+
+                        <div class="column is-4" data-aos="fade">
+                            <p class="heading-title-top">أخر الخدمات</p>
+                          <article class="blog-post">
+                            <figure class="post-image">
+                              <a href="./blog/single.html">
+                                <img alt="Joo - Niche Multi-Purpose HTML Template" src="{{ asset('uploads/serv/'.$Last_service->image) }}"> </a>
+                            </figure>
+                            <div class="entry-header">
+                              <div class="post-meta">
+                                <ul>
+                                  <li>
+                                    {{-- <a href="#">
+                                      <span>أبريل 5 ، 2018</span>
+                                    </a> --}}
+                                  </li>
+                                </ul>
+                              </div>
+                              <h2 class="entry-title">
+                                <a href="./blog/single.html">{{ $Last_service->serve_name }}</a>
+                              </h2>
+                              <p>{{ $Last_service->desc }}</p>
+                            </div>
+                            <div class="entry-footer">
+                              <a href="{{ route('lastservice.showlast',$Last_service->id) }}"  class="button">اقرأ المزيد</a>
+                            </div>
+                          </article>
+                          <!-- .blog-post -->
+                        </div>
+                      </div>
+                    </div>
+                  </section>
+
                 {{-- ********** Start News ************ --}}
-    <section id="news" class="section news-section is-clearfix">
-        <div class="container">
-          <div class="blog-list style-2 columns is-variable is-4 is-multiline">
-            <div class="column is-4" >
-                <div class="blog-post-heading">
-                    <p class="heading-title-top">أخر الاتفاقيات</p>
-                    <h1 class="heading-title style-3 has-text-left">
-                    <span class="has-text-primary">{{ $Last_agreement->agreement_title }}</span>
-                    </h1>
-                    <p>{{ $Last_agreement->desc }}</p>
-                    <a href="{{ route('Last_event.show',$Last_agreement->id) }}" class="button">إقرأ المزيد
-                    <span class="icon">
-                        {{-- href="{{route('front.show',$product->id)}}" --}}
-                        <i class="ion-ios-arrow-round-forward"></i>
-                    </span>
-                    </a>
-                </div>
-            </div>
-            <div class="column is-4" >
-                <article class="blog-post">
-                    <figure class="post-image">
-                        <a href="./blog/single.html">
-                            <img alt="Joo - Niche Multi-Purpose HTML Template" src="{{ asset('uploads/event/'.$Last_event->image) }}">
-                        </figure>
-                        <div class="entry-header">
-                        <div class="post-meta">
-                            <ul>
-                            <li>
-                                <a href="#">
-                                <span>أبريل 5 ، 2018</span>
-                                </a>
-                            </li>
-                            </ul>
-                        </div>
-                        <h2 class="entry-title">
-                            {{-- <a href="./blog/single.html">{{ $Last_event->event_title }}</a> --}}
-                            <a href="{{ route('Last_event.show',$Last_event->id) }}">{{ $Last_event->event_title }}</a>
-                        </h2>
-                        <p>{{ $Last_event->desc }}</p>
-                        </div>
-                        <div class="entry-footer">
-                        <a href="{{ route('Last_event.show',$Last_event->id) }}" class="button"> </a>
-                        </div>
-                    </figure>
-                </article>
-                 {{-- ********** End News ************ --}}
-            </div>
-           </div>
-        </div>
-    </section>
+
+
+
+                {{-- ********** End Service ************ --}}
+
+
+
     {{-- start client feedback --}}
     <section id="testimonials" class="section testimonials-section has-background-primary-light is-clearfix">
         <div class="container">
@@ -402,6 +447,95 @@
     {{-- فورمه اجاكس --}}
 @endsection
 @section('js')
+
+
+<script type="text/javascript">
+    $.ajaxSetup({
+        headers: {
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        }
+        });
+    $(".save-data").click(function(event){
+        event.preventDefault();
+        // let name = $("input[name=name]").val();
+        // let email = $("input[name=email]").val();
+        // let subject = $("input[name=subject]").val();
+        // let user_id = $("select[name=user_id]").val();
+        let serv_id = $("select[name=serv_id]").val();
+        let sms = $("textarea[name=sms]").val();
+        console.log(serv_id);
+        $.ajax({
+          method:"POST",
+          url: "/sendrequest",
+          data:{
+            // name:name,
+            // email:email,
+            // subject:subject,
+            // user_id:user_id,
+            serv_id:serv_id,
+            sms:sms,
+          },
+          success:function(response){
+            if(response) {
+            swal(response.status);
+              $("#ajaxform")[0].reset();
+            }
+          },
+          error: function(error) {
+           console.log(error);
+          }
+         });
+
+    });
+  </script>
+
+{{-- *************************بداية JS************************** --}}
+{{--
+<script type="text/javascript">
+    $.ajaxSetup({
+        headers: {
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        }
+        });
+    $(".save-data").click(function(event){
+        event.preventDefault();
+        // let name = $("input[name=name]").val();
+        // let email = $("input[name=email]").val();
+        // let subject = $("input[name=subject]").val();
+        // let user_id = $("select[name=user_id]").val();
+        let serv_id = $("select[name=serv_id]").val();
+      //  let sms = $("textarea[name=sms]").val();
+        console.log(serv_id);
+        $.ajax({
+          method:"POST",
+          url: "/showlast",
+          data:{
+            // name:name,
+            // email:email,
+            // subject:subject,
+            // user_id:user_id,
+            serv_id:serv_id,
+       //     sms:sms,
+          },
+          success:function(response){
+            if(response) {
+            swal(response.status);
+              $("#ajaxform")[0].reset();
+            }
+          },
+          error: function(error) {
+           console.log(error);
+          }
+         });
+
+    }); --}}
+  {{-- </script> --}}
+
+{{-- *************************نهاية JS************************** --}}
+
+
+
+
     <script type="text/javascript">
         $.ajaxSetup({
             headers: {
@@ -439,4 +573,5 @@
             });
         });
     </script>
+
 @endsection

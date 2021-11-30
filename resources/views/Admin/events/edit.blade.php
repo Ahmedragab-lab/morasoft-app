@@ -20,6 +20,12 @@
                         <input type="text" class="form-control" required placeholder="Enter service name " name="event_title_en"
                         value="{{ $events->getTranslation('event_title','en') }}" />
                     </div>
+
+                    <div class="form-group">
+                        <label>{{ __('site.event_limit') }}</label>
+                        <input type="text" class="form-control" required placeholder="Enter Event Limit " name="limit" />
+                    </div>
+
                     <div class="form-group">
                         <label>{{ __('site.description') }}</label>
                         <div>
