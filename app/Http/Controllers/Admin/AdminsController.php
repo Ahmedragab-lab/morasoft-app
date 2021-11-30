@@ -50,7 +50,7 @@ class AdminsController extends Controller
 
     public function update(StoreAdmin $request)
     {
-        return $this->admins->update( $request);
+        return $this->admins->update($request);
     }
 
     public function destroy($id)

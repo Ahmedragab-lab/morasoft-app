@@ -12,10 +12,11 @@
                     @method('PUT')
                     <div class="form-group">
                         <label>{{ __('site.name') }}</label>
-                        <input type="text" class="form-control" required  name="name"  value="{{$Admins->name}}" />
-                        @error('name')
+                        <input type="text" class="form-control" required  name="name"
+                         value="{{$Admins->name}}" />
+                        {{-- @error('name')
                         <div class="text-warning">{{ $message }}</div>
-                        @enderror
+                        @enderror --}}
                     </div>
 
                     <div class="form-group">
@@ -23,32 +24,34 @@
                         <div>
                             <input type="email" class="form-control" required
                                    parsley-type="email"  name="email" value="{{$Admins->email}}"/>
-                            @error('email')
+                            {{-- @error('email')
                                     <div class="text-warning">{{ $message }}</div>
-                            @enderror
+                            @enderror --}}
                         </div>
                     </div>
                     <div class="form-group">
                         <label>{{ __('site.password') }}</label>
                         <div>
-                            <input type="password" id="pass2" class="form-control" name="password" value="{{$Admins->password}}"/>
-                            @error('password')
+                            <input type="password" id="pass2" class="form-control" name="password"
+                            value="{{$Admins->password}}"/>
+                            {{-- @error('password')
                                <div class="text-warning">{{ $message }}</div>
-                            @enderror
+                            @enderror --}}
                         </div>
                         <div class="m-t-10">
                             <input type="password" class="form-control"
                                    data-parsley-equalto="#pass2" name="confirm-password" />
-                            @error('confirm-password')
+                            {{-- @error('confirm-password')
                             <div class="text-warning">{{ $message }}</div>
-                            @enderror
+                            @enderror --}}
                         </div>
                     </div>
 
 
                     <div class="form-group">
                         <label>{{ __('site.status') }}</label>
-                        <select name = "admin"  class="form-control " value="{{ $Admins->status}}"> style="height: calc(2.8rem + 7px);  " >
+                        <select name = "admin"  class="form-control "
+                        value="{{ $Admins->status}}"> style="height: calc(2.8rem + 7px);  " >
                             {{-- <option value="{{ $Admins->status}}"></option> --}}
 
 

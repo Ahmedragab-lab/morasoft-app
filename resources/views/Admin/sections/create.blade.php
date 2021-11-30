@@ -5,17 +5,17 @@
     <div class="col-lg-9">
         <div class="card m-b-30">
             <div class="card-body">
-                <h4 class="mt-0 header-title">{{ __('site.Add_section') }}</h4>
+                <h4 class="mt-0 header-title">{{ __('site.add_section') }}</h4>
                 <a class="btn btn-primary btn-sm" style="margin: 10px;" href="{{ route('sections.index') }}">{{ __('site.back') }}</a>
                 <form class="" action="{{route('sections.store')}}" method="post" enctype="multipart/form-data">
                     {{csrf_field()}}
                     <div class="form-group">
-                        <label>{{ __('site.section_name') }}</label>
-                        <input type="text" class="form-control" required placeholder="ادخل اسم القسم" name="section_name" />
+                        <label>{{ __('site.section_name_ar') }}</label>
+                        <input type="text" class="form-control" required placeholder="{{ __('site.Enter_section_name_ar') }}" name="section_name" />
                     </div>
                     <div class="form-group">
                         <label>{{ __('site.section_name_en') }}</label>
-                        <input type="text" class="form-control" required placeholder="Enter section name " name="section_name_en" />
+                        <input type="text" class="form-control" required placeholder="{{ __('site.Enter_section_name_en') }}" name="section_name_en" />
                     </div>
                     <div class="form-group">
                         <label>{{ __('site.slug') }}</label>

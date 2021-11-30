@@ -36,12 +36,15 @@ return [
    'feedback'=>'تقييم العملاء',
 //    end sidebar
 // start dashboard service page translation
-'service_name_ar'=>'اسم الخدمه',
+'service_name_ar'=>'اسم الخدمه بالعربية',
+'service_name_en'=>'اسم الخدمه بالانجليزية',
 'event_title_ar'=>'عنوان الخبر',
 'services'=>'الخدمات',
 'services_page'=>'صفحه الخدمات',
 'Add_Service'=>'اضف خدمه',
 'Service_name'=>'اسم الخدمه',
+'Enter_Service_name_ar'=>' أدخل اسم الخدمه بالعربية',
+'Enter_Service_name_en'=>' أدخل اسم الخدمه بالانجليزية',
 'event_title'=>'عنوان الخبر',
 'event_limit'=>'مختصر الخبر',
 'description'=>'الوصف',
@@ -105,7 +108,10 @@ return [
 
 
 'sections'=>' الاقسام',
-'section_name'=>' اسم القسم',
+'section_name_ar'=>' اسم القسم بالعربية',
+'section_name_en'=>' اسم القسم بالانجليزية',
+'Enter_section_name_ar'=>'  أدخل اسم القسم بالعربية',
+'Enter_section_name_en'=>'  أدخل اسم القسم بالانجليزية',
 'add_section'=>' اضف قسم',
 'popular'=>' الاكثر شهره',
 'products'=>' المنتجات',

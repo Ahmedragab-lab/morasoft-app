@@ -7,7 +7,7 @@
             <div class="card-body">
                 <h4 class="mt-0 header-title">{{ __('site.services') }}</h4>
                 <div class="col-md-6 mb-3">
-                    <a href="{{ route('services.create') }}"  class="btn btn-primary btn-block"><i class="fa fa-user-circle"></i> Add service</a>
+                    <a href="{{ route('services.create') }}"  class="btn btn-primary btn-block"><i class="fa fa-user-circle"></i> {{ __('site.Add_Service') }} </a>
                 </div>
                 <div class="table-responsive">
                     <table id="datatable" class="table table-bordered dt-responsive nowrap" style="border-collapse: collapse; border-spacing: 0; width: 100%;">

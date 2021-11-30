@@ -11,7 +11,7 @@
                     {{csrf_field()}}
                     @method('PUT')
                     <div class="form-group">
-                        <label>{{ __('site.section_name') }}</label>
+                        <label>{{ __('site.section_name_ar') }}</label>
                         <input type="text" class="form-control" required  name="section_name" value="{{ $section->getTranslation('section_name','ar') }}" />
                     </div>
                     <div class="form-group">
