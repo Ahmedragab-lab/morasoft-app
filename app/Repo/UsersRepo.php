@@ -59,7 +59,7 @@ class UsersRepo implements UsersInterface{
     public function update( $request, $id)
     {
         try{
-            $data = User::find($id);
+            $data = User::findorfail($id);
 
             if($request->hasFile('image')){
                 $path = 'uploads/user-img/' . $data->image;
@@ -93,7 +93,7 @@ class UsersRepo implements UsersInterface{
     public function destroy($id)
     {
         try{
-            $data = User::find($id);
+            $data = User::findorfail($id);
             if($data->image != 'default.jpg'){
                 $path = 'uploads/user-img/' . $data->image;
                 if(File::exists($path)){

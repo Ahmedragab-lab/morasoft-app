@@ -2,13 +2,11 @@
 
 namespace App\Http\Controllers\Frontend;
 
-use App\Models\Cart;
-use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\Models\Product;
-use Illuminate\Support\Facades\Auth;
+use App\Models\contact;
+use Illuminate\Http\Request;
 
-class CartController extends Controller
+class ContactController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -17,10 +15,13 @@ class CartController extends Controller
      */
     public function index()
     {
-        $products = Product::all();
-        $cartitems = Cart::where('user_id',Auth::id())->get();
-        return view('site.pages.mycart',compact('cartitems','products'));
+
+        $contacts = contact::all();
+
+        return view('site.pages.contact',compact('contacts'));
     }
+
+
 
     /**
      * Show the form for creating a new resource.
@@ -46,21 +47,24 @@ class CartController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Cart  $cart
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Cart $cart)
+    public function show($id)
     {
-        //
+
+        $contacts = contact::findorfail($id);
+        return view('site.pages.contact',compact('contacts'));
     }
+
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Cart  $cart
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(Cart $cart)
+    public function edit($id)
     {
         //
     }
@@ -69,10 +73,10 @@ class CartController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Cart  $cart
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Cart $cart)
+    public function update(Request $request, $id)
     {
         //
     }
@@ -80,12 +84,11 @@ class CartController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Cart  $cart
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Cart $cart)
+    public function destroy($id)
     {
         //
     }
-
 }

@@ -51,7 +51,8 @@
                                     <a href="{{ route('allfeedback.index')}}">{{ __('front.feedback') }} </a>
                                 </li>
                                 <li>
-                                    <a href="./blog/index.html">{{ __('front.contactus') }}</a>
+
+                                    <a href="{{ route('contact.index')}}">{{ __('front.contactus') }}</a>
 
                                 </li>
                                 <li class="has-dropdown">
@@ -67,10 +68,12 @@
                                 @endguest
                                 @auth
                                     <li class="has-dropdown">
-                                        <a href="#"><img src={{ asset('uploads/user-img/'.Auth::user()->image) }} width="50" class="rounded-circle" > {{ \Str::limit(auth()->user()->fname, 10) }}</a>
+                                        <a href="#"><img src={{ asset('uploads/user-img/'.Auth::user()->image) }} width="50" class="rounded-circle" >
+                                             {{ \Str::limit(auth()->user()->fname, 10) }}
+                                        </a>
                                         <ul class="dropdown">
-                                            <li><a href="{{ route('profile')}}"><i class=" far fa-address-card"></i> Profile</a></li>
-                                            <li><a href="#"><i class=" far fa-comment-dots"></i> my orders</a></li>
+                                            <li><a href="{{ route('userprofile.show',Auth::user()->id)}}"><i class=" far fa-address-card"></i> My Profile</a></li>
+                                            {{-- <li><a href="#"><i class=" far fa-comment-dots"></i> my orders</a></li> --}}
                                             <li><a href="{{ route('mycart.index')}}"><i class="icon-basket"></i> my cart</a></li>
                                             <li>
                                                 <a href="{{ route('logout') }}"
@@ -84,15 +87,37 @@
                                         </ul>
                                     </li>
                                     <li class="has-dropdown">
-                                        <a href="#"> <i class="fas fa-bell "></i></a>
+                                        <a href="#"> <i class="fas fa-bell "></i>
+                                            <span class="badge badge-danger badge-pill noti-icon-badge" id="noticount">
+                                                {{ auth()->user()->unreadNotifications->count() }}
+                                            </span>
+                                        </a>
                                         <ul class="dropdown">
-                                            <li><a href="#"><img src={{ asset('assets/images/profile_img.jpg') }} width="30" class="rounded-circle" > Asmaa Hosny</a></li>
-                                            <li><a href="#"><img src={{ asset('assets/images/profile_img.jpg') }} width="30" class="rounded-circle" > Asmaa Hosny</a></li>
+                                            <div id="unread">
+                                                @foreach(auth()->user()->unreadNotifications as $notification)
+                                                    <li>
+                                                        <a href="{{ route('order_details.show',$notification->data['id']) }}">
+                                                            <h4 style="color:rgb(0, 0, 0); font-size:15px;">
+                                                                {{ $notification->data['title'] }}
+                                                                <span style="color: rgb(226, 33, 33); font-size:20px; font-weight:bold;">
+                                                                    {{ (number_format($notification->data['price'] ,2)) }} LE
+                                                                </span>
+                                                                of order number
+                                                                <span style="color: rgb(33, 117, 226); font-size:15px;">
+                                                                    {{ $notification->data['order_no'] }}
+                                                                </span>
+                                                                thank you
+                                                                <span style="color: rgb(33, 123, 226); font-size:15px;">
+                                                                {{ $notification->data['user'] }}
+                                                                </span>
+                                                            </h4>
+                                                        </a>
+                                                    </li>
+                                                @endforeach
+                                            </div>
                                         </ul>
                                     </li>
                                 @endauth
-
-
                             </ul>
                         </nav>
                         <!-- #site-navigation -->

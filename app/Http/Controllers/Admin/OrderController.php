@@ -3,9 +3,13 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\Admin;
 use App\Models\Order;
+use App\Models\User;
 use App\Models\UserReqest;
+use App\Notifications\AdminPrice;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Notification;
 
 class OrderController extends Controller
 {
@@ -68,9 +72,15 @@ class OrderController extends Controller
     {
         try
         {
-            $order_price = UserReqest::find($id);
+
+            $order_price = UserReqest::findorfail($id);
             $order_price->price = $request->price;
             $order_price->save();
+
+            $user = User::where('id',$order_price->user_id)->get();
+            $userrequest = UserReqest::latest()->first();
+            Notification::send($user,new AdminPrice($userrequest));
+            
             toastr()->success(__('price added successfully'));
             return redirect()->route('orders.index');
         }catch (\Exception $e){

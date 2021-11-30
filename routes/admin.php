@@ -32,7 +32,7 @@ Route::group(
         Route::resource('/companies',Admin\CompanyController::class);
         Route::resource('/orders',Admin\OrderController::class);
         Route::resource('/cartitems',Admin\CartOrderController::class); // to show orders from checkout my cart page
-        // Route::put('addprice',[Admin\OrderController::class,'addprice'])->name('addprice');  // admin can add price to serice
+
     });
 
 require __DIR__ . '/auth.php';

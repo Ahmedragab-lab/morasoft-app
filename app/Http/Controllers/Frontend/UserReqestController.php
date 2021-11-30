@@ -24,13 +24,13 @@ class UserReqestController extends Controller
                 $req = new UserReqest();
                 $req->name =auth()->user()->fname;
                 $req->email = auth()->user()->email;
-                $req->address = auth()->user()->address1;
+                // $req->address = auth()->user()->address1;
                 $req->from_id =  $from;
                 $req->to_id = $to;
                 $req->user_id = Auth::id();
                 $req->service_id = $service_id;
                 $req->sms = $sms;
-                $req->order_no = 'morasoft'.rand(1111,9999);
+                $req->order_no = 'morasoft'.rand(1000000000, 9999999999);
                 $req->save();
                 return response()->json(['status'=>$req->name . ' request submitted successfully']);
 
@@ -55,13 +55,14 @@ class UserReqestController extends Controller
            $req = new UserReqest();
            $req->name =auth()->user()->fname;
            $req->email = auth()->user()->email;
-           $req->address = auth()->user()->address1;
+        //    $req->address = auth()->user()->address1;
            $req->from_id =  $from;
            $req->to_id = $to;
            $req->user_id = Auth::id();
            $req->service_id = $service_id;
            $req->sms = $sms;
-           $req->order_no = 'morasoft'.rand(1111,9999);
+
+           $req->order_no = 'morasoft'.rand(1000000000, 9999999999);
            $req->save();
            return response()->json(['status'=>$req->name . ' request submitted successfully']);
 

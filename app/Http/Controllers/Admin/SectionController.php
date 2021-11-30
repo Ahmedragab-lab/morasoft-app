@@ -75,7 +75,8 @@ class SectionController extends Controller
     {
         try{
             $validated = $request->validated();
-            $section = Section::find($id);
+
+            $section = Section::findorfail($id);
             if($request->hasFile('image')){
                 $path = 'uploads/section/' . $section->image;
                 if(File::exists($path)){
@@ -105,7 +106,7 @@ class SectionController extends Controller
     public function destroy($id)
     {
     try{
-        $section = Section::find($id);
+        $section = Section::findorfail($id);
         if($section->image){
             $path = 'uploads/section/' . $section->image;
             if(File::exists($path)){
