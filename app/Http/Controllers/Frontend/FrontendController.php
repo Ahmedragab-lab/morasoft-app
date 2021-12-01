@@ -12,6 +12,7 @@ use App\Models\Service;
 use Illuminate\Http\Request;
 use App\Models\navbar_details;
 use App\Models\Product;
+use App\Models\Setting;
 use Dotenv\Validator;
 
 class FrontendController extends Controller
@@ -26,6 +27,9 @@ class FrontendController extends Controller
 
         $Last_comp=Company::orderBy('id','DESC')->first();
         $Last_product=Product::orderBy('id','DESC')->first();
+
+        
+
         // $allevents = Event::orderBy('id','DESC')->get();
 
 

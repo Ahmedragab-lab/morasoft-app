@@ -64,6 +64,7 @@
     <!-- #footer-top -->
   </div>
   <!-- #footer-top-wrap -->
+
   <div id="footer-wrap" class="is-clearfix">
     <footer id="footer" class="site-footer">
       <div id="footer-inner" class="site-footer-inner container">
@@ -79,6 +80,7 @@
                 </div>
                 <!-- #footer-logo -->
                 <br>
+
                 <p>شركة مورا سوفت لخدمات النقل والشحن بمختلف الطرق ..
                     تعمل الشركة على خدمتك على مدار الساعة ونقل شحناتك وتوصيلها عبر أأمن الطرق وافضل الاسعار
                 </p>
@@ -117,6 +119,8 @@
             <div class="widget widget-links" >
               <h3  class="widget-title ">{{ __('front.services') }}</h3>
                 <ul list-style: none>
+
+
 
                     <li >
                         @foreach (\App\Models\Service::where('status','1')->get() as $service)
@@ -162,9 +166,11 @@
             <!-- .widget -->
           </div>
           <!-- .column -->
+
           <div class="column is-4">
             <div class="widget widget-form">
-              <h3 class="widget-title ">contact us</h3>
+
+              <h3 class="widget-title "> contact us</h3>
 
                 <a href="../pages/contact.html">Address</a>
                 </h3>

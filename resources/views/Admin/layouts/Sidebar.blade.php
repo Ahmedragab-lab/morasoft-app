@@ -133,6 +133,12 @@
                         </span>
                     </a>
                 </li>
+
+                  <!-- Settings-->
+                  <li>
+                    <a href="{{route('settings.index')}}"><i class="fas fa-cogs"></i><span class="right-nav-text">settings </span></a>
+                </li>
+
             </ul>
         </div>
         <div class="clearfix"></div>

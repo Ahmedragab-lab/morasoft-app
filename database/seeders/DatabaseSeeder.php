@@ -24,6 +24,9 @@ class DatabaseSeeder extends Seeder
         $this->call(AgreementSeeder::class);
         $this->call(CompaniesTableSeeder::class);
         $this->call(CountryTableSeeder::class);
+        $this->call(SettingsTableSeeder::class);
+
+
 
         // $users = User::factory()->create();
 
