@@ -45,7 +45,6 @@ class AdminPrice extends Notification
             'price'=>$this->userrequest->price,
             'user'=>$this->userrequest->name,
             'title'=>'price by morasoft',
-
         ];
     }
     // public function toArray($notifiable)

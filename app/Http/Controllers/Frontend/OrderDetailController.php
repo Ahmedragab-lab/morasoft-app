@@ -7,6 +7,8 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\UserReqest;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Notification;
 
 class OrderDetailController extends Controller
 {
@@ -27,9 +29,13 @@ class OrderDetailController extends Controller
       $order->tax =  $tax;
       $order->total =  $total;
       $order->save();
+    //   auth()->user()->notifications()->where('id', $id)->delete();
+    //   Notification::where('data[order_no]',$order->order->order_no)->delete();
+    DB::table('notifications')->where('data->order_no',$order->order->order_no)->delete();
     //   $userReq = UserReqest::where('user_id',Auth::id())->get();
     //   UserReqest::destroy($userReq);
       return response()->json(['status'=> ' order submitted successfully']);
+    //   return redirect()->route('front.index')->response()->json(['status'=> ' order submitted successfully']);
     }
 
 
