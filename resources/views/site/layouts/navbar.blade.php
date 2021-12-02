@@ -50,11 +50,12 @@
 
                                     <a href="{{ route('allfeedback.index')}}">{{ __('front.feedback') }} </a>
                                 </li>
+                                @auth()
+
                                 <li>
-
                                     <a href="{{ route('contact.index')}}">{{ __('front.contactus') }}</a>
-
                                 </li>
+                                @endauth
                                 <li class="has-dropdown">
                                     <a href="#"> اشحن اونلاين</a>
                                     <ul class="dropdown">

@@ -53,60 +53,68 @@
 
 
 
-            <li class="list-inline-item dropdown notification-list">
-                <a class="nav-link dropdown-toggle arrow-none waves-effect" data-toggle="dropdown" href="#" role="button"
-                aria-haspopup="false" aria-expanded="false">
+            <li class="list-inline-item dropdown notification-list dropdown-notifications">
+                <a class="nav-link dropdown-toggle arrow-none waves-effect"
+                        data-toggle="dropdown" href="#" role="button"
+                    aria-haspopup="false" aria-expanded="false">
                     <i class="mdi mdi-bell-outline noti-icon"></i>
-                    <span class="badge badge-danger badge-pill noti-icon-badge">3</span>
+                    <span class="badge badge-danger badge-pill noti-icon-badge"
+                        data-count="1">0</span>
                 </a>
-                <div class="dropdown-menu dropdown-menu-right dropdown-arrow dropdown-menu-lg dropdown-menu-animated">
-                    <!-- item-->
+                <div class="dropdown-menu  dropdown-menu-right dropdown-arrow dropdown-menu-lg dropdown-menu-animated">
                     <div class="dropdown-item noti-title">
-                        <h5>Notification (3)</h5>
+                        <h5>Notification(<span class="notif-count">0</span>)</h5>
                     </div>
-
-                    <div class="slimscroll-noti">
-                        <!-- item-->
-                        <a href="javascript:void(0);" class="dropdown-item notify-item active">
+                    <div  class="slimscroll-noti scrollable-container">
+                        <a href="" class="dropdown-item notify-item active">
                             <div class="notify-icon bg-success"><i class="mdi mdi-cart-outline"></i></div>
-                            <p class="notify-details"><b>Your order is placed</b><span class="text-muted">Dummy text of the printing and typesetting industry.</span></p>
+                            <p class="notify-details">
+                                <b>dd</b>
+                                <span class="text-muted">ff</span>
+                            </p>
                         </a>
-
-                        <!-- item-->
-                        <a href="javascript:void(0);" class="dropdown-item notify-item">
-                            <div class="notify-icon bg-danger"><i class="mdi mdi-message-text-outline"></i></div>
-                            <p class="notify-details"><b>New Message received</b><span class="text-muted">You have 87 unread messages</span></p>
-                        </a>
-
-                        <!-- item-->
-                        <a href="javascript:void(0);" class="dropdown-item notify-item">
-                            <div class="notify-icon bg-info"><i class="mdi mdi-filter-outline"></i></div>
-                            <p class="notify-details"><b>Your item is shipped</b><span class="text-muted">It is a long established fact that a reader will</span></p>
-                        </a>
-
-                        <!-- item-->
-                        <a href="javascript:void(0);" class="dropdown-item notify-item">
-                            <div class="notify-icon bg-success"><i class="mdi mdi-message-text-outline"></i></div>
-                            <p class="notify-details"><b>New Message received</b><span class="text-muted">You have 87 unread messages</span></p>
-                        </a>
-
-                        <!-- item-->
-                        <a href="javascript:void(0);" class="dropdown-item notify-item">
-                            <div class="notify-icon bg-warning"><i class="mdi mdi-cart-outline"></i></div>
-                            <p class="notify-details"><b>Your order is placed</b><span class="text-muted">Dummy text of the printing and typesetting industry.</span></p>
-                        </a>
-
                     </div>
-
-
-                    <!-- All-->
                     <a href="javascript:void(0);" class="dropdown-item notify-all">
                         View All
                     </a>
-
                 </div>
             </li>
+            {{-- <li class="dropdown dropdown-notification nav-item  dropdown-notifications">
+                <a class="nav-link nav-link-label" href="#"
+            data-toggle="dropdown">
+                    <i class="fa fa-bell"> </i>
+                    <span
+                        class="badge badge-pill badge-default badge-danger badge-default badge-up badge-glow   notif-count"
+            data-count="9">9</span>
+                </a>
+                <ul class="dropdown-menu dropdown-menu-media dropdown-menu-right">
+                    <li class="dropdown-menu-header">
+                        <h6 class="dropdown-header m-0 text-center">
+                            <span class="grey darken-2 text-center"> الرسائل</span>
+                        </h6>
+                    </li>
+                    <li class="scrollable-container ps-container ps-active-y media-list w-100">
+                        <a href="">
+                            <div class="media">
+                                <div class="media-body">
+                                    <h6 class="media-heading text-right ">عنوان الاشعار </h6>
+                                    <p class="notification-text font-small-3 text-muted text-right"> نص الاشعار</p>
+                                    <small style="direction: ltr;">
+                                        <p class=" text-muted text-right"
+                                              style="direction: ltr;"> 20-05-2020 - 06:00 pm
+                                        </p>
+                                        <br>
 
+                                    </small>
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="dropdown-menu-footer"><a class="dropdown-item text-muted text-center"
+                        href=""> جميع الاشعارات </a>
+                    </li>
+                </ul>
+            </li> --}}
 
             <li class="list-inline-item dropdown notification-list nav-user">
                 <a class="nav-link dropdown-toggle arrow-none waves-effect" data-toggle="dropdown" href="#" role="button"
