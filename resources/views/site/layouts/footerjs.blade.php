@@ -56,3 +56,18 @@
     //     $('#unread').load(window.location.href + "#unread");
     // }, 5000);
 </script>
+{{-- <script src="https://js.pusher.com/7.0/pusher.min.js"></script>
+  <script>
+
+    // Enable pusher logging - don't include this in production
+    Pusher.logToConsole = true;
+
+    var pusher = new Pusher('bb82e65c18afc6a8c12f', {
+      cluster: 'mt1'
+    });
+
+    var channel = pusher.subscribe('my-channel');
+    channel.bind('my-event', function(data) {
+      alert(JSON.stringify(data));
+    });
+  </script> --}}
