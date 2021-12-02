@@ -118,6 +118,28 @@
                                             </div>
                                         </ul>
                                     </li>
+                                    <li class="dropdown-notifications">
+                                        <a href="#" data-toggle="dropdown">
+                                          <span class="icon notif-count">
+                                            <span class="badge" data-badge="3" data-count="1">
+                                              <i class="icon-bell"></i>
+                                            </span>
+                                          </span>
+                                        </a>
+                                        <ul class="dropdown-notification scrollable-container">
+                                          {{-- <li class="header">
+                                              notifications(<span class="notif-count">{{ \App\Models\UserReqest::count() }}</span>)
+                                          </li> --}}
+                                          {{-- <li>
+                                            <a href="javascript:void(0);">
+                                              <strong>Jessica</strong> likes your photo
+                                            </a>
+                                          </li> --}}
+                                          {{-- <li class="footer">
+                                            <a href="javascript:void(0);">sell all</a>
+                                          </li> --}}
+                                        </ul>
+                                    </li>
                                 @endauth
                             </ul>
                         </nav>

@@ -1,4 +1,7 @@
-<script src="{{ asset('front/js/jquery-3.6.0.min') }}"></script>
+{{-- <script src="{{ asset('front/js/jquery-3.6.0.min') }}"></script> --}}
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"
+        integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+<script src="https://js.pusher.com/6.0/pusher.min.js"></script>
 
 @if (App::getLocale() == 'ar')
 <script src="{{ asset('front/arabic/js/vendor.min.js?v=1557446391092') }}"></script>
@@ -56,18 +59,61 @@
     //     $('#unread').load(window.location.href + "#unread");
     // }, 5000);
 </script>
-{{-- <script src="https://js.pusher.com/7.0/pusher.min.js"></script>
-  <script>
+<script src="https://js.pusher.com/7.0/pusher.min.js"></script>
+
+    <script>
+        $.ajaxSetup({
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            }
+        });
+        Pusher.logToConsole = true;
+        var pusher = new Pusher('bb82e65c18afc6a8c12f', {
+          cluster: 'mt1'
+        // encrypted:false
+        });
+        var channel = pusher.subscribe('new_price');
+        channel.bind('PriceNotification', function(data) {
+        alert(JSON.stringify(data));
+        });
+    </script>
+{{-- <script src="{{ asset('js/pusherNotifications.js') }}"></script> --}}
+<script>
+        // notification price
+    //=*=*=*=*=*=*=*=*=*****************************************============
+    var notificationsWrapper   = $('.dropdown-notifications');
+    var notificationsToggle    = notificationsWrapper.find('a[data-toggle]');
+    var notificationsCountElem = notificationsToggle.find('span[data-count]');
+    var notificationsCount     = parseInt(notificationsCountElem.data('count'));
+    var notifications          = notificationsWrapper.find('ul.scrollable-container');
+    // if (notificationsCount <= 0) {
+    // notificationsWrapper.hide();
+    // }
 
     // Enable pusher logging - don't include this in production
-    Pusher.logToConsole = true;
+    // Pusher.logToConsole = true;
 
-    var pusher = new Pusher('bb82e65c18afc6a8c12f', {
-      cluster: 'mt1'
-    });
+    // var pusher = new Pusher('bb82e65c18afc6a8c12f', {
+    //     cluster: 'mt1',
+    //   encrypted: true
+    // });
 
-    var channel = pusher.subscribe('my-channel');
-    channel.bind('my-event', function(data) {
-      alert(JSON.stringify(data));
+    // Subscribe to the channel we specified in our Laravel Event
+    var channel = pusher.subscribe('new_price');
+    channel.bind('App\\Events\\PriceNotification', function(data) {
+    var existingNotifications = notifications.html();
+    var newNotificationHtml =
+    `
+        <li>
+            <a href="#">
+                <strong>`+data.price+`</strong> `+data.price+`
+            </a>
+        </li>
+    `;
+    notifications.html(newNotificationHtml + existingNotifications);
+    notificationsCount += 1;
+    notificationsCountElem.attr('data-count', notificationsCount);
+    notificationsWrapper.find('.notif-count').text(notificationsCount);
+    notificationsWrapper.show();
     });
-  </script> --}}
+</script>

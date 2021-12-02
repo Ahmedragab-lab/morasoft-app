@@ -27,7 +27,7 @@ Route::group(
         Route::resource('Last_event',Frontend\Allevents::class);// get last event
         Route::resource('Last_agrement',Frontend\Allagrements::class);// get last Agrement
         Route::get('lastservice/{id}',[Frontend\Allservices::class,'showlast'])->name('lastservice.showlast');// get last service
-        Route::get('/contact-us',[ContactController::class,'contact']);
+        // Route::get('/contact-us',[ContactController::class,'contact']);
 
 
         Route::resource('allsections',Frontend\AllSections::class); // go to all Sections page

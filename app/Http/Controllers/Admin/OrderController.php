@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Events\PriceNotification;
 use App\Http\Controllers\Controller;
 use App\Models\Admin;
 use App\Models\Order;
@@ -80,7 +81,13 @@ class OrderController extends Controller
             $user = User::where('id',$order_price->user_id)->get();
             $userrequest = UserReqest::latest()->first();
             Notification::send($user,new AdminPrice($userrequest));
-            
+
+            $data=[
+                'user_id'=>$user,
+                'price'=>$order_price->price,
+              ];
+              event(new PriceNotification($data));
+
             toastr()->success(__('price added successfully'));
             return redirect()->route('orders.index');
         }catch (\Exception $e){
