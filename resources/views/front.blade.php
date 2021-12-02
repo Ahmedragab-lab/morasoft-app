@@ -373,8 +373,7 @@
                         </span> Oops! Something went wrong, we couldn't send your message.
                     </div>
                     <!-- ajax contact form -->
-                    {{-- <form accept-charset="UTF-8" class="ajax-contact-form" action="https://usebasin.com/f/3587049dbc33.json" method="POST"> --}}
-                    <form accept-charset="UTF-8" class="ajax-contact-form" action="https://usebasin.com/f/3587049dbc33.json" method="POST">
+                    <form accept-charset="UTF-8" class="ajax-contact-form" id="ajaxform" action="https://usebasin.com/f/3587049dbc33.json" method="POST">
                         <div class="field is-horizontal">
                             <div class="field-body">
                                 <div class="field">
@@ -447,95 +446,6 @@
     {{-- فورمه اجاكس --}}
 @endsection
 @section('js')
-
-
-<script type="text/javascript">
-    $.ajaxSetup({
-        headers: {
-            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-        }
-        });
-    $(".save-data").click(function(event){
-        event.preventDefault();
-        // let name = $("input[name=name]").val();
-        // let email = $("input[name=email]").val();
-        // let subject = $("input[name=subject]").val();
-        // let user_id = $("select[name=user_id]").val();
-        let serv_id = $("select[name=serv_id]").val();
-        let sms = $("textarea[name=sms]").val();
-        console.log(serv_id);
-        $.ajax({
-          method:"POST",
-          url: "/sendrequest",
-          data:{
-            // name:name,
-            // email:email,
-            // subject:subject,
-            // user_id:user_id,
-            serv_id:serv_id,
-            sms:sms,
-          },
-          success:function(response){
-            if(response) {
-            swal(response.status);
-              $("#ajaxform")[0].reset();
-            }
-          },
-          error: function(error) {
-           console.log(error);
-          }
-         });
-
-    });
-  </script>
-
-{{-- *************************بداية JS************************** --}}
-{{--
-<script type="text/javascript">
-    $.ajaxSetup({
-        headers: {
-            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-        }
-        });
-    $(".save-data").click(function(event){
-        event.preventDefault();
-        // let name = $("input[name=name]").val();
-        // let email = $("input[name=email]").val();
-        // let subject = $("input[name=subject]").val();
-        // let user_id = $("select[name=user_id]").val();
-        let serv_id = $("select[name=serv_id]").val();
-      //  let sms = $("textarea[name=sms]").val();
-        console.log(serv_id);
-        $.ajax({
-          method:"POST",
-          url: "/showlast",
-          data:{
-            // name:name,
-            // email:email,
-            // subject:subject,
-            // user_id:user_id,
-            serv_id:serv_id,
-       //     sms:sms,
-          },
-          success:function(response){
-            if(response) {
-            swal(response.status);
-              $("#ajaxform")[0].reset();
-            }
-          },
-          error: function(error) {
-           console.log(error);
-          }
-         });
-
-    }); --}}
-  {{-- </script> --}}
-
-{{-- *************************نهاية JS************************** --}}
-
-
-
-
     <script type="text/javascript">
         $.ajaxSetup({
             headers: {

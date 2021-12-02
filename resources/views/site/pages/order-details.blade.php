@@ -15,78 +15,6 @@
                       method="POST" autocomplete="off">
                     @csrf
                     <div class="row">
-                        <dive class="col-md">
-                            <div class="columns is-variable is-multiline is-centered">
-                                <div class="column is-10">
-                                    {{-- <h1 class="heading-title style-1">Basic Details</h1> --}}
-                                    <br>
-                                    <!-- successful form message -->
-                                    <div class="overhang-message-content is-hidden success">
-                                    <span class="icon">
-                                        <i class="ion-md-notifications"></i>
-                                    </span> Thank You! Your message was sent successfully. </div>
-                                    <div class="overhang-message-content is-hidden error" >
-                                    <span class="icon">
-                                        <i class="ion-md-notifications"></i>
-                                    </span> OOPS! there is somethig wrong.
-                                    </div>
-                                    <!-- ajax contact form -->
-                                        <div class="field is-horizontal">
-                                            <div class="field-body">
-                                            <div class="field">
-                                                <div class="control is-expanded">
-                                                    {{-- <input type="text" value="{{ Auth::user()->id }}" name="user_id"> --}}
-                                                {{-- <input class="input" type="text" name="fname" placeholder="First Name" value="{{ Auth::user()->fname }}" readonly> </div> --}}
-                                            </div>
-                                            <div class="field">
-                                                <div class="control is-expanded">
-                                                {{-- <input class="input" type="text" name="lname" placeholder="Last Name" value="{{ Auth::user()->lname }}" readonly> </div> --}}
-                                            </div>
-                                            </div>
-                                        </div>
-                                        <div class="field is-horizontal">
-                                            <div class="field-body">
-                                            <div class="field">
-                                                <div class="control is-expanded">
-                                                {{-- <input class="input" type="email" name="email" placeholder="Your Email" value="{{ Auth::user()->email }}" readonly> </div> --}}
-                                            </div>
-                                            <div class="field">
-                                                <div class="control is-expanded">
-                                                {{-- <input class="input" type="tel" name="phone" placeholder="Your Phone" value="{{ Auth::user()->phone }}" required> </div> --}}
-                                            </div>
-                                            </div>
-                                        </div>
-                                        <div class="field is-horizontal">
-                                            <div class="field-body">
-                                            <div class="field">
-                                                <div class="control is-expanded">
-                                                {{-- <input class="input" type="text" name="address1" placeholder="Address" value="{{ Auth::user()->address1 }}" required> </div> --}}
-                                            </div>
-                                            <div class="field">
-                                                <div class="control is-expanded">
-                                                {{-- <input class="input" type="text" name="address2" placeholder="Address2" value="{{ Auth::user()->address2 }}" required> </div> --}}
-                                            </div>
-                                            </div>
-                                        </div>
-                                        <div class="field is-horizontal">
-                                            <div class="field-body">
-                                            <div class="field">
-                                                <div class="control is-expanded">
-                                                {{-- <input class="input" type="text" name="city" placeholder="City" value="{{ Auth::user()->city }}" required> </div> --}}
-                                            </div>
-                                            <div class="field">
-                                                <div class="control is-expanded">
-                                                {{-- <input class="input" type="text" name="country" placeholder="Country" value="{{ Auth::user()->country }}" required> </div> --}}
-                                            </div>
-                                            </div>
-                                        </div>
-
-                                    <br>
-                                    <br>
-                                    <br>
-                                </div>
-                            </div>
-                        </dive>
                         <div class="col-md-12">
                             <div class="columns is-variable is-multiline is-centered">
                                 <div class="column is-10">
@@ -161,7 +89,65 @@
     </div>
 </div>
   <!-- #content-main-wrap -->
+<section id="tracking-steps" class="section tracking-steps-section is-clearfix">
+    <div class="container">
+      <p class="heading-title-top has-text-centered">tracking</p>
+      <h1 class="heading-title style-3">how we work</h1>
+      <br>
+      <br>
+      <div class="steps" data-aos="fade-right">
+        <div class="step-item" data-step-id="0">
+          <div class="step-marker"> 1 </div>
+          <div class="step-details">
+            <p class="step-title">lorem ipsum dolor</p>
+            <p>Lorem ipsum dolor sit amet nulla varius lectus.</p>
+          </div>
+        </div>
+        <div class="step-item active" data-step-id="1">
+          <div class="step-marker">2</div>
+          <div class="step-details">
+            <p class="step-title">lorem ipsum dolor</p>
+            <p>Lorem ipsum dolor sit amet nulla varius lectus.</p>
+          </div>
+        </div>
+        <div class="step-item" data-step-id="2">
+          <div class="step-marker">3</div>
+          <div class="step-details">
+            <p class="step-title">lorem ipsum dolor</p>
+            <p>Lorem ipsum dolor sit amet nulla varius lectus.</p>
+          </div>
+        </div>
+        <div class="step-item" data-step-id="3">
+          <div class="step-marker"> 4 </div>
+          <div class="step-details">
+            <p class="step-title">lorem ipsum dolor</p>
+            <p>Lorem ipsum dolor sit amet nulla varius lectus.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+</section>
 
+ {{-- start client feedback --}}
+ <section id="testimonials" class="section testimonials-section has-background-primary-light is-clearfix">
+    <div class="container">
+        <p class="heading-title-top has-text-centered">آراء العملاء</p>
+        <h1 class="heading-title style-3">قالوا عنا</h1>
+        <div class="testimonials  owl-carousel dots carousel-items-3 columns-style-1 ">
+            @foreach (\App\Models\Feedback::orderBy('id','DESC')->limit(3)->get() as $feedback)
+                <div class="testimonials-item">
+                    <p>{{ $feedback->feedback }}</p>
+                    <img alt="no photo" src="{{ asset('uploads/user-img/' . $feedback->users->image) }}">
+                    <h3>{{ $feedback->users->name }}
+                        <br>
+                        <span>{{ $feedback->services->serve_name }} Services</span>
+                    </h3>
+                </div>
+            @endforeach
+        </div>
+    </div>
+</section>
+{{-- end client feedback --}}
 @endsection
 @section('js')
 <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
@@ -203,6 +189,8 @@
                     }
                     $('.save-data').removeClass('btn-warning ').addClass('btn-success disabled').html('done thank you for your choice');
                     // $('.save-data').hide();
+                    // return redirect('/');
+
                 }
             });
         });
