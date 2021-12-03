@@ -25,6 +25,7 @@ class CreateUserReqestsTable extends Migration
             $table->foreignId('service_id')->references('id')->on('services')->cascadeOnDelete();
             $table->longText('sms');
             $table->double('price',2)->nullable();
+            // $table->tinyInteger('step')->default('1');
             $table->timestamps();
         });
     }
