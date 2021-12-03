@@ -31,6 +31,7 @@ Route::group(
         Route::resource('/agreements',Admin\AgreementController::class);
         Route::resource('/companies',Admin\CompanyController::class);
         Route::resource('/orders',Admin\OrderController::class);
+        Route::resource('/orderlist',Admin\OrderlistController::class);
         Route::resource('/cartitems',Admin\CartOrderController::class); // to show orders from checkout my cart page
 
     });
