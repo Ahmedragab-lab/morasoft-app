@@ -3,7 +3,13 @@
 
 @endsection
 @section('content')
-
+<div id="content-main-wrap" class="is-clearfix">
+    <div id="content-area" class="site-content-area">
+      <div id="content-area-inner" class="site-content-area-inner">
+        <!-- works section -->
+        <section class="section hero has-background-primary-light  works-list is-clearfix">
+          <div class="container">
+            <br>
     <div id="header-bottom-wrap" class="is-clearfix">
         <div id="header-bottom" class="site-header-bottom">
             <div id="header-bottom-inner" class="site-header-bottom-inner ">
@@ -15,17 +21,17 @@
                                 <img alt="Joo - Niche Multi-Purpose HTML Template"
                                      src={{ asset('uploads/user-img/'.Auth::user()->image) }}
                                      style="border-radius: 50%;padding: 5px;background: white;display: inline-block;
-                                     margin-bottom: 12px;max-width:100px;"> </p>
+                                     margin-bottom: 12px;max-width:100px;">
+                            </p>
 
                             <li>
-
+                                <a href="{{route('userprofile.show',$user->id)}}">
                                     <span class="icon">
                                     <i class="icon-link"></i>
                                     </span>
                                 </a>
                             </li>
-                            <h3 class="subtitle">{{Auth::user()->name }}</h3>
-
+                            <h3 class="subtitle">{{Auth::user()->fname }} {{Auth::user()->lname }}</h3>
                             <h2 class="subtitle">{{ Auth::user()->email }}</h2>
                             <ul class="header-menu-icons social">
                                 <li>
@@ -202,15 +208,15 @@
                                             <form action="#">
                                                 <div class="field">
                                                     <div class="control is-expanded">
-                                                        <input class="input" type="password" name="password" placeholder="Old Password"> </div>
+                                                        <input class="input" type="password" id="pass2" name="password1" placeholder="Old Password"> </div>
                                                 </div>
                                                 <div class="field">
                                                     <div class="control is-expanded">
-                                                        <input class="input" type="password" name="password" placeholder="New Password"> </div>
+                                                        <input class="input" type="password"  name="password2" placeholder="New Password"> </div>
                                                 </div>
                                                 <div class="field">
                                                     <div class="control is-expanded">
-                                                        <input class="input" type="password" name="password" placeholder="Repeat New Password"> </div>
+                                                        <input class="input" type="password" data-parsley-equalto="#"  name="confirm-password" placeholder="Repeat New Password"> </div>
                                                 </div>
                                                 <!-- .field -->
                                                 <div class="field ">

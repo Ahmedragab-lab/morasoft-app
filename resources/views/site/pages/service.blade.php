@@ -142,8 +142,7 @@
                         </span> Oops! Something went wrong, we couldn't send your message.
                     </div>
                     <!-- ajax contact form -->
-                    {{-- <form accept-charset="UTF-8" class="ajax-contact-form" action="https://usebasin.com/f/3587049dbc33.json" method="POST"> --}}
-                    <form accept-charset="UTF-8" class="ajax-contact-form" action="https://usebasin.com/f/3587049dbc33.json" method="POST">
+                    <form accept-charset="UTF-8" id="ajaxform" class="ajax-contact-form" action="https://usebasin.com/f/3587049dbc33.json" method="POST">
                         <div class="field is-horizontal">
                             <div class="field-body">
                                 <div class="field">
@@ -252,6 +251,4 @@
     });
 </script>
 @endsection
-{{--
 
-    --}}

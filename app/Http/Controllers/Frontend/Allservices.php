@@ -27,7 +27,7 @@ class Allservices extends Controller
          $Last_service = Service::find($id);
          $service = Service::orderBy('id','DESC')->get();
 
-        return view('site.pages.Last_service',compact('Last_service','service'));
+        return view('site.pages.Last_service',compact('service'));
 
     //return 'aaaaaaaaaaaa';
        }

@@ -57,9 +57,6 @@ class SettingController extends Controller
 
     }
 
-    public function show(Request $request)
-    {
-        //
-    }
+   
 
 }

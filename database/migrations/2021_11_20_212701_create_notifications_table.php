@@ -15,6 +15,7 @@ class CreateNotificationsTable extends Migration
     {
         Schema::create('notifications', function (Blueprint $table) {
             $table->uuid('id')->primary();
+            // $table->foreignId('user_id')->references('id')->on('users')->cascadeOnDelete();
             $table->string('type');
             $table->morphs('notifiable');
             $table->text('data');
@@ -23,11 +24,7 @@ class CreateNotificationsTable extends Migration
         });
     }
 
-    /**
-     * Reverse the migrations.
-     *
-     * @return void
-     */
+  
     public function down()
     {
         Schema::dropIfExists('notifications');
