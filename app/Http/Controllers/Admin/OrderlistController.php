@@ -72,7 +72,14 @@ class OrderlistController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $order = OrderDetail::findorfail($id);
+        $order->step = $request->options;
+        // $order->step2 = $request->options==true?'2':'0';
+        // $order->step3 = $request->options==true?'3':'0';
+        // $order->step4 = $request->options==true?'4':'0';
+        $order->save();
+        toastr()->success(__('tracking steps update successfully'));
+        return redirect()->route('orderlist.index');
     }
 
     /**

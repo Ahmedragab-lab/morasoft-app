@@ -41,10 +41,10 @@
                                     <td>{{ $order->order->price}}</td>
                                     <td><a href="{{ route('orderlist.show',$order->id) }}" class="btn btn-success">Invoice details</a></td>
                                     <td>
-                                        <form action="{{ route('orders.destroy', $order->id) }}" method="post">
+                                        <form action="{{ route('orderlist.destroy', $order->id) }}" method="post">
                                             @csrf
                                             @method('delete')
-                                            <button type="button" class="btn btn-primary waves-effect waves-light" data-toggle="modal" data-target="#addprice{{ $order->id }}">
+                                            <button type="button" class="btn btn-primary waves-effect waves-light" data-toggle="modal" data-target="#editsteps{{ $order->id }}">
                                                 {{ __('site.add tracking steps') }}
                                             </button>
                                             <button type="button" class="btn btn-danger"
@@ -54,7 +54,7 @@
                                         </form>
                                     </td>
                                 </tr>
-                                {{-- @include('Admin.orders.invice') --}}
+                                @include('Admin.orderlist.editsteps')
                             @endforeach
                         </tbody>
                     </table>
