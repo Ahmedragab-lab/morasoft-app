@@ -42,7 +42,8 @@ class OrderDetailController extends Controller
     public function show($id)
     {
         $order_details = UserReqest::where('id',$id)->first();
-        return view('site.pages.order-details',compact('order_details'));
+        $order_step = OrderDetail::where('order_id',$id)->first();
+        return view('site.pages.order-details',compact('order_details','order_step'));
     }
 
     /**
