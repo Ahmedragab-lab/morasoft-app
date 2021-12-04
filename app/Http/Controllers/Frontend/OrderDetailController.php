@@ -31,7 +31,7 @@ class OrderDetailController extends Controller
       $order->save();
     //   auth()->user()->notifications()->where('id', $id)->delete();
     //   Notification::where('data[order_no]',$order->order->order_no)->delete();
-    DB::table('notifications')->where('data->order_no',$order->order->order_no)->delete();
+    // DB::table('notifications')->where('data->order_no',$order->order->order_no)->delete();
     //   $userReq = UserReqest::where('user_id',Auth::id())->get();
     //   UserReqest::destroy($userReq);
       return response()->json(['status'=> ' order submitted successfully']);
