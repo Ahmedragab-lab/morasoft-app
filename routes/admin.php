@@ -34,15 +34,10 @@ Route::group(
         Route::resource('/orderlist',Admin\OrderlistController::class);
         Route::resource('/cartitems',Admin\CartOrderController::class); // to show orders from checkout my cart page
 
-<<<<<<< HEAD
-        // Route::put('addprice',[Admin\OrderController::class,'addprice'])->name('addprice');  // admin can add price to serice
-
            //==============================Setting============================
         Route::resource('settings',Admin\SettingController::class);
 
 
-=======
->>>>>>> master
     });
 
 require __DIR__ . '/auth.php';
