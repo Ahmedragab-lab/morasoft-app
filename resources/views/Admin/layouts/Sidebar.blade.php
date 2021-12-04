@@ -133,6 +133,14 @@
                         </span>
                     </a>
                 </li>
+                <li>
+                    <a href="{{ route('orderlist.index') }}" class="waves-effect">
+                        <i class="far fa-comment-dots"></i>
+                        <span>{{ trans('قائمه الاوردارات المطلوبه') }}
+                            <span class="badge badge-success badge-pill float-right"></span>
+                        </span>
+                    </a>
+                </li>
             </ul>
         </div>
         <div class="clearfix"></div>

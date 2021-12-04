@@ -36,7 +36,6 @@
                                         </tr>
                                         </thead>
                                         <tbody>
-                                            {{-- @foreach ($order_details as $item) --}}
                                             <tr>
                                                 <td >{{ $order_details->order_no }}</td>
                                                 <td>{{ $order_details->name }}</td>
@@ -45,10 +44,6 @@
                                                 <td>{{ $order_details->to->Name}}</td>
                                                 <td>{{ number_format($order_details->price) }} LE</td>
                                             </tr>
-                                            @php
-                                                // $total_price += $item->price;
-                                            @endphp
-                                            {{-- @endforeach --}}
                                         </tbody>
                                     </table>
                                     <table class="table is-fullwidth is-hoverable">
@@ -74,6 +69,10 @@
                                         </tbody>
                                     </table>
                                     <button type="submit" class="btn btn-warning float-end save-data">Order Now</button>
+                                    {{-- <a href="#" class="btn btn-info float-end " style="display:none;"> --}}
+                                    <a href="{{ route('step',$order_details->id) }}" class="btn btn-info float-end step" style="display:none;">
+                                         متابعه عمليه الشحن
+                                    </a>
                                     <br>
                                     <br>
                                     <br>
@@ -88,45 +87,7 @@
       </div>
     </div>
 </div>
-  <!-- #content-main-wrap -->
-<section id="tracking-steps" class="section tracking-steps-section is-clearfix">
-    <div class="container">
-      <p class="heading-title-top has-text-centered">tracking</p>
-      <h1 class="heading-title style-3">how we work</h1>
-      <br>
-      <br>
-      <div class="steps" data-aos="fade-right">
-        <div class="step-item" data-step-id="0">
-          <div class="step-marker"> 1 </div>
-          <div class="step-details">
-            <p class="step-title">lorem ipsum dolor</p>
-            <p>Lorem ipsum dolor sit amet nulla varius lectus.</p>
-          </div>
-        </div>
-        <div class="step-item active" data-step-id="1">
-          <div class="step-marker">2</div>
-          <div class="step-details">
-            <p class="step-title">lorem ipsum dolor</p>
-            <p>Lorem ipsum dolor sit amet nulla varius lectus.</p>
-          </div>
-        </div>
-        <div class="step-item" data-step-id="2">
-          <div class="step-marker">3</div>
-          <div class="step-details">
-            <p class="step-title">lorem ipsum dolor</p>
-            <p>Lorem ipsum dolor sit amet nulla varius lectus.</p>
-          </div>
-        </div>
-        <div class="step-item" data-step-id="3">
-          <div class="step-marker"> 4 </div>
-          <div class="step-details">
-            <p class="step-title">lorem ipsum dolor</p>
-            <p>Lorem ipsum dolor sit amet nulla varius lectus.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-</section>
+
 
  {{-- start client feedback --}}
  <section id="testimonials" class="section testimonials-section has-background-primary-light is-clearfix">
@@ -188,9 +149,7 @@
                         swal(response.status);
                     }
                     $('.save-data').removeClass('btn-warning ').addClass('btn-success disabled').html('done thank you for your choice');
-                    // $('.save-data').hide();
-                    // return redirect('/');
-
+                    $('.step').show();
                 }
             });
         });

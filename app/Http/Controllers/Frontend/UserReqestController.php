@@ -33,10 +33,6 @@ class UserReqestController extends Controller
                 $req->order_no = 'morasoft'.rand(1000000000, 9999999999);
                 $req->save();
                 return response()->json(['status'=>$req->name . ' request submitted successfully']);
-
-                // $user = User::get();
-                // $order = UserReqest::latest()->first();
-                // $user->notify(new \App\Notifications\Add_service_Order($order));
             }
         }else{
             return response()->json(['status'=>'Login to continue']);

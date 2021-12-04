@@ -31,7 +31,7 @@ class OrderDetailController extends Controller
       $order->save();
     //   auth()->user()->notifications()->where('id', $id)->delete();
     //   Notification::where('data[order_no]',$order->order->order_no)->delete();
-    DB::table('notifications')->where('data->order_no',$order->order->order_no)->delete();
+    // DB::table('notifications')->where('data->order_no',$order->order->order_no)->delete();
     //   $userReq = UserReqest::where('user_id',Auth::id())->get();
     //   UserReqest::destroy($userReq);
       return response()->json(['status'=> ' order submitted successfully']);
@@ -42,18 +42,15 @@ class OrderDetailController extends Controller
     public function show($id)
     {
         $order_details = UserReqest::where('id',$id)->first();
+
         return view('site.pages.order-details',compact('order_details'));
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\OrderDetail  $orderDetail
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(OrderDetail $orderDetail)
+
+    public function showstep($id)
     {
-        //
+        $order_step = OrderDetail::where('order_id',$id)->first();
+        return view('site.pages.order-steps',compact('order_step'));
     }
 
     /**
