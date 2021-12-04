@@ -18,7 +18,10 @@ class CreateUserReqestsTable extends Migration
             $table->string('order_no');
             $table->string('name');
             $table->string('email');
+<<<<<<< HEAD
             // $table->text('address');
+=======
+>>>>>>> master
             $table->foreignId('from_id')->references('id')->on('countries')->cascadeOnDelete();
             $table->foreignId('to_id')->references('id')->on('countries')->cascadeOnDelete();
             $table->foreignId('user_id')->references('id')->on('users')->cascadeOnDelete();

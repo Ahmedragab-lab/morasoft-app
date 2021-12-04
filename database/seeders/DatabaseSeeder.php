@@ -27,7 +27,10 @@ class DatabaseSeeder extends Seeder
         $this->call(CountryTableSeeder::class);
         $this->call(SettingsTableSeeder::class);
 
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> master
     }
 }

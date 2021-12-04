@@ -36,7 +36,10 @@
                                         </tr>
                                         </thead>
                                         <tbody>
+<<<<<<< HEAD
                                             {{-- @foreach ($order_details as $item) --}}
+=======
+>>>>>>> master
                                             <tr>
                                                 <td >{{ $order_details->order_no }}</td>
                                                 <td>{{ $order_details->name }}</td>
@@ -45,10 +48,13 @@
                                                 <td>{{ $order_details->to->Name}}</td>
                                                 <td>{{ number_format($order_details->price) }} LE</td>
                                             </tr>
+<<<<<<< HEAD
                                             @php
                                                 // $total_price += $item->price;
                                             @endphp
                                             {{-- @endforeach --}}
+=======
+>>>>>>> master
                                         </tbody>
                                     </table>
                                     <table class="table is-fullwidth is-hoverable">
@@ -74,6 +80,13 @@
                                         </tbody>
                                     </table>
                                     <button type="submit" class="btn btn-warning float-end save-data">Order Now</button>
+<<<<<<< HEAD
+=======
+                                    {{-- <a href="#" class="btn btn-info float-end " style="display:none;"> --}}
+                                    <a href="{{ route('step',$order_details->id) }}" class="btn btn-info float-end step" style="display:none;">
+                                         متابعه عمليه الشحن
+                                    </a>
+>>>>>>> master
                                     <br>
                                     <br>
                                     <br>
@@ -88,6 +101,7 @@
       </div>
     </div>
 </div>
+<<<<<<< HEAD
   <!-- #content-main-wrap -->
 <section id="tracking-steps" class="section tracking-steps-section is-clearfix">
     <div class="container">
@@ -127,6 +141,9 @@
       </div>
     </div>
 </section>
+=======
+
+>>>>>>> master
 
  {{-- start client feedback --}}
  <section id="testimonials" class="section testimonials-section has-background-primary-light is-clearfix">
@@ -188,9 +205,13 @@
                         swal(response.status);
                     }
                     $('.save-data').removeClass('btn-warning ').addClass('btn-success disabled').html('done thank you for your choice');
+<<<<<<< HEAD
                     // $('.save-data').hide();
                     // return redirect('/');
 
+=======
+                    $('.step').show();
+>>>>>>> master
                 }
             });
         });

@@ -18,6 +18,10 @@ class CreateOrderDetailsTable extends Migration
             $table->foreignId('order_id')->references('id')->on('user_reqests')->cascadeOnDelete();
             $table->double('tax',2);
             $table->double('total',2);
+<<<<<<< HEAD
+=======
+            $table->tinyInteger('step')->default('1'); //  4 steps for tracking 
+>>>>>>> master
             $table->timestamps();
         });
     }

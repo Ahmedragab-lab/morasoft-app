@@ -50,11 +50,18 @@
 
                                     <a href="{{ route('allfeedback.index')}}">{{ __('front.feedback') }} </a>
                                 </li>
+<<<<<<< HEAD
                                 <li>
 
                                     <a href="{{ route('contact.index')}}">{{ __('front.contactus') }}</a>
+=======
+                                @auth()
+>>>>>>> master
 
+                                <li>
+                                    <a href="{{ route('contact.index')}}">{{ __('front.contactus') }}</a>
                                 </li>
+                                @endauth
                                 <li class="has-dropdown">
                                     <a href="#"> اشحن اونلاين</a>
                                     <ul class="dropdown">
@@ -115,6 +122,31 @@
                                                     </li>
                                                 @endforeach
                                             </div>
+<<<<<<< HEAD
+=======
+                                        </ul>
+                                    </li>
+                                    <li class="dropdown-notifications">
+                                        <a href="#" data-toggle="dropdown">
+                                          <span class="icon notif-count">
+                                            <span class="badge" data-badge="3" data-count="1">
+                                              <i class="icon-bell"></i>
+                                            </span>
+                                          </span>
+                                        </a>
+                                        <ul class="dropdown-notification scrollable-container">
+                                          {{-- <li class="header">
+                                              notifications(<span class="notif-count">{{ \App\Models\UserReqest::count() }}</span>)
+                                          </li> --}}
+                                          {{-- <li>
+                                            <a href="javascript:void(0);">
+                                              <strong>Jessica</strong> likes your photo
+                                            </a>
+                                          </li> --}}
+                                          {{-- <li class="footer">
+                                            <a href="javascript:void(0);">sell all</a>
+                                          </li> --}}
+>>>>>>> master
                                         </ul>
                                     </li>
                                 @endauth

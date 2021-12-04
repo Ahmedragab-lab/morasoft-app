@@ -42,6 +42,7 @@ class OrderDetailController extends Controller
     public function show($id)
     {
         $order_details = UserReqest::where('id',$id)->first();
+<<<<<<< HEAD
         return view('site.pages.order-details',compact('order_details'));
     }
 
@@ -54,6 +55,17 @@ class OrderDetailController extends Controller
     public function edit(OrderDetail $orderDetail)
     {
         //
+=======
+
+        return view('site.pages.order-details',compact('order_details'));
+    }
+
+
+    public function showstep($id)
+    {
+        $order_step = OrderDetail::where('order_id',$id)->first();
+        return view('site.pages.order-steps',compact('order_step'));
+>>>>>>> master
     }
 
     /**
