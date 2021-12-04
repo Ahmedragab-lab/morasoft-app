@@ -177,25 +177,63 @@
                 </div>
             </div>
 
-        <div class="col-xl-3 col-md-6">
-            <div class="card bg-pink mini-stat text-white">
-                <div class="p-3 mini-stat-desc">
-                    <div class="clearfix">
-                        <h6 class="text-uppercase mt-0 float-left text-white-50">{{ __('site.orders') }}</h6>
-                        <h4 class="mb-3 mt-0 float-right">{{ \App\Models\UserReqest::count() }}</h4>
+            <div class="col-xl-3 col-md-6">
+                <div class="card bg-pink mini-stat text-white">
+                    <div class="p-3 mini-stat-desc">
+                        <div class="clearfix">
+                            <h6 class="text-uppercase mt-0 float-left text-white-50">{{ __('site.orders') }}</h6>
+                            <h4 class="mb-3 mt-0 float-right">{{ \App\Models\UserReqest::count() }}</h4>
+                        </div>
+                        <div>
+                            {{-- <span class="badge badge-light text-info"> +89% </span> <span class="ml-2">From previous period</span> --}}
+                        </div>
                     </div>
-                    <div>
-                        {{-- <span class="badge badge-light text-info"> +89% </span> <span class="ml-2">From previous period</span> --}}
+                    <div class="p-3">
+                        <div class="float-right">
+                            <a href="#" class="text-white-50"><i class="mdi mdi-briefcase-check h5"></i></a>
+                        </div>
+                        <p class="font-14 m-0">{{ \App\Models\Agreement::count() }}</p>
                     </div>
-                </div>
-                <div class="p-3">
-                    <div class="float-right">
-                        <a href="#" class="text-white-50"><i class="mdi mdi-briefcase-check h5"></i></a>
-                    </div>
-                    <p class="font-14 m-0">{{ \App\Models\Agreement::count() }}</p>
                 </div>
             </div>
-        </div>
+            <div class="col-xl-6 col-md-6">
+                <div class="card bg-pink mini-stat text-white">
+                    <div class="p-3 mini-stat-desc">
+                        <div class="clearfix">
+                            <h6 class="text-uppercase mt-0 float-left text-white-50">{{ __('اوردارات الخدمات') }}</h6>
+                            <h4 class="mb-3 mt-0 float-right">{{ \App\Models\OrderDetail::count() }}</h4>
+                        </div>
+                        <div>
+                            {{-- <span class="badge badge-light text-info"> +89% </span> <span class="ml-2">From previous period</span> --}}
+                        </div>
+                    </div>
+                    <div class="p-3">
+                        <div class="float-right">
+                            <a href="#" class="text-white-50"><i class="mdi mdi-briefcase-check h5"></i></a>
+                        </div>
+                        <p class="font-14 m-0">{{ \App\Models\OrderDetail::count() }}</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-6 col-md-6">
+                <div class="card bg-primary mini-stat text-white">
+                    <div class="p-3 mini-stat-desc">
+                        <div class="clearfix">
+                            <h6 class="text-uppercase mt-0 float-left text-white-50">{{ __('اوردارات تم تسليمها للعميل') }}</h6>
+                            <h4 class="mb-3 mt-0 float-right">{{ \App\Models\OrderDetail::where('step','4')->count() }}</h4>
+                        </div>
+                        <div>
+                            {{-- <span class="badge badge-light text-info"> +89% </span> <span class="ml-2">From previous period</span> --}}
+                        </div>
+                    </div>
+                    <div class="p-3">
+                        <div class="float-right">
+                            <a href="#" class="text-white-50"><i class="mdi mdi-briefcase-check h5"></i></a>
+                        </div>
+                        <p class="font-14 m-0">{{ \App\Models\OrderDetail::where('step','4')->count() }}</p>
+                    </div>
+                </div>
+            </div>
        </div>
     </div>
         <!-- end row -->
