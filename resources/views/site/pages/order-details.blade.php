@@ -150,8 +150,6 @@
                     }
                     $('.save-data').removeClass('btn-warning ').addClass('btn-success disabled').html('done thank you for your choice');
                     $('.step').show();
-                    // return redirect('/');
-
                 }
             });
         });
