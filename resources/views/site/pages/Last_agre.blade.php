@@ -30,7 +30,14 @@
     <!-- <br>
 
     <br> -->
+
     <p> {{ $Last_agreement->desc }}.</p>
+
+
+    {{-- <input name="phone1" value="{{ $getsettings.['phone1'] }}" type="text" class="form-control" placeholder="phone 1"> --}}
+    <div class="col-lg-9">
+        {{-- <input name="phone1" value="{{ $setting['phone1'] }}" type="text" class="form-control" placeholder="phone 1"> --}}
+    </div>
     <br>
 
 

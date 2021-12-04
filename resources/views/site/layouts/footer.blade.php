@@ -146,21 +146,21 @@
                         <li ><a href="{{ route('allsections.show',$section->id) }}"> {{$section->section_name}} </a></li>
                     @endforeach
                 </li>
-                {{-- <li>
-                  <a href="./index.html">التخزين</a>
-                </li>
-                <li>
-                  <a href="./index.html">الشحن البحري</a>
-                </li>
-                <li>
-                  <a href="./index.html">الشحن الجوي</a>
-                </li>
-                <li>
-                  <a href="./index.html">النقل البري</a>
-                </li>
-                <li>
-                  <a href="./index.html"> بضائع وحدات</a>
-                </li> --}}
+                     {{-- <li>
+                    <a href="./index.html">التخزين</a>
+                    </li>
+                    <li>
+                    <a href="./index.html">الشحن البحري</a>
+                    </li>
+                    <li>
+                    <a href="./index.html">الشحن الجوي</a>
+                    </li>
+                    <li>
+                    <a href="./index.html">النقل البري</a>
+                    </li>
+                    <li>
+                    <a href="./index.html"> بضائع وحدات</a>
+                    </li>  --}}
               </ul>
             </div>
             <!-- .widget -->
@@ -170,12 +170,26 @@
           <div class="column is-4">
             <div class="widget widget-form">
 
+                <li >
+                    @foreach (\App\Models\Setting::get() as $setting)
+
+                    {{-- <li ><a href="{{ route('allservices.show',$service->id) }}"> {{$service->serve_name }} </a></li> --}}
+
+                    <p>{{ $setting['comp_name'] }}</p>
+                    @endforeach
+                </li>
+
               <h3 class="widget-title "> contact us</h3>
 
                 <a href="../pages/contact.html">Address</a>
                 </h3>
-                <p>مخرج 14 , طريق عمر بن عبدالعزيز , الرياض,
-                <br> المملكة العربية السعودية</p>
+                {{-- <p>مخرج 14 , طريق عمر بن عبدالعزيز , الرياض, --}}
+                    {{-- <p>{!! getSettingsOf('phone1') !!}</p> --}}
+                    {{-- {!! getSettingsOf('$setting['comp_name']') !!}   {{ $setting['comp_name'] }} --}}
+                    {{-- <p> {!! getSettingsOf ['comp_name'] !!}</p> --}}
+
+                    {{-- <p> {{getSettingsOf()->$setting['comp_name']}}</p> --}}
+                {{-- <br> المملكة العربية السعودية</p> --}}
 
               {{-- <div class="media-content"> --}}
                 <h3>

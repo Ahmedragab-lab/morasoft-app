@@ -34,7 +34,7 @@ Route::group(
         Route::resource('allfeedback',Frontend\Allfeedback::class); // go to all feedback page
         Route::resource('Last_event',Frontend\Allevents::class);// get last event
         Route::resource('contact',Frontend\ContactController::class);  //go to contact page
-        Route::get('getsettings/{id}',[Frontend\ContactController::class , 'getsettings'])->name('getsettings'); //go to addcontact from contact page
+      
 
         Route::get('/reserveServ', function () {
             return view('site.pages.reserveServ');

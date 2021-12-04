@@ -20,17 +20,7 @@ class ContactController extends Controller
         return view('site.pages.contact',compact('contacts'));
     }
 
-    // start get settings
-    public function getsettings()
-    {
-        $collection = Setting::all();
-        $setting['setting'] = $collection->flatMap(function ($collection) {
-            return [$collection->key => $collection->value];
-        });
-
-        return view('site.pages.contact', $setting);
-    }
-
+  
 
     public function contact(Request $request)
     {
