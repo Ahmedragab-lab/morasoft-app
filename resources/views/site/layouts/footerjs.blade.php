@@ -85,7 +85,7 @@
     var notificationsToggle    = notificationsWrapper.find('a[data-toggle]');
     var notificationsCountElem = notificationsToggle.find('span[data-count]');
     var notificationsCount     = parseInt(notificationsCountElem.data('count'));
-    var notifications          = notificationsWrapper.find('ul.scrollable-container');
+    var notifications          = notificationsWrapper.find('ul.wolfff');
     // if (notificationsCount <= 0) {
     // notificationsWrapper.hide();
     // }
