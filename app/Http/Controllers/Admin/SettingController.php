@@ -6,6 +6,8 @@ use App\Http\Controllers\Controller;
 use App\Http\Traits\AttachFilesTrait;
 use App\Models\Setting;
 use Illuminate\Http\Request;
+use Spatie\Valuestore\Valuestore;
+
 
 
 class SettingController extends Controller
@@ -19,7 +21,6 @@ class SettingController extends Controller
         $setting['setting'] = $collection->flatMap(function ($collection) {
             return [$collection->key => $collection->value];
         });
-
          return view('Admin.setting.index', $setting);
 
      //   return view('Admin.setting.index',compact('setting'));
@@ -57,6 +58,12 @@ class SettingController extends Controller
 
     }
 
-   
+    private function generateCache()
+    {
+        $settings = Valuestore::make(config_path('settings.json'));
+        Setting::all()->each(function ($item) use ($settings) {
+            $settings->put($item->key, $item->value);
+        });
+    }
 
 }

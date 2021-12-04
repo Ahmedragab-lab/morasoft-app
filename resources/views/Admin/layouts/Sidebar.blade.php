@@ -133,14 +133,14 @@
                         </span>
                     </a>
                 </li>
-<<<<<<< HEAD
+
 
                   <!-- Settings-->
                   <li>
                     <a href="{{route('settings.index')}}"><i class="fas fa-cogs"></i><span class="right-nav-text">settings </span></a>
                 </li>
 
-=======
+
                 <li>
                     <a href="{{ route('orderlist.index') }}" class="waves-effect">
                         <i class="far fa-comment-dots"></i>
@@ -149,7 +149,7 @@
                         </span>
                     </a>
                 </li>
->>>>>>> master
+
             </ul>
         </div>
         <div class="clearfix"></div>

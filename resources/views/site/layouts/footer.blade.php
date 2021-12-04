@@ -170,26 +170,13 @@
           <div class="column is-4">
             <div class="widget widget-form">
 
-                <li >
-                    @foreach (\App\Models\Setting::get() as $setting)
-
-                    {{-- <li ><a href="{{ route('allservices.show',$service->id) }}"> {{$service->serve_name }} </a></li> --}}
-
-                    <p>{{ $setting['comp_name'] }}</p>
-                    @endforeach
-                </li>
-
               <h3 class="widget-title "> contact us</h3>
 
                 <a href="../pages/contact.html">Address</a>
                 </h3>
-                {{-- <p>مخرج 14 , طريق عمر بن عبدالعزيز , الرياض, --}}
-                    {{-- <p>{!! getSettingsOf('phone1') !!}</p> --}}
-                    {{-- {!! getSettingsOf('$setting['comp_name']') !!}   {{ $setting['comp_name'] }} --}}
-                    {{-- <p> {!! getSettingsOf ['comp_name'] !!}</p> --}}
+                <p>مخرج 14 , طريق عمر بن عبدالعزيز , الرياض,
 
-                    {{-- <p> {{getSettingsOf()->$setting['comp_name']}}</p> --}}
-                {{-- <br> المملكة العربية السعودية</p> --}}
+                <br> المملكة العربية السعودية</p>
 
               {{-- <div class="media-content"> --}}
                 <h3>

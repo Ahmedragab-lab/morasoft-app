@@ -50,13 +50,8 @@
 
                                     <a href="{{ route('allfeedback.index')}}">{{ __('front.feedback') }} </a>
                                 </li>
-<<<<<<< HEAD
-                                <li>
-
-                                    <a href="{{ route('contact.index')}}">{{ __('front.contactus') }}</a>
-=======
                                 @auth()
->>>>>>> master
+
 
                                 <li>
                                     <a href="{{ route('contact.index')}}">{{ __('front.contactus') }}</a>
@@ -122,8 +117,7 @@
                                                     </li>
                                                 @endforeach
                                             </div>
-<<<<<<< HEAD
-=======
+
                                         </ul>
                                     </li>
                                     <li class="dropdown-notifications">
@@ -146,7 +140,7 @@
                                           {{-- <li class="footer">
                                             <a href="javascript:void(0);">sell all</a>
                                           </li> --}}
->>>>>>> master
+
                                         </ul>
                                     </li>
                                 @endauth

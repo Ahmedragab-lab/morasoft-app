@@ -6,7 +6,7 @@ function getSettingsOf() {
 
     $collection = Setting::all();
     $setting['setting'] = $collection->flatMap(function ($collection) {
-        return [$collection->key => $collection->value];
+      return [$collection->key => $collection->value];
     });
 }
 
