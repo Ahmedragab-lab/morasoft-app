@@ -4,13 +4,13 @@
 * Author: BootstrapMade.com
 * License: https://bootstrapmade.com/license/
 */
-
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@300;400&display=swap');
 /*--------------------------------------------------------------
 # General
 --------------------------------------------------------------*/
 body {
-  font-family: "Open Sans", sans-serif;
-  color: #fff;
+    font-family: 'Cairo', sans-serif;
+    color: #fff;
   background: url("../img/bg.jpg") top center no-repeat;
   background-size: cover;
 
@@ -43,8 +43,7 @@ a:hover {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: "Raleway", sans-serif;
-}
+    font-family: 'Cairo', sans-serif;}
 
 #main {
   position: relative;

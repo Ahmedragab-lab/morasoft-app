@@ -52,6 +52,8 @@
                 <x-button class="ml-3">
                     {{ __('Log in') }}
                 </x-button>
+
+
             </div>
         </form>
     </x-auth-card>
@@ -143,7 +145,7 @@
 
     <!-- Validation Errors -->
     <x-auth-validation-errors class="mb-4" :errors="$errors" />
-       <h1>{{ __('auth.user') }}</h1>
+       <h1>{{ __('auth.user') }}</h1><br>
        <h3> <a href="{{ route('admin.login') }}"  class="btn btn-primary">if you are admin Please Login Form here</a></h3>
         <br><br>
       <form method="POST" action="{{ route('login') }}">
@@ -184,6 +186,7 @@
             <x-button class="ml-3 ">
                 {{ __('Log in') }}
             </x-button>
+            <li class="btn-cta"><a href="/register" style="color:#fff"><span>register</span></a></li>
         </div>
     </form>
 
