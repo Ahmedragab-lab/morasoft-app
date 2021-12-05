@@ -121,7 +121,7 @@
                                     <li class="dropdown-notifications">
                                         <a href="#" data-toggle="dropdown">
                                           <span class="icon notif-count">
-                                            <span class="badge" data-badge="3" data-count="1">
+                                            <span class="badge" data-badge="1" data-count="1">
                                               <i class="icon-bell"></i>
                                             </span>
                                           </span>
