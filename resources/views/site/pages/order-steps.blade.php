@@ -54,7 +54,7 @@
                     <div class="has-text-centered">
                         <div class="show-modal has-text-left">
                             <button class="button launch-modal">
-                                Please Rate  <span style="color: rgb(12, 12, 11);font-size:22px;"> {{  $order_step->order->service->serve_name }}</span>
+                                Please Rate  <span style="font-size:22px;"> ( {{  $order_step->order->service->serve_name }} service )</span>
                             </button>
                             <form action="{{ route('addrate') }}" method="post">
                                 @csrf
