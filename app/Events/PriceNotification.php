@@ -29,7 +29,7 @@ class PriceNotification implements ShouldBroadcast
     {
         return new Channel('new_price');
         // return ['new_email'];
-    }
+    } 
     public function broadcastAs()
     {
         return 'PriceNotification';

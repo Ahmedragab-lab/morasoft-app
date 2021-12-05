@@ -69,6 +69,7 @@
         });
         Pusher.logToConsole = true;
         var pusher = new Pusher('c79dee38494226dd7e21', {
+        
           cluster: 'mt1'
         // encrypted:false
         });
@@ -77,15 +78,15 @@
         alert(JSON.stringify(data));
         });
     </script>
-{{-- <script src="{{ asset('js/pusherNotifications.js') }}"></script> --}}
-<script type="text/javascript">
+<script src="{{ asset('js/pusherNotifications.js') }}"></script> 
+ <script type="text/javascript">
         // notification price
     //=*=*=*=*=*=*=*=*=*****************************************============
     var notificationsWrapper   = $('.dropdown-notifications');
     var notificationsToggle    = notificationsWrapper.find('a[data-toggle]');
-    var notificationsCountElem = notificationsToggle.find('i[data-count]');
+    var notificationsCountElem = notificationsToggle.find('span[data-count]');
     var notificationsCount     = parseInt(notificationsCountElem.data('count'));
-    var notifications          = notificationsWrapper.find('ul.scrollable-container');
+    var notifications          = notificationsWrapper.find('li.scrollable-container');
     // if (notificationsCount <= 0) {
     // notificationsWrapper.hide();
     // }
@@ -117,3 +118,12 @@
     notificationsWrapper.show();
     });
 </script>
+
+
+
+
+
+
+
+
+

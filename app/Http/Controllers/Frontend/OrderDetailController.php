@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Frontend;
 
+use App\Events\PriceNotification;
 use App\Models\OrderDetail;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -34,6 +35,13 @@ class OrderDetailController extends Controller
     DB::table('notifications')->where('data->order_no',$order->order->order_no)->delete();
     //   $userReq = UserReqest::where('user_id',Auth::id())->get();
     //   UserReqest::destroy($userReq);
+
+    $data=[
+        'order_id' =>  $order_id,
+        'tax'=> $tax,
+        'total'=>  $total,
+    ];
+    event(new PriceNotification(($data)));
       return response()->json(['status'=> ' order submitted successfully']);
     //   return redirect()->route('front.index')->response()->json(['status'=> ' order submitted successfully']);
     }
