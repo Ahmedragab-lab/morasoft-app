@@ -41,7 +41,7 @@ channel.bind('App\\Events\\EmailNotification', function(data) {
 
 // notification price
 //=*=*=*=*=*=*=*=*=*****************************************============
-var notificationsWrapper   = $('.dropdown-notifications');
+var notificationsWrapper   = $('.dropdown-notificationspusher');
 var notificationsToggle    = notificationsWrapper.find('a[data-toggle]');
 var notificationsCountElem = notificationsToggle.find('span[data-badge]');
 var notificationsCount     = parseInt(notificationsCountElem.data('count'));

@@ -44,14 +44,9 @@
                                     <a href="{{ route('allproducts.index')}}">{{ __('front.products') }}</a>
                                 </li>
                                 <li>
-
-                                    {{-- <form action ={{url('/contact')}} method = "post" class="form_horezintal"> --}}
-
-
                                     <a href="{{ route('allfeedback.index')}}">{{ __('front.feedback') }} </a>
                                 </li>
-                                @auth()
-
+                                @auth
                                 <li>
                                     <a href="{{ route('contact.index')}}">{{ __('front.contactus') }}</a>
                                 </li>
@@ -59,7 +54,11 @@
                                 <li class="has-dropdown">
                                     <a href="#"> اشحن اونلاين</a>
                                     <ul class="dropdown">
-                                        <li><a href="{{ url('/reserveServ') }}"<i class=" far fa-address-card"></i> قدم طلبك</a></li>
+                                        <li>
+                                            <a href="{{ url('/reserveServ') }}" >
+                                              <i class=" far fa-address-card"></i> قدم طلبك
+                                            </a>
+                                        </li>
                                         <li><a href="#"><i class=" far fa-comment-dots"></i> تتبع الشحنة</a></li>
                                     </ul>
                                 </li>
@@ -118,23 +117,24 @@
                                             </div>
                                         </ul>
                                     </li>
-                                    <li class="dropdown-notifications">
+                                    <li class="dropdown-notificationspusher">
                                         <a href="#" data-toggle="dropdown">
-                                          <span class="icon notif-count">
-                                            <span class="badge" data-badge="1" data-count="1">
+                                          <span class="icon ">
                                               <i class="icon-bell"></i>
-                                            </span>
+                                              <span
+                                              class="badge notif-count"  data-count="0"  >
+                                              </span>
                                           </span>
                                         </a>
-                                        <ul class="dropdown-notification scrollable-container wolfff">
+                                        <ul class="dropdown-notification scrollable-container wolfff" id="foxxx">
                                           {{-- <li class="header">
                                               notifications(<span class="notif-count">{{ \App\Models\UserReqest::count() }}</span>)
                                           </li> --}}
-                                          {{-- <li>
+                                          <li>
                                             <a href="javascript:void(0);">
                                               <strong>Jessica</strong> likes your photo
                                             </a>
-                                          </li> --}}
+                                          </li>
                                           {{-- <li class="footer">
                                             <a href="javascript:void(0);">sell all</a>
                                           </li> --}}
