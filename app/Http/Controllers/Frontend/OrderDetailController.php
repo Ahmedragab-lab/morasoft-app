@@ -53,26 +53,6 @@ class OrderDetailController extends Controller
         return view('site.pages.order-steps',compact('order_step'));
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\OrderDetail  $orderDetail
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, OrderDetail $orderDetail)
-    {
-        //
-    }
+   
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\OrderDetail  $orderDetail
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(OrderDetail $orderDetail)
-    {
-        //
-    }
 }
