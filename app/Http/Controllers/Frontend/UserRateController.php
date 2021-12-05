@@ -10,11 +10,21 @@ class UserRateController extends Controller
 
     public function addrate(Request $request)
     {
-        $rate = new UserRate();
-        $rate->user_id = $request->user_id;
-        $rate->service_id = $request->service_id;
-        $rate->star = $request->rate;
-        $rate->save();
+        $user_id = $request->user_id;
+        $service_id = $request->service_id;
+        $exist = UserRate::where('user_id',$user_id)->where('service_id',$service_id)->first();
+        if($exist){
+            $exist->star = $request->rate;
+            $exist->update();
+            return redirect()->back()->with('status',"thank you your rate updated successfully");
+        }else{
+            $rate = new UserRate();
+            $rate->user_id = $user_id;
+            $rate->service_id = $service_id;
+            $rate->star = $request->rate;
+            $rate->save();
+            return redirect()->back()->with('status',"thank you");
+        }
     }
 
     /**
