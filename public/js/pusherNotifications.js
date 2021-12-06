@@ -47,9 +47,9 @@ channel.bind('App\\Events\\EmailNotification', function(data) {
     var notificationsCountElem = notificationsToggle.find('span[data-count]');
     var notificationsCount     = parseInt(notificationsCountElem.data('count'));
     var notifications          = notificationsWrapper.find('ul.scrollable-container');
-    // if (notificationsCount <= 0) {
-    // notificationsWrapper.hide();
-    // }
+    if (notificationsCount <= 0) {
+    notificationsWrapper.hide();
+    }
     // Pusher.logToConsole = true;
     // var pusher = new Pusher('bb82e65c18afc6a8c12f', {
     //     cluster: 'mt1',
@@ -64,7 +64,7 @@ channel.bind('App\\Events\\EmailNotification', function(data) {
     `
         <li>
             <a href="#">
-                <strong>`+data.price+`</strong> `+data.price+`
+                <strong>`+data.price+`</strong> `+data.time+`
             </a>
         </li>
     `;
