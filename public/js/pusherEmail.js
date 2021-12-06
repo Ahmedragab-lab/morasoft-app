@@ -27,7 +27,7 @@ channel.bind('App\\Events\\EmailNotification', function(data) {
     `<a href="" class="dropdown-item notify-item active">
         <div class="notify-icon bg-success"><i class="mdi mdi-cart-outline"></i></div>
         <p class="notify-details">
-            <b>`+data.sms+`</b>
+            <b>`+data.username+`</b>
             <span class="text-muted">`+data.sms+`</span>
         </p>
     </a>`;
