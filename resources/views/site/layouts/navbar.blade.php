@@ -118,20 +118,27 @@
                                         </ul>
                                     </li>
 
-                                     {{-- @foreach (\App\Models\Usernoti::all() as $noti) --}}
                                     <li class="dropdown-notifications">
                                         <a href="#" data-toggle="dropdown">
-                                          <span class="icon ">
-                                              <i class="icon-bell"></i>
-                                              <span
-                                              class="badge notif-count"  data-count="0" >
-                                              </span>
-                                          </span>
+                                            <span class="icon ">
+                                                <i class="icon-bell"></i>
+                                                <span class="badge notif-count"
+                                                 data-count="{{ \App\Models\Usernoti::count() }}" >
+                                                </span>
+                                            </span>
                                         </a>
                                         <ul class="dropdown-notification scrollable-container" >
-                                        </ul>
-                                    </li>
 
+                                            <li class="header">notifications(<span class="notif-count">{{ \App\Models\Usernoti::count() }}</span>)</li>
+                                            @foreach (\App\Models\Usernoti::all() as $noti)
+                                            <li>
+                                                <a href="#">
+                                                    <strong>{{ $noti->price }}</strong>
+                                                </a>
+                                            </li>
+                                            @endforeach
+                                        </ul>
+                                        </li>
 
                                 @endauth
                             </ul>
