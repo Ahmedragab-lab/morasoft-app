@@ -45,6 +45,10 @@ class CheckoutController extends Controller
             // if(Order::whereNotIn('order_id',$ids )){
                 // $order = Order::whereNotIn('order_id',$ids )->get();
                 // $order = Order::where('order_id',Auth::id() )->exists();
+            $exist = Order::where('order_id',Auth::id())->first();
+            if($exist){
+                return redirect()->back()->with('status',"you are already order bafore");
+            }else{
                 $order = new Order();
                 $order->order_id = Auth::id();
                 $order->fname = $request->fname;
@@ -57,37 +61,38 @@ class CheckoutController extends Controller
                 $order->country = $request->country;
                 $order->tracking_no = 'morasoft'.rand(1000000000, 9999999999);
                 $order->save();
-            // };
-            $cartitems= Cart::where('user_id',Auth::id())->get();
-            foreach($cartitems as $item){
-                OrderItem::create([
-                    'order_id'=> $order->id,
-                    'prod_id'=> $item->product_id,
-                    'qty'=> $item->product_qty,
-                    'price'=> $item->product->selling_price,
-                    'priceqty'=>$item->sum,
-                    'priceqtytax'=>$item->tax,
-                    'total'=>$item->sum + $item->tax,
-                ]);
-                $product = Product::where('id',$item->product_id)->first();
-                $product->qty = $product->qty - $item->product_qty;
-                $product->update();
             }
-            if(Auth::user()->address1 == NULL){
-                $user = User::where('id',Auth::id())->first();
-                $user->fname = $request->fname;
-                $user->lname = $request->lname;
-                $user->phone = $request->phone;
-                $user->address1 = $request->address1;
-                $user->address2 = $request->address2;
-                $user->city = $request->city;
-                $user->country = $request->country;
-                $user->update();
-            }
-            $cartitems= Cart::where('user_id',Auth::id())->get();
-            Cart::destroy($cartitems);
-            DB::commit();
-            return redirect('/')->with('status',"your order done ");
+                $cartitems= Cart::where('user_id',Auth::id())->get();
+                foreach($cartitems as $item){
+                    OrderItem::create([
+                        'order_id'=> $order->id,
+                        'prod_id'=> $item->product_id,
+                        'qty'=> $item->product_qty,
+                        'price'=> $item->product->selling_price,
+                        'priceqty'=>$item->sum,
+                        'priceqtytax'=>$item->tax,
+                        'total'=>$item->sum + $item->tax,
+                    ]);
+                    $product = Product::where('id',$item->product_id)->first();
+                    $product->qty = $product->qty - $item->product_qty;
+                    $product->update();
+                }
+                if(Auth::user()->address1 == NULL){
+                    $user = User::where('id',Auth::id())->first();
+                    $user->fname = $request->fname;
+                    $user->lname = $request->lname;
+                    $user->phone = $request->phone;
+                    $user->address1 = $request->address1;
+                    $user->address2 = $request->address2;
+                    $user->city = $request->city;
+                    $user->country = $request->country;
+                    $user->update();
+                }
+                $cartitems= Cart::where('user_id',Auth::id())->get();
+                Cart::destroy($cartitems);
+                DB::commit();
+                return redirect()->back()->with('status',"your order done");
+
         } catch (\Exception $e) {
             DB::rollback();
             return redirect()->back()->withErrors(['error' => $e->getMessage()]);
