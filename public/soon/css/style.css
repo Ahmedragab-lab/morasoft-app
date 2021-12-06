@@ -11,8 +11,8 @@
 body {
     font-family: 'Cairo', sans-serif;
     color: #fff;
-  background: url("../img/bg.jpg") top center no-repeat;
-  background-size: cover;
+  background: url("../img/bg2.jpg") top center no-repeat ;
+  background-size:cover
 
 }
 
@@ -23,7 +23,7 @@ body::before {
   right: 0;
   top: 0;
   bottom: 0;
-  background: rgba(34, 34, 34, 0.8);
+  
 }
 
 @media (min-width: 1024px) {
@@ -47,6 +47,17 @@ h1, h2, h3, h4, h5, h6 {
 
 #main {
   position: relative;
+}
+.login-form{
+  border-bottom: 3px solid  #cf5029;
+  border-top: 3px solid  #cf5029;
+  /* background-color: #4b505d; */
+  background: rgba(80, 79, 79, 0.5);
+  border-radius: 10px;
+}
+.btn-admin{
+  background-color:  #cf5029;
+  border-radius: 10px;
 }
 
 /*--------------------------------------------------------------

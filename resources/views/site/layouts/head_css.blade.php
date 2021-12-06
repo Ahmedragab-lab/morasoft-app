@@ -10,14 +10,14 @@
     @yield('css')
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-     <link rel="stylesheet" href="{{ asset('front/arabic/webfonts/all.min.css') }}">
+     <link rel="stylesheet" href="{{ asset('front/arabic/css/all.min.css') }}">
     <link rel="stylesheet" href="{{ asset('front/arabic/css/vendor.css') }}">
     <link rel="stylesheet" href="{{ asset('front/arabic/css/styles.css') }}">
-    <link rel="stylesheet" href="{{ asset('front/arabic/css/styles-rtl.min.css?v=1557447064956') }}">
+    {{-- <link rel="stylesheet" href="{{ asset('front/arabic/css/styles-rtl.min.css?v=1557447064956') }}"> --}}
     <link rel="stylesheet" href="{{ asset('front/arabic/css/custom.css?v=1557447064956') }}">
     <link rel="stylesheet" href="{{ asset('front/arabic/css/main-ar.css') }}">
     <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600&v=1557446973926" rel="stylesheet">
-    <link href="https://www.fontstatic.com/f=sky-bold,sky?v=1557446973926" rel="stylesheet">
+    {{-- <link href="https://www.fontstatic.com/f=sky-bold,sky?v=1557446973926" rel="stylesheet"> --}}
     <link rel="apple-touch-icon" sizes="57x57"
         href="{{ URL::asset('front/images/favicons/apple-touch-icon-57x57.png') }}">
     <link rel="apple-touch-icon" sizes="60x60"
@@ -54,7 +54,7 @@
         @yield('css')
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
             integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-            <link rel="stylesheet" href="{{ asset('front/english/webfonts/all.min.css') }}">
+            <link rel="stylesheet" href="{{ asset('front/english/css/all.min.css') }}">
         <link rel="stylesheet" href="{{ asset('front/english/css/vendor.css') }}">
         <link rel="stylesheet" href="{{ asset('front/english/css/styles.css') }}">
         <link rel="stylesheet" href="{{ asset('front/english/css/custom.css?v=1557446391092') }}">
@@ -94,10 +94,10 @@
                 submenu-is-capitalized logo-text-is-capitalized page-index">
 @endif
 
-<link rel="stylesheet" href="{{ asset('front/css/owl.carousel.min') }}">
-<link rel="stylesheet" href="{{ asset('front/css/owl.theme.default.min') }}">
-<link rel="stylesheet" href="{{ asset('front/css/vendor.css') }}">
-<link rel="stylesheet" href="{{ asset('front/css/styles.css') }}">
+{{-- <link rel="stylesheet" href="{{ asset('front/css/owl.carousel.min') }}"> --}}
+{{-- <link rel="stylesheet" href="{{ asset('front/css/owl.theme.default.min') }}"> --}}
+{{-- <link rel="stylesheet" href="{{ asset('front/css/vendor.css') }}"> --}}
+{{-- <link rel="stylesheet" href="{{ asset('front/css/styles.css') }}"> --}}
 
 {{-- <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600&v=1557446305971" rel="stylesheet"> --}}
 <!-- cdn icon fonts

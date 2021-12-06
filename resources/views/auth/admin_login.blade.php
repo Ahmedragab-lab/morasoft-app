@@ -1,3 +1,5 @@
+
+
 {{-- <x-guest-layout>
     <x-auth-card>
         <!-- <h1>{{ __('auth.admin') }}</h1> -->
@@ -95,7 +97,7 @@
   <!-- ======= Header ======= -->
   <header id="header" class="d-flex align-items-center">
     <div class="container d-flex flex-column align-items-center">
-
+<div class="login-form p-4">
       <!-- <h1>ComingSoon</h1>
       <h2>We're working hard to improve our website and we'll ready to launch after</h2>
       <div class="countdown d-flex justify-content-center" data-count="2021/12/5">
@@ -143,7 +145,7 @@
     <!-- Session Status -->
     <!-- <x-auth-session-status class="mb-4" :status="session('status')" />
 
-    <!-- Validation Errors -->
+    <!- Validation Errors -->
     <x-auth-validation-errors class="mb-4" :errors="$errors"></x-auth-validation-errors>
        <h1>{{ __('auth.admin') }}</h1>
 {{--       <h3> <a href="{{ route('login') }}"  class="btn btn-primary">if you are user Please Login Form here</a></h3>--}}
@@ -187,12 +189,13 @@
             <x-button class="ml-3 ">
                 {{ __('Log in') }}
             </x-button>
-            <li class="btn-cta"><a href="/register"><span>register</span></a></li>
+            <li class="btn-cta text-light"><a href="/register"><span>Register</span></a></li>
         </div>
     </form>
 
 </x-guest-layout>
-    </div> -->
+</div>
+    </div> 
   </header><!-- End #header -->
 
   <main id="main">
@@ -242,10 +245,10 @@
         <!-- You can delete the links only if you purchased the pro version. -->
         <!-- Licensing information: https://bootstrapmade.com/license/ -->
         <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/comingsoon-free-html-bootstrap-template/ -->
-        Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+        {{-- Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a> --}}
       </div>
     </div>
-  </footer>End #footer -->
+  {{-- </footer>End #footer --> --}}
 
   <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
