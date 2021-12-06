@@ -59,14 +59,22 @@
                     aria-haspopup="false" aria-expanded="false">
                     <i class="mdi mdi-bell-outline noti-icon"></i>
                     <span class="badge badge-danger badge-pill noti-icon-badge notif-count"
-                        data-count="0">0</span>
+                        data-count="{{ \App\Models\Contact::count() }}">{{ \App\Models\Contact::count() }}</span>
                 </a>
                 <div class="dropdown-menu  dropdown-menu-right dropdown-arrow dropdown-menu-lg dropdown-menu-animated">
                     <div class="dropdown-item noti-title">
-                        <h5>Notification(<span class="notif-count">0</span>)</h5>
+                        <h5>Notification(<span class="notif-count">{{ \App\Models\Contact::count() }}</span>)</h5>
                     </div>
                     <div  class="slimscroll-noti scrollable-container">
-
+                        @foreach (\App\Models\Contact::orderByDesc('id')->take(5)->get() as $Contact)
+                        <a href="" class="dropdown-item notify-item active">
+                            <div class="notify-icon bg-success"><i class="mdi mdi-cart-outline"></i></div>
+                            <p class="notify-details">
+                                <b>{{ $Contact->user->fname }}{{ $Contact->user->lname }}</b>
+                                <span class="text-muted">{{ $Contact->sms }}</span>
+                            </p>
+                        </a>
+                    @endforeach
                     </div>
                     <a href="javascript:void(0);" class="dropdown-item notify-all">
                         View All
