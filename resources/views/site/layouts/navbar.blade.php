@@ -123,12 +123,12 @@
                                             <span class="icon ">
                                                 <i class="icon-bell"></i>
                                                 <span class="badge notif-count"
-                                                 data-count="{{ \App\Models\Usernoti::count() }}" >
+                                                 data-count="{{ \App\Models\Usernoti::count() }}" >{{ \App\Models\Usernoti::count() }}
                                                 </span>
                                             </span>
                                         </a>
                                         <ul class="dropdown-notification scrollable-container" >
-                                            
+
                                             <li class="header">notifications(<span class="notif-count">{{ \App\Models\Usernoti::count() }}</span>)</li>
                                             @foreach (\App\Models\Usernoti::orderByDesc('id')->take(5)->get() as $noti)
                                                 <li>
