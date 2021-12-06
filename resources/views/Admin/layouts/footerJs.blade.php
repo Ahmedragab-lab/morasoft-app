@@ -61,9 +61,7 @@
     Pusher.logToConsole = true;
 
     var pusher = new Pusher('bb82e65c18afc6a8c12f', {
-        // cluster: 'mt1'
-        // encrypted: true
-        encrypted:false
+        cluster: 'mt1'
     });
 
     var channel = pusher.subscribe('new_email');
@@ -71,7 +69,7 @@
         alert(JSON.stringify(data));
     });
 </script>
-<script src="{{ asset('js/pusherNotifications.js') }}"></script>
+<script src="{{ asset('js/pusherEmail.js') }}"></script>
     {{-- <script type="text/javascript">
         var notificationsWrapper   = $('.dropdown-notifications');
         var notificationsToggle    = notificationsWrapper.find('a[data-toggle]');

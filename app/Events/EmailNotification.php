@@ -32,12 +32,12 @@ class EmailNotification  implements ShouldBroadcast
 
     public function broadcastOn()
     {
-        return new Channel('new_email');
-        // return ['new_email'];
+        // return new Channel('new_email');
+        return ['new_email'];
     }
-    public function broadcastAs()
-    {
-        return 'EmailNotification';
+    // public function broadcastAs()
+    // {
+    //     return 'EmailNotification';
 
-    }
+    // }
 }

@@ -34,7 +34,7 @@ class ContactController extends Controller
          'user_id'=>$userid,
          'sms'=>$sms,
        ];
-       event(new EmailNotification($data));
+       event(new EmailNotification($contact));
        return response()->json(['status'=> ' Email submitted successfully']);
     }
 
