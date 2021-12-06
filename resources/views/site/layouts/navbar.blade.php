@@ -27,42 +27,7 @@
                                 <li>
                                     <a  href="{{ route('front.index') }}">{{ __('front.home') }}</a>
                                 </li>
-                                <li class="dropdown dropdown-notification nav-item  dropdown-notifications">
-                                    <a class="nav-link nav-link-label" href="#" data-toggle="dropdown">
-                                        <i class="fa fa-bell"> </i>
-                                        <span
-                                            class="badge badge-pill badge-default badge-danger badge-default badge-up badge-glow   notif-count"
-                                            data-count="9">9</span>
-                                    </a>
-                                    <ul class="dropdown-menu dropdown-menu-media dropdown-menu-right">
-                                        <li class="dropdown-menu-header">
-                                            <h6 class="dropdown-header m-0 text-center">
-                                                <span class="grey darken-2 text-center"> الرسائل</span>
-                                            </h6>
-                                        </li>
-                                        <li class="scrollable-container ps-container ps-active-y media-list w-100">
-                                            <a href="">
-                                                <div class="media">
-                                                    <div class="media-body">
-                                                        <h6 class="media-heading text-right ">عنوان الاشعار </h6>
-                                                        <p class="notification-text font-small-3 text-muted text-right"> نص الاشعار</p>
-                                                        <small style="direction: ltr;">
-                                                            <p class=" text-muted text-right"
-                                                                  style="direction: ltr;"> 20-05-2020 - 06:00 pm
-                                                            </p>
-                                                            <br>
-        
-                                                        </small>
-                                                    </div>
-                                                </div>
-                                            </a>
-        
-                                        </li>
-                                        <li class="dropdown-menu-footer"><a class="dropdown-item text-muted text-center"
-                                                                            href=""> جميع الاشعارات </a>
-                                        </li>
-                                    </ul>
-                                </li>
+                               
                                 <li class="has-dropdown">
                                     <a href="#"> {{ __('front.services') }}</a>
 
@@ -84,14 +49,9 @@
                                     <a href="{{ route('allproducts.index')}}">{{ __('front.products') }}</a>
                                 </li>
                                 <li>
-
-                                    {{-- <form action ={{url('/contact')}} method = "post" class="form_horezintal"> --}}
-
-
                                     <a href="{{ route('allfeedback.index')}}">{{ __('front.feedback') }} </a>
                                 </li>
-                                @auth()
-
+                                @auth
                                 <li>
                                     <a href="{{ route('contact.index')}}">{{ __('front.contactus') }}</a>
                                 </li>
@@ -99,7 +59,11 @@
                                 <li class="has-dropdown">
                                     <a href="#"> اشحن اونلاين</a>
                                     <ul class="dropdown">
-                                        <li><a href="{{ url('/reserveServ') }}"<i class=" far fa-address-card"></i> قدم طلبك</a></li>
+                                        <li>
+                                            <a href="{{ url('/reserveServ') }}" >
+                                              <i class=" far fa-address-card"></i> قدم طلبك
+                                            </a>
+                                        </li>
                                         <li><a href="#"><i class=" far fa-comment-dots"></i> تتبع الشحنة</a></li>
                                     </ul>
                                 </li>
@@ -158,28 +122,29 @@
                                             </div>
                                         </ul>
                                     </li>
+
                                     <li class="dropdown-notifications">
                                         <a href="#" data-toggle="dropdown">
-                                          <span class="icon notif-count">
-                                            <span class="badge" data-badge="1" data-count="1">
-                                              <i class="icon-bell"></i>
+                                            <span class="icon ">
+                                                <i class="icon-bell"></i>
+                                                <span class="badge notif-count"
+                                                 data-count="{{ \App\Models\Usernoti::count() }}" >
+                                                </span>
                                             </span>
-                                          </span>
                                         </a>
-                                        <ul class="dropdown-notification scrollable-container wolfff">
-                                          {{-- <li class="header">
-                                              notifications(<span class="notif-count">{{ \App\Models\UserReqest::count() }}</span>)
-                                          </li> --}}
-                                          {{-- <li>
-                                            <a href="javascript:void(0);">
-                                              <strong>Jessica</strong> likes your photo
-                                            </a>
-                                          </li> --}}
-                                          {{-- <li class="footer">
-                                            <a href="javascript:void(0);">sell all</a>
-                                          </li> --}}
+                                        <ul class="dropdown-notification scrollable-container" >
+
+                                            <li class="header">notifications(<span class="notif-count">{{ \App\Models\Usernoti::count() }}</span>)</li>
+                                            @foreach (\App\Models\Usernoti::all() as $noti)
+                                            <li>
+                                                <a href="#">
+                                                    <strong>{{ $noti->price }}</strong>
+                                                </a>
+                                            </li>
+                                            @endforeach
                                         </ul>
-                                    </li>
+                                        </li>
+
                                 @endauth
                             </ul>
                         </nav>
