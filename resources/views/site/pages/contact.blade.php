@@ -228,6 +228,7 @@
             $('.contact').click(function(e){
                 e.preventDefault();
                 var userid  = $('input[name="userid"]').val();
+                var name = $('input[name="name"]').val();
                 var sms = $('textarea[name="sms"]').val();
                 console.log(userid);
                 console.log(sms);
@@ -236,6 +237,7 @@
                     url: "/contact",
                     data: {
                         'userid': userid,
+                        'name': name,
                         'sms': sms,
                     },
                     success: function(response) {

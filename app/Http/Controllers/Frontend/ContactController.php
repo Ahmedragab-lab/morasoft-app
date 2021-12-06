@@ -25,9 +25,11 @@ class ContactController extends Controller
     public function contact(Request $request)
     {
        $userid = $request->input('userid');
+       $name = $request->input('name');
        $sms = $request->input('sms');
        $contact = new Contact();
        $contact->user_id = $userid;
+       $contact->name = $name;
        $contact->sms =$sms;
        $contact->save();
        $data=[
