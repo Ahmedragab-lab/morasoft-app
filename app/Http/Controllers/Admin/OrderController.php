@@ -7,9 +7,11 @@ use App\Http\Controllers\Controller;
 use App\Models\Admin;
 use App\Models\Order;
 use App\Models\User;
+use App\Models\Usernoti;
 use App\Models\UserReqest;
 use App\Notifications\AdminPrice;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Notification;
 
 class OrderController extends Controller
@@ -82,12 +84,23 @@ class OrderController extends Controller
             $userrequest = UserReqest::latest()->first();
             Notification::send($user,new AdminPrice($userrequest));
 
+<<<<<<< HEAD
 
+=======
+            $u = User::where('id',$order_price->user_id)->get();
+>>>>>>> master
             $data=[
-                'user_id'=>$user,
+                'user_id'=>$u,
                 'price'=>$order_price->price,
               ];
-              event(new PriceNotification($data));
+
+              $noti = new Usernoti();
+              $noti->user_id = Auth::user()->id;
+              $noti->price = $order_price->price;
+              $noti->save();
+
+              event(new PriceNotification($noti));
+            //   event(new PriceNotification($userrequest));
 
 
             toastr()->success(__('price added successfully'));

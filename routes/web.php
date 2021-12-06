@@ -52,6 +52,10 @@ Route::group(
 
             Route::get('step/{id}',[Frontend\OrderDetailController::class , 'showstep'])->name('step'); //go to trackstep from order details page
 
+
+
+            Route::post('addrate',[Frontend\UserRateController::class , 'addrate'])->name('addrate'); //add rate
+
         });
 
         require __DIR__.'/auth.php';

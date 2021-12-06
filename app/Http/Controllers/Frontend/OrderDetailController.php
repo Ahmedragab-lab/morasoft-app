@@ -24,17 +24,27 @@ class OrderDetailController extends Controller
       $tax = $request->input('tax');
       $total = $request->input('total');
 
-      $order = new OrderDetail();
-      $order->order_id =  $order_id;
-      $order->tax =  $tax;
-      $order->total =  $total;
-      $order->save();
+      $exist = OrderDetail::where('order_id',$order_id)->first();
+      if($exist){
+        return response()->json(['status'=> ' order Already submitted before']);
+      }else{
+
+          $order = new OrderDetail();
+          $order->order_id =  $order_id;
+          $order->tax =  $tax;
+          $order->total =  $total;
+          $order->save();
+          return response()->json(['status'=> ' order submitted successfully']);
+      }
+
+
+
+
     //   auth()->user()->notifications()->where('id', $id)->delete();
     //   Notification::where('data[order_no]',$order->order->order_no)->delete();
     // DB::table('notifications')->where('data->order_no',$order->order->order_no)->delete();
     //   $userReq = UserReqest::where('user_id',Auth::id())->get();
     //   UserReqest::destroy($userReq);
-      return response()->json(['status'=> ' order submitted successfully']);
     //   return redirect()->route('front.index')->response()->json(['status'=> ' order submitted successfully']);
     }
 
@@ -68,26 +78,6 @@ class OrderDetailController extends Controller
 >>>>>>> master
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\OrderDetail  $orderDetail
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, OrderDetail $orderDetail)
-    {
-        //
-    }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\OrderDetail  $orderDetail
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(OrderDetail $orderDetail)
-    {
-        //
-    }
+
 }
