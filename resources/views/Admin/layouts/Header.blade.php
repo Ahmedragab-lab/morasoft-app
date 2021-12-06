@@ -58,21 +58,15 @@
                         data-toggle="dropdown" href="#" role="button"
                     aria-haspopup="false" aria-expanded="false">
                     <i class="mdi mdi-bell-outline noti-icon"></i>
-                    <span class="badge badge-danger badge-pill noti-icon-badge"
-                        data-count="1">0</span>
+                    <span class="badge badge-danger badge-pill noti-icon-badge notif-count"
+                        data-count="0">0</span>
                 </a>
                 <div class="dropdown-menu  dropdown-menu-right dropdown-arrow dropdown-menu-lg dropdown-menu-animated">
                     <div class="dropdown-item noti-title">
                         <h5>Notification(<span class="notif-count">0</span>)</h5>
                     </div>
                     <div  class="slimscroll-noti scrollable-container">
-                        <a href="" class="dropdown-item notify-item active">
-                            <div class="notify-icon bg-success"><i class="mdi mdi-cart-outline"></i></div>
-                            <p class="notify-details">
-                                <b>dd</b>
-                                <span class="text-muted">ff</span>
-                            </p>
-                        </a>
+
                     </div>
                     <a href="javascript:void(0);" class="dropdown-item notify-all">
                         View All
