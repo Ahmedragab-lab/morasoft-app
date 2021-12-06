@@ -35,7 +35,7 @@ Route::group(
         Route::resource('/cartitems',Admin\CartOrderController::class); // to show orders from checkout my cart page
 
            //==============================Setting============================
-        Route::resource('settings',Admin\SettingController::class);
+        Route::resource('/settings',Admin\SettingController::class);
 
 
     });

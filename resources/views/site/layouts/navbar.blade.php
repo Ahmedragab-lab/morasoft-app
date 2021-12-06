@@ -8,7 +8,8 @@
                             <a href="{{ route('front.index') }}">
                                 <img alt="Joo - Niche Multi-Purpose HTML Template"
                                     src="{{ asset('front/images/logo/logo2.png') }}">
-                                <span class="logo-text">{{ __('front.mora') }}</span>
+                                {{-- <span class="logo-text">{{ $settings->comp_name }}</span> --}}
+                                <span class="logo-text">شركة مورا سوفت</span>
                             </a>
                         </div>
                         <!-- #logo-inner -->
@@ -50,13 +51,15 @@
 
                                     <a href="{{ route('allfeedback.index')}}">{{ __('front.feedback') }} </a>
                                 </li>
-                                @auth()
+
 
 
                                 <li>
+                                    @auth()
                                     <a href="{{ route('contact.index')}}">{{ __('front.contactus') }}</a>
+                                    @endauth
                                 </li>
-                                @endauth
+
                                 <li class="has-dropdown">
                                     <a href="#"> اشحن اونلاين</a>
                                     <ul class="dropdown">
@@ -123,12 +126,12 @@
                                     <li class="dropdown-notifications">
                                         <a href="#" data-toggle="dropdown">
                                           <span class="icon notif-count">
-                                            <span class="badge" data-badge="3" data-count="1">
+                                            <span class="badge" data-badge="1" data-count="1">
                                               <i class="icon-bell"></i>
                                             </span>
                                           </span>
                                         </a>
-                                        <ul class="dropdown-notification scrollable-container">
+                                        <ul class="dropdown-notification scrollable-container wolfff">
                                           {{-- <li class="header">
                                               notifications(<span class="notif-count">{{ \App\Models\UserReqest::count() }}</span>)
                                           </li> --}}

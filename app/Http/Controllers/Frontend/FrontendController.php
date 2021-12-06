@@ -30,6 +30,8 @@ class FrontendController extends Controller
 
         $settings = Setting::first();
 
+
+
         // $allevents = Event::orderBy('id','DESC')->get();
 
 

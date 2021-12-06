@@ -28,7 +28,9 @@ Route::group(
         Route::resource('Last_agrement',Frontend\Allagrements::class);// get last Agrement
         Route::get('lastservice/{id}',[Frontend\Allservices::class,'showlast'])->name('lastservice.showlast');// get last service
 
+
         // Route::get('/contact-us',[ContactController::class,'contact']);
+
 
 
 

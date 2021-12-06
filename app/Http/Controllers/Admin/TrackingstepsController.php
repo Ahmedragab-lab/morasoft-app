@@ -45,7 +45,7 @@ class TrackingstepsController extends Controller
     public function edit( $id)
     {
 
-        $tracking_steps = tracking_step::find($id);
+        $tracking_steps = tracking_step::findOrFail($id);
         return view('Admin.tracking_steps.edit',compact('tracking_steps'));
     }
 

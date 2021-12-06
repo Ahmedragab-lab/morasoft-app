@@ -4,45 +4,56 @@
             <div class="level">
                 <div class="level-left">
                     <ul class="topbar-info ">
-                        <li>
+                      {{--   <li>
                             <a href="#">
                                 <span class="icon">
                                     <i class="icon-clock"></i>
                                 </span> سبت - خميس : 09:00 - 17:00 </a>
-                        </li>
+                        </li>--}}
                         <li>
                             <a href="#">
                                 <span class="icon">
                                     <i class="icon-envelope"></i>
-                                </span> info@company.com </a>
+                                {{-- </span> {{ $settings->email }} </a> --}}
+                            </span> email </a>
                         </li>
                         <li>
                             <a href="#">
                                 <span class="icon">
                                     <i class="icon-phone"></i>
-                                </span> +01021493036 </a>
+                                {{-- </span> {{ $settings->phone1 }} </a> --}}
+                            </span> phone  </a>
                         </li>
+                        {{-- <li>
+                            <a href="#">
+                                <span class="icon">
+                                    <i class="icon-phone"></i>
+                                </span> {{ $settings->phone2 }} </a>
+                        </li> --}}
                     </ul>
                 </div>
                 <!-- .level-left -->
                 <div class="level-right">
                     <ul class="header-menu-icons social">
                         <li>
-                            <a href="https://www.facebook.com" target="_blank">
+                            {{-- <a href="{{ $settings->FBLink }}" target="_blank"> --}}
+                                <a href="#" target="_blank">
                                 <span class="icon">
                                     <i class="fab fa-facebook-f"></i>
                                 </span>
                             </a>
                         </li>
                         <li>
-                            <a href="#" target="_blank">
+                            {{-- <a href="{{ $settings->YoutubeLink }}" target="_blank"> --}}
+                                <a href="#" target="_blank">
                                 <span class="icon">
-                                    <i class="fab fa-twitter"></i>
+                                    <i class="fab fa-youtube"></i>
                                 </span>
                             </a>
                         </li>
                         <li>
-                            <a href="#" target="_blank">
+                            {{-- <a href="{{ $settings->LinLink }}" target="_blank"> --}}
+                                <a href="#" target="_blank">
                                 <span class="icon">
                                     <i class="fab fa-linkedin-in"></i>
                                 </span>
@@ -50,7 +61,7 @@
                         </li>
                     </ul>
                     <!-- .header-menu-icons -->
-                    <ul class="nav-menu-dropdown style-2 global-style on-click">
+                    {{-- <ul class="nav-menu-dropdown style-2 global-style on-click">
                         <li>
                             <a href="javascript:void(0);">
                                 <span class="icon">
@@ -68,7 +79,7 @@
                                 </li>
                             </ul>
                         </li>
-                    </ul>
+                    </ul> --}}
                     <!-- .header-menu-icons -->
                     <ul class="nav-menu-dropdown style-2 on-click">
                         <li>

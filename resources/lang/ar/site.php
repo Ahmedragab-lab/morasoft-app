@@ -34,6 +34,7 @@ return [
    'agreement'=>'الاتفاقيات',
    'tracking-steps'=>'خطوات تتبع الشحنه',
    'feedback'=>'تقييم العملاء',
+   'settings'=>'الإعدادات',
 //    end sidebar
 // start dashboard service page translation
 'service_name_ar'=>'اسم الخدمه بالعربية',
@@ -108,6 +109,7 @@ return [
 
 
 'sections'=>' الاقسام',
+'section_name'=>' اسم القسم ',
 'section_name_ar'=>' اسم القسم بالعربية',
 'section_name_en'=>' اسم القسم بالانجليزية',
 'Enter_section_name_ar'=>'  أدخل اسم القسم بالعربية',
@@ -159,4 +161,22 @@ return [
 'sumtax' => 'ضريبه',
 'total' => 'الاجمالى',
 // End cartorder page===============================================================
+
+// ======= Start Setting Page =========
+
+'comp_name' => 'اسم الشركة',
+'about' => 'حول الشركة',
+'phone1' => 'هاتف 1 ',
+'phone2' => 'هاتف 2 ',
+'websiteLink' => 'ويب سايت ',
+'FBLink' => 'فيس بوك ',
+'LinLink' => 'لينكد إن',
+'YoutubeLink' => 'يوتيوب',
+'logo' => 'شعار الشركة',
+'Update_Settings' => 'تعديل الاعدادات ',
+
+
+// ======= End Setting Page =========
+
+
 ];

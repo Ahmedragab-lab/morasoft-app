@@ -84,24 +84,27 @@
                 <p>شركة مورا سوفت لخدمات النقل والشحن بمختلف الطرق ..
                     تعمل الشركة على خدمتك على مدار الساعة ونقل شحناتك وتوصيلها عبر أأمن الطرق وافضل الاسعار
                 </p>
+
+                {{-- <p>{{ $settings->about }}</p> --}}
+
                 <div class="footer-social-links ">
                   <ul>
                     <li>
-                      <a href="https://www.facebook.com/samir.gamal77" target="_blank">
+                      {{-- <a href="{{ $settings->FBLink }}" target="_blank"> --}}
                         <span class="icon">
                           <i class="fab fa-facebook-f"></i>
                         </span>
                       </a>
                     </li>
                     <li>
-                      <a href="https://www.linkedin.com/in/samir-gamal-8ab68ba0" target="_blank">
+                      {{-- <a href="{{ $settings->LinLink }}" target="_blank"> --}}
                         <span class="icon">
                           <i class="fab fa-linkedin"></i>
                         </span>
                       </a>
                     </li>
                     <li>
-                      <a href="https://www.youtube.com/channel/UCwT_14y87y3tgR8AqMCxrRA" target="_blank">
+                      {{-- <a href="{{ $settings->YoutubeLink }}" target="_blank"> --}}
                         <span class="icon">
                           <i class="fab fa-youtube"></i>
                         </span>
@@ -119,8 +122,6 @@
             <div class="widget widget-links" >
               <h3  class="widget-title ">{{ __('front.services') }}</h3>
                 <ul list-style: none>
-
-
 
                     <li >
                         @foreach (\App\Models\Service::where('status','1')->get() as $service)
@@ -172,25 +173,25 @@
 
               <h3 class="widget-title "> contact us</h3>
 
-                <a href="../pages/contact.html">Address</a>
+                <a href="#">Address</a>
                 </h3>
-                <p>مخرج 14 , طريق عمر بن عبدالعزيز , الرياض,
+                {{-- <p> {{ $settings->city }},
 
-                <br> المملكة العربية السعودية</p>
+                <br> {{ $settings->country }}</p> --}}
 
               {{-- <div class="media-content"> --}}
                 <h3>
                   <a>Phone</a>
                 </h3>
-                <p>+ 0500699206
-                  <br> + 0560032681</p>
+                {{-- <p>{{ $settings->phone1 }}
+                  <br> {{ $settings->phone2 }}</p> --}}
             </div>
 
             <h3>
                 <a>Email</a>
               </h3>
-              <p>admin@morasoft.net
-                <br>www.morasoft.net</p>
+              {{-- <p>{{ $settings->email }}
+                <br>{{ $settings->websiteLink }}</p> --}}
               {{-- <p></p> --}}
               {{-- <br> --}}
               {{-- <form>

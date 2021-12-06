@@ -23,6 +23,14 @@
                 </li>
                 {{-- End home dashboard  --}}
                 <li class="menu-title"><h5>{{ trans('site.component') }}</h5></li>
+
+                <!-- Settings-->
+                <li>
+                    <a href="{{route('settings.index')}}"><i class="fas fa-cogs"></i><span class="right-nav-text">{{ trans('site.settings') }} </span></a>
+                </li>
+
+
+
                {{-- route Admin  --}}
                <li>
                 <a href="{{ route('admins.index') }}" class="waves-effect">
@@ -132,12 +140,6 @@
                             <span class="badge badge-success badge-pill float-right"></span>
                         </span>
                     </a>
-                </li>
-
-
-                  <!-- Settings-->
-                  <li>
-                    <a href="{{route('settings.index')}}"><i class="fas fa-cogs"></i><span class="right-nav-text">settings </span></a>
                 </li>
 
 

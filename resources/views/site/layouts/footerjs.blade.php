@@ -59,8 +59,7 @@
     //     $('#unread').load(window.location.href + "#unread");
     // }, 5000);
 </script>
-<<<<<<< HEAD
-=======
+
 <script src="https://js.pusher.com/7.0/pusher.min.js"></script>
 
     <script>
@@ -87,7 +86,7 @@
     var notificationsToggle    = notificationsWrapper.find('a[data-toggle]');
     var notificationsCountElem = notificationsToggle.find('span[data-count]');
     var notificationsCount     = parseInt(notificationsCountElem.data('count'));
-    var notifications          = notificationsWrapper.find('ul.scrollable-container');
+    var notifications          = notificationsWrapper.find('ul.wolfff');
     // if (notificationsCount <= 0) {
     // notificationsWrapper.hide();
     // }
@@ -119,4 +118,4 @@
     notificationsWrapper.show();
     });
 </script>
->>>>>>> master
+

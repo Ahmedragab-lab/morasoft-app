@@ -117,101 +117,6 @@
                         <div class="media-content">
                             <h3>
                             <a href="../pages/contact.html">Email</a>
-<<<<<<< HEAD
-
-                            </h3>
-
-
-
-                            <p>admin@morasoft.net
-                            <br> www.morasoft.net</p>
-                        </div>
-                        </div>
-                        <!-- .box-item -->
-                    </div>
-                    </div>
-                    <!-- .columns -->
-                </div>
-                <div class="column is-8">
-                    <!-- successful form message -->
-                    <div class="overhang-message-content is-hidden success">
-                    <span class="icon">
-                        <i class="ion-md-notifications"></i>
-                    </span> Thank You! Your message was sent successfully. </div>
-                    <!-- error form message -->
-                    <div class="overhang-message-content is-hidden error">
-                    <span class="icon">
-                        <i class="ion-md-notifications"></i>
-                    </span> Oops! Something went wrong, we couldn't send your message. </div>
-                    <!-- ajax contact form -->
-                    <form accept-charset="UTF-8" id="ajaxform" class="ajax-contact-form" action="https://usebasin.com/f/3587049dbc33.json" method="POST">
-                        <div class="field is-horizontal">
-                            <div class="field-body">
-                                <div class="field">
-                                    <div class="control is-expanded">
-                                        <input type="hidden" name="userid" value="{{ auth()->user()->id }}">
-                                        <input class="input" type="text" name="name"  readonly value="{{ auth()->user()->fname }} {{ auth()->user()->lname }} "> </div>
-                                </div>
-                                <!-- .field -->
-                                <div class="field">
-                                    <div class="control is-expanded">
-                                        <input class="input" type="text" name="address"  readonly value="{{ auth()->user()->address1 }}"> </div>
-                                </div>
-                                <!-- .field -->
-                            </div>
-                            <!-- .field-body -->
-                        </div>
-                        <!-- .field -->
-                        <div class="field is-horizontal">
-                            <div class="field-body">
-                                <div class="field">
-                                    <div class="control is-expanded">
-                                        <input class="input" type="tel" name="phone" readonly value="{{ auth()->user()->phone }}"> </div>
-                                </div>
-                                <!-- .field -->
-                                <div class="field">
-                                    <div class="control is-expanded">
-                                        <input class="input" type="email" name="email" readonly value="{{ auth()->user()->email }}"> </div>
-                                </div>
-                                <!-- .field -->
-                            </div>
-                            <!-- .field-body -->
-                        </div>
-                        <!-- .field -->
-                        <div class="field ">
-                            <div class="control is-expanded">
-                                <textarea class="textarea" name="sms" placeholder="Your Message" required></textarea>
-                            </div>
-                        </div>
-                        <!-- .field -->
-                        <div class="field ">
-                            <div class="control has-text-centered">
-                                <button class="button contact" type="submit" >Send message</button>
-                            </div>
-                        </div>
-                        <!-- .field -->
-                    </form>
-                </div>
-                </div>
-                <br> </div>
-            </section>
-            <!-- .contact-form -->
-            <!-- google-maps section -->
-            {{-- <section class="hero google-maps is-clearfix">
-            <div>
-                <div>
-                <iframe src="https://snazzymaps.com/embed/129396" width="100%" height="500px" style="border:none;"></iframe>
-                </div>
-            </div>
-            </section> --}}
-            <!-- .google-maps -->
-        </div>
-        <!-- #content-area-inner -->
-        </div>
-        <!-- #content-area -->
-    </div>
-
-=======
                             </h3>
                             <p>admin@morasoft.net
                             <br> www.morasoft.net</p>
@@ -301,7 +206,6 @@
         <!-- #content-area -->
     </div>
 
->>>>>>> master
 
 <section class="hero google-maps is-clearfix">
     <div>

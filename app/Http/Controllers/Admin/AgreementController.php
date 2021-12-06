@@ -17,7 +17,7 @@ class AgreementController extends Controller
     }
 
 
- 
+
 
     public function create()
     {

@@ -37,6 +37,7 @@ return [
    'serv'=>'Services',
    'tracking-steps'=>'Tracking Steps',
    'feedback'=>'Client Feedback',
+   'settings'=>'Settings',
 //    end sidebar
 // start dashboard service page translation
 'service_name_en'=>'Service Name EN',
@@ -116,6 +117,7 @@ return [
 
 //  section  page translation
 'sections'=>' Sections',
+'section_name'=>' Section Name',
 'section_name_ar'=>' Section Name AR',
 'section_name_en'=>' Section Name EN',
 'Enter_section_name_ar'=>' Section Name AR',
@@ -164,5 +166,21 @@ return [
 'sumtax' => 'Tax',
 'total' => 'Total',
 // End cartorder page===============================================================
+
+
+// ======= Start Setting Page =========
+
+'comp_name' => 'Comp Name',
+'about' => 'About',
+'phone1' => 'Phone1',
+'phone2' => 'Phone2',
+'websiteLink' => 'Website Link',
+'FBLink' => 'FaceBook',
+'LinLink' => 'LinKedIn ',
+'YoutubeLink' => 'Youtube',
+'logo' => 'Logo',
+'Update_Settings' => ' Update Settings ',
+
+// ======= End Setting Page =========
 
 ];
