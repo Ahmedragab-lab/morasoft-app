@@ -39,7 +39,8 @@ File: Main scss File
 33. Timeline
 34. Account Pages
 */
-@import url("https://fonts.googleapis.com/css?family=Open+Sans:400,600,700");
+/*@import url("https://fonts.googleapis.com/css?family=Open+Sans:400,600,700");*/
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@300;400&display=swap');
 /* ==============
   General
 ===================*/
@@ -47,8 +48,7 @@ body {
   background: #f5f5f5;
   margin: 0;
   font-size: 13px;
-  font-family: "Open Sans", sans-serif;
-}
+    font-family: 'Cairo', sans-serif;}
 
 html {
   overflow-x: hidden;
@@ -2090,8 +2090,8 @@ body.fixed-left .side-menu.left {
   padding: 10px 12px;
   background: #ffffff;
   border: none;
-  font-family: "Open Sans", sans-serif;
-  -webkit-box-shadow: 0 5px 25px 5px rgba(0, 0, 0, 0.14);
+    font-family: 'Cairo', sans-serif;
+    -webkit-box-shadow: 0 5px 25px 5px rgba(0, 0, 0, 0.14);
           box-shadow: 0 5px 25px 5px rgba(0, 0, 0, 0.14);
 }
 
@@ -2256,8 +2256,7 @@ body.fixed-left .side-menu.left {
 .c3-chart-arcs-title {
   font-size: 18px;
   font-weight: 600;
-  font-family: "Open Sans", sans-serif;
-}
+    font-family: 'Cairo', sans-serif;}
 
 .c3-tooltip tr {
   border: none !important;
@@ -2269,8 +2268,7 @@ body.fixed-left .side-menu.left {
 
 .c3-tooltip .value {
   font-weight: 600;
-  font-family: "Open Sans", sans-serif;
-}
+    font-family: 'Cairo', sans-serif;}
 
 .c3-line {
   stroke-width: 2px;
@@ -2278,8 +2276,7 @@ body.fixed-left .side-menu.left {
 
 .c3-legend-item {
   font-size: 13px;
-  font-family: "Open Sans", sans-serif;
-}
+    font-family: 'Cairo', sans-serif;}
 
 /* ==============
   Form-elements
@@ -2763,8 +2760,7 @@ table.focus-on tbody tr.focused td {
   border: none;
   padding: 8px 16px 8px 46px;
   background: #f3f3f3;
-  font-family: "Open Sans", sans-serif;
-}
+    font-family: 'Cairo', sans-serif;}
 
 .custom-dd-empty .dd-list .dd3-content:hover {
   color: #5985ee;
@@ -2833,8 +2829,7 @@ table.focus-on tbody tr.focused td {
 /* Sweet Alert2 */
 /* =========== */
 .swal2-modal {
-  font-family: "Open Sans", sans-serif;
-}
+    font-family: 'Cairo', sans-serif;}
 
 .swal2-modal .swal2-title {
   font-size: 24px;

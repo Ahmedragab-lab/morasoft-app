@@ -27,14 +27,14 @@ Route::group(
         Route::resource('Last_event',Frontend\Allevents::class);// get last event
         Route::resource('Last_agrement',Frontend\Allagrements::class);// get last Agrement
         Route::get('lastservice/{id}',[Frontend\Allservices::class,'showlast'])->name('lastservice.showlast');// get last service
-        // Route::get('/contact-us',[ContactController::class,'contact']);
+
 
 
         Route::resource('allsections',Frontend\AllSections::class); // go to all Sections page
         Route::resource('allfeedback',Frontend\Allfeedback::class); // go to all feedback page
         Route::resource('Last_event',Frontend\Allevents::class);// get last event
         Route::resource('contact',Frontend\ContactController::class);  //go to contact page
-
+      
         Route::get('/reserveServ', function () {
             return view('site.pages.reserveServ');
         });
@@ -46,6 +46,7 @@ Route::group(
             Route::post('order_details',[Frontend\OrderDetailController::class , 'order_details'])->name('order_details'); //go to add service order from order details page
             Route::post('contact',[Frontend\ContactController::class , 'contact'])->name('contact'); //go to addcontact from contact page
             Route::get('step/{id}',[Frontend\OrderDetailController::class , 'showstep'])->name('step'); //go to trackstep from order details page
+            Route::post('addrate',[Frontend\UserRateController::class , 'addrate'])->name('addrate'); //add rate
         });
 
         require __DIR__.'/auth.php';

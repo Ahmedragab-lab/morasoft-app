@@ -78,15 +78,15 @@
         alert(JSON.stringify(data));
         });
     </script>
-<script src="{{ asset('js/pusherNotifications.js') }}"></script> 
- <script type="text/javascript">
+{{-- <script src="{{ asset('js/pusherNotifications.js') }}"></script>  --}}
+ <script >
         // notification price
     //=*=*=*=*=*=*=*=*=*****************************************============
     var notificationsWrapper   = $('.dropdown-notifications');
     var notificationsToggle    = notificationsWrapper.find('a[data-toggle]');
     var notificationsCountElem = notificationsToggle.find('span[data-count]');
     var notificationsCount     = parseInt(notificationsCountElem.data('count'));
-    var notifications          = notificationsWrapper.find('li.scrollable-container');
+    var notifications          = notificationsWrapper.find('ul.wolfff');
     // if (notificationsCount <= 0) {
     // notificationsWrapper.hide();
     // }
