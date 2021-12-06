@@ -15,18 +15,18 @@ class CreateOrdersTable extends Migration
     {
         Schema::create('orders', function (Blueprint $table) {
             $table->id();
-            // $table->foreignId('order_id')->references('id')->on('users')->cascadeOnDelete();
-            // $table->string('fname');
-            // $table->string('lname');
-            // $table->string('email');
-            // $table->string('phone');
-            // $table->string('address1');
-            // $table->string('address2');
-            // $table->string('city');
-            // $table->string('country');
-            // $table->tinyInteger('status')->default('0');
-            // $table->text('sms')->nullable();
-            // $table->string('tracking_no');
+            $table->foreignId('order_id')->references('id')->on('users')->cascadeOnDelete();
+            $table->string('fname');
+            $table->string('lname');
+            $table->string('email');
+            $table->string('phone');
+            $table->string('address1');
+            $table->string('address2');
+            $table->string('city');
+            $table->string('country');
+            $table->tinyInteger('status')->default('0');
+            $table->text('sms')->nullable();
+            $table->string('tracking_no');
             $table->timestamps();
         });
     }
