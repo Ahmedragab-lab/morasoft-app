@@ -128,16 +128,15 @@
                                             </span>
                                         </a>
                                         <ul class="dropdown-notification scrollable-container" >
-
-                                            <li class="header">notifications(<span class="notif-count">{{ \App\Models\Usernoti::count() }}</span>)</li>
-                                            @foreach (\App\Models\Usernoti::all() as $noti)
-                                            <li>
-                                                <a href="#">
-                                                    <strong>{{ $noti->price }}</strong>
-                                                </a>
-                                            </li>
-                                            @endforeach
-                                        </ul>
+                                                @foreach (\App\Models\Usernoti::all() as $noti)
+                                                <li class="header">notifications(<span class="notif-count">{{ \App\Models\Usernoti::count() }}</span>)</li>
+                                                <li>
+                                                    <a href="#">
+                                                        <strong>{{ $noti->price }}</strong>
+                                                    </a>
+                                                </li>
+                                                @endforeach
+                                            </ul>
                                         </li>
 
                                 @endauth
