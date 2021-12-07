@@ -1,6 +1,7 @@
 @extends('site.layouts.master')
 @section('title') mora soft company @endsection
 @section('css')
+<link href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.css">
     <meta name="csrf-token" content="{{ csrf_token() }}">
 @endsection
 @section('navslider')
@@ -58,6 +59,7 @@
 
     <section id="tracking" class="section tracking-section is-clearfix">
         <div class="container">
+<<<<<<< HEAD
             <p class="heading-title-top has-text-centered">tracking</p>
             <h1 class="heading-title style-3">track your shipment</h1>
             <div class="columns is-mobile is-centered">
@@ -83,6 +85,37 @@
                         <a href="#">Advanced Tracking</a>
                     </p>
                 </div>
+=======
+          <p class="heading-title-top has-text-centered">tracking</p>
+          <h1 class="heading-title style-3">track your shipment</h1>
+          <div class="columns is-mobile is-centered">
+            <div class="column is-10" >
+              <div class="subscribe-form style-1">
+                <form method="post" action="{{ route('searchtrackstep') }}">
+                    @csrf
+                    <div class="field has-addons has-addons-centered is-grouped">
+                        <div class="control">
+                        <input class="input" type="text" placeholder="Type your order number" name="order_no" required autocomplete="off">
+                        </div>
+                        <div class="control">
+                        {{-- <a href="" class="button" type="submit">
+                            <span class="tracking_search">Track it</span>
+                            <span class="icon is-small">
+                            <i class="icon-target"></i>
+                            </span>
+                        </a> --}}
+                        <input type="submit" value="Track it" class="button" >
+                        </div>
+                    </div>
+                </form>
+              </div>
+              <p class="help"> with best regardes
+                  <span class="icon is-small">
+                     <i class="icon-target"></i>
+                  </span>Mora Soft.
+                <a href="#">Advanced Tracking</a>
+              </p>
+>>>>>>> 84d3812917dd48569795a80ef1ea9a7ecd5e8583
             </div>
         </div>
     </section>
@@ -320,6 +353,7 @@
                             </h2>
                             <p>{{ $Last_service->desc }}</p>
                         </div>
+<<<<<<< HEAD
                         <div class="entry-footer">
                             <a href="{{ route('lastservice.showlast', $Last_service->id) }}" class="button">اقرأ
                                 المزيد</a>
@@ -330,6 +364,11 @@
             </div>
         </div>
     </section>
+=======
+                      </div>
+                    </div>
+                </section>
+>>>>>>> 84d3812917dd48569795a80ef1ea9a7ecd5e8583
 
     {{-- ********** Start News ************ --}}
 
@@ -535,6 +574,25 @@
                     }
                 });
             });
+            // $(".tracking_search").click(function(e){
+            //     e.preventDefault();
+            //     let order_no = $("input[name=order_no]").val();
+            //     console.log(order_no);
+            //     $.ajax({
+            //         method:"GET",
+            //         url: "/searchtrackstep",
+            //         data:{
+            //             order_no:order_no,
+            //         },
+            //         success: function(response)
+            //         {
+            //             if(response) {
+            //                 swal(response.status);
+            //                 // $("#ajaxform")[0].reset();
+            //             }
+            //         }
+            //     });
+            // });
         });
     </script>
 

@@ -10,6 +10,7 @@ use App\Models\UserReqest;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Notification;
+use Symfony\Component\HttpFoundation\Response;
 
 class OrderDetailController extends Controller
 {
@@ -53,7 +54,6 @@ class OrderDetailController extends Controller
     public function show($id)
     {
         $order_details = UserReqest::where('id',$id)->first();
-
         return view('site.pages.order-details',compact('order_details'));
     }
 
@@ -65,5 +65,35 @@ class OrderDetailController extends Controller
     }
 
 
+    // public function searchtrackstep(Request $request)
+    // {
+    //     $order_no = $request->input('order_no');
+    //     $order = UserReqest::where('order_no',$order_no)->first();
+    //     if($order){
+    //         // return response()->json(['status'=>' ok']);
+    //         $order_step = OrderDetail::where('order_id',$order->id)->first();
+    //         return response()->view('site.pages.order-steps',compact('order_step'));
+    //         // return Response::view('hello')->header('Content-Type', $type);
+    //     }else{
+    //         return response()->json(['status'=>' error']);
+    //     }
+    //     // dd($order_step);
+    //     // $d = OrderDetail::where('order_id',)->first();
+    //     // return view('site.pages.order-steps',compact('order_step'));
+    //     // return response()->json(['status'=>$req->name . ' request submitted successfully'])
+    // }
+      public function searchtrackstep(Request $request)
+        {
+            $order_no = $request->input('order_no');
+            $order = UserReqest::where('order_no',$order_no)->where('user_id',Auth::user()->id)->first();
+            if($order){
+                $order_step = OrderDetail::where('order_id',$order->id)->first();
+                return response()->view('site.pages.order-step',compact('order_step'));
+            }else{
+                return redirect()->back()->with('status',"this number is wrong");
+            }
+            // dd($order_no);
+            // return "hello";
+        }
 
 }
