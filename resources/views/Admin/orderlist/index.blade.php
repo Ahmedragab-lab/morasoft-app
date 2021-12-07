@@ -20,11 +20,11 @@
                                 <th>{{ __('site.order_no') }}</th>
                                 <th>{{ __('site.fname') }}</th>
                                 <th>{{ __('site.email') }}</th>
-                                <th>{{ __('site.service') }}</th>
+                                <th>{{ __('site.services') }}</th>
                                 <th>{{ __('site.from') }}</th>
                                 <th>{{ __('site.to') }}</th>
                                 <th>{{ __('site.price') }}</th>
-                                <th>{{ __('site.تفاصيل الفاتوره') }}</th>
+                                <th>{{ __('site.bill_detail') }}</th>
                                 <th>{{ __('site.action') }}</th>
                             </tr>
                         </thead>
@@ -48,7 +48,7 @@
                                                 {{ __('site.add tracking steps') }}
                                             </button>
                                             <button type="button" class="btn btn-danger"
-                                            onclick="confirm('{{ __('Are you sure you want to delete this order '.$order->id.'?') }}') ? this.parentElement.submit() : ''">
+                                            onclick="confirm('{{ __('site.Warning'.$order->id.'?') }}') ? this.parentElement.submit() : ''">
                                             {{ __('site.delete') }}
                                             </button>
                                         </form>

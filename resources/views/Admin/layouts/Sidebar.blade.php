@@ -129,7 +129,7 @@
                 <li>
                     <a href="{{ route('orders.index') }}" class="waves-effect">
                         <i class="far fa-comment-dots"></i>
-                        <span>اسأل عن السعر
+                        <span>{{ trans('site.ask_for_price') }}
                             <span class="badge badge-success badge-pill float-right"></span>
                         </span>
                     </a>
@@ -139,7 +139,7 @@
                 <li>
                     <a href="{{ route('orderlist.index') }}" class="waves-effect">
                         <i class="far fa-comment-dots"></i>
-                        <span>{{ trans('قائمه الاوردارات المطلوبه') }}
+                        <span>{{ trans('site.order_list_want') }}
                             <span class="badge badge-success badge-pill float-right"></span>
                         </span>
                     </a>

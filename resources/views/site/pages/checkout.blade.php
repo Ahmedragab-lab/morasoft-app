@@ -1,7 +1,7 @@
 @extends('site.layouts.master')
 @section('title') checkout @endsection
 @section('css')
-<link href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.css">
+{{-- <link href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.css"> --}}
 @endsection
 @section('content')
 <br><br><br>
@@ -10,18 +10,8 @@
       <div id="content-area-inner" class="site-content-area-inner">
         <section class="section  is-clearfix hero has-background-primary-light">
             <div class="container">
-                <div class="col-12">
-                    @if (session('status'))
-                        <div class="alert alert-success alert-dismissible fade show" role="alert">
-                            {{ session('status') }}
-                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                            </button>
-                        </div>
-                    @endif
-                </div>
-                <form accept-charset="UTF-8" class="ajax-contact-form" action="{{ route('checkout.store') }}"
-                      method="POST" autocomplete="off">
+
+                <form  action="{{ route('checkout.store') }}" method="POST" autocomplete="off">
                     @csrf
                     <div class="row">
                         <dive class="col-md-7">
@@ -152,7 +142,7 @@
                                             </tr>
                                         </tbody>
                                     </table>
-                                    <button type="submit" class="btn btn-warning float-end">Order Now</button>
+                                    <button type="submit" class="btn btn-warning float-end save-data">Order Now</button>
                                     <br>
                                     <br>
                                     <br>
@@ -171,13 +161,15 @@
 
 @endsection
 @section('js')
-<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-@if(session('status'))
-    <script>
-          swal("{{ session('status') }}");
-    </script>
-@endif
-{{-- <script src="https://unpkg.com/sweetalert2@7.18.0/dist/sweetalert2.all.js"></script> --}}
+<script>
+    $(document).ready(function(){
+    $(".save-data").click(function(e){
+        // e.preventDefault();
+        $('.save-data').removeClass('btn-warning ').addClass('btn-success disabled').html('done thank you for your choice');
+
+    });
+});
+</script>
 
 
 @endsection

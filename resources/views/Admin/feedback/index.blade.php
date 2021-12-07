@@ -31,10 +31,10 @@
                                     <form action="{{ route('feedbacks.destroy', $feedback->id) }}" method="post">
                                         @csrf
                                         @method('delete')
-                                        <a href="{{ route('feedbacks.edit', $feedback->id) }}" class="btn btn-info">{{ __('Edit') }}</a>
+                                        <a href="{{ route('feedbacks.edit', $feedback->id) }}" class="btn btn-info">{{ __('site.edit') }}</a>
                                         <button type="button" class="btn btn-danger"
-                                        onclick="confirm('{{ __('Are you sure you want to delete this feedback?') }}') ? this.parentElement.submit() : ''">
-                                            {{ __('Delete') }}
+                                        onclick="confirm('{{ __('site.Warning') }}') ? this.parentElement.submit() : ''">
+                                        {{ __('site.delete') }}
                                         </button>
                                     </form>
                                 </td>

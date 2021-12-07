@@ -52,7 +52,7 @@
                                        {{-- @method('delete') --}}
                              <a href="{{ route('settings.edit', $Setting->id) }}" class="btn btn-info">{{ __('site.edit') }}</a>
                                         {{-- <button type="button" class="btn btn-danger"
-                                        onclick="confirm('{{ __('Are you sure you want to delete this service?') }}') ? this.parentElement.submit() : ''">
+                                        onclick="confirm('{{ __('site.Warning') }}') ? this.parentElement.submit() : ''">
                                             {{ __('Delete') }}
                                         </button>
                                     </form>  --}}

@@ -23,9 +23,11 @@ class ContactController extends Controller
     public function contact(Request $request)
     {
        $userid = $request->input('userid');
+       $name = $request->input('name');
        $sms = $request->input('sms');
        $contact = new Contact();
        $contact->user_id = $userid;
+       $contact->name = $name;
        $contact->sms =$sms;
        $contact->save();
 
@@ -33,7 +35,7 @@ class ContactController extends Controller
          'user_id'=>$userid,
          'sms'=>$sms,
        ];
-       event(new EmailNotification($data));
+       event(new EmailNotification($contact));
        return response()->json(['status'=> ' Email submitted successfully']);
     }
 

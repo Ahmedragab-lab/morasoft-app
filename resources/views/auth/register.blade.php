@@ -155,6 +155,7 @@
 {{--        </x-slot>--}}
 
         <!-- Validation Errors -->
+        <div class="login-form p-4">
         <x-auth-validation-errors class="mb-4" :errors="$errors"></x-auth-validation-errors>
         <h1>{{ __('auth.register') }}</h1> <br>
         <form method="POST" action="{{ route('register') }}">
@@ -209,7 +210,7 @@
                 </x-button>
             </div>
         </form>
-
+      </div>
 </x-guest-layout>
     </div>
   </header>
@@ -263,10 +264,10 @@
   <!-- You can delete the links only if you purchased the pro version. -->
   <!-- Licensing information: https://bootstrapmade.com/license/ -->
   <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/comingsoon-free-html-bootstrap-template/ -->
-  Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+  {{-- Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a> --}}
   </div>
   </div>
-  </footer>End #footer -->
+  {{-- </footer>End #footer --> --}}
 
   <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 

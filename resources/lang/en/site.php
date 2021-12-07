@@ -9,6 +9,7 @@ return [
    'edit'=>'Edit',
    'delete'=>'Delete',
    'back'=>'Back',
+   'Warning'=> 'Are Sure Of The Deleting Process ?',
 
    'active'=> 'Active',
    'unactive'=> 'Un Active',
@@ -31,6 +32,7 @@ return [
    'clients'=>'clients',
    'component'=>'Component',
    'comp'=>'Companies',
+   'event' => 'Events',
    'clients'=>'clients',
    'categories'=>'Categories',
    'Products'=>'Products',
@@ -144,6 +146,16 @@ return [
 // End section  page translation
 // user request page translation
 'orders'=>'Orders',
+'order_no' => 'Order Number',
+'from' => 'From',
+'to' => 'TO',
+'price' => 'Price',
+'sms' => 'SMS',
+'ask_for_price' => 'Ask For Price',
+'order_list_want' => 'Order List Wanted',
+'bill_detail' => 'Bill Detail',
+
+
 // end request page translation
 
 
@@ -158,7 +170,8 @@ return [
 'CompAddress' => 'Address',
 'CompDetail' => 'Company Details',
 'CompAdd' => 'Add Company',
-'CompUpdate' => 'Company Update',
+'CompUpdate' => 'Update Company ',
+'compdelete' => 'Delete Company',
 
 
 
@@ -169,7 +182,7 @@ return [
 // cartorder page==================================================================
 
 'orderdetails' => 'Order Details',
-'tracking_no' => 'Order_No',
+'tracking_no' => 'Order No',
 'userfname' => 'First Name',
 'userlname' => 'Last Name',
 'useremail' => 'Email',

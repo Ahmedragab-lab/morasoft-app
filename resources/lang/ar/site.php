@@ -11,6 +11,7 @@ return [
    'back'=>'رجوع',
    'active'=> 'فعال',
    'unactive'=> 'غير فعال',
+   'Warning'=> 'هل انت متاكد من عملية الحذف ؟',
 
 
 
@@ -40,7 +41,7 @@ return [
 'service_name_ar'=>'اسم الخدمه بالعربية',
 'service_name_en'=>'اسم الخدمه بالانجليزية',
 'event_title_ar'=>'عنوان الخبر',
-'services'=>'الخدمات',
+'services' =>'الخدمات',
 'services_page'=>'صفحه الخدمات',
 'Add_Service'=>'اضف خدمه',
 'Service_name'=>'اسم الخدمه',
@@ -133,6 +134,15 @@ return [
 
 // user request page translation
 'orders'=>'طلبات الخدمات',
+'order_no' => 'رقم الطلب',
+'from' => 'من',
+'to' => 'الى',
+'price' => 'السعر',
+'sms' => 'SMS',
+'ask_for_price' => 'اسأل عن السعر',
+'order_list_want' => 'قائمه الاوردارات المطلوبه',
+'bill_detail' => 'تفاصيل الفاتورة',
+
 // end request page translation
 
 
@@ -152,6 +162,7 @@ return [
 'CompUpdate' => 'تعديل بيانات الشركة',
 
 'CompAdd' => 'اضافة شركة ',
+'compdelete' => 'حذف شركة ',
 
 
 

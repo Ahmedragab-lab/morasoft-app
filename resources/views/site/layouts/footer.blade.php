@@ -333,61 +333,61 @@
           <div class="columns is-variable is-multiline is-2">
             <div class="column is-6">
               <figure>
-                <img alt="Joo - Niche Multi-Purpose HTML Template" src="{{ asset('front/images/portfolio//demos/creative-1.png') }}">
+                {{-- <img alt="Joo - Niche Multi-Purpose HTML Template" src="{{ asset('front/images/portfolio//demos/creative-1.png') }}"> --}}
                 <figcaption>
                   <h5>إبداعى 01</h5>
-                  <a href="https://themes.jozoor.com/html/joo/creative/01/rtl/" target="_blank">View more</a>
+                  {{-- <a href="https://themes.jozoor.com/html/joo/creative/01/rtl/" target="_blank">View more</a> --}}
                 </figcaption>
               </figure>
             </div>
             <div class="column is-6">
               <figure>
-                <img alt="Joo - Niche Multi-Purpose HTML Template" src="{{ asset('front/images/portfolio//demos/corporate-1.png') }}">
+                {{-- <img alt="Joo - Niche Multi-Purpose HTML Template" src="{{ asset('front/images/portfolio//demos/corporate-1.png') }}"> --}}
                 <figcaption>
                   <h5>شركات 01</h5>
-                  <a href="https://themes.jozoor.com/html/joo/corporate/01/rtl/" target="_blank">View more</a>
+                  {{-- <a href="https://themes.jozoor.com/html/joo/corporate/01/rtl/" target="_blank">View more</a> --}}
                 </figcaption>
               </figure>
             </div>
             <div class="column is-6">
               <figure>
-                <img alt="Joo - Niche Multi-Purpose HTML Template" src="{{ asset('front/images/portfolio//demos/entertainment-2.png') }}">
+                {{-- <img alt="Joo - Niche Multi-Purpose HTML Template" src="{{ asset('front/images/portfolio//demos/entertainment-2.png') }}"> --}}
                 <figcaption>
                   <h5>مطعم برجر</h5>
-                  <a href="https://themes.jozoor.com/html/joo/entertainment/02/rtl/" target="_blank">View more</a>
+                  {{-- <a href="https://themes.jozoor.com/html/joo/entertainment/02/rtl/" target="_blank">View more</a> --}}
                 </figcaption>
               </figure>
             </div>
             <div class="column is-6">
               <figure>
-                <img alt="Joo - Niche Multi-Purpose HTML Template" src="./assets/images/portfolio//demos/wedding-1.png">
+                {{-- <img alt="Joo - Niche Multi-Purpose HTML Template" src="./assets/images/portfolio//demos/wedding-1.png"> --}}
                 <figcaption>
                   <h5>حفل زفاف</h5>
-                  <a href="https://themes.jozoor.com/html/joo/wedding/01/rtl/" target="_blank">View more</a>
+                  {{-- <a href="https://themes.jozoor.com/html/joo/wedding/01/rtl/" target="_blank">View more</a> --}}
                 </figcaption>
               </figure>
             </div>
             <div class="column is-6">
               <figure>
-                <img alt="Joo - Niche Multi-Purpose HTML Template" src="./assets/images/portfolio//demos/corporate-2.png">
+                {{-- <img alt="Joo - Niche Multi-Purpose HTML Template" src="./assets/images/portfolio//demos/corporate-2.png"> --}}
                 <figcaption>
                   <h5>شركات 02</h5>
-                  <a href="https://themes.jozoor.com/html/joo/corporate/02/rtl/" target="_blank">View more</a>
+                  {{-- <a href="https://themes.jozoor.com/html/joo/corporate/02/rtl/" target="_blank">View more</a> --}}
                 </figcaption>
               </figure>
             </div>
             <div class="column is-6">
               <figure>
-                <img alt="Joo - Niche Multi-Purpose HTML Template" src="./assets/images/portfolio//demos/entertainment-3.png">
+                {{-- <img alt="Joo - Niche Multi-Purpose HTML Template" src="./assets/images/portfolio//demos/entertainment-3.png"> --}}
                 <figcaption>
                   <h5>صالون حلاقة</h5>
-                  <a href="https://themes.jozoor.com/html/joo/entertainment/03/rtl/" target="_blank">View more</a>
+                  {{-- <a href="https://themes.jozoor.com/html/joo/entertainment/03/rtl/" target="_blank">View more</a> --}}
                 </figcaption>
               </figure>
             </div>
             <div class="column is-6 is-active">
               <figure>
-                <img alt="Joo - Niche Multi-Purpose HTML Template" src="./assets/images/portfolio//demos/corporate-3.png">
+                {{-- <img alt="Joo - Niche Multi-Purpose HTML Template" src="./assets/images/portfolio//demos/corporate-3.png"> --}}
                 <span class="tag menu-mark is-primary">مفعل</span>
                 <figcaption>
                   <h5>شركة شحن</h5>
@@ -396,52 +396,52 @@
             </div>
             <div class="column is-6">
               <figure>
-                <img alt="Joo - Niche Multi-Purpose HTML Template" src="./assets/images/portfolio//demos/entertainment-1.png">
+                {{-- <img alt="Joo - Niche Multi-Purpose HTML Template" src="./assets/images/portfolio//demos/entertainment-1.png"> --}}
                 <figcaption>
                   <h5>مطعم 01</h5>
-                  <a href="https://themes.jozoor.com/html/joo/entertainment/01/rtl/" target="_blank">View more</a>
+                  {{-- <a href="https://themes.jozoor.com/html/joo/entertainment/01/rtl/" target="_blank">View more</a> --}}
                 </figcaption>
               </figure>
             </div>
             <div class="column is-6">
               <figure>
-                <img alt="Joo - Niche Multi-Purpose HTML Template" src="./assets/images/portfolio//demos/wedding-2.png">
+                {{-- <img alt="Joo - Niche Multi-Purpose HTML Template" src="./assets/images/portfolio//demos/wedding-2.png"> --}}
                 <figcaption>
                   <h5>منظم حفلات</h5>
-                  <a href="https://themes.jozoor.com/html/joo/wedding/02/rtl/" target="_blank">View more</a>
+                  {{-- <a href="https://themes.jozoor.com/html/joo/wedding/02/rtl/" target="_blank">View more</a> --}}
                 </figcaption>
               </figure>
             </div>
             <div class="column is-6">
               <figure>
-                <img alt="Joo - Niche Multi-Purpose HTML Template" src="./assets/images/portfolio//demos/corporate-4.png">
+                {{-- <img alt="Joo - Niche Multi-Purpose HTML Template" src="./assets/images/portfolio//demos/corporate-4.png"> --}}
                 <figcaption>
                   <h5>شركة شحن 02</h5>
-                  <a href="https://themes.jozoor.com/html/joo/corporate/04/rtl/" target="_blank">View more</a>
+                  {{-- <a href="https://themes.jozoor.com/html/joo/corporate/04/rtl/" target="_blank">View more</a> --}}
                 </figcaption>
               </figure>
             </div>
             <div class="column is-6">
               <figure>
-                <img alt="Joo - Niche Multi-Purpose HTML Template" src="./assets/images/portfolio//demos/creative-2.png">
+                {{-- <img alt="Joo - Niche Multi-Purpose HTML Template" src="./assets/images/portfolio//demos/creative-2.png">
                 <figcaption>
                   <h5>إبداعى 02</h5>
                   <a href="https://themes.jozoor.com/html/joo/creative/02/rtl/" target="_blank">View more</a>
-                </figcaption>
+                </figcaption> --}}
               </figure>
             </div>
             <div class="column is-6">
               <figure>
-                <img alt="Joo - Niche Multi-Purpose HTML Template" src="./assets/images/portfolio//demos/wedding-3.png">
+                {{-- <img alt="Joo - Niche Multi-Purpose HTML Template" src="./assets/images/portfolio//demos/wedding-3.png">
                 <figcaption>
                   <h5>فساتين الزفاف</h5>
                   <a href="https://themes.jozoor.com/html/joo/wedding/03/rtl/" target="_blank">View more</a>
-                </figcaption>
+                </figcaption> --}}
               </figure>
             </div>
             <div class="column is-6">
               <figure>
-                <img alt="Joo - Niche Multi-Purpose HTML Template" src="./assets/images/portfolio//demos/specialty-1.png">
+                {{-- <img alt="Joo - Niche Multi-Purpose HTML Template" src="./assets/images/portfolio//demos/specialty-1.png"> --}}
                 <figcaption>
                   <h5>تحت الإنشاء</h5>
                   <a href="https://themes.jozoor.com/html/joo/specialty/01/rtl/" target="_blank">View more</a>
@@ -450,7 +450,7 @@
             </div>
             <div class="column is-6">
               <figure>
-                <img alt="Joo - Niche Multi-Purpose HTML Template" src="./assets/images/portfolio//demos/creative-3.png">
+                {{-- <img alt="Joo - Niche Multi-Purpose HTML Template" src="./assets/images/portfolio//demos/creative-3.png"> --}}
                 <figcaption>
                   <h5>إبداعى 03</h5>
                   <a href="https://themes.jozoor.com/html/joo/creative/03/rtl/" target="_blank">View more</a>

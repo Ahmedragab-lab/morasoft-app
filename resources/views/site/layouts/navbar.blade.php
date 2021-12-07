@@ -6,10 +6,20 @@
                     <div id="header-logo" class="site-logo ">
                         <div id="logo-inner" class="site-logo-inner">
                             <a href="{{ route('front.index') }}">
+
                                 <img alt="Joo - Niche Multi-Purpose HTML Template"
                                     src="{{ asset('front/images/logo/logo2.png') }}">
                                 {{-- <span class="logo-text">{{ $settings->comp_name }}</span> --}}
                                 {{-- <span class="logo-text">شركة مورا سوفت</span> --}}
+
+                                {{-- <img alt="Joo - Niche Multi-Purpose HTML Template"
+                                    src="{{ asset('assets/images/logo8.png') }}" width="200" height="200">  --}}
+                              {{-- <span> <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="truck-moving" class="svg-inline--fa fa-truck-moving fa-w-1 text-dark"
+                               role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><path
+                                fill="currentColor" d="M621.3 237.3l-58.5-58.5c-12-12-28.3-18.7-45.3-18.7H480V64c0-17.7-14.3-32-32-32H32C14.3 32 0 46.3 0 64v336c0 44.2 35.8 80 80 80 26.3 0 49.4-12.9 64-32.4 14.6 19.6 37.7 32.4 64 32.4 44.2 0 80-35.8 80-80 0-5.5-.6-10.8-1.6-16h163.2c-1.1 5.2-1.6 10.5-1.6 16 0 44.2 35.8 80 80 80s80-35.8 80-80c0-5.5-.6-10.8-1.6-16H624c8.8 0 16-7.2 16-16v-85.5c0-17-6.7-33.2-18.7-45.2zM80 432c-17.6 0-32-14.4-32-32s14.4-32 32-32 32 14.4 32 32-14.4 32-32 32zm128 0c-17.6 0-32-14.4-32-32s14.4-32 32-32 32 14.4 32 32-14.4 32-32 32zm272-224h37.5c4.3 0 8.3 1.7 11.3 4.7l43.3 43.3H480v-48zm48 224c-17.6 0-32-14.4-32-32s14.4-32 32-32 32 14.4 32 32-14.4 32-32 32z"></path></svg></span> --}}
+                                <i class="fas fa-truck-moving text-dark logo-text "></i>
+                                    <span class="logo-text">{{ __('front.mora') }}</span>
+
                             </a>
                         </div>
                         <!-- #logo-inner -->
@@ -24,6 +34,7 @@
                                 <li>
                                     <a  href="{{ route('front.index') }}">{{ __('front.home') }}</a>
                                 </li>
+
                                 <li class="has-dropdown">
                                     <a href="#"> {{ __('front.services') }}</a>
 
@@ -129,7 +140,7 @@
                                             <span class="icon ">
                                                 <i class="icon-bell"></i>
                                                 <span class="badge notif-count"
-                                                 data-count="{{ \App\Models\Usernoti::count() }}" >
+                                                 data-count="{{ \App\Models\Usernoti::count() }}" >{{ \App\Models\Usernoti::count() }}
                                                 </span>
                                             </span>
                                         </a>
@@ -151,16 +162,16 @@
                                         <ul class="dropdown-notification scrollable-container" >
 
                                             <li class="header">notifications(<span class="notif-count">{{ \App\Models\Usernoti::count() }}</span>)</li>
-                                            @foreach (\App\Models\Usernoti::all() as $noti)
-                                            <li>
-                                                <a href="#">
-                                                    <strong>{{ $noti->price }}</strong>
-                                                </a>
-                                            </li>
+                                            @foreach (\App\Models\Usernoti::orderByDesc('id')->take(5)->get() as $noti)
+                                                <li>
+                                                    <a href="#">
+                                                        <strong>{{ $noti->price }}</strong>
+                                                    </a>
+                                                </li>
                                             @endforeach
 
                                         </ul>
-                                        </li>
+                                    </li>
 
                                 @endauth
                             </ul>

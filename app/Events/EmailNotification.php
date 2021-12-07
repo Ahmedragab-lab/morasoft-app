@@ -15,16 +15,19 @@ class EmailNotification  implements ShouldBroadcast
 {
     use Dispatchable, InteractsWithSockets, SerializesModels;
 
+    public $contact;
     public $userid;
+    public $username;
     public $sms;
     public $date;
     public $time;
 
 
-    public function __construct($data = [])
+    public function __construct($contact)
     {
-        $this->userid = $data['user_id'];
-        $this->sms = $data['sms'];
+        $this->userid = $contact->id;
+        $this->username = $contact->name;
+        $this->sms = $contact->sms;
         $this->date = date("Y-m-d", strtotime(Carbon::now()));
         $this->time = date("h:i A", strtotime(Carbon::now()));
     }
@@ -32,12 +35,12 @@ class EmailNotification  implements ShouldBroadcast
 
     public function broadcastOn()
     {
-        return new Channel('new_email');
-        // return ['new_email'];
+        // return new Channel('new_email');
+        return ['new_email'];
     }
-    public function broadcastAs()
-    {
-        return 'EmailNotification';
+    // public function broadcastAs()
+    // {
+    //     return 'EmailNotification';
 
-    }
+    // }
 }
