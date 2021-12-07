@@ -84,10 +84,10 @@ class OrderDetailController extends Controller
       public function searchtrackstep(Request $request)
         {
             $order_no = $request->input('order_no');
-            $order = UserReqest::where('order_no',$order_no)->first();
+            $order = UserReqest::where('order_no',$order_no)->where('user_id',Auth::user()->id)->first();
             if($order){
                 $order_step = OrderDetail::where('order_id',$order->id)->first();
-                return response()->view('site.pages.order-steps',compact('order_step'));
+                return response()->view('site.pages.order-step',compact('order_step'));
             }else{
                 return redirect()->back()->with('status',"this number is wrong");
             }
