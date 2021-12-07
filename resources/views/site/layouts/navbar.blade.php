@@ -1,6 +1,6 @@
-<div id="header-wrap" class="is-clearfix">
-    <header id="header" class="site-header">
-        <div id="header-inner" class="site-header-inner container">
+<div id="header-wrap" class="is-clearfix shadow">
+    <header id="header" class="site-header shadow">
+        <div id="header-inner" class="site-header-inner container ">
             <div class="level">
                 <div class="level-left">
                     <div id="header-logo" class="site-logo ">
@@ -60,11 +60,11 @@
                                     <a href="#"> اشحن اونلاين</a>
                                     <ul class="dropdown">
                                         <li>
-                                            <a href="{{ url('/reserveServ') }}" >
+                                            <a href="#order" >
                                               <i class=" far fa-address-card"></i> قدم طلبك
                                             </a>
                                         </li>
-                                        <li><a href="#"><i class=" far fa-comment-dots"></i> تتبع الشحنة</a></li>
+                                        <li><a href="#tracking"><i class=" far fa-comment-dots"></i> تتبع الشحنة</a></li>
                                     </ul>
                                 </li>
                                 @guest
