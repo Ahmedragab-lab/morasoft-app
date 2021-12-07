@@ -44,7 +44,7 @@
                                 <td>{{ $Setting->LinLink }}</td>
                                 <td>{{ $Setting->YoutubeLink }}</td>
                                 <td>
-                                    <img src="{{ asset('uploads/Setting/'.$Setting->logo) }}" class="img-thumbnail" width="70" alt="">
+                                    <img src="{{ asset('uploads/settings/'.$Setting->image) }}" class="img-thumbnail" width="70" alt="">
                                 </td>
                                 <td>
                                      {{-- <form action="{{ route('agreements.destroy', $agreement->id) }}" method="post"> --}}

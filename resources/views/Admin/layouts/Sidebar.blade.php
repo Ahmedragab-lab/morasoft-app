@@ -117,14 +117,7 @@
                         </span>
                     </a>
                 </li>
-                <li>
-                    <a href="{{ route('tracking_steps.index') }}" class="waves-effect">
-                        <i class=" far fa-bell"></i>
-                        <span>{{ trans('site.tracking-steps') }}
-                            <span class="badge badge-success badge-pill float-right"></span>
-                        </span>
-                    </a>
-                </li>
+
                 <li>
                     <a href="{{ route('cartitems.index') }}" class="waves-effect">
                         <i class="far fa-comment-dots"></i>
@@ -136,7 +129,7 @@
                 <li>
                     <a href="{{ route('orders.index') }}" class="waves-effect">
                         <i class="far fa-comment-dots"></i>
-                        <span>{{ trans('site.orders') }}
+                        <span>اسأل عن السعر
                             <span class="badge badge-success badge-pill float-right"></span>
                         </span>
                     </a>

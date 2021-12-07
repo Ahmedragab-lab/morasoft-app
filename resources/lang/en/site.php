@@ -35,6 +35,7 @@ return [
    'categories'=>'Categories',
    'Products'=>'Products',
    'serv'=>'Services',
+   'agreement' => 'Agreements',
    'tracking-steps'=>'Tracking Steps',
    'feedback'=>'Client Feedback',
    'settings'=>'Settings',
@@ -45,8 +46,23 @@ return [
 'event_title_en'=>'Event Title',
 'agreement_title'=>'Agreement Title',
 'agreement_title_en'=>'Agreement Title',
-'event_title'=>'event title',
+
+// ====== Start Event Translation =====
+
+'event_title'=>'Event Title',
+'event_title_ar' => 'Event Title AR',
+'event_title_en' => ' Event Title EN',
+'enter_event_title_ar' => 'Enter Event Title AR',
+'enter_event_title_en' => 'Enter Event Title EN',
 'event_limit'=>'event limit ',
+'enter_event_limit'=>'Enter Event Limit ',
+'add_event' => 'Add Event',
+'edit_event' => 'Edit Event',
+'table_event' => 'Table Event',
+
+// ====== End Event Translation =====
+
+
 'services'=>'Services',
 'services_page'=>'Services Page',
 'Add_Service'=>'Add Service',
@@ -133,6 +149,7 @@ return [
 
 
 // start Company page translation
+'CompName'=> ' Company Name ',
 'CompNameAR'=> 'Company Name AR ',
 'CompNameEN'=> 'Company Name EN ',
 'CompDescription' => ' CompDescription ',
@@ -182,5 +199,42 @@ return [
 'Update_Settings' => ' Update Settings ',
 
 // ======= End Setting Page =========
+
+
+
+// ======= Start Products Page =========
+
+'product_name' => 'Product Name',
+'product_name_en' => '؛roduct Pme EN',
+'enter_product_name_ar' => 'Enter Product Name AR',
+'enter_product_name_en' => 'Enter Product Name EN',
+'original_Price' => 'Original Price',
+'selling_Price' => 'Selling Price',
+'qty' => 'Quantity',
+'tax'=> 'Tax',
+'add_product' => 'Add Product',
+'slug' => 'Slug',
+'small_description' => 'Small Description',
+'select_section'=> 'Select The Section',
+'trending' => 'Trend',
+
+// ======= End Products Page =========
+
+
+// ======= Start Agreements Page =========
+
+'agreement_table' => 'Agreements Table',
+'add_agreement' => 'Add Agreement',
+'edit_agreement' => 'Edit Agreement',
+'agreement_title' => 'Agreement Title',
+'agreement_title_ar' => 'Agreement Title AR',
+'agreement_title_en' => 'Agreement Title EN',
+'enter_agreement_title_ar' => ' Enter Agreement Title AR',
+'enter_agreement_title_en' => 'Enter Agreement Title EN',
+
+// ======= End Agreements Page =========
+
+
+
 
 ];

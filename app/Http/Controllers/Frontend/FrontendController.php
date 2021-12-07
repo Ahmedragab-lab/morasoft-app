@@ -28,13 +28,10 @@ class FrontendController extends Controller
         $Last_comp=Company::orderBy('id','DESC')->first();
         $Last_product=Product::orderBy('id','DESC')->first();
 
-        $settings = Setting::first();
-
+        $settings = Setting::get();
 
 
         // $allevents = Event::orderBy('id','DESC')->get();
-
-
 
         // $events=Event::all()->last();
          $Last_service = Service::orderBy('id','DESC')->first();

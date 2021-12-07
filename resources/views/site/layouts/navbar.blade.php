@@ -9,7 +9,7 @@
                                 <img alt="Joo - Niche Multi-Purpose HTML Template"
                                     src="{{ asset('front/images/logo/logo2.png') }}">
                                 {{-- <span class="logo-text">{{ $settings->comp_name }}</span> --}}
-                                <span class="logo-text">شركة مورا سوفت</span>
+                                {{-- <span class="logo-text">شركة مورا سوفت</span> --}}
                             </a>
                         </div>
                         <!-- #logo-inner -->

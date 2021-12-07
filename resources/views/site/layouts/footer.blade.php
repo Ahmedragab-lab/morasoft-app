@@ -168,6 +168,23 @@
           </div>
           <!-- .column -->
 
+{{--
+          <li class="has-dropdown">
+            <a href="#"> {{ __('front.sections') }}</a>
+            <ul class="dropdown">
+                @foreach (\App\Models\Section::where('status','1')->get() as $section)
+                <li><a href="{{ route('allsections.show',$section->id) }}">{{$section->section_name}}</a></li>
+                @endforeach
+            </ul>
+        </li> --}}
+
+
+
+        {{-- <p> {{ \App\Models\setting->city }} --}}
+
+
+
+
           <div class="column is-4">
             <div class="widget widget-form">
 
@@ -175,7 +192,7 @@
 
                 <a href="#">Address</a>
                 </h3>
-                {{-- <p> {{ $settings->city }},
+                {{-- <p> {{ $settings->city }}
 
                 <br> {{ $settings->country }}</p> --}}
 

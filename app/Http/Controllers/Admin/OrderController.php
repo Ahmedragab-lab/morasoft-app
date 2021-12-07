@@ -84,11 +84,11 @@ class OrderController extends Controller
             $userrequest = UserReqest::latest()->first();
             Notification::send($user,new AdminPrice($userrequest));
 
-<<<<<<< HEAD
 
-=======
+
+
             $u = User::where('id',$order_price->user_id)->get();
->>>>>>> master
+
             $data=[
                 'user_id'=>$u,
                 'price'=>$order_price->price,

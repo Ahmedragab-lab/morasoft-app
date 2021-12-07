@@ -5,14 +5,14 @@
     <div class="col-lg-9">
         <div class="card m-b-30">
             <div class="card-body">
-                <h4 class="mt-0 header-title">{{ __('site.Add_product') }}</h4>
+                <h4 class="mt-0 header-title">{{ __('site.add_product') }}</h4>
                 <a class="btn btn-primary btn-sm" style="margin: 10px;" href="{{ route('products.index') }}">{{ __('site.back') }}</a>
                 <form class="" action="{{route('products.store')}}" method="post" enctype="multipart/form-data">
                     {{csrf_field()}}
                     <div class="form-group">
                         <label>{{ __('site.section_name') }}</label>
                         <select class="form-control" name="section_id" >
-                            <option value="" > ---- Select a section ----</option>
+                            <option value="" > ---- {{ __('site.select_section') }} ----</option>
                             @foreach ( $sections as $section)
                                  <option value="{{ $section->id }}">{{ $section->section_name }}</option>
                             @endforeach
@@ -20,11 +20,11 @@
                     </div>
                     <div class="form-group">
                         <label>{{ __('site.product_name') }}</label>
-                        <input type="text" class="form-control" required placeholder="ادخل اسم المنتج" name="product_name" />
+                        <input type="text" class="form-control" required placeholder="{{ __('site.enter_product_name_ar') }}" name="product_name" />
                     </div>
                     <div class="form-group">
                         <label>{{ __('site.product_name_en') }}</label>
-                        <input type="text" class="form-control" required placeholder="Enter product name " name="product_name_en" />
+                        <input type="text" class="form-control" required placeholder="{{ __('site.enter_product_name_en') }}" name="product_name_en" />
                     </div>
                     <div class="form-group">
                         <label>{{ __('site.slug') }}</label>
@@ -43,11 +43,11 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <label>{{ __('site.original_price') }}</label>
+                        <label>{{ __('site.original_Price') }}</label>
                         <input type="text" class="form-control"  name="original_price" />
                     </div>
                     <div class="form-group">
-                        <label>{{ __('site.selling_price') }}</label>
+                        <label>{{ __('site.selling_Price') }}</label>
                         <input type="text" class="form-control"  name="selling_price" />
                     </div>
                     <div class="form-group">

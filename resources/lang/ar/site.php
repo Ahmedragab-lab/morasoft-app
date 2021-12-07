@@ -31,7 +31,7 @@ return [
    'Products'=>'المنتجات',
    'serv'=>'الخدمات',
    'event'=>'الاخبار',
-   'agreement'=>'الاتفاقيات',
+   'agreement' => 'الاتفاقيات',
    'tracking-steps'=>'خطوات تتبع الشحنه',
    'feedback'=>'تقييم العملاء',
    'settings'=>'الإعدادات',
@@ -46,10 +46,23 @@ return [
 'Service_name'=>'اسم الخدمه',
 'Enter_Service_name_ar'=>' أدخل اسم الخدمه بالعربية',
 'Enter_Service_name_en'=>' أدخل اسم الخدمه بالانجليزية',
+
+// ====== Start Event Translation =====
 'event_title'=>'عنوان الخبر',
+'event_title_ar' => ' عنوان الخبر بالعربية',
+'event_title_en' => ' عنوان الخبر بالانجليزية',
+'enter_event_title_ar' => ' أدخل عنوان الخبر بالعربية',
+'enter_event_title_en' => 'أدخل عنوان الخبر بالانجليزية',
 'event_limit'=>'مختصر الخبر',
+'enter_event_limit'=>'أدخل مختصر الخبر',
+'add_event' => 'اضافة خبر',
+'edit_event' => 'تعديل الخبر',
+'table_event' => 'جدول الاخبار',
 'description'=>'الوصف',
 'status'=>'الحاله',
+
+// ====== End Event Translation =====
+
 'checkstatus'=>'إختر الحاله',
 'enterName'=>'أدخل الاسم',
 'enterEmail'=>'أدخل الايميل',
@@ -127,6 +140,7 @@ return [
 //*********************** */
 
 // start Company page translation
+'CompName'=> ' اسم الشركة ',
 'CompNameAR'=> ' اسم الشركة بالعربية',
 'CompNameEN'=> ' اسم الشركة بالانجليزية',
 'CompDescription' => 'نبذة ',
@@ -175,8 +189,42 @@ return [
 'logo' => 'شعار الشركة',
 'Update_Settings' => 'تعديل الاعدادات ',
 
-
 // ======= End Setting Page =========
+
+
+
+
+// ======= Start Products Page =========
+
+'product_name' => 'اسم المنتج',
+'product_name_en' => 'اسم المنتج بالانجليزية',
+'enter_product_name_ar' => 'ادخل اسم المنتج بالعربية',
+'enter_product_name_en' => 'ادخل اسم المنتج بالانجليزية',
+'original_Price' => 'السعر الاصلي',
+'selling_Price' => 'سعر البيع',
+'qty' => 'الكمية',
+'tax'=> 'الضريبة',
+'add_product' => 'اضافة منتج',
+'slug' => 'النوع',
+'small_description' => 'وصف مختصر',
+'select_section'=> 'اختر القسم',
+'trending' => 'تريند',
+
+// ======= End Products Page =========
+
+
+// ======= Start Agreements Page =========
+
+'agreement_table' => 'جدول الاتفاقيات',
+'add_agreement' => 'اضافة اتفاقية',
+'edit_agreement' => 'تعديل الاتفاقية',
+'agreement_title' => 'عنوان الاتفاقية',
+'agreement_title_ar' => 'عنوان الاتفاقية بالعربية',
+'agreement_title_en' => 'عنوان الاتفاقية بالانجليزية',
+'enter_agreement_title_ar' => ' ادخل عنوان الاتفاقية بالعربية',
+'enter_agreement_title_en' => ' ادخل عنوان الاتفاقية بالانجليزية',
+
+// ======= End Agreements Page =========
 
 
 ];

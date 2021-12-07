@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\StoreSetting;
 use App\Http\Traits\AttachFilesTrait;
 use App\Models\Setting;
 use Illuminate\Support\Facades\File;
@@ -34,29 +35,30 @@ class SettingController extends Controller
 
     public function edit($id)
     {
-        $settings = Setting::find($id);
-        return view('Admin.setting.update',compact('settings'));
+        $settings = Setting::findorfail($id);
+        return view('Admin.setting.edit',compact('settings'));
     }
 
 
     public function update(Request $request, $id){
 
         try{
-         //   $validated = $request->validated();
-            $settings = Setting::find($id);
+            $validated = $request->validated();
+            $settings = Setting::findorfail($id);
             if($request->hasFile('image')){
-                $path = 'uploads/event/' . $settings->image;
+                $path = 'uploads/settings/' . $settings->image;
                 if(File::exists($path)){
                     File::delete($path);
                 }
                 $file = $request->file('image');
                 $ext  = $file->getClientOriginalExtension();
                 $filename = time() . '.' . $ext ;
-                $file->move('uploads/serv',$filename);
+                $file->move('uploads/settings',$filename);
                 $settings->image = $filename;
             }
 
             $settings->comp_name = $request->comp_name;
+            $settings->about = $request->about;
             $settings->phone1 = $request->phone1;
             $settings->phone2 = $request->phone2;
             $settings->country = $request->country;
@@ -66,10 +68,16 @@ class SettingController extends Controller
             $settings->FBLink = $request->FBLink;
             $settings->LinLink = $request->LinLink;
             $settings->YoutubeLink = $request->YoutubeLink;
-            $settings->update();
+            $settings->save();
 
+            toastr()->success(trans('messages.Update'));
+            return back();
+        }
+        catch (\Exception $e){
 
-
+            return redirect()->back()->with(['error' => $e->getMessage()]);
+        }
+    }
             // $info = $request->except('_token', '_method', 'logo');
             // foreach ($info as $key=> $value){
             //     Setting::where('key', $key)->update(['value' => $value]);
@@ -90,15 +98,15 @@ class SettingController extends Controller
             //     $this->uploadFile($request,'logo','logo');
             // }
 
-            toastr()->success(trans('messages.Update'));
-            return back();
-        }
-        catch (\Exception $e){
+            // toastr()->success(trans('messages.Update'));
+            // return back();
+        // }
+        // catch (\Exception $e){
 
-            return redirect()->back()->with(['error' => $e->getMessage()]);
-        }
+        //     return redirect()->back()->with(['error' => $e->getMessage()]);
+        // }
 
-    }
+    // }
         //https://github.com/spatie/valuestore
         // يأتي ينشئ ملف
         // config->settings.json

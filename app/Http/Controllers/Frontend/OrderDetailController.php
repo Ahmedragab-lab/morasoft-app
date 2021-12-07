@@ -52,20 +52,6 @@ class OrderDetailController extends Controller
     public function show($id)
     {
         $order_details = UserReqest::where('id',$id)->first();
-<<<<<<< HEAD
-        return view('site.pages.order-details',compact('order_details'));
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\OrderDetail  $orderDetail
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(OrderDetail $orderDetail)
-    {
-        //
-=======
 
         return view('site.pages.order-details',compact('order_details'));
     }
@@ -75,7 +61,7 @@ class OrderDetailController extends Controller
     {
         $order_step = OrderDetail::where('order_id',$id)->first();
         return view('site.pages.order-steps',compact('order_step'));
->>>>>>> master
+
     }
 
 

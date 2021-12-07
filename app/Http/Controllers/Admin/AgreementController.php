@@ -17,13 +17,10 @@ class AgreementController extends Controller
     }
 
 
-
-
     public function create()
     {
         return view('admin.agreements.create');
     }
-
 
     public function store( StoreAgreement $request)
     {
@@ -59,7 +56,7 @@ class AgreementController extends Controller
 
     public function edit($id)
     {
-        $agreements = Agreement::find($id);
+        $agreements = Agreement::findorfail($id);
         return view('Admin.agreements.edit',compact('agreements'));
     }
 
@@ -68,7 +65,7 @@ class AgreementController extends Controller
     {
         try{
             $validated = $request->validated();
-            $agreement = Agreement::find($id);
+            $agreement = Agreement::findorfail($id);
             if($request->hasFile('image')){
                 $path = 'uploads/agreement/' . $agreement->image;
                 if(File::exists($path)){
@@ -83,7 +80,7 @@ class AgreementController extends Controller
             $agreement->agreement_title = ['en'=>$request->agreement_title_en ,'ar'=>$request->agreement_title];
             $agreement->desc = $request->desc;
             $agreement->status = $request->status==true?'1':'0';
-            $agreement->update();
+            $agreement->save();
             toastr()->success(__('Agreement update successfully'));
             return redirect()->route('agreements.index');
         }

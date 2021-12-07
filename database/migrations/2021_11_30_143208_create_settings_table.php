@@ -19,7 +19,7 @@ class CreateSettingsTable extends Migration
             // $table->string('value');
 
             $table->string('comp_name');
-            $table->text('about');
+            $table->longText('about');
             $table->string('phone1');
             $table->string('phone2');
             $table->string('country');
