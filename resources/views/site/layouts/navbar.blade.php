@@ -73,7 +73,7 @@
                                 @endguest
                                 @auth
                                     <li class="has-dropdown">
-                                        <a href="#"><img src={{ asset('uploads/user-img/'.Auth::user()->image) }} width="50" class="rounded-circle" >
+                                        <a href="#"><img src={{ asset('uploads/user-img/'.Auth::user()->image) }} width="30" class="rounded-circle" >
                                              {{ \Str::limit(auth()->user()->fname, 10) }}
                                         </a>
                                         <ul class="dropdown">
