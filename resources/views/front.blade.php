@@ -59,33 +59,6 @@
 
     <section id="tracking" class="section tracking-section is-clearfix">
         <div class="container">
-<<<<<<< HEAD
-            <p class="heading-title-top has-text-centered">tracking</p>
-            <h1 class="heading-title style-3">track your shipment</h1>
-            <div class="columns is-mobile is-centered">
-                <div class="column is-10" data-aos="fade-up">
-                    <div class="subscribe-form style-1">
-                        <form>
-                            <div class="field has-addons has-addons-centered is-grouped">
-                                <div class="control">
-                                    <input class="input" type="text" placeholder="Type your tracking number">
-                                </div>
-                                <div class="control">
-                                    <a href="#" class="button">
-                                        <span>Track it</span>
-                                        <span class="icon is-small">
-                                            <i class="icon-target"></i>
-                                        </span>
-                                    </a>
-                                </div>
-                            </div>
-                        </form>
-                    </div>
-                    <p class="help"> separate multiple tracking numbers with a space or comma.
-                        <a href="#">Advanced Tracking</a>
-                    </p>
-                </div>
-=======
           <p class="heading-title-top has-text-centered">tracking</p>
           <h1 class="heading-title style-3">track your shipment</h1>
           <div class="columns is-mobile is-centered">
@@ -115,7 +88,6 @@
                   </span>Mora Soft.
                 <a href="#">Advanced Tracking</a>
               </p>
->>>>>>> 84d3812917dd48569795a80ef1ea9a7ecd5e8583
             </div>
         </div>
     </section>
