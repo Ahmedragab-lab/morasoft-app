@@ -40,11 +40,11 @@ class SettingController extends Controller
     }
 
 
-    public function update(Request $request, $id){
+    public function update($request ){
 
         try{
-            $validated = $request->validated();
-            $settings = Setting::findorfail($id);
+            // $validated = $request->validated();
+            $settings = Setting::findorfail($request->id);
             if($request->hasFile('image')){
                 $path = 'uploads/settings/' . $settings->image;
                 if(File::exists($path)){
@@ -56,7 +56,6 @@ class SettingController extends Controller
                 $file->move('uploads/settings',$filename);
                 $settings->image = $filename;
             }
-
             $settings->comp_name = $request->comp_name;
             $settings->about = $request->about;
             $settings->phone1 = $request->phone1;
@@ -68,7 +67,7 @@ class SettingController extends Controller
             $settings->FBLink = $request->FBLink;
             $settings->LinLink = $request->LinLink;
             $settings->YoutubeLink = $request->YoutubeLink;
-            $settings->save();
+            $settings->update();
 
             toastr()->success(trans('messages.Update'));
             return back();

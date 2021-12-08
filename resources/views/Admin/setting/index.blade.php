@@ -6,9 +6,7 @@
         <div class="card m-b-30">
             <div class="card-body">
                 <h4 class="mt-0 header-title">{{ __('site.settings') }}</h4>
-                {{-- <div class="col-md-6 mb-3">
-                    <a href="{{ route('settings.update') }}"  class="btn btn-primary btn-block"><i class="fa fa-user-circle"></i> Update Event</a>
-                </div> --}}
+               
                 <div class="table-responsive">
                     <table class="table table-striped mb-0">
                         <thead>
