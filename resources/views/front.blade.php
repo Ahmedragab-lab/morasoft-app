@@ -325,18 +325,22 @@
                                 <a href="./blog/single.html">{{ $Last_service->serve_name }}</a>
                             </h2>
                             <p>{{ $Last_service->desc }}</p>
+
                             </div>
                              <div class="entry-footer">
+
                             <a href="{{ route('lastservice.showlast', $Last_service->id) }}" class="button">اقرأ
                                 المزيد</a>
                         </div>
                     </article>
                     <!-- .blog-post -->
                 </div>
+
                         </div>
                       </div>
                     </div>
                 </section>
+
 
     {{-- ********** Start News ************ --}}
 
@@ -346,7 +350,7 @@
 
     {{-- Asmaa Client feedback --}}
     <section>
-       
+
             <p class="heading-title-top has-text-centered">آراء العملاء</p>
             <h1 class="heading-title style-3">قالوا عنا</h1>
         <div id="carouselFeedback" class="carousel slide " data-bs-ride="carousel">
@@ -374,9 +378,9 @@
                 </div>
                 @endforeach
 
-            
+
             </div>
-           
+
             <button class="carousel-control-prev" type="button" data-bs-target="#carouselFeedback" data-bs-slide="prev">
                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                 <span class="visually-hidden">Previous</span>
@@ -385,9 +389,9 @@
                 <span class="carousel-control-next-icon" aria-hidden="true"></span>
                 <span class="visually-hidden">Next</span>
               </button>
-             
+
         </div>
-       
+
     </section>
 
     {{-- start client feedback --}}
