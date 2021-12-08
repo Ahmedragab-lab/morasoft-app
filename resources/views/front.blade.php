@@ -206,7 +206,7 @@
         </div>
     </section>
 
-    <section id="tracking-steps" class="section tracking-steps-section is-clearfix">
+    {{-- <section id="tracking-steps" class="section tracking-steps-section is-clearfix">
         <div class="container">
             <p class="heading-title-top has-text-centered">tracking</p>
             <h1 class="heading-title style-3">how we work</h1>
@@ -225,6 +225,7 @@
                     <div class="step-details">
                         <p class="step-title">lorem ipsum dolor</p>
                         <p>Lorem ipsum dolor sit amet nulla varius lectus.</p>
+                        
                     </div>
                 </div>
                 <div class="step-item" data-step-id="2">
@@ -243,7 +244,7 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> --}}
 
 
     {{-- ********** Start Events ************ --}}
@@ -324,19 +325,21 @@
                                 <a href="./blog/single.html">{{ $Last_service->serve_name }}</a>
                             </h2>
                             <p>{{ $Last_service->desc }}</p>
-                        </div>
 
-                        <div class="entry-footer">
+                            </div>
+                             <div class="entry-footer">
+
                             <a href="{{ route('lastservice.showlast', $Last_service->id) }}" class="button">اقرأ
                                 المزيد</a>
                         </div>
                     </article>
                     <!-- .blog-post -->
                 </div>
-            </div>
-        </div>
-    </section>
 
+                        </div>
+                      </div>
+                    </div>
+                </section>
 
 
     {{-- ********** Start News ************ --}}
@@ -365,10 +368,12 @@
                 <div class="carousel-item feedback @if($loop->first) active @endif h-2" data-bs-interval="1500">
                     <img src="{{asset('assets/images/globebannermobile.jpg')}}" class="d-block w-100 " style="height:500px" alt="...">
                     <div class="carousel-caption feedback-caption d-none d-md-block">
-                        <img src="{{ asset('uploads/user-img/' . $feedback->users->image) }}" width="150" height="150" class="img-area rounded-circle h-5" alt="...">
+                        <img src="{{ asset('uploads/user-img/' . $feedback->users->image) }}" width="150" height="150" class="img-area rounded-circle h-5 img-profil " alt="...">
 
-                        <h3>Second slide label</h3>
-                        <p>Some representative placeholder content for the second slide.</p>
+                        <h1 class="text-light  py-2  ">{{ $feedback->users->fname }}   {{$feedback->users->lname}} </h1>
+                    
+                        <label class="feed-service">{{ $feedback->services->serve_name }}   Service</label>
+                        <p>{{ $feedback->feedback }}</p>
                     </div>
                 </div>
                 @endforeach
