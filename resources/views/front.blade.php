@@ -1,7 +1,7 @@
 @extends('site.layouts.master')
 @section('title') mora soft company @endsection
 @section('css')
-<link href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.css">
     <meta name="csrf-token" content="{{ csrf_token() }}">
 @endsection
 @section('navslider')
@@ -59,37 +59,38 @@
 
     <section id="tracking" class="section tracking-section is-clearfix">
         <div class="container">
-          <p class="heading-title-top has-text-centered">tracking</p>
-          <h1 class="heading-title style-3">track your shipment</h1>
-          <div class="columns is-mobile is-centered">
-            <div class="column is-10" >
-              <div class="subscribe-form style-1">
-                <form method="post" action="{{ route('searchtrackstep') }}">
-                    @csrf
-                    <div class="field has-addons has-addons-centered is-grouped">
-                        <div class="control">
-                        <input class="input" type="text" placeholder="Type your order number" name="order_no" required autocomplete="off">
-                        </div>
-                        <div class="control">
-                        {{-- <a href="" class="button" type="submit">
+            <p class="heading-title-top has-text-centered">tracking</p>
+            <h1 class="heading-title style-3">track your shipment</h1>
+            <div class="columns is-mobile is-centered">
+                <div class="column is-10">
+                    <div class="subscribe-form style-1">
+                        <form method="post" action="{{ route('searchtrackstep') }}">
+                            @csrf
+                            <div class="field has-addons has-addons-centered is-grouped">
+                                <div class="control">
+                                    <input class="input" type="text" placeholder="Type your order number"
+                                        name="order_no" required autocomplete="off">
+                                </div>
+                                <div class="control">
+                                    {{-- <a href="" class="button" type="submit">
                             <span class="tracking_search">Track it</span>
                             <span class="icon is-small">
                             <i class="icon-target"></i>
                             </span>
                         </a> --}}
-                        <input type="submit" value="Track it" class="button" >
-                        </div>
+                                    <input type="submit" value="Track it" class="button">
+                                </div>
+                            </div>
+                        </form>
                     </div>
-                </form>
-              </div>
-              <p class="help"> with best regardes
-                  <span class="icon is-small">
-                     <i class="icon-target"></i>
-                  </span>Mora Soft.
-                <a href="#">Advanced Tracking</a>
-              </p>
+                    <p class="help"> with best regardes
+                        <span class="icon is-small">
+                            <i class="icon-target"></i>
+                        </span>Mora Soft.
+                        <a href="#">Advanced Tracking</a>
+                    </p>
+                </div>
             </div>
-        </div>
     </section>
     {{-- services section --}}
     <section id="services" class="section services-section has-background-primary-light is-clearfix">
@@ -325,18 +326,18 @@
                                 <a href="./blog/single.html">{{ $Last_service->serve_name }}</a>
                             </h2>
                             <p>{{ $Last_service->desc }}</p>
-                            </div>
-                             <div class="entry-footer">
+                        </div>
+                        <div class="entry-footer">
                             <a href="{{ route('lastservice.showlast', $Last_service->id) }}" class="button">اقرأ
                                 المزيد</a>
                         </div>
                     </article>
                     <!-- .blog-post -->
                 </div>
-                        </div>
-                      </div>
-                    </div>
-                </section>
+            </div>
+        </div>
+        </div>
+    </section>
 
     {{-- ********** Start News ************ --}}
 
@@ -346,9 +347,9 @@
 
     {{-- Asmaa Client feedback --}}
     <section>
-       
-            <p class="heading-title-top has-text-centered">آراء العملاء</p>
-            <h1 class="heading-title style-3">قالوا عنا</h1>
+
+        <p class="heading-title-top has-text-centered">آراء العملاء</p>
+        <h1 class="heading-title style-3">قالوا عنا</h1>
         <div id="carouselFeedback" class="carousel slide " data-bs-ride="carousel">
             {{-- <div class="carousel-indicators">
                 <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"
@@ -361,33 +362,36 @@
             <div class="carousel-inner ">
                 @foreach (\App\Models\Feedback::orderBy('id', 'DESC')->limit(15)->get()
         as $feedback)
-                <div class="carousel-item feedback @if($loop->first) active @endif h-2" data-bs-interval="1500">
-                    <img src="{{asset('assets/images/globebannermobile.jpg')}}" class="d-block w-100 " style="height:500px" alt="...">
-                    <div class="carousel-caption feedback-caption d-none d-md-block">
-                        <img src="{{ asset('uploads/user-img/' . $feedback->users->image) }}" width="150" height="150" class="img-area rounded-circle h-5 img-profil " alt="...">
+                    <div class="carousel-item feedback @if ($loop->first) active @endif h-2" data-bs-interval="1500">
+                        <img src="{{ asset('assets/images/globebannermobile.jpg') }}" class="d-block w-100 "
+                            style="height:500px" alt="...">
+                        <div class="carousel-caption feedback-caption d-none d-md-block">
+                            <img src="{{ asset('uploads/user-img/' . $feedback->users->image) }}" width="150"
+                                height="150" class="img-area rounded-circle h-5 img-profil " alt="...">
 
-                        <h1 class="text-light  py-2  ">{{ $feedback->users->fname }}   {{$feedback->users->lname}} </h1>
-                    
-                        <label class="feed-service">{{ $feedback->services->serve_name }}   Service</label>
-                        <p>{{ $feedback->feedback }}</p>
+                            <h1 class="text-light  py-2  ">{{ $feedback->users->fname }} {{ $feedback->users->lname }}
+                            </h1>
+
+                            <label class="feed-service">{{ $feedback->services->serve_name }} Service</label>
+                            <p>{{ $feedback->feedback }}</p>
+                        </div>
                     </div>
-                </div>
                 @endforeach
 
-            
+
             </div>
-           
+
             <button class="carousel-control-prev" type="button" data-bs-target="#carouselFeedback" data-bs-slide="prev">
                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                 <span class="visually-hidden">Previous</span>
-              </button>
-              <button class="carousel-control-next" type="button" data-bs-target="#carouselFeedback" data-bs-slide="next">
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselFeedback" data-bs-slide="next">
                 <span class="carousel-control-next-icon" aria-hidden="true"></span>
                 <span class="visually-hidden">Next</span>
-              </button>
-             
+            </button>
+
         </div>
-       
+
     </section>
 
     {{-- start client feedback --}}
@@ -397,7 +401,7 @@
             <h1 class="heading-title style-3">قالوا عنا</h1>
             <div class="testimonials  owl-carousel dots carousel-items-3 columns-style-1 ">
                 @foreach (\App\Models\Feedback::orderBy('id', 'DESC')->limit(3)->get()
-        as $feedback)
+    as $feedback)
                     <div class="testimonials-item">
                         <p>{{ $feedback->feedback }}</p>
                         <img alt="no photo" src="{{ asset('uploads/user-img/' . $feedback->users->image) }}">
@@ -413,7 +417,7 @@
     {{-- end client feedback --}}
     {{-- anthor form --}}
     <section id="quote" class="section quote-section padding-bottom-none is-clearfix">
-        <div id="order" class="container" >
+        <div id="order" class="container">
             <div class="columns is-variable is-2 is-multiline">
                 <div class="column is-6-desktop is-12-tablet">
                     <h1 class="heading-title style-3 has-text-left"> Ask for

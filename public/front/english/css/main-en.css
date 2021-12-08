@@ -157,7 +157,7 @@ fa-bell{
     left: 0;
     right: 0;
     background-color: #000;
-    opacity: .5;
+    opacity: .7;
 }
 .carousel-caption{
     bottom: 200px;
@@ -178,7 +178,7 @@ font-family: 'Poppins', sans-serif;
     margin: auto;
     width: 60%;
     line-height: 1.9;
-    color: aliceblue;
+    color: white;
 }
 .slider-btn{
     margin-top: 30px;
@@ -247,7 +247,7 @@ img-area{
   .carousel-caption p{
     font-size: 1.5rem;
     font-weight: 200px;
-    color: #d6d2d1 !important;
+    /* color: #d6d2d1 !important; */
     margin-top: 2px;
   }
   .carousel-caption  .feed-service{
@@ -266,3 +266,11 @@ img-area{
     padding-left: 100px;
     padding-right: 100px;
   }
+
+
+  /* contact */
+
+  .icon-media{
+      color:#cf5029 !important ;
+  }
+  

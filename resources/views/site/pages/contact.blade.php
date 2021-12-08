@@ -8,30 +8,32 @@
         <div id="content-area" class="site-content-area">
         <div id="content-area-inner" class="site-content-area-inner">
             <!-- contact-form section -->
-            <section class="section contact-form is-clearfix">
-            <div class="container">
-                <p class="heading-title-top has-text-centered">contact us</p>
-                <h1 class="heading-title style-3">How we can help</h1>
+            <section class="section contact-form is-clearfix mt-4">
+            <div class="container m-auto ">
+                <div class="m-auto text-center ">
+                <h1 class=" mt-5 pb-0  mb-0 text-center p-2 "style="font-size:40px;font-weight:bold">contact us</h1>
+                </div>
+                <p class=" my-3 pb-0  text-center  ">How we can help</p>
                 <div class="has-text-centered">
                 <div class="global-social-links style-1">
                     <ul>
                     <li>
                         <a href="https://www.facebook.com/samir.gamal77">
-                        <span class="icon">
+                        <span class="icon icon-media shadow">
                             <i class="fab fa-facebook-f"></i>
                         </span>
                         </a>
                     </li>
                     <li>
                         <a href="https://www.linkedin.com/in/samir-gamal-8ab68ba0/">
-                        <span class="icon">
+                        <span class="icon icon-media shadow">
                             <i class="fab fa-linkedin"></i>
                         </span>
                         </a>
                     </li>
                     <li>
                         <a href="https://www.youtube.com/channel/UCwT_14y87y3tgR8AqMCxrRA">
-                        <span class="icon">
+                        <span class="icon icon-media shadow">
                             <i class="fab fa-youtube"></i>
                         </span>
                         </a>
@@ -45,7 +47,7 @@
                     </li> --}}
                     <li>
                         <a href="https://www.morasoft.net/">
-                        <span class="icon">
+                        <span class=" icon icon-media  shadow">
                             <i class="fab fa-google"></i>
                         </span>
                         </a>
@@ -65,7 +67,7 @@
                 <br>
                 <br>
                 <div class="columns is-multiline is-variable is-8">
-                <div class="column is-4">
+                <div class="column is-4 shadow">
                     <div class="columns is-variable is-4 is-multiline boxes-style-3">
                     <div class="column is-12" data-aos="fade">
                         <div class="box-item media">
@@ -127,7 +129,7 @@
                     </div>
                     <!-- .columns -->
                 </div>
-                <div class="column is-8">
+                <div class="column is-8 shadow">
                     <!-- successful form message -->
                     <div class="overhang-message-content is-hidden success">
                     <span class="icon">
@@ -140,15 +142,15 @@
                     </span> Oops! Something went wrong, we couldn't send your message. </div>
                     <!-- ajax contact form -->
                     <form accept-charset="UTF-8" id="ajaxform" class="ajax-contact-form" action="https://usebasin.com/f/3587049dbc33.json" method="POST">
-                        <div class="field is-horizontal">
+                        <div class="field is-horizontal ">
                             <div class="field-body">
-                                <div class="field">
+                                <div class="field  shadow">
                                     <div class="control is-expanded">
                                         <input type="hidden" name="userid" value="{{ auth()->user()->id }}">
                                         <input class="input" type="text" name="name"  readonly value="{{ auth()->user()->fname }} {{ auth()->user()->lname }} "> </div>
                                 </div>
                                 <!-- .field -->
-                                <div class="field">
+                                <div class="field  shadow">
                                     <div class="control is-expanded">
                                         <input class="input" type="text" name="address"  readonly value="{{ auth()->user()->address1 }}"> </div>
                                 </div>
@@ -159,12 +161,12 @@
                         <!-- .field -->
                         <div class="field is-horizontal">
                             <div class="field-body">
-                                <div class="field">
+                                <div class="field  shadow">
                                     <div class="control is-expanded">
                                         <input class="input" type="tel" name="phone" readonly value="{{ auth()->user()->phone }}"> </div>
                                 </div>
                                 <!-- .field -->
-                                <div class="field">
+                                <div class="field  shadow">
                                     <div class="control is-expanded">
                                         <input class="input" type="email" name="email" readonly value="{{ auth()->user()->email }}"> </div>
                                 </div>
@@ -174,14 +176,19 @@
                         </div>
                         <!-- .field -->
                         <div class="field ">
-                            <div class="control is-expanded">
+                            <div class="control is-expanded shadow">
                                 <textarea class="textarea" name="sms" placeholder="Your Message" required></textarea>
                             </div>
                         </div>
                         <!-- .field -->
-                        <div class="field ">
-                            <div class="control has-text-centered">
-                                <button class="button contact" type="submit" >Send message</button>
+                        <div class="field  ">
+                            <div class="control has-text-centered ">
+                                <button class="button contact rounded-pill shadow" type="submit" ><svg
+                                    xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                    class="bi bi-send-fill" viewBox="0 0 16 16">
+                                    <path fill-rule="evenodd"
+                                        d="M15.964.686a.5.5 0 0 0-.65-.65L.767 5.855H.766l-.452.18a.5.5 0 0 0-.082.887l.41.26.001.002 4.995 3.178 3.178 4.995.002.002.26.41a.5.5 0 0 0 .886-.083l6-15Zm-1.833 1.89.471-1.178-1.178.471L5.93 9.363l.338.215a.5.5 0 0 1 .154.154l.215.338 7.494-7.494Z" />
+                                </svg> Send message</button>
                             </div>
                         </div>
                         <!-- .field -->

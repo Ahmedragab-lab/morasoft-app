@@ -111,7 +111,7 @@
         <div class="carousel-item active">
             <img src="{{ asset('front/images/slider/8.jpg') }}" class="d-block w-100 animate__animated animate__fadeInTopLeft" style="animation-delay: 1000ms" alt="...">
             <div class="carousel-caption d-none d-md-block">
-                <h5 class="animate__animated animate__fadeInDown">First slide label</h5>
+                <h5 class="animate__animated animate__fadeInDown">Morasoft for International shipping</h5>
                 <p>Some representative placeholder content for the first slide.</p>
                 <div class="slider-btn">
                     <button class=" btn btn-1 animate__animated animate__slideInLeft" style="animation-delay: 1s"> See Our Services</button>
