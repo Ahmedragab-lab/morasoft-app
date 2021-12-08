@@ -38,13 +38,13 @@ body.header-transparent header {
 {
     color: #cf5029 !important;
 }
-.level .level-right  .menu .active >.nav-link,
+/* .level .level-right  .menu .active >.nav-link,
 .level .level-right  .menu .nav-link.active,
 .level .llevel-right .menu .nav-link.show,
 .level .level-right  .menu .show>.nav-link
 {
     color: #cf5029 !important;
-}
+} */
 
 .active{
     border-bottom: #cf5029;
