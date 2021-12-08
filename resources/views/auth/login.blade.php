@@ -52,6 +52,8 @@
                 <x-button class="ml-3">
                     {{ __('Log in') }}
                 </x-button>
+
+
             </div>
         </form>
     </x-auth-card>
@@ -92,7 +94,7 @@
 
   <!-- ======= Header ======= -->
   <header id="header" class="d-flex align-items-center">
-    <div class="container d-flex flex-column align-items-center">
+    <div class="container d-flex flex-column align-items-center ">
 
       <!-- <h1>ComingSoon</h1>
       <h2>We're working hard to improve our website and we'll ready to launch after</h2>
@@ -137,14 +139,15 @@
       </div>
       <x-guest-layout> -->
 
-
+    <div class="login-form p-4">
     <!-- Session Status -->
-    <x-auth-session-status class="mb-4" :status="session('status')" />
+    <x-auth-session-status class="mb-4 " :status="session('status')" />
 
     <!-- Validation Errors -->
     <x-auth-validation-errors class="mb-4" :errors="$errors" />
-       <h1>{{ __('auth.user') }}</h1>
-       <h3> <a href="{{ route('admin.login') }}"  class="btn btn-primary">if you are admin Please Login Form here</a></h3>
+       <h1>{{ __('auth.user') }}</h1><br>
+
+       <h3> <a href="{{ route('admin.login') }}"  class="btn btn-admin m-auto w-full">if you are admin Please Login Form here</a></h3>
         <br><br>
       <form method="POST" action="{{ route('login') }}">
         @csrf
@@ -184,10 +187,13 @@
             <x-button class="ml-3 ">
                 {{ __('Log in') }}
             </x-button>
+            <li class="btn-cta"><a href="/register" style="color:#fff"><span>Register</span></a></li>
         </div>
     </form>
+ 
 
 </x-guest-layout>
+</div>
     </div>
   </header><!-- End #header -->
 
@@ -234,7 +240,7 @@
         &copy; Copyright <strong><span>ComingSoon</span></strong>. All Rights Reserved
       </div>
       <div class="credits">
-        <!-- All the links in the footer should remain intact. -->
+         All the links in the footer should remain intact. -->
         <!-- You can delete the links only if you purchased the pro version. -->
         <!-- Licensing information: https://bootstrapmade.com/license/ -->
         <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/comingsoon-free-html-bootstrap-template/ -->
