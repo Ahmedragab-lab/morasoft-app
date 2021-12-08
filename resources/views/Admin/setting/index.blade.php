@@ -23,6 +23,7 @@
                                 <th>{{ __('site.FBLink') }}</th>
                                 <th>{{ __('site.LinLink') }}</th>
                                 <th>{{ __('site.YoutubeLink') }}</th>
+                                <th>{{ __('site.map') }}</th>
                                 <th>{{ __('site.logo') }}</th>
                             </tr>
                         </thead>
@@ -41,6 +42,7 @@
                                 <td>{{ $Setting->FBLink }}</td>
                                 <td>{{ $Setting->LinLink }}</td>
                                 <td>{{ $Setting->YoutubeLink }}</td>
+                                <td>{{ Str::limit($Setting->map,20) }}</td>
                                 <td>
                                     <img src="{{ asset('uploads/settings/'.$Setting->image) }}" class="img-thumbnail" width="70" alt="">
                                 </td>

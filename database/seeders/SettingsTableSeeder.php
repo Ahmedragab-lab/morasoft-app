@@ -18,17 +18,19 @@ class SettingsTableSeeder extends Seeder
         DB::table('settings')->delete();
         $settings = new Setting();
 
-        $settings->comp_name =  'MoraSoft Company';
+        $settings->comp_name =  'MoraSoft';
         $settings->about =  'شركة مورا سوفت لخدمات النقل والشحن بمختلف الطرق .. تعمل الشركة على خدمتك على مدار الساعة ونقل شحناتك وتوصيلها عبر أأمن الطرق وافضل الاسعار';
         $settings->phone1 = '111111111';
         $settings->phone2 = '222222222';
         $settings->country = 'المملكة العربية السعودية';
         $settings->city = 'مخرج 14 , طريق عمر بن عبدالعزيز , الرياض';
         $settings->email = 'admin@morasoft.net';
-        $settings->websiteLink =  'www.morasoft.net';
-        $settings->FBLink =  'www.morasoft.net';
-        $settings->LinLink = 'www.morasoft.net';
-        $settings->YoutubeLink =  'www.morasoft.net';
+        $settings->websiteLink =  'https://www.morasoft.net';
+        $settings->FBLink =  'https://www.facebook.com';
+        $settings->LinLink = 'https://ae.linkedin.com';
+        $settings->YoutubeLink =  'https://www.youtube.com';
+        $settings->map = 'https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d27231.420735041746!2d34.41045893742996!3d31.443660285671744!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sar!2s!4v1638996252818!5m2!1sar!2s';
+
         $settings->image= '1.jpg';
         $settings->save();
 
@@ -53,7 +55,7 @@ class SettingsTableSeeder extends Seeder
 
         // DB::table('settings')->insert($data);
 
-      
+
     }
 
 }

@@ -4,7 +4,8 @@
 @endsection
 @section('content')
 
-    <div id="content-main-wrap" class="is-clearfix">
+<div id="content-main-wrap" class="is-clearfix">
+    @foreach (\App\Models\Setting::get() as $settings )
         <div id="content-area" class="site-content-area">
         <div id="content-area-inner" class="site-content-area-inner">
             <!-- contact-form section -->
@@ -16,21 +17,21 @@
                 <div class="global-social-links style-1">
                     <ul>
                     <li>
-                        <a href="https://www.facebook.com/samir.gamal77">
+                        <a href="{{ $settings->FBLink }}">
                         <span class="icon">
                             <i class="fab fa-facebook-f"></i>
                         </span>
                         </a>
                     </li>
                     <li>
-                        <a href="https://www.linkedin.com/in/samir-gamal-8ab68ba0/">
+                        <a href="{{ $settings->LinLink }}">
                         <span class="icon">
                             <i class="fab fa-linkedin"></i>
                         </span>
                         </a>
                     </li>
                     <li>
-                        <a href="https://www.youtube.com/channel/UCwT_14y87y3tgR8AqMCxrRA">
+                        <a href="{{ $settings->YoutubeLink }}">
                         <span class="icon">
                             <i class="fab fa-youtube"></i>
                         </span>
@@ -44,7 +45,7 @@
                         </a>
                     </li> --}}
                     <li>
-                        <a href="https://www.morasoft.net/">
+                        <a href="{{ $settings->websiteLink }}">
                         <span class="icon">
                             <i class="fab fa-google"></i>
                         </span>
@@ -80,8 +81,8 @@
                             <h3>
                             <a href="../pages/contact.html">Address</a>
                             </h3>
-                            <p>مخرج 14 , طريق عمر بن عبدالعزيز , الرياض,
-                            <br> المملكة العربية السعودية</p>
+                            <p>{{ $settings->city }},
+                            <br> {{ $settings->country }}</p>
                         </div>
                         </div>
                         <!-- .box-item -->
@@ -99,8 +100,8 @@
                             <h3>
                             <a href="../pages/contact.html">Phone</a>
                             </h3>
-                            <p>+ 0500699206
-                            <br> + 0560032681</p>
+                            <p>{{ $settings->phone1 }}
+                            <br> {{ $settings->phone2 }}</p>
                         </div>
                         </div>
                         <!-- .box-item -->
@@ -118,8 +119,8 @@
                             <h3>
                             <a href="../pages/contact.html">Email</a>
                             </h3>
-                            <p>admin@morasoft.net
-                            <br> www.morasoft.net</p>
+                            <p>{{ $settings->email }}
+                            <br> {{ $settings->websiteLink }}</p>
                         </div>
                         </div>
                         <!-- .box-item -->
@@ -204,16 +205,22 @@
         <!-- #content-area-inner -->
         </div>
         <!-- #content-area -->
-    </div>
 
 
-<section class="hero google-maps is-clearfix">
-    <div>
-        <div>
-            <iframe src="https://snazzymaps.com/embed/124493" width="100%" height="500px" style="border:none;"></iframe>
-        </div>
-    </div>
-</section>
+
+        <section class="hero google-maps is-clearfix">
+            <div>
+                <div>
+                    {{-- <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d27231.420735041746!2d34.41045893742996!3d31.443660285671744!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sar!2s!4v1638996252818!5m2!1sar!2s" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe> --}}
+                    {{-- <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d108935.61560473012!2d34.47865147954783!3d31.43511452308313!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sar!2s!4v1638995984380!5m2!1sar!2s" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe> --}}
+                    <iframe src="{{ $settings->map }}" width="100%" height="500px" style="border:none;"></iframe>
+                </div>
+            </div>
+        </section>
+
+    @endforeach
+</div>
+
 @endsection
 
 @section('js')

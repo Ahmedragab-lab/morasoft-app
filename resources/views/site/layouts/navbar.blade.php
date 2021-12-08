@@ -5,32 +5,16 @@
                 <div class="level-left">
                     <div id="header-logo" class="site-logo ">
                         <div id="logo-inner" class="site-logo-inner">
-<<<<<<< HEAD
-                            <a href="{{ route('front.index') }}">
-
-                                <img alt="Joo - Niche Multi-Purpose HTML Template"
-                                    src="{{ asset('front/images/logo/logo2.png') }}">
-                                {{-- <span class="logo-text">{{ $settings->comp_name }}</span> --}}
-                                {{-- <span class="logo-text">شركة مورا سوفت</span> --}}
-
-                                {{-- <img alt="Joo - Niche Multi-Purpose HTML Template"
-                                    src="{{ asset('assets/images/logo8.png') }}" width="200" height="200">  --}}
-                              {{-- <span> <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="truck-moving" class="svg-inline--fa fa-truck-moving fa-w-1 text-dark"
-                               role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><path
-                                fill="currentColor" d="M621.3 237.3l-58.5-58.5c-12-12-28.3-18.7-45.3-18.7H480V64c0-17.7-14.3-32-32-32H32C14.3 32 0 46.3 0 64v336c0 44.2 35.8 80 80 80 26.3 0 49.4-12.9 64-32.4 14.6 19.6 37.7 32.4 64 32.4 44.2 0 80-35.8 80-80 0-5.5-.6-10.8-1.6-16h163.2c-1.1 5.2-1.6 10.5-1.6 16 0 44.2 35.8 80 80 80s80-35.8 80-80c0-5.5-.6-10.8-1.6-16H624c8.8 0 16-7.2 16-16v-85.5c0-17-6.7-33.2-18.7-45.2zM80 432c-17.6 0-32-14.4-32-32s14.4-32 32-32 32 14.4 32 32-14.4 32-32 32zm128 0c-17.6 0-32-14.4-32-32s14.4-32 32-32 32 14.4 32 32-14.4 32-32 32zm272-224h37.5c4.3 0 8.3 1.7 11.3 4.7l43.3 43.3H480v-48zm48 224c-17.6 0-32-14.4-32-32s14.4-32 32-32 32 14.4 32 32-14.4 32-32 32z"></path></svg></span> --}}
-                                <i class="fas fa-truck-moving text-dark logo-text "></i>
-                                    <span class="logo-text">{{ __('front.mora') }}</span>
-
-=======
                             <a href="{{ route('front.index') }}" class=" nav-link active">
+                                @foreach (\App\Models\Setting::get() as $settings )
                                 {{-- <img alt="Joo - Niche Multi-Purpose HTML Template" --}}
                                 {{-- src="{{ asset('assets/images/logo.png') }}" width="200" height="200"> --}}
                                 {{-- <span> <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="truck-moving" class="svg-inline--fa fa-truck-moving fa-w-1 text-dark"
                                role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><path
                                 fill="currentColor" d="M621.3 237.3l-58.5-58.5c-12-12-28.3-18.7-45.3-18.7H480V64c0-17.7-14.3-32-32-32H32C14.3 32 0 46.3 0 64v336c0 44.2 35.8 80 80 80 26.3 0 49.4-12.9 64-32.4 14.6 19.6 37.7 32.4 64 32.4 44.2 0 80-35.8 80-80 0-5.5-.6-10.8-1.6-16h163.2c-1.1 5.2-1.6 10.5-1.6 16 0 44.2 35.8 80 80 80s80-35.8 80-80c0-5.5-.6-10.8-1.6-16H624c8.8 0 16-7.2 16-16v-85.5c0-17-6.7-33.2-18.7-45.2zM80 432c-17.6 0-32-14.4-32-32s14.4-32 32-32 32 14.4 32 32-14.4 32-32 32zm128 0c-17.6 0-32-14.4-32-32s14.4-32 32-32 32 14.4 32 32-14.4 32-32 32zm272-224h37.5c4.3 0 8.3 1.7 11.3 4.7l43.3 43.3H480v-48zm48 224c-17.6 0-32-14.4-32-32s14.4-32 32-32 32 14.4 32 32-14.4 32-32 32z"></path></svg></span> --}}
                                 {{-- <i class="fas fa-truck-moving text-dark logo-text "></i> --}}
-                                <span class="logo-text">{{ __('front.mora') }}</span>
->>>>>>> f63107ac6da851e1cb45fb89fb365f8d59714b14
+                                <span class="logo-text">{{ $settings->comp_name }}</span>
+                                @endforeach
                             </a>
                         </div>
                         <!-- #logo-inner -->
@@ -78,20 +62,11 @@
                                     <a href="{{ route('allfeedback.index') }}"
                                         class="nav-link">{{ __('front.feedback') }} </a>
                                 </li>
-<<<<<<< HEAD
-
-
-
-                                <li>
-                                    @auth()
-                                    <a href="{{ route('contact.index')}}">{{ __('front.contactus') }}</a>
-=======
                                 @auth
                                     <li>
                                         <a href="{{ route('contact.index') }}"
                                             class="nav-link">{{ __('front.contactus') }}</a>
                                     </li>
->>>>>>> f63107ac6da851e1cb45fb89fb365f8d59714b14
                                 @endauth
                                 </li>
 
@@ -169,7 +144,7 @@
                                                                     {{ $notification->data['order_no'] }}
                                                                 </span>
                                                                 for more details click on this message.
-                                                                
+
                                                             </h4>
                                                         </a>
                                                     </li>
@@ -188,26 +163,7 @@
                                                 </span>
                                             </span>
                                         </a>
-<<<<<<< HEAD
-
-                                        {{-- <ul class="dropdown-notification scrollable-container wolfff"> --}}
-                                          {{-- <li class="header">
-                                              notifications(<span class="notif-count">{{ \App\Models\UserReqest::count() }}</span>)
-                                          </li> --}}
-                                          {{-- <li>
-                                            <a href="javascript:void(0);">
-                                              <strong>Jessica</strong> likes your photo
-                                            </a>
-                                          </li> --}}
-                                          {{-- <li class="footer">
-                                            <a href="javascript:void(0);">sell all</a>
-                                          </li> --}}
-
-
-                                        <ul class="dropdown-notification scrollable-container" >
-=======
                                         <ul class="dropdown-notification scrollable-container">
->>>>>>> f63107ac6da851e1cb45fb89fb365f8d59714b14
 
                                             <li class="header">notifications(<span
                                                     class="notif-count">{{ \App\Models\Usernoti::count() }}</span>)

@@ -208,6 +208,7 @@ return [
 'FBLink' => 'FaceBook',
 'LinLink' => 'LinKedIn ',
 'YoutubeLink' => 'Youtube',
+'map' => 'Location',
 'logo' => 'Logo',
 'Update_Settings' => ' Update Settings ',
 

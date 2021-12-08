@@ -3,63 +3,67 @@
         <div id="header-top-inner" class="site-header-top-inner container">
             <div class="level">
                 <div class="level-left">
+
                     <ul class="topbar-info ">
-                      {{--   <li>
-                            <a href="#">
-                                <span class="icon">
-                                    <i class="icon-clock"></i>
-                                </span> سبت - خميس : 09:00 - 17:00 </a>
-                        </li>--}}
+
+                        @foreach (\App\Models\Setting::get() as $settings )
+
+
                         <li>
                             <a href="#">
                                 <span class="icon">
                                     <i class="icon-envelope"></i>
-                                {{-- </span> {{ $settings->email }} </a> --}}
-                            </span> email </a>
+                                </span>  {{ $settings->email }} </a>
                         </li>
+
                         <li>
                             <a href="#">
                                 <span class="icon">
                                     <i class="icon-phone"></i>
-                                {{-- </span> {{ $settings->phone1 }} </a> --}}
-                            </span> phone  </a>
+                                </span> {{ $settings->phone1 }} </a>
+
                         </li>
-                        {{-- <li>
+
+                        <li>
                             <a href="#">
                                 <span class="icon">
                                     <i class="icon-phone"></i>
                                 </span> {{ $settings->phone2 }} </a>
-                        </li> --}}
+                        </li>
+                        @endforeach
                     </ul>
                 </div>
                 <!-- .level-left -->
                 <div class="level-right">
                     <ul class="header-menu-icons social">
+                        @foreach (\App\Models\Setting::get() as $settings )
                         <li>
-                            {{-- <a href="{{ $settings->FBLink }}" target="_blank"> --}}
-                                <a href="#" target="_blank">
+                            <a href="{{ $settings->FBLink }}" target="_blank">
                                 <span class="icon">
                                     <i class="fab fa-facebook-f"></i>
                                 </span>
                             </a>
+
                         </li>
                         <li>
-                            {{-- <a href="{{ $settings->YoutubeLink }}" target="_blank"> --}}
-                                <a href="#" target="_blank">
+                            <a href="{{ $settings->YoutubeLink }}" target="_blank">
                                 <span class="icon">
                                     <i class="fab fa-youtube"></i>
                                 </span>
                             </a>
                         </li>
+
+
                         <li>
-                            {{-- <a href="{{ $settings->LinLink }}" target="_blank"> --}}
-                                <a href="#" target="_blank">
+                            <a href="{{ $settings->LinLink }}" target="_blank">
                                 <span class="icon">
                                     <i class="fab fa-linkedin-in"></i>
                                 </span>
                             </a>
                         </li>
+                        @endforeach
                     </ul>
+
                     <!-- .header-menu-icons -->
                     {{-- <ul class="nav-menu-dropdown style-2 global-style on-click">
                         <li>

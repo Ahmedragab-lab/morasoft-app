@@ -88,7 +88,11 @@
                         <input type="text" class="form-control" required name="YoutubeLink"
                         value="{{ $settings->YoutubeLink }}" />
                     </div>
-
+                    <div class="form-group">
+                        <label>{{ __('site.map') }}</label>
+                        <input type="text" class="form-control" required name="map"
+                        value="{{ $settings->map }}" />
+                    </div>
 
                     <div class="form-group">
                         <label>{{ __('site.add-image') }} :</label>

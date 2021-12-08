@@ -67,6 +67,7 @@ class SettingController extends Controller
             $settings->FBLink = $request->FBLink;
             $settings->LinLink = $request->LinLink;
             $settings->YoutubeLink = $request->YoutubeLink;
+            $settings->map = $request->map;
             $settings->update();
 
             toastr()->success(trans('messages.Update'));

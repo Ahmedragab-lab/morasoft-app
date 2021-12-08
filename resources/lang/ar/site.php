@@ -197,6 +197,7 @@ return [
 'FBLink' => 'فيس بوك ',
 'LinLink' => 'لينكد إن',
 'YoutubeLink' => 'يوتيوب',
+'map' => 'الموقع',
 'logo' => 'شعار الشركة',
 'Update_Settings' => 'تعديل الاعدادات ',
 

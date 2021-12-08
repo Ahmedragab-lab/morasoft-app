@@ -29,6 +29,7 @@ class CreateSettingsTable extends Migration
             $table->string('FBLink');
             $table->string('LinLink');
             $table->string('YoutubeLink');
+            $table->string('map');
             $table->string('image');
             $table->timestamps();
         });
