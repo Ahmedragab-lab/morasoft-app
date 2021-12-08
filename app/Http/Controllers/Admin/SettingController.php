@@ -40,13 +40,13 @@ class SettingController extends Controller
     }
 
 
-    public function update($request ){
+    public function update(Request $request , $id ){
 
         try{
             // $validated = $request->validated();
-            $settings = Setting::findorfail($request->id);
+            $settings = Setting::findorfail($id);
             if($request->hasFile('image')){
-                $path = 'uploads/settings/' . $settings->image;
+                $path = 'uploads/settings/'. $settings->image;
                 if(File::exists($path)){
                     File::delete($path);
                 }

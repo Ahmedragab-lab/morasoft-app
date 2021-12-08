@@ -6,7 +6,7 @@
         <div class="card m-b-30">
             <div class="card-body">
                 <h4 class="mt-0 header-title">{{ __('site.settings') }}</h4>
-               
+
                 <div class="table-responsive">
                     <table class="table table-striped mb-0">
                         <thead>
@@ -31,11 +31,11 @@
                             <tr>
                                 <th scope="row">{{ $index +1 }}</th>
                                 <td>{{ $Setting->comp_name }}</td>
-                                <td>{{ $Setting->about }}</td>
+                                <td>{{ Str::limit($Setting->about,10) }}</td>
                                 <td>{{ $Setting->phone1 }}</td>
                                 <td>{{ $Setting->phone2 }}</td>
                                 <td>{{ $Setting->country }}</td>
-                                <td>{{ $Setting->city }}</td>
+                                <td>{{  Str::limit($Setting->city,10) }}</td>
                                 <td>{{ $Setting->email }}</td>
                                 <td>{{ $Setting->websiteLink }}</td>
                                 <td>{{ $Setting->FBLink }}</td>
