@@ -139,7 +139,7 @@
                         <i class="ion-md-notifications"></i>
                     </span> Oops! Something went wrong, we couldn't send your message. </div>
                     <!-- ajax contact form -->
-                    <form accept-charset="UTF-8" id="ajaxform" class="ajax-contact-form" action="https://usebasin.com/f/3587049dbc33.json" method="POST">
+                    <form accept-charset="UTF-8" id="ajaxform" class="ajax-contact-form"  method="POST">
                         <div class="field is-horizontal">
                             <div class="field-body">
                                 <div class="field">
@@ -240,9 +240,15 @@
                         'name': name,
                         'sms': sms,
                     },
-                    success: function(response) {
+                    success: function(response)
+                    {
                     swal(response.status);
                     $("#ajaxform")[0].reset();
+                    },
+                    error: function(response) {
+                    swal(response.status);
+                    // $('textarea[name="sms"]').text(response.responseJSON.errors.sms);
+                    // console.log(response.error);
                     }
                 });
             });
