@@ -59,33 +59,6 @@
 
     <section id="tracking" class="section tracking-section is-clearfix">
         <div class="container">
-<<<<<<< HEAD
-            <p class="heading-title-top has-text-centered">tracking</p>
-            <h1 class="heading-title style-3">track your shipment</h1>
-            <div class="columns is-mobile is-centered">
-                <div class="column is-10" data-aos="fade-up">
-                    <div class="subscribe-form style-1">
-                        <form>
-                            <div class="field has-addons has-addons-centered is-grouped">
-                                <div class="control">
-                                    <input class="input" type="text" placeholder="Type your tracking number">
-                                </div>
-                                <div class="control">
-                                    <a href="#" class="button">
-                                        <span>Track it</span>
-                                        <span class="icon is-small">
-                                            <i class="icon-target"></i>
-                                        </span>
-                                    </a>
-                                </div>
-                            </div>
-                        </form>
-                    </div>
-                    <p class="help"> separate multiple tracking numbers with a space or comma.
-                        <a href="#">Advanced Tracking</a>
-                    </p>
-                </div>
-=======
           <p class="heading-title-top has-text-centered">tracking</p>
           <h1 class="heading-title style-3">track your shipment</h1>
           <div class="columns is-mobile is-centered">
@@ -115,7 +88,6 @@
                   </span>Mora Soft.
                 <a href="#">Advanced Tracking</a>
               </p>
->>>>>>> 84d3812917dd48569795a80ef1ea9a7ecd5e8583
             </div>
         </div>
     </section>
@@ -353,7 +325,7 @@
                             </h2>
                             <p>{{ $Last_service->desc }}</p>
                         </div>
-<<<<<<< HEAD
+
                         <div class="entry-footer">
                             <a href="{{ route('lastservice.showlast', $Last_service->id) }}" class="button">اقرأ
                                 المزيد</a>
@@ -364,11 +336,8 @@
             </div>
         </div>
     </section>
-=======
-                      </div>
-                    </div>
-                </section>
->>>>>>> 84d3812917dd48569795a80ef1ea9a7ecd5e8583
+
+
 
     {{-- ********** Start News ************ --}}
 
@@ -378,7 +347,7 @@
 
     {{-- Asmaa Client feedback --}}
     <section>
-       
+
             <p class="heading-title-top has-text-centered">آراء العملاء</p>
             <h1 class="heading-title style-3">قالوا عنا</h1>
         <div id="carouselFeedback" class="carousel slide " data-bs-ride="carousel">
@@ -404,9 +373,9 @@
                 </div>
                 @endforeach
 
-            
+
             </div>
-           
+
             <button class="carousel-control-prev" type="button" data-bs-target="#carouselFeedback" data-bs-slide="prev">
                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                 <span class="visually-hidden">Previous</span>
@@ -415,9 +384,9 @@
                 <span class="carousel-control-next-icon" aria-hidden="true"></span>
                 <span class="visually-hidden">Next</span>
               </button>
-             
+
         </div>
-       
+
     </section>
 
     {{-- start client feedback --}}
