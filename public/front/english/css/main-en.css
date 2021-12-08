@@ -38,9 +38,9 @@ body.header-transparent header {
 .bg-color{
     background-color: #4b505d;
 }
-.reserve-Serv{
+/* .reserve-Serv{ */
 
-}
+
 .personal-form{
     width: 40%;
     background-color: #4b505d;
@@ -88,3 +88,114 @@ fa-bell{
 .order-btn{
     text-align: center !important;
 }
+
+/* Slider */
+
+.carousel-item{
+    height: 100vh;
+    min-height: 300px;
+    background: no-repeat scroll center scroll;
+    -wedkit-background-size:cover;
+    background-size: cover;
+
+
+}
+.carousel-item::before{
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: #000;
+    opacity: .5;
+}
+.carousel-caption{
+    bottom: 200px;
+    padding-left: 100px;
+    padding-right: 100px;
+}
+.carousel-caption h5{
+  font-size: 6rem;
+  font-weight: 700px;
+}
+.carousel-caption p{
+    font-size: 2rem;
+    top:2rem ;
+    color: aliceblue;
+}
+.slider-btn{
+    margin-top: 30px;
+}
+.slider-btn .btn{
+    background-color: #4b505d;
+    color: white;
+    border-radius: 25px;
+    padding: .7rem;
+    font-size:1.2rem ;
+    border: 2px solid  #cf5029; 
+    margin: 15px;
+}
+.slider-btn .btn-1{
+    background-color: #cf5029;
+    color: white;
+    border-radius: 25px;
+    padding: .7rem;
+    font-size:1.2rem ;
+    border: 2px solid  #4b505d;
+    margin: 15px;
+}
+/* feedback slider */
+img-area{
+    width: 50px;
+    height: 50px;
+    margin: auto;
+    border: 1px solid white;
+    overflow: hidden;
+  
+}
+.img-area img{
+    width: 100%;
+    text-align: center;
+    top: 2px;
+    
+}
+.feedback{
+
+    height: 50vh;
+    min-height: 300px;
+    background: no-repeat scroll center scroll;
+    -wedkit-background-size:cover;
+    background-size: cover;
+}
+
+.feedback::before{
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: #000;
+    opacity: .1;
+}
+.carousel-caption h3{
+    top: 5px;
+    font-size: 2rem;
+    font-weight: 200px;
+    color: #cf5029;
+    margin-top: 2px;
+  }
+  .carousel-caption p{
+      font-size: 2rem;
+      top:2rem ;
+      color: aliceblue;
+  }
+  .feedback-caption{
+
+    top: 5px;
+    padding-left: 100px;
+    padding-right: 100px;
+  }

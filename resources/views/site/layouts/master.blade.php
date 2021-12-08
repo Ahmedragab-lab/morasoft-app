@@ -3,7 +3,7 @@
     <head>
         @include('site.layouts.head_css')
         <div class="pageloader is-active"></div>
-        <div id="site-wrap" class="site">
+        <div id="site-wrap" class="site" data-bs-spy="scroll" data-bs-target=".navbar" data-bs-offset="50">
             @include('site.layouts.upperbar')
             @include('site.layouts.navbar')
             @yield('navslider')
