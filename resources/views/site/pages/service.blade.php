@@ -4,12 +4,12 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
 @endsection
 @section('content')
-<div id="header-bottom-wrap" class="is-clearfix">
+<div id="header-bottom-wrap" class="is-clearfix ">
     <div id="header-bottom" class="site-header-bottom">
       <div id="header-bottom-inner" class="site-header-bottom-inner ">
         <section class="hero page-title is-medium has-text-centered services">
           <div class="hero-body">
-            <div class="container">
+            <div class="container p-5">
               <h1>Mora soft</h1>
               <h3>Services</h3>
             </div>
@@ -18,7 +18,7 @@
       </div>
     </div>
 </div>
-<div id="content-main-wrap" class="is-clearfix">
+<div id="content-main-wrap" class="is-clearfix  m-5 p-5">
     <div id="content-area" class="site-content-area">
       <div id="content-area-inner" class="site-content-area-inner">
         <section class="section hero has-background-primary-light padding-bottom-none padding-top-none is-clearfix">

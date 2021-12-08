@@ -1,4 +1,3 @@
-
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -10,7 +9,9 @@
     @yield('css')
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-     <link rel="stylesheet" href="{{ asset('front/arabic/css/all.min.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <link rel="stylesheet" href="{{ asset('front/arabic/css/all.min.css') }}">
+
     <link rel="stylesheet" href="{{ asset('front/arabic/css/vendor.css') }}">
     <link rel="stylesheet" href="{{ asset('front/arabic/css/styles.css') }}">
     {{-- <link rel="stylesheet" href="{{ asset('front/arabic/css/styles-rtl.min.css?v=1557447064956') }}"> --}}
@@ -45,16 +46,18 @@
         href="{{ URL::asset('front/images/favicons/favicon-16x16.png') }}">
     <link rel="shortcut icon" href="{{ URL::asset('front/images/favicons/favicon.ico') }}">
     </head>
+
     <body
         class=" rtl active-pageloader corporate logistics header-sticky hide-on-scroll
                 header-menu-with-icons header-transparent header-menu-border-bottom header-topbar topbar-background
                 dark-color footer-widgets footer-background dark-color submenu-show-arrow-right menu-is-capitalized
                 submenu-is-capitalized logo-text-is-capitalized page-index">
- @else
+    @else
         @yield('css')
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
             integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-            <link rel="stylesheet" href="{{ asset('front/english/css/all.min.css') }}">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+        <link rel="stylesheet" href="{{ asset('front/english/css/all.min.css') }}">
         <link rel="stylesheet" href="{{ asset('front/english/css/vendor.css') }}">
         <link rel="stylesheet" href="{{ asset('front/english/css/styles.css') }}">
         <link rel="stylesheet" href="{{ asset('front/english/css/custom.css?v=1557446391092') }}">
@@ -87,6 +90,7 @@
             href="{{ URL::asset('front/images/favicons/favicon-16x16.png') }}">
         <link rel="shortcut icon" href="{{ URL::asset('front/images/favicons/favicon.ico') }}">
         </head>
+
         <body
             class=" active-pageloader corporate logistics header-sticky hide-on-scroll
                 header-menu-with-icons header-transparent header-menu-border-bottom header-topbar topbar-background

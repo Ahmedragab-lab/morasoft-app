@@ -1,5 +1,5 @@
-<div id="header-top-wrap" class="is-clearfix">
-    <div id="header-top" class="site-header-top">
+<div id="header-top-wrap" class="is-clearfix shadow ">
+    <div id="header-top" class="site-header-top shadow ">
         <div id="header-top-inner" class="site-header-top-inner container">
             <div class="level">
                 <div class="level-left">
