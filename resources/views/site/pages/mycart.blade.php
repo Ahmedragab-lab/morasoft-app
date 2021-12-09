@@ -46,9 +46,9 @@
                                 <div class="price-field "><p class="price product-price "  >{{ $item->product->selling_price }} LE</p></div>
                                 <div class="quantity">
                                     <div class="quantity-input">
-                                        <input type="number"  min="1" name="prod_qty" value="{{ $item->product_qty }}" data-max="120" pattern="[0-9]*" class="qty-input">
-                                        <a class="btn btn-increase changeqty increment" href="#"></a>
-                                        <a class="btn btn-reduce changeqty decrement"   href="#"></a>
+                                        <input type="number" onkeydown="return false"  min="1" max={{ $item->product->qty }} name="prod_qty" value="{{ $item->product_qty }}"  class="qty-input">
+                                        {{-- <a class="btn btn-increase changeqty increment" href="#"></a>
+                                        <a class="btn btn-reduce changeqty decrement"   href="#"></a> --}}
                                     </div>
                                 </div>
                                 <div class="price-field sub-total"><p class="price subprice">{{ $item->product->selling_price * $item->product_qty }} LE</p></div>
@@ -78,7 +78,8 @@
                         <label class="checkbox-field">
                             {{-- <input class="frm-input " name="have-code" id="have-code" value="" type="checkbox"><span>I have promo code</span> --}}
                         </label>
-                        <a class="btn contact rounded-pill shadow  bg-dark float end" style="color:chocolate" href="{{ route('checkout.index') }}">Check out</a>
+                        <a class="btn btn-warning float end checkoutbtn" href='#' id="checkoutbtn">save quantity</a>
+                        <a class="btn btn-primary float end " href='{{ route('checkout.index') }}' id="checkoutbtn">Go to order now</a>
             @else
                         <h2>Your Cart is empty</h2>
                         <a class="btn btn-warning link-to-shop float end" href="{{ route('allproducts.index')}}">Continue Shopping<i class="fa fa-arrow-circle-right" aria-hidden="true"></i></a>
@@ -141,28 +142,28 @@
         });
         $(document).ready(function(){
 
-            $('.increment').click(function(e){
-                e.preventDefault();
-                // var inc = $('.qty-input').val();
-                var inc = $(this).closest('.product_data').find('.qty-input').val();
-                var value = parseInt(inc,10);
-                value = isNaN(value) ? 0 : value;
-                if(value < 10){
-                    value++ ;
-                    // $('.qty-input').val(value);
-                    var inc = $(this).closest('.product_data').find('.qty-input').val(value);
-                }
-            });
-            $('.decrement').click(function(e){
-                e.preventDefault();
-                var dec = $(this).closest('.product_data').find('.qty-input').val();
-                var value = parseInt(dec,10);
-                value = isNaN(value) ? 0 : value;
-                if(value > 1){
-                    value-- ;
-                    var inc = $(this).closest('.product_data').find('.qty-input').val(value);
-                }
-            });
+            // $('.increment').click(function(e){
+            //     e.preventDefault();
+            //     // var inc = $('.qty-input').val();
+            //     var inc = $(this).closest('.product_data').find('.qty-input').val();
+            //     var value = parseInt(inc,10);
+            //     value = isNaN(value) ? 0 : value;
+            //     if(value < 10){
+            //         value++ ;
+            //         // $('.qty-input').val(value);
+            //         var inc = $(this).closest('.product_data').find('.qty-input').val(value);
+            //     }
+            // });
+            // $('.decrement').click(function(e){
+            //     e.preventDefault();
+            //     var dec = $(this).closest('.product_data').find('.qty-input').val();
+            //     var value = parseInt(dec,10);
+            //     value = isNaN(value) ? 0 : value;
+            //     if(value > 1){
+            //         value-- ;
+            //         var inc = $(this).closest('.product_data').find('.qty-input').val(value);
+            //     }
+            // });
             $('.delete-item').click(function(e){
                 e.preventDefault();
                 var prod_id  = $('input[name="prod_id"]').val();
@@ -179,15 +180,18 @@
                     }
                 });
             });
-            $('.changeqty').click(function(e){
+            $('#checkoutbtn').click(function(e){
                 e.preventDefault();
-                // var prod_id  = $('input[name="prod_id"]').val();
-                var prod_id  =  $(this).closest('.product_data').find('.prod_id').val();
-                var prod_qty  =  $(this).closest('.product_data').find('.qty-input').val();
-                var prod_price =  $(this).closest('.product_data').find('.prod_price').val();
+                var prod_id  = $('input[name="prod_id"]').val();
+                var prod_qty  = $('input[name="prod_qty"]').val();
+                var prod_price  = $('input[name="prod_price"]').val();
+                // var prod_id  =  $(this).closest('.product_data').find('.prod_id').val();
+                // var prod_qty  =  $(this).closest('.product_data').find('.qty-input').val();
+                // var prod_price =  $(this).closest('.product_data').find('.prod_price').val();
                 // var cart_tax  =  prod_qty * prod_price;
                 // var cart_total  =  $('input[name="cart_total"]').val();
                 // var prod_qty = $('input[name="prod_qty"]').val();
+                console.log(prod_id);
                 console.log(prod_qty);
                 console.log(prod_price);
                 // console.log(cart_tax);
@@ -202,10 +206,16 @@
                         // 'cart_tax': cart_tax,
                         // 'cart_total': cart_total,
                     },
+                    // success: function(response) {
+                    //     window.location.reload();
+                    // }
                     success: function(response) {
-                        window.location.reload();
+                    swal(response.status);
+                    },
+                    error: function(response) {
+                    swal(response.status);
                     }
-                });
+                    });
             });
         });
   </script>

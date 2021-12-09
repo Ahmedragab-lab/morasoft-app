@@ -201,7 +201,7 @@
                     <div class="step-details">
                         <p class="step-title">lorem ipsum dolor</p>
                         <p>Lorem ipsum dolor sit amet nulla varius lectus.</p>
-                        
+
                     </div>
                 </div>
                 <div class="step-item" data-step-id="2">
@@ -306,18 +306,22 @@
                                 <a href="./blog/single.html">{{ $Last_service->serve_name }}</a>
                             </h2>
                             <p>{{ $Last_service->desc }}</p>
+
                             </div>
                              <div class="entry-footer">
+
                             <a href="{{ route('lastservice.showlast', $Last_service->id) }}" class="button">اقرأ
                                 المزيد</a>
                         </div>
                     </article>
                     <!-- .blog-post -->
                 </div>
+
                         </div>
                       </div>
                     </div>
                 </section>
+
 
     {{-- ********** Start News ************ --}}
 
@@ -351,16 +355,16 @@
                         <img src="{{ asset('uploads/user-img/' . $feedback->users->image) }}" width="150" height="150" class="img-area rounded-circle h-5 img-profil " alt="...">
 
                         <h1 class="text-light  py-2  ">{{ $feedback->users->fname }}   {{$feedback->users->lname}} </h1>
-                    
+
                         <label class="feed-service">{{ $feedback->services->serve_name }}   Service</label>
                         <p>{{ $feedback->feedback }}</p>
                     </div>
                 </div>
                 @endforeach
 
-            
+
             </div>
-           
+
             <button class="carousel-control-prev" type="button" data-bs-target="#carouselFeedback" data-bs-slide="prev">
                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                 <span class="visually-hidden">Previous</span>
@@ -369,9 +373,9 @@
                 <span class="carousel-control-next-icon" aria-hidden="true"></span>
                 <span class="visually-hidden">Next</span>
               </button>
-             
+
         </div>
-       
+
     </section>
     {{-- Counter showing --}}
     <section class="  is-clearfix shadow">
@@ -556,11 +560,13 @@
                         serv_id: serv_id,
                         sms: sms,
                     },
-                    success: function(response) {
-                        if (response) {
-                            swal(response.status);
-                            $("#ajaxform")[0].reset();
-                        }
+                    success: function(response)
+                    {
+                    swal(response.status);
+                    $("#ajaxform")[0].reset();
+                    },
+                    error: function(response) {
+                    swal(response.status);
                     }
                 });
             });

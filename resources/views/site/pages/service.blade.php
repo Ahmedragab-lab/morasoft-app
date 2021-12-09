@@ -241,10 +241,11 @@
                 },
                 success: function(response)
                 {
-                    if(response) {
-                        swal(response.status);
-                        $("#ajaxform")[0].reset();
-                    }
+                swal(response.status);
+                $("#ajaxform")[0].reset();
+                },
+                error: function(response) {
+                swal(response.status);
                 }
             });
         });

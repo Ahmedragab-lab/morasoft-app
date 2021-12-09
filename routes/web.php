@@ -16,9 +16,7 @@ Route::group(
 
         Route::post('/sendrequest', [Frontend\UserReqestController::class,'sendrequest'])->name('sendrequest');   // send request from front home page by ajax
         Route::post('/servrequest', [Frontend\UserReqestController::class,'servrequest'])->name('servrequest');   // send request from service page by ajax
-        Route::post('/addtocart', [Frontend\UserReqestController::class,'addtocart'])->name('addtocart');         // send request from product-details page by ajax
-        Route::post('/delete_item', [Frontend\UserReqestController::class,'delete_item'])->name('delete_item');   // send request from mycart page by ajax to delete item
-        Route::post('/update_qty',[Frontend\UserReqestController::class,'update_qty'])->name('update_qty');     // send request from mycart to update item quantity
+
 
 
         Route::resource('allservices',Frontend\Allservices::class); // go to all services page
@@ -35,7 +33,7 @@ Route::group(
         Route::resource('allfeedback',Frontend\Allfeedback::class); // go to all feedback page
         Route::resource('Last_event',Frontend\Allevents::class);// get last event
         Route::resource('contact',Frontend\ContactController::class);  //go to contact page
-      
+
         Route::get('/reserveServ', function () {
             return view('site.pages.reserveServ');
         });
@@ -49,6 +47,10 @@ Route::group(
             Route::get('step/{id}',[Frontend\OrderDetailController::class , 'showstep'])->name('step'); //go to trackstep from order details page
             Route::post('addrate',[Frontend\UserRateController::class , 'addrate'])->name('addrate'); //add rate
             Route::post('/searchtrackstep',[Frontend\OrderDetailController::class,'searchtrackstep'])->name('searchtrackstep');  // search for tracking step by order number
+            
+            Route::post('/addtocart', [Frontend\UserReqestController::class,'addtocart'])->name('addtocart');         // send request from product-details page by ajax
+            Route::post('/delete_item', [Frontend\UserReqestController::class,'delete_item'])->name('delete_item');   // send request from mycart page by ajax to delete item
+            Route::post('/update_qty',[Frontend\UserReqestController::class,'update_qty'])->name('update_qty');     // send request from mycart to update item quantity
         });
 
         require __DIR__.'/auth.php';
