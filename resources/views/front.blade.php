@@ -10,7 +10,7 @@
 @section('content')
     {{-- ============================slider product======================================== --}}
     <section id="welcome" class="section welcome-section has-background-primary-light is-clearfix">
-        <div class="container">
+        <div class="container shadow overflow-hidden">
             <p class="heading-title-top has-text-centered">welcome logistics</p>
             <h1 class="heading-title style-3"> Our
                 {{-- <br> difference. --}}
@@ -58,7 +58,7 @@
     {{-- ============================End slider product======================================== --}}
 
     <section id="tracking" class="section tracking-section is-clearfix">
-        <div class="container">
+        <div class="container shadow">
           <p class="heading-title-top has-text-centered">tracking</p>
           <h1 class="heading-title style-3">track your shipment</h1>
           <div class="columns is-mobile is-centered">
@@ -93,19 +93,12 @@
     </section>
     {{-- services section --}}
     <section id="services" class="section services-section has-background-primary-light is-clearfix">
-        <div class="container">
-            <div class="columns is-variable is-multiline is-4">
-
-                <div class="column is-5-desktop is-12-tablet">
-                    <p class="heading-title-top">الخدمات اللوجستية</p>
-                    <h1 class="heading-title style-3 has-text-left">خدماتنا الخاصة</h1>
-                </div>
-                <div class="column is-7-desktop is-12-tablet">
-                    <p class="heading-title-bottom">خدمتنا تتحدث عننا ونحتاج الى ارائكم واقتراحتكم شكرااا جزيلا لكم فريق
-                        <strong style="color:rgb(240, 29, 29);font-size:30px;font-weight:bold;">مورا سوفت</strong>
-                    </p>
-                </div>
-            </div><br>
+        <div class="container shadow">
+            <p class="heading-title-top has-text-centered pt-5">welcome logistics</p>
+        <h1 class="heading-title style-3"> Our
+            {{-- <br> difference. --}}
+            <span class="has-text-primary">Services </span>
+        </h1>
             <div class="columns is-variable is-4 is-multiline boxes-style-2">
                 @foreach (\App\Models\Service::orderBy('id', 'DESC')->limit(3)->get()
         as $serv)
@@ -126,11 +119,9 @@
     </section>
     {{-- End services section --}}
     {{-- video section --}}
-    <section class="section watch-video is-clearfix">
-        <div class="container">
-            <br>
-            <br>
-            <div class="columns is-variable is-8 is-multiline">
+    {{-- <section class="section watch-video  is-clearfix vid-container">
+        <div class="fluid-container ">
+            <div class="columns is-variable is-8 is-multiline m-auto">
                 <div class="column is-6-desktop is-12-tablet has-text-centered">
                     <div class="works-latest">
                         <div class="works-latest-item">
@@ -172,39 +163,24 @@
 
                 <br>
             </div>
-    </section>
+    </section> --}}
     {{-- End video section --}}
-    <section class="hero fun-facts is-clearfix">
-        <div class="hero-body">
-            <h2 class="display-none">funfacts</h2>
-            <nav class="level counterup style-5">
-                <div class="level-item has-text-centered">
-                    <div>
-                        <p class="title counter">340</p>
-                        <p class="heading">years of experience</p>
-                    </div>
-                </div>
-                <div class="level-item has-text-centered">
-                    <div>
-                        <p class="title counter">120</p>
-                        <p class="heading">branches over world</p>
-                    </div>
-                </div>
-                <div class="level-item has-text-centered">
-                    <div>
-                        <p class="title counter">230</p>
-                        <p class="heading">tonnes transported</p>
-                    </div>
-                </div>
-                <div class="level-item has-text-centered">
-                    <div>
-                        <p class="title counter">110</p>
-                        <p class="heading">countries covered</p>
-                    </div>
-                </div>
-            </nav>
-        </div>
-    </section>
+   
+
+   <!-- Start Video -->
+   <div class="video">
+    <video autoplay muted loop>
+      <source  src="{{ asset('assets/images/video.mp4') }}" type="video/mp4" />
+    </video>
+    <div class="text">
+      <h2>MoraSoft company for shipping</h2>
+      <p>Its All You Need</p>
+      <button class="rounded-pill">See More</button>
+    </div>
+  </div>
+  <!-- End Video -->
+
+
 
     {{-- <section id="tracking-steps" class="section tracking-steps-section is-clearfix">
         <div class="container">
@@ -247,14 +223,21 @@
     </section> --}}
 
 
+     
     {{-- ********** Start Events ************ --}}
 
+   
     <section id="news" class="section news-section is-clearfix">
-        <div class="container">
+       
+        <div class="container shadow">
+            <p class="heading-title-top has-text-centered pt-5">welcome logistics</p>
+            <h1 class="heading-title style-3"> Last
+                {{-- <br> difference. --}}
+                <span class="has-text-primary">News </span>
+            </h1>
             <div class="blog-list style-2 columns is-variable is-4 is-multiline">
                 <div class="column is-4" data-aos="fade">
                     <div class="blog-post-heading">
-                        <p class="heading-title-top">أخر الاخبار</p>
                         <h1 class="heading-title style-3 has-text-left">
                             {{-- <img alt="Joo - Niche Multi-Purpose HTML Template" src="{{ asset('uploads/event/'.$Last_event->image) }}"> --}}
                             <h1 class="heading-title style-3 has-text-left">
@@ -269,12 +252,11 @@
                     </div>
                 </div>
                 <div class="column is-4" data-aos="fade">
-                    <p class="heading-title-top">أخر الاتفاقيات</p>
                     <article class="blog-post">
                         <figure class="post-image">
                             <a href="">
                                 <img alt="Joo - Niche Multi-Purpose HTML Template"
-                                    src="{{ asset('uploads/event/' . $Last_event->image) }}"> </a>
+                                    src="{{ asset('uploads/agreement/' . $Last_agreement->image) }}" width="400" style="height: 250px; width=500px"> </a>
                         </figure>
                         <div class="entry-header">
                             <div class="post-meta">
@@ -303,13 +285,12 @@
                 </div>
 
 
-                <div class="column is-4" data-aos="fade">
-                    <p class="heading-title-top">أخر الخدمات</p>
+                <div class="column is-4 " data-aos="fade">
                     <article class="blog-post">
-                        <figure class="post-image">
+                        <figure class="post-image shadow">
                             <a href="./blog/single.html">
                                 <img alt="Joo - Niche Multi-Purpose HTML Template"
-                                    src="{{ asset('uploads/serv/' . $Last_service->image) }}"> </a>
+                                    src="{{ asset('uploads/serv/' . $Last_service->image) }}"style="height: 250px"> </a>
                         </figure>
                         <div class="entry-header">
                             <div class="post-meta">
@@ -350,9 +331,12 @@
 
     {{-- Asmaa Client feedback --}}
     <section>
-
-            <p class="heading-title-top has-text-centered">آراء العملاء</p>
-            <h1 class="heading-title style-3">قالوا عنا</h1>
+       
+        <p class="heading-title-top has-text-centered pt-5">welcome logistics</p>
+        <h1 class="heading-title style-3"> Feedback
+            {{-- <br> difference. --}}
+            <span class="has-text-primary">Clients </span>
+        </h1>
         <div id="carouselFeedback" class="carousel slide " data-bs-ride="carousel">
             {{-- <div class="carousel-indicators">
                 <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"
@@ -366,7 +350,7 @@
                 @foreach (\App\Models\Feedback::orderBy('id', 'DESC')->limit(15)->get()
         as $feedback)
                 <div class="carousel-item feedback @if($loop->first) active @endif h-2" data-bs-interval="1500">
-                    <img src="{{asset('assets/images/globebannermobile.jpg')}}" class="d-block w-100 " style="height:500px" alt="...">
+                    <img src="{{asset('front/images/background/back-2.png')}}" class="d-block w-100 " style="height:500px" alt="...">
                     <div class="carousel-caption feedback-caption d-none d-md-block">
                         <img src="{{ asset('uploads/user-img/' . $feedback->users->image) }}" width="150" height="150" class="img-area rounded-circle h-5 img-profil " alt="...">
 
@@ -393,7 +377,44 @@
         </div>
 
     </section>
+    {{-- Counter showing --}}
+    <section class="  is-clearfix shadow">
+        <div class=" counter-container ">
+            <h2 class="display-none ">funfacts</h2>
+            <nav class="level counterup style-5 p-4">
+                <div class="level-item has-text-centered">
+                    <div class="m-auto text-center">
+                        <h1 class="  " style="font-size: 60px"><i class="fas fa-users"></i></h1>
+                        <h1 class="title counter">{{ \App\Models\User::count() }}</h1>
+                        <h1 class="" style="font-size: 25px;color:#4b505d;">Users number</h1>
+                    </div>
+                </div>
+                <div class="level-item has-text-centered">
+                    <div class="m-auto text-center">
+                        <h1 style="font-size: 60px"><i class="far fa-handshake"></i></h1>
+                        <p class="title counter">{{ \App\Models\Service::count() }}</p>
+                        <p class=""style="font-size: 25px;color:#4b505d;">Service number </p>
+                    </div>
+                </div>
+                <div class="level-item has-text-centered">
+                    <div class="m-auto text-center">
+                        <h1 style="font-size: 60px"><i class="fas fa-star"></i></h1>
+                        <p class="title counter" style="font-size: 60px">{{ \App\Models\Feedback::count() }}</p>
+                        <p class="" style="font-size: 25px;color:#4b505d;">  feedback Numbers </p>
+                    </div>
+                </div>
+                <div class="level-item has-text-centered">
+                    <div class="m-auto text-center">
+                        <h1 class=""style="font-size: 60px"><i class="fas fa-building"></i></h1>
+                        <p class="title counter" style="font-size: 60px;">110</p>
+                        <h1 class="text-center" style="font-size: 25px;color:#4b505d;">countries covered</h1>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </section>
 
+{{-- End counter showing --}}
     {{-- start client feedback --}}
     {{-- <section id="testimonials" class="section testimonials-section has-background-primary-light is-clearfix">
         <div class="container">
@@ -415,15 +436,16 @@
         </div>
     </section> --}}
     {{-- end client feedback --}}
+    
     {{-- anthor form --}}
-    <section id="quote" class="section quote-section padding-bottom-none is-clearfix">
-        <div id="order" class="container" >
-            <div class="columns is-variable is-2 is-multiline">
-                <div class="column is-6-desktop is-12-tablet">
-                    <h1 class="heading-title style-3 has-text-left"> Ask for
-                        <span class="has-text-primary">price</span>
+    <section id="quote" class="section quote-section padding-bottom-none is-clearfix ">
+        <div id="order" class="container shadow mb-5 p-4" >
+            <div class="columns is-variable is-2 is-multiline  p-4">
+                <div class="column is-6-desktop is-12-tablet ">
+                    <h1 class="heading-title style-3 text-center"> Ask for
+                        <span class="has-text-primary ">price</span>
                     </h1>
-                    <p class="heading-title-bottom"> Always do our best for you thank you</p>
+                    <p class="heading-title-bottom text-center"> Always do our best for you thank you</p>
                     <!-- successful form message -->
                     <div class="overhang-message-content is-hidden success">
                         <span class="icon">
@@ -437,13 +459,13 @@
                         </span> Oops! Something went wrong, we couldn't send your message.
                     </div>
                     <!-- ajax contact form -->
-                    <form accept-charset="UTF-8" class="ajax-contact-form" id="ajaxform"
+                    <form accept-charset="UTF-8" class="ajax-contact-form " id="ajaxform"
                         action="https://usebasin.com/f/3587049dbc33.json" method="POST">
                         <div class="field is-horizontal">
                             <div class="field-body">
                                 <div class="field">
                                     <div class="control is-expanded">
-                                        <div class="select">
+                                        <div class="select ps-2">
                                             <select name="from">
                                                 <option value="" readonly> ---from ---</option>
                                                 @foreach (\App\Models\Country::all() as $country)
@@ -454,8 +476,8 @@
                                     </div>
                                 </div>
                                 <div class="field">
-                                    <div class="control is-expanded">
-                                        <div class="select">
+                                    <div class="control is-expand">
+                                        <div class="select pe-2 ">
                                             <select name="to">
                                                 <option value="" readonly> ---to ---</option>
                                                 @foreach (\App\Models\Country::all() as $country)
@@ -471,7 +493,7 @@
                             <div class="field-body">
                                 <div class="field">
                                     <div class="control is-expanded">
-                                        <div class="select">
+                                        <div class="select p-2">
                                             <select name="serv_id">
                                                 <option value="" readonly> ---select your service---</option>
                                                 @foreach (\App\Models\Service::all() as $service)
@@ -485,13 +507,13 @@
                             </div>
                         </div>
                         <div class="field ">
-                            <div class="control is-expanded">
-                                <textarea class="textarea" name="sms" placeholder="Message" required=""></textarea>
+                            <div class="control is-expanded p-2">
+                                <textarea class="textarea " name="sms" placeholder="Message" required=""></textarea>
                             </div>
                         </div>
                         <div class="field ">
-                            <div class="control">
-                                <button class="button save-data" type="submit"> ارسل طلبك <svg
+                            <div class="control text-center m-auto ">
+                                <button class="button save-data rounded-pill shadow " type="submit"> ارسل طلبك <svg
                                         xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                                         class="bi bi-send-fill" viewBox="0 0 16 16">
                                         <path fill-rule="evenodd"
@@ -501,17 +523,15 @@
                         </div>
                     </form>
                 </div>
-                <div class="column is-6-desktop is-12-tablet" data-aos-delay="600">
-                    <br>
-                    <br>
-                    <br>
-                    <br>
-                    <img alt="Joo - Niche Multi-Purpose HTML Template" src="{{ asset('front/images/global/man.png') }}">
+                <div class="column is-6-desktop is-12-tablet rounded" data-aos-delay="600">
+                    
+                    <img alt="Joo - Niche Multi-Purpose HTML Template  border rounded shadow  " src="{{ asset('assets/images/man_1.png') }}">
                 </div>
             </div>
         </div>
     </section>
-    {{-- فورمه اجاكس --}}
+   
+    
 @endsection
 @section('js')
     <script type="text/javascript">

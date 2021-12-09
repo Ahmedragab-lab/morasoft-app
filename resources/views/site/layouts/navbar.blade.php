@@ -140,7 +140,7 @@
                                                                     LE
                                                                 </span>
                                                                order number is :
-                                                                <span style="background-color: rgb(202, 206, 212); font-size:15px;">
+                                                                <span style="background-color:  rgb(226, 33, 33); font-size:15px;">
                                                                     {{ $notification->data['order_no'] }}
                                                                 </span>
                                                                 for more details click on this message.

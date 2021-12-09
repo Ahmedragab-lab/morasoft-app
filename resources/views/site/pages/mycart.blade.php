@@ -78,7 +78,7 @@
                         <label class="checkbox-field">
                             {{-- <input class="frm-input " name="have-code" id="have-code" value="" type="checkbox"><span>I have promo code</span> --}}
                         </label>
-                        <a class="btn btn-warning float end checkoutbtn" href='#' id="checkoutbtn">save quantity</a>
+                        <a class="btn btn-update float end checkoutbtn" href='#' id="checkoutbtn">Update Shopping Cart</a>
                         <a class="btn btn-primary float end " href='{{ route('checkout.index') }}' id="checkoutbtn">Go to order now</a>
             @else
                         <h2>Your Cart is empty</h2>
@@ -90,7 +90,7 @@
                     </div> --}}
                 </div>
             @endif
-            <div class="wrap-show-advance-info-box style-1 box-in-site">
+            <div class="wrap-show-advance-info-box style-1 box-in-site shadow">
                 <h3 class="title-box">Most Viewed Products</h3>
                 <div class="wrap-products">
                     <div class="products slide-carousel owl-carousel style-nav-1 equal-container" data-items="5" data-loop="false" data-nav="true" data-dots="false" data-responsive='{"0":{"items":"1"},"480":{"items":"2"},"768":{"items":"3"},"992":{"items":"3"},"1200":{"items":"5"}}' >
@@ -211,6 +211,7 @@
                     // }
                     success: function(response) {
                     swal(response.status);
+                    window.location.reload();
                     },
                     error: function(response) {
                     swal(response.status);

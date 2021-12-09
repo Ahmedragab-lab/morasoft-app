@@ -24,7 +24,7 @@
                                       $total_price = 0;
                                       $total = 0;
                                     @endphp
-                                    <table class="table is-fullwidth is-hoverable">
+                                    <table class="table is-fullwidth is-hoverable shadow">
                                         <thead>
                                         <tr>
                                             <th>order_no</th>
@@ -35,12 +35,10 @@
                                             <th>price</th>
                                         </tr>
                                         </thead>
+
                                         <tbody>
-<<<<<<< HEAD
-                                            {{-- @foreach ($order_details as $item) --}}
-=======
->>>>>>> master
-                                            <tr>
+                                        <tbody class="shadow">
+                                            <tr class="shadow">
                                                 <td >{{ $order_details->order_no }}</td>
                                                 <td>{{ $order_details->name }}</td>
                                                 <td>{{ $order_details->service->serve_name }}</td>
@@ -48,16 +46,9 @@
                                                 <td>{{ $order_details->to->Name}}</td>
                                                 <td>{{ number_format($order_details->price) }} LE</td>
                                             </tr>
-<<<<<<< HEAD
-                                            @php
-                                                // $total_price += $item->price;
-                                            @endphp
-                                            {{-- @endforeach --}}
-=======
->>>>>>> master
                                         </tbody>
                                     </table>
-                                    <table class="table is-fullwidth is-hoverable">
+                                    <table class="table is-fullwidth is-hoverable shadow">
                                         <thead>
                                         <tr>
                                             <th>total price</th>
@@ -79,14 +70,17 @@
                                             <input type="hidden" value="{{ $order_details->price+$total_tax }}" name="total">
                                         </tbody>
                                     </table>
+
                                     <button type="submit" class="btn btn-warning float-end save-data">Order Now</button>
-<<<<<<< HEAD
-=======
+
+                                    <div class="has-text-centered">
+                                        <button type="submit" class="btn button contact rounded-pill shadow  save-data ">Order Now</button>
+
+                                    </div>
                                     {{-- <a href="#" class="btn btn-info float-end " style="display:none;"> --}}
                                     <a href="{{ route('step',$order_details->id) }}" class="btn btn-info float-end step" style="display:none;">
                                          متابعه عمليه الشحن
                                     </a>
->>>>>>> master
                                     <br>
                                     <br>
                                     <br>
@@ -101,49 +95,6 @@
       </div>
     </div>
 </div>
-<<<<<<< HEAD
-  <!-- #content-main-wrap -->
-<section id="tracking-steps" class="section tracking-steps-section is-clearfix">
-    <div class="container">
-      <p class="heading-title-top has-text-centered">tracking</p>
-      <h1 class="heading-title style-3">how we work</h1>
-      <br>
-      <br>
-      <div class="steps" data-aos="fade-right">
-        <div class="step-item" data-step-id="0">
-          <div class="step-marker"> 1 </div>
-          <div class="step-details">
-            <p class="step-title">lorem ipsum dolor</p>
-            <p>Lorem ipsum dolor sit amet nulla varius lectus.</p>
-          </div>
-        </div>
-        <div class="step-item active" data-step-id="1">
-          <div class="step-marker">2</div>
-          <div class="step-details">
-            <p class="step-title">lorem ipsum dolor</p>
-            <p>Lorem ipsum dolor sit amet nulla varius lectus.</p>
-          </div>
-        </div>
-        <div class="step-item" data-step-id="2">
-          <div class="step-marker">3</div>
-          <div class="step-details">
-            <p class="step-title">lorem ipsum dolor</p>
-            <p>Lorem ipsum dolor sit amet nulla varius lectus.</p>
-          </div>
-        </div>
-        <div class="step-item" data-step-id="3">
-          <div class="step-marker"> 4 </div>
-          <div class="step-details">
-            <p class="step-title">lorem ipsum dolor</p>
-            <p>Lorem ipsum dolor sit amet nulla varius lectus.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-</section>
-=======
-
->>>>>>> master
 
  {{-- start client feedback --}}
  <section id="testimonials" class="section testimonials-section has-background-primary-light is-clearfix">
@@ -205,13 +156,7 @@
                         swal(response.status);
                     }
                     $('.save-data').removeClass('btn-warning ').addClass('btn-success disabled').html('done thank you for your choice');
-<<<<<<< HEAD
-                    // $('.save-data').hide();
-                    // return redirect('/');
-
-=======
                     $('.step').show();
->>>>>>> master
                 }
             });
         });
