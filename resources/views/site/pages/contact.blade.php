@@ -247,8 +247,6 @@
                     },
                     error: function(response) {
                     swal(response.status);
-                    // $('textarea[name="sms"]').text(response.responseJSON.errors.sms);
-                    // console.log(response.error);
                     }
                 });
             });
