@@ -10,7 +10,7 @@ use App\Models\UserReqest;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Events\EmailNotification;
-
+use Illuminate\Support\Facades\Validator;
 class UserReqestController extends Controller
 {
     //ajax request from  front page price ask ================================\\//
@@ -19,13 +19,23 @@ class UserReqestController extends Controller
          $to = $request->input('to');
          $service_id = $request->input('serv_id');
          $sms = $request->input('sms');
+         $validator = Validator::make($request->all(),
+         [
+            'from'    => 'required',
+            'to'      => 'required',
+            'serv_id' => 'required',
+            'sms'     => 'required|min:5|max:250|regex:/^([a-zA-Z]+)(\s[a-zA-Z]+)*$/',
+         ]);
+         if ($validator->fails())
+         {
+             return response()->json(['status'=>$validator->errors()->first()]);
+         }
         if(Auth::check()){
             $serv_check = Service::where('id',$service_id);
             if($serv_check){
                 $req = new UserReqest();
                 $req->name =auth()->user()->fname;
                 $req->email = auth()->user()->email;
-                // $req->address = auth()->user()->address1;
                 $req->from_id =  $from;
                 $req->to_id = $to;
                 $req->user_id = Auth::id();
@@ -33,20 +43,6 @@ class UserReqestController extends Controller
                 $req->sms = $sms;
                 $req->order_no = 'morasoft'.rand(1000000000, 9999999999);
                 $req->save();
-                
-            //     $data=[
-            //         $req->name =auth()->user()->fname,
-            //         $req->email = auth()->user()->email,
-            //         // $req->address = auth()->user()->address1;
-            //         $req->from_id =  $from,
-            //         $req->to_id = $to,
-            //         $req->user_id = Auth::id(),
-            //         $req->service_id = $service_id,
-            //         $req->sms = $sms,
-            //     ];
-
-            //    event(new EmailNotification($data));                               
-
                 return response()->json(['status'=>$req->name . ' request submitted successfully']);
             }
         }else{
@@ -60,26 +56,30 @@ class UserReqestController extends Controller
     $to = $request->input('to');
     $service_id = $request->input('serv_id');
     $sms = $request->input('sms');
+    $validator = Validator::make($request->all(),
+    [
+       'from'    => 'required',
+       'to'      => 'required',
+       'sms'     => 'required|min:5|max:250|regex:/^([a-zA-Z]+)(\s[a-zA-Z]+)*$/',
+    ]);
+    if ($validator->fails())
+    {
+        return response()->json(['status'=>$validator->errors()->first()]);
+    }
    if(Auth::check()){
        $serv_check = Service::where('id',$service_id);
        if($serv_check){
            $req = new UserReqest();
            $req->name =auth()->user()->fname;
            $req->email = auth()->user()->email;
-        //    $req->address = auth()->user()->address1;
            $req->from_id =  $from;
            $req->to_id = $to;
            $req->user_id = Auth::id();
            $req->service_id = $service_id;
            $req->sms = $sms;
-
            $req->order_no = 'morasoft'.rand(1000000000, 9999999999);
            $req->save();
            return response()->json(['status'=>$req->name . ' request submitted successfully']);
-
-           // $user = User::get();
-           // $order = UserReqest::latest()->first();
-           // $user->notify(new \App\Notifications\Add_service_Order($order));
        }
    }else{
        return response()->json(['status'=>'Login to continue']);
