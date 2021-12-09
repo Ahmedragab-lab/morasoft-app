@@ -22,17 +22,6 @@ class CheckoutController extends Controller
         return view('site.pages.checkout',compact('cartitems'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-
-    }
-
-
     public function store(Request $request)
     {
         DB::beginTransaction();
@@ -46,9 +35,9 @@ class CheckoutController extends Controller
             // if(Order::whereNotIn('order_id',$ids )){
                 // $order = Order::whereNotIn('order_id',$ids )->get();
                 // $order = Order::where('order_id',Auth::id() )->exists();
-            $no=Order::select('tracking_no')->get();
-            // dd($no);
-            $exist = Order::whereNotIn('tracking_no',$no)->first();
+            $tracking_no=Order::select('tracking_no')->get();
+            // dd($tracking_no);
+            $exist = Order::whereNotIn('tracking_no',$tracking_no)->first();
             if($exist){
                 return redirect()->back()->with('status',"cart is empty");
             }else
@@ -105,14 +94,11 @@ class CheckoutController extends Controller
                     $product->qty = $product->qty - $item->product_qty;
                     $product->update();
                 }
-
                 $cartitems= Cart::where('user_id',Auth::id())->get();
                 Cart::destroy($cartitems);
                 DB::commit();
                 return redirect()->route('mycart.index')->with('status',"your order done");
-                // route('mycart.index')
             }
-
         } catch (\Exception $e) {
             DB::rollback();
             return redirect()->back()->withErrors(['error' => $e->getMessage()]);
@@ -120,48 +106,5 @@ class CheckoutController extends Controller
 
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        //
-    }
 }
