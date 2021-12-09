@@ -23,6 +23,14 @@
                 </li>
                 {{-- End home dashboard  --}}
                 <li class="menu-title"><h5>{{ trans('site.component') }}</h5></li>
+
+                <!-- Settings-->
+                <li>
+                    <a href="{{route('settings.index')}}"><i class="fas fa-cogs"></i><span class="right-nav-text">{{ trans('site.settings') }} </span></a>
+                </li>
+
+
+
                {{-- route Admin  --}}
                <li>
                 <a href="{{ route('admins.index') }}" class="waves-effect">
@@ -109,14 +117,7 @@
                         </span>
                     </a>
                 </li>
-                <li>
-                    <a href="{{ route('tracking_steps.index') }}" class="waves-effect">
-                        <i class=" far fa-bell"></i>
-                        <span>{{ trans('site.tracking-steps') }}
-                            <span class="badge badge-success badge-pill float-right"></span>
-                        </span>
-                    </a>
-                </li>
+
                 <li>
                     <a href="{{ route('cartitems.index') }}" class="waves-effect">
                         <i class="far fa-comment-dots"></i>
@@ -128,19 +129,22 @@
                 <li>
                     <a href="{{ route('orders.index') }}" class="waves-effect">
                         <i class="far fa-comment-dots"></i>
-                        <span>{{ trans('site.orders') }}
+                        <span>{{ trans('site.ask_for_price') }}
                             <span class="badge badge-success badge-pill float-right"></span>
                         </span>
                     </a>
                 </li>
+
+
                 <li>
                     <a href="{{ route('orderlist.index') }}" class="waves-effect">
                         <i class="far fa-comment-dots"></i>
-                        <span>{{ trans('قائمه الاوردارات المطلوبه') }}
+                        <span>{{ trans('site.order_list_want') }}
                             <span class="badge badge-success badge-pill float-right"></span>
                         </span>
                     </a>
                 </li>
+
             </ul>
         </div>
         <div class="clearfix"></div>

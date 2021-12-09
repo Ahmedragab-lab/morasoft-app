@@ -23,7 +23,7 @@
                                 <th>{{ __('site.phone') }}</th>
                                 <th>{{ __('site.address1') }}</th>
                                 <th>{{ __('site.image') }}</th>
-                                <th>{{ __('site.service') }}</th>
+                                <th>{{ __('site.services') }}</th>
                                 <th>{{ __('site.from') }}</th>
                                 <th>{{ __('site.to') }}</th>
                                 <th>{{ __('site.sms') }}</th>
@@ -57,7 +57,7 @@
                                                 {{ __('site.add_price') }}
                                             </button>
                                             <button type="button" class="btn btn-danger"
-                                            onclick="confirm('{{ __('Are you sure you want to delete this order '.$order->id.'?') }}') ? this.parentElement.submit() : ''">
+                                            onclick="confirm('{{ __('site.Warning'.$order->id.'?') }}') ? this.parentElement.submit() : ''">
                                             {{ __('site.delete') }}
                                             </button>
                                         </form>

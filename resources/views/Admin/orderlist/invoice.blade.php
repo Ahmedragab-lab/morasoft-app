@@ -22,6 +22,7 @@
                                 <div class="col-6">
                                     <address>
                                         <strong>Billed To:</strong><br>
+                                        {{-- تفاصيل الشركة --}}
                                         {{ $order->order->user->fname }} {{ $order->order->user->lname }}<br>
                                         {{ $order->order->user->address1 }}<br>
                                         {{ $order->order->user->address2 }}<br>

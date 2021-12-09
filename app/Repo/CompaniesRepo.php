@@ -46,7 +46,7 @@ class CompaniesRepo implements CompaniesInterface{
     {
         $companies=company::findOrFail($id);
 
-        return view('admin.companies.edit',compact('companies'));
+        return view('Admin.companies.edit',compact('companies'));
 
     }
 

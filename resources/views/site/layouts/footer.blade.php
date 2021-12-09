@@ -64,42 +64,49 @@
     <!-- #footer-top -->
   </div>
   <!-- #footer-top-wrap -->
+
   <div id="footer-wrap" class="is-clearfix">
     <footer id="footer" class="site-footer">
       <div id="footer-inner" class="site-footer-inner container">
         <div class="columns is-variable is-6 is-multiline">
+            @foreach (\App\Models\Setting::get() as $settings )
           <div class="column is-4">
             <div class="widget widget-html">
               <div class="textwidget">
                 <div id="footer-logo" class="site-logo ">
                   <a href="{{ route('front.index') }}">
-                    <img alt="Joo - Niche Multi-Purpose HTML Template" src="{{ asset('front/images/logo/logo2.png') }}">
+                    <img alt="Joo - Niche Multi-Purpose HTML Template" src="{{ asset('uploads/settings/'.$settings->image) }}">
+
                     <span class="logo-text">حول الشركة</span>
                   </a>
                 </div>
                 <!-- #footer-logo -->
                 <br>
-                <p>شركة مورا سوفت لخدمات النقل والشحن بمختلف الطرق ..
+
+                {{-- <p>شركة مورا سوفت لخدمات النقل والشحن بمختلف الطرق ..
                     تعمل الشركة على خدمتك على مدار الساعة ونقل شحناتك وتوصيلها عبر أأمن الطرق وافضل الاسعار
-                </p>
+                </p> --}}
+
+                <p>{{ $settings->about }}</p>
+
                 <div class="footer-social-links ">
                   <ul>
                     <li>
-                      <a href="https://www.facebook.com/samir.gamal77" target="_blank">
+                      <a href="{{ $settings->FBLink }}" target="_blank">
                         <span class="icon">
                           <i class="fab fa-facebook-f"></i>
                         </span>
                       </a>
                     </li>
                     <li>
-                      <a href="https://www.linkedin.com/in/samir-gamal-8ab68ba0" target="_blank">
+                      <a href="{{ $settings->LinLink }}" target="_blank">
                         <span class="icon">
                           <i class="fab fa-linkedin"></i>
                         </span>
                       </a>
                     </li>
                     <li>
-                      <a href="https://www.youtube.com/channel/UCwT_14y87y3tgR8AqMCxrRA" target="_blank">
+                      <a href="{{ $settings->YoutubeLink }}" target="_blank">
                         <span class="icon">
                           <i class="fab fa-youtube"></i>
                         </span>
@@ -142,48 +149,71 @@
                         <li ><a href="{{ route('allsections.show',$section->id) }}"> {{$section->section_name}} </a></li>
                     @endforeach
                 </li>
-                {{-- <li>
-                  <a href="./index.html">التخزين</a>
-                </li>
-                <li>
-                  <a href="./index.html">الشحن البحري</a>
-                </li>
-                <li>
-                  <a href="./index.html">الشحن الجوي</a>
-                </li>
-                <li>
-                  <a href="./index.html">النقل البري</a>
-                </li>
-                <li>
-                  <a href="./index.html"> بضائع وحدات</a>
-                </li> --}}
+                     {{-- <li>
+                    <a href="./index.html">التخزين</a>
+                    </li>
+                    <li>
+                    <a href="./index.html">الشحن البحري</a>
+                    </li>
+                    <li>
+                    <a href="./index.html">الشحن الجوي</a>
+                    </li>
+                    <li>
+                    <a href="./index.html">النقل البري</a>
+                    </li>
+                    <li>
+                    <a href="./index.html"> بضائع وحدات</a>
+                    </li>  --}}
               </ul>
             </div>
             <!-- .widget -->
           </div>
-          <!-- .column -->
+             <!-- .column -->
+
+            {{--
+          <li class="has-dropdown">
+            <a href="#"> {{ __('front.sections') }}</a>
+            <ul class="dropdown">
+                @foreach (\App\Models\Section::where('status','1')->get() as $section)
+                <li><a href="{{ route('allsections.show',$section->id) }}">{{$section->section_name}}</a></li>
+                @endforeach
+            </ul>
+            </li> --}}
+
+
+
+            {{-- <p> {{ \App\Models\setting->city }} --}}
+
+
+
+
           <div class="column is-4">
             <div class="widget widget-form">
-              <h3 class="widget-title ">contact us</h3>
 
-                <a href="../pages/contact.html">Address</a>
-                </h3>
-                <p>مخرج 14 , طريق عمر بن عبدالعزيز , الرياض,
-                <br> المملكة العربية السعودية</p>
+            <p>  contact us</p>
+
+              <p>{{ $settings->city }}</p>
+
+              <p>{{ $settings->country }}</p>
+
+
+
+                {{-- <p> {{ $settings->city }}
+
+                <br> {{ $settings->country }}</p> --}}
 
               {{-- <div class="media-content"> --}}
-                <h3>
-                  <a>Phone</a>
-                </h3>
-                <p>+ 0500699206
-                  <br> + 0560032681</p>
+                <p>{{ __('site.phone1') }} :  {{ $settings->phone1 }}</p>
+                <p>{{ __('site.phone2') }} :  {{ $settings->phone2 }}</p>
+                {{-- <p>{{ $settings->phone1 }}
+                  <br> {{ $settings->phone2 }}</p> --}}
             </div>
 
-            <h3>
-                <a>Email</a>
-              </h3>
-              <p>admin@morasoft.net
-                <br>www.morasoft.net</p>
+
+                <p>{{ $settings->email }}</p>
+
+              {{-- <p>{{ $settings->email }}
+                <br>{{ $settings->websiteLink }}</p> --}}
               {{-- <p></p> --}}
               {{-- <br> --}}
               {{-- <form>
@@ -201,6 +231,7 @@
             {{-- </div> --}}
           </div>
           <!-- .column -->
+          @endforeach
         </div>
         <!-- .columns -->
       </div>

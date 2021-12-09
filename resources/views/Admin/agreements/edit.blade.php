@@ -5,8 +5,8 @@
     <div class="col-lg-9">
         <div class="card m-b-30">
             <div class="card-body">
-                <h4 class="mt-0 header-title">{{ __('site.Edit_agreements') }}</h4>
-                <a class="btn btn-primary btn-sm" style="margin: 10px;" href="{{ route('agreements.index') }}">رجوع</a>
+                <h4 class="mt-0 header-title">{{ __('site.edit_agreement') }}</h4>
+                <a class="btn btn-primary btn-sm" style="margin: 10px;" href="{{ route('agreements.index') }}">{{ __('site.back') }}</a>
                 <form class="" action="{{ route('agreements.update',$agreements->id) }}" method="post" enctype="multipart/form-data">
                     {{csrf_field()}}
                     @method('PUT')
@@ -16,7 +16,7 @@
                         value="{{ $agreements->getTranslation('agreement_title','ar') }}" />
                     </div>
                     <div class="form-group">
-                        <label>{{ __('site.event_title_en') }}</label>
+                        <label>{{ __('site.agreement_title_en') }}</label>
                         <input type="text" class="form-control" required  name="agreement_title_en"
                         value="{{ $agreements->getTranslation('agreement_title','en') }}" />
                     </div>

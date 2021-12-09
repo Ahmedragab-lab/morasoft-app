@@ -44,11 +44,11 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <label>{{ __('site.original_price') }}</label>
+                        <label>{{ __('site.original_Price') }}</label>
                         <input type="text" class="form-control"  name="original_price" value="{{ $product->original_price }}"/>
                     </div>
                     <div class="form-group">
-                        <label>{{ __('site.selling_price') }}</label>
+                        <label>{{ __('site.selling_Price') }}</label>
                         <input type="text" class="form-control"  name="selling_price" value="{{ $product->selling_price }}"/>
                     </div>
                     <div class="form-group">

@@ -35,6 +35,8 @@
                                             <th>price</th>
                                         </tr>
                                         </thead>
+
+                                        <tbody>
                                         <tbody class="shadow">
                                             <tr class="shadow">
                                                 <td >{{ $order_details->order_no }}</td>
@@ -68,6 +70,9 @@
                                             <input type="hidden" value="{{ $order_details->price+$total_tax }}" name="total">
                                         </tbody>
                                     </table>
+
+                                    <button type="submit" class="btn btn-warning float-end save-data">Order Now</button>
+
                                     <div class="has-text-centered">
                                         <button type="submit" class="btn button contact rounded-pill shadow  save-data ">Order Now</button>
 
@@ -90,7 +95,6 @@
       </div>
     </div>
 </div>
-
 
  {{-- start client feedback --}}
  <section id="testimonials" class="section testimonials-section has-background-primary-light is-clearfix">

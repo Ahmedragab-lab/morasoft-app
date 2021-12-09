@@ -5,21 +5,21 @@
     <div class="col-lg-9">
         <div class="card m-b-30">
             <div class="card-body">
-                <h4 class="mt-0 header-title">create new events</h4>
-                <a class="btn btn-primary btn-sm" style="margin: 10px;" href="{{ route('events.index') }}">رجوع</a>
+                <h4 class="mt-0 header-title">{{ __('site.add_event') }}</h4>
+                <a class="btn btn-primary btn-sm" style="margin: 10px;" href="{{ route('events.index') }}">{{ __('site.back') }}</a>
                 <form class="" action="{{route('events.store')}}" method="post" enctype="multipart/form-data">
                     {{csrf_field()}}
                     <div class="form-group">
                         <label>{{ __('site.event_title_ar') }}</label>
-                        <input type="text" class="form-control" required placeholder="ادخل اسم الخدمه" name="event_title" />
+                        <input type="text" class="form-control" required placeholder="{{ __('site.enter_event_title_ar') }}" name="event_title" />
                     </div>
                     <div class="form-group">
                         <label>{{ __('site.event_title_en') }}</label>
-                        <input type="text" class="form-control" required placeholder="Enter Event Title " name="event_title_en" />
+                        <input type="text" class="form-control" required placeholder="{{ __('site.enter_event_title_en') }} " name="event_title_en" />
                     </div>
                     <div class="form-group">
                         <label>{{ __('site.event_limit') }}</label>
-                        <input type="text" class="form-control" required placeholder="Enter Event Limit " name="limit" />
+                        <input type="text" class="form-control" required placeholder="{{ __('site.enter_event_limit') }} " name="limit" />
                     </div>
 
                     <div class="form-group">

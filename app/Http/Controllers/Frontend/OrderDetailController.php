@@ -62,6 +62,7 @@ class OrderDetailController extends Controller
     {
         $order_step = OrderDetail::where('order_id',$id)->first();
         return view('site.pages.order-steps',compact('order_step'));
+
     }
 
 

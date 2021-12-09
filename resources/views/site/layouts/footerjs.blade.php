@@ -76,6 +76,10 @@
     // }, 5000);
 </script>
 
+
+<script src="https://js.pusher.com/7.0/pusher.min.js"></script>
+
+
 {{-- pusher price --}}
 <script src="https://js.pusher.com/7.0/pusher.min.js"></script>
 <script>
@@ -85,7 +89,9 @@
         }
     });
     Pusher.logToConsole = true;
-    var pusher = new Pusher('bb82e65c18afc6a8c12f', {
+
+    var pusher = new Pusher('45f6c1fd40946edb6c48', {
+
         cluster: 'mt1'
     // encrypted:false
     });
@@ -94,6 +100,8 @@
     alert(JSON.stringify(data));
     });
 </script>
+
 <script src="{{ asset('js/pusherNotifications.js') }}"></script>
+
 
 

@@ -5,17 +5,17 @@
     <div class="col-lg-9">
         <div class="card m-b-30">
             <div class="card-body">
-                <h4 class="mt-0 header-title">create new agreement</h4>
-                <a class="btn btn-primary btn-sm" style="margin: 10px;" href="{{ route('agreements.index') }}">رجوع</a>
+                <h4 class="mt-0 header-title">{{ __('site.add_agreement') }}</h4>
+                <a class="btn btn-primary btn-sm" style="margin: 10px;" href="{{ route('agreements.index') }}">{{ __('site.back') }}</a>
                 <form class="" action="{{route('agreements.store')}}" method="post" enctype="multipart/form-data">
                     {{csrf_field()}}
                     <div class="form-group">
                         <label>{{ __('site.agreement_title_ar') }}</label>
-                        <input type="text" class="form-control" required placeholder="ادخل اسم الخدمه" name="agreement_title" />
+                        <input type="text" class="form-control" required placeholder="{{ __('site.enter_agreement_title_ar') }}" name="agreement_title" />
                     </div>
                     <div class="form-group">
                         <label>{{ __('site.agreement_title_en') }}</label>
-                        <input type="text" class="form-control" required placeholder="Enter Event Title " name="agreement_title_en" />
+                        <input type="text" class="form-control" required placeholder="{{ __('site.enter_agreement_title_en') }} " name="agreement_title_en" />
                     </div>
                     <div class="form-group">
                         <label>{{ __('site.description') }}</label>
