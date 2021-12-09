@@ -168,8 +168,7 @@
                                             <li class="header">notifications(<span
                                                     class="notif-count">{{ \App\Models\Usernoti::count() }}</span>)
                                             </li>
-                                            @foreach (\App\Models\Usernoti::orderByDesc('id')->take(5)->get()
-        as $noti)
+                                            @foreach (\App\Models\Usernoti::orderByDesc('id')->take(5)->get() as $noti)
                                                 <li>
                                                     <a href="#">
                                                         <strong>{{ $noti->price }}</strong>

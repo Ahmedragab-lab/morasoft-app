@@ -62,9 +62,7 @@
                         <div class="field">
                             <div class="control quantity-input">
                                 <input type="hidden" value="{{ $product->id }}" class="prod_id" name="prod_id">
-
-                                <input class="input has-text-centered qty_input " type="number"   min="1" max="{{ $product->qty }}" value="1" name="prod_qty" data-max="120" pattern="[0-9]*">
-
+                                <input class="input has-text-centered qty_input " type="number"  onkeydown="return false" min="1" max="{{ $product->qty }}" value="1" name="prod_qty" >
                             </div>
                         </div>
                     </div>
@@ -556,6 +554,9 @@ $.ajaxSetup({
                     'prod_qty': prod_qty,
                 },
                 success: function(response) {
+                swal(response.status);
+                },
+                error: function(response) {
                 swal(response.status);
                 }
             });

@@ -52,7 +52,10 @@
                                             </div>
                                             <div class="field">
                                                 <div class="control is-expanded">
-                                                <input class="input" type="tel" name="phone" placeholder="Your Phone" value="{{ Auth::user()->phone }}" required> </div>
+                                                <input class="input" type="tel" name="phone" placeholder="Your Phone" value="{{ Auth::user()->phone }}" > </div>
+                                                @error('phone')
+                                                <div class="text-warning">{{ $message }}</div>
+                                                @enderror
                                             </div>
                                             </div>
                                         </div>
@@ -60,11 +63,17 @@
                                             <div class="field-body">
                                             <div class="field">
                                                 <div class="control is-expanded">
-                                                <input class="input" type="text" name="address1" placeholder="Address" value="{{ Auth::user()->address1 }}" required> </div>
+                                                <input class="input" type="text" name="address1" placeholder="Address" value="{{ Auth::user()->address1 }}" > </div>
+                                                @error('address1')
+                                                <div class="text-warning">{{ $message }}</div>
+                                                @enderror
                                             </div>
                                             <div class="field">
                                                 <div class="control is-expanded">
-                                                <input class="input" type="text" name="address2" placeholder="Address2" value="{{ Auth::user()->address2 }}" required> </div>
+                                                <input class="input" type="text" name="address2" placeholder="Address2" value="{{ Auth::user()->address2 }}" > </div>
+                                                @error('address2')
+                                                <div class="text-warning">{{ $message }}</div>
+                                                @enderror
                                             </div>
                                             </div>
                                         </div>
@@ -72,11 +81,11 @@
                                             <div class="field-body">
                                             <div class="field">
                                                 <div class="control is-expanded">
-                                                <input class="input" type="text" name="city" placeholder="City" value="{{ Auth::user()->city }}" required> </div>
+                                                <input class="input" type="text" name="city" placeholder="City" value="{{ Auth::user()->city }}" > </div>
                                             </div>
                                             <div class="field">
                                                 <div class="control is-expanded">
-                                                <input class="input" type="text" name="country" placeholder="Country" value="{{ Auth::user()->country }}" required> </div>
+                                                <input class="input" type="text" name="country" placeholder="Country" value="{{ Auth::user()->country }}" > </div>
                                             </div>
                                             </div>
                                         </div>
@@ -162,13 +171,13 @@
 @endsection
 @section('js')
 <script>
-    $(document).ready(function(){
-    $(".save-data").click(function(e){
-        // e.preventDefault();
-        $('.save-data').removeClass('btn-warning ').addClass('btn-success disabled').html('done thank you for your choice');
+//     $(document).ready(function(){
+//     $(".save-data").click(function(e){
+//         // e.preventDefault();
+//         $('.save-data').removeClass('btn-warning ').addClass('btn-success disabled').html('done thank you for your choice');
 
-    });
-});
+//     });
+// });
 </script>
 
 
