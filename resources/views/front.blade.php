@@ -57,8 +57,8 @@
     </section>
     {{-- ============================End slider product======================================== --}}
 
-    <section id="tracking" class="section tracking-section is-clearfix">
-        <div class="container shadow">
+    <section id="tracking" class="section tracking-section is-clearfix shadow">
+        <div class="container ">
           <p class="heading-title-top has-text-centered">tracking</p>
           <h1 class="heading-title style-3">track your shipment</h1>
           <div class="columns is-mobile is-centered">
@@ -168,9 +168,9 @@
    
 
    <!-- Start Video -->
-   <div class="video">
-    <video autoplay muted loop>
-      <source  src="{{ asset('assets/images/video.mp4') }}" type="video/mp4" />
+   <div class="video shadow" style="height: 700px">
+    <video autoplay muted loop  >
+      <source  src="{{ asset('assets/images/video.mp4') }}"   type="video/mp4" />
     </video>
     <div class="text">
       <h2>MoraSoft company for shipping</h2>
@@ -406,7 +406,7 @@
                 <div class="level-item has-text-centered">
                     <div class="m-auto text-center">
                         <h1 class=""style="font-size: 60px"><i class="fas fa-building"></i></h1>
-                        <p class="title counter" style="font-size: 60px;">110</p>
+                        <p class="title counter" style="font-size: 60px;">{{ \App\Models\Country::count() }}</p>
                         <h1 class="text-center" style="font-size: 25px;color:#4b505d;">countries covered</h1>
                     </div>
                 </div>

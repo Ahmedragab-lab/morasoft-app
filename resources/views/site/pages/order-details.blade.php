@@ -71,7 +71,7 @@
                                         </tbody>
                                     </table>
 
-                                    <button type="submit" class="btn btn-warning float-end save-data">Order Now</button>
+                                    {{-- <button type="submit" class="btn btn-warning float-end save-data">Order Now</button> --}}
 
                                     <div class="has-text-centered">
                                         <button type="submit" class="btn button contact rounded-pill shadow  save-data ">Order Now</button>

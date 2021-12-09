@@ -9291,10 +9291,10 @@ body.blog-list-style-3 .blog-list.style-3 .blog-post .entry-header .post-meta ul
     justify-content: flex-end;
 }
 
-.counterup.style-5 .level-item > div {
+/* .counterup.style-5 .level-item > div {
     border-right: 1px solid #EAEAEA;
     text-align: left;
-}
+} */
 
 .counterup.style-5 .level-item > div .title,
 .counterup.style-5 .level-item > div .heading {

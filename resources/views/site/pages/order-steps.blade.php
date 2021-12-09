@@ -50,26 +50,28 @@
             {{-- feed back --}}
             <section class="section  is-clearfix">
                 <div class="container">
-                    <h1 class="heading-title style-1">we intersting in your feed back thank you</h1>
+                    <h1 class="heading-title style-1">we intersting in your feedback thank you</h1>
                     <div class="has-text-centered">
                         <div class="show-modal has-text-left">
-                            <button class="button launch-modal">
-                                Please Rate  <span style="font-size:22px;"> ( {{  $order_step->order->service->serve_name }} service )</span>
+                            <button class="button launch-modal rounded-pill">
+                                 <span style="font-size:22px;"> Leave a rating to {{  $order_step->order->service->serve_name }} service </span>
                             </button>
                             <form action="{{ route('addrate') }}" method="post">
                                 @csrf
                                 <input type="hidden" value="{{ $order_step->order->user->id }}" name="user_id">
                                 <input type="hidden" value="{{ $order_step->order->service->id }}" name="service_id">
                                 <div class="modal">
-                                    <div class="modal-background"></div>
-                                        <div class="modal-content">
-                                            <div class="box">
-                                                <article class="media">
-                                                    <div class="media-content">
-                                                        <div class="content">
-                                                            <strong>{{ $order_step->order->user->fname }}{{ $order_step->order->user->lname }} </strong>
-                                                            <small>{{ $order_step->order->user->email }}</small>
-                                                            <div class="rate">
+                                    <div class="modal-background shadow"></div>
+                                        <div class="modal-content ">
+                                            <div class="p-4">
+                                                <article class="media " >
+                                                    <div class="media-content m-auto text-center  m-2" style="height:200px ;width:100px;">
+                                                        <div class="text-center m-auto" >
+                                                            {{-- <strong>{{ $order_step->order->user->fname }}{{ $order_step->order->user->lname }} </strong> --}}
+                                                            {{-- <div>{{ $order_step->order->user->email }}</div> --}}
+                                                            <strong class="rext-center fs-2"> How would you rate this course?</strong>
+                                                            <p class="text-center fs-5">Select Rating</p>
+                                                            <div class="rate m-auto text-center" style="">
                                                                 <input type="radio" id="star5" name="rate" value="5" />
                                                                 <label for="star5" title="text">5 stars</label>
                                                                 <input type="radio" id="star4" name="rate" value="4" />
@@ -81,10 +83,16 @@
                                                                 <input type="radio" id="star1" name="rate" value="1" />
                                                                 <label for="star1" title="text">1 star</label>
                                                             </div>
-                                                            <button  type="submit" class="button is-success">Save changes</button>
+                                                           
+                                                            
                                                         </div>
+                                                       
                                                     </div>
+                                                   
                                                 </article>
+                                                <div class="text-center">
+                                                    <button  type="submit" class="button is-success rounded-pill">Save changes</button>
+                                                </div>
                                             </div>
                                         </div>
                                     <button class="modal-close is-large" aria-label="close"></button>
