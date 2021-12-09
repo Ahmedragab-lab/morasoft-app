@@ -31,7 +31,7 @@
                                             @method('delete')
                                             <a href="{{ route('tracking_steps.edit', $tracking_step->id) }}" class="btn btn-info">{{ __('Edit') }}</a>
                                             <button type="button" class="btn btn-danger"
-                                                    onclick="confirm('{{ __('Are you sure you want to delete this tracking_steps?') }}') ? this.parentElement.submit() : ''">
+                                                    onclick="confirm('{{ __('site.Warning') }}') ? this.parentElement.submit() : ''">
                                                 {{ __('Delete') }}
                                             </button>
                                         </form>

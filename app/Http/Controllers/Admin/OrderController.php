@@ -84,7 +84,11 @@ class OrderController extends Controller
             $userrequest = UserReqest::latest()->first();
             Notification::send($user,new AdminPrice($userrequest));
 
+
+
+
             $u = User::where('id',$order_price->user_id)->get();
+
             $data=[
                 'user_id'=>$u,
                 'price'=>$order_price->price,
@@ -97,6 +101,7 @@ class OrderController extends Controller
 
               event(new PriceNotification($noti));
             //   event(new PriceNotification($userrequest));
+
 
             toastr()->success(__('price added successfully'));
             return redirect()->route('orders.index');

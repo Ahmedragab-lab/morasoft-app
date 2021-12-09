@@ -12,6 +12,7 @@ use App\Models\Service;
 use Illuminate\Http\Request;
 use App\Models\navbar_details;
 use App\Models\Product;
+use App\Models\Setting;
 use Dotenv\Validator;
 
 class FrontendController extends Controller
@@ -26,9 +27,11 @@ class FrontendController extends Controller
 
         $Last_comp=Company::orderBy('id','DESC')->first();
         $Last_product=Product::orderBy('id','DESC')->first();
+
+        $settings = Setting::get();
+
+
         // $allevents = Event::orderBy('id','DESC')->get();
-
-
 
         // $events=Event::all()->last();
          $Last_service = Service::orderBy('id','DESC')->first();
@@ -37,7 +40,7 @@ class FrontendController extends Controller
         // $Last_comp=Company::orderBy('id','DESC')->first();
         // $allevents = Event::orderBy('id','DESC')->get();
         // $Last_product=Product::orderBy('id','DESC')->first();
-        return view('/front',compact('Last_agreement','Last_event','Last_service'));
+        return view('/front',compact('Last_agreement','Last_event','Last_service','settings'));
     }
 
 

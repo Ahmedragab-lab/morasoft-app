@@ -41,13 +41,13 @@
 
 
                                             <td>
-                                                <a href="{{ route('companies.edit',$company->id) }}" class="btn btn-info btn-sm" role="button" aria-pressed="true" title="edit">
+                                                <a href="{{ route('companies.edit',$company->id) }}" class="btn btn-info btn-sm" role="button" aria-pressed="true" title="{{ __('site.edit') }}">
                                                     <i class="fa fa-edit"></i>
                                                 </a>
 
 
 
-                                                <button type="button" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#delete_comp{{ $company->id }}" title="delete">
+                                                <button type="button" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#delete_comp{{ $company->id }}" title="{{ __('site.delete') }}">
                                                     <i class="fa fa-trash"></i>
                                                 </button>
                                             </td>

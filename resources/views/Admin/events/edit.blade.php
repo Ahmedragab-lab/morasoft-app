@@ -5,7 +5,7 @@
     <div class="col-lg-9">
         <div class="card m-b-30">
             <div class="card-body">
-                <h4 class="mt-0 header-title">{{ __('site.Edit_events') }}</h4>
+                <h4 class="mt-0 header-title">{{ __('site.edit_event') }}</h4>
                 <a class="btn btn-primary btn-sm" style="margin: 10px;" href="{{ route('events.index') }}">رجوع</a>
                 <form class="" action="{{ route('events.update',$events->id) }}" method="post" enctype="multipart/form-data">
                     {{csrf_field()}}

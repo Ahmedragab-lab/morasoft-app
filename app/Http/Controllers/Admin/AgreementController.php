@@ -3,38 +3,25 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreAgreement;
 use App\Models\Agreement;
+use App\Models\Setting;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\File;
 
 class AgreementController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+
     public function index()
     {
         $agreements=Agreement::all();
         return view('Admin.agreements.index',compact('agreements'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+
     public function create()
     {
         return view('admin.agreements.create');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
     public function store( StoreAgreement $request)
     {
         try {
@@ -59,42 +46,26 @@ class AgreementController extends Controller
         }
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\Agreement  $agreement
-     * @return \Illuminate\Http\Response
-     */
+
     public function show($id)
     {
         // $Last_agrement = Agreement::find($id);
         // return view('site.pages.last_agre',compact('Last_agrement'));
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\Agreement  $agreement
-     * @return \Illuminate\Http\Response
-     */
+
     public function edit($id)
     {
-        $agreements = Agreement::find($id);
+        $agreements = Agreement::findorfail($id);
         return view('Admin.agreements.edit',compact('agreements'));
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Agreement  $agreement
-     * @return \Illuminate\Http\Response
-     */
+
     public function update(StoreAgreement $request,$id)
     {
         try{
             $validated = $request->validated();
-            $agreement = Agreement::find($id);
+            $agreement = Agreement::findorfail($id);
             if($request->hasFile('image')){
                 $path = 'uploads/agreement/' . $agreement->image;
                 if(File::exists($path)){
@@ -109,7 +80,7 @@ class AgreementController extends Controller
             $agreement->agreement_title = ['en'=>$request->agreement_title_en ,'ar'=>$request->agreement_title];
             $agreement->desc = $request->desc;
             $agreement->status = $request->status==true?'1':'0';
-            $agreement->update();
+            $agreement->save();
             toastr()->success(__('Agreement update successfully'));
             return redirect()->route('agreements.index');
         }
@@ -118,12 +89,7 @@ class AgreementController extends Controller
         }
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\Agreement  $agreement
-     * @return \Illuminate\Http\Response
-     */
+
     public function destroy($id)
     {
         try{

@@ -174,6 +174,10 @@ return [
         App\Providers\RouteServiceProvider::class,
         App\Providers\RepositoryServiceProvider::class,
         App\Providers\RepoServiceProvider::class,
+        App\Providers\GlobalFunctionsServiceProvider::class,
+
+
+        // App\Helper\GeneralHelper::class,
     ],
 
     /*
