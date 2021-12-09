@@ -9,12 +9,12 @@
     <div id="content-area" class="site-content-area">
       <div id="content-area-inner" class="site-content-area-inner">
         <section class="section  is-clearfix hero has-background-primary-light">
-            <div class="container">
+            <div class="fluid-container">
 
                 <form  action="{{ route('checkout.store') }}" method="POST" autocomplete="off">
                     @csrf
-                    <div class="row">
-                        <dive class="col-md-7">
+                    <div class="row rounded shadow pt-4 overflow-hidden">
+                        <div class="col-md-7">
                             <div class="columns is-variable is-multiline is-centered">
                                 <div class="column is-10">
                                     <h1 class="heading-title style-1">Basic Details</h1>
@@ -95,10 +95,10 @@
                                     <br>
                                 </div>
                             </div>
-                        </dive>
-                        <div class="col-md-5">
-                            <div class="columns is-variable is-multiline is-centered">
-                                <div class="column is-10">
+                        </div>
+                        <div class="col-md-5 ">
+                            <div class="columns is-variable is-multiline is-centered ">
+                                <div class="column is-10 ">
                                     <h1 class="heading-title style-1">Order Details</h1>
                                     <br>
                                     @php
@@ -106,7 +106,7 @@
                                       $total_tax = 0;
                                       $total = 0;
                                     @endphp
-                                    <table class="table is-fullwidth is-hoverable">
+                                    <table class="table is-fullwidth is-hoverable ">
                                         <thead>
                                         <tr>
                                             <th>Image</th>
@@ -117,9 +117,9 @@
                                             <th>Tax (14%)</th>
                                         </tr>
                                         </thead>
-                                        <tbody>
+                                        <tbody class="overflow-scroll">
                                             @foreach ($cartitems as $item)
-                                            <tr>
+                                            <tr >
                                                 <td><img src="{{ asset('uploads/product/'.$item->product->image) }}" alt="" width="50px"></td>
                                                 <td>{{ $item->product->product_name }}</td>
                                                 <td>{{ $item->product_qty }}</td>
@@ -151,7 +151,9 @@
                                             </tr>
                                         </tbody>
                                     </table>
-                                    <button type="submit" class="btn btn-warning float-end save-data">Order Now</button>
+                                    <div class="m-auto text-center">
+                                    <button type="submit" class="btn text-light  save-data rounded-pill " style="background:#cf5029">Order Now</button>
+                                    </div>
                                     <br>
                                     <br>
                                     <br>

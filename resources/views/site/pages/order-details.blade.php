@@ -24,7 +24,7 @@
                                       $total_price = 0;
                                       $total = 0;
                                     @endphp
-                                    <table class="table is-fullwidth is-hoverable">
+                                    <table class="table is-fullwidth is-hoverable shadow">
                                         <thead>
                                         <tr>
                                             <th>order_no</th>
@@ -35,8 +35,8 @@
                                             <th>price</th>
                                         </tr>
                                         </thead>
-                                        <tbody>
-                                            <tr>
+                                        <tbody class="shadow">
+                                            <tr class="shadow">
                                                 <td >{{ $order_details->order_no }}</td>
                                                 <td>{{ $order_details->name }}</td>
                                                 <td>{{ $order_details->service->serve_name }}</td>
@@ -46,7 +46,7 @@
                                             </tr>
                                         </tbody>
                                     </table>
-                                    <table class="table is-fullwidth is-hoverable">
+                                    <table class="table is-fullwidth is-hoverable shadow">
                                         <thead>
                                         <tr>
                                             <th>total price</th>
@@ -68,7 +68,10 @@
                                             <input type="hidden" value="{{ $order_details->price+$total_tax }}" name="total">
                                         </tbody>
                                     </table>
-                                    <button type="submit" class="btn btn-warning float-end save-data">Order Now</button>
+                                    <div class="has-text-centered">
+                                        <button type="submit" class="btn button contact rounded-pill shadow  save-data ">Order Now</button>
+
+                                    </div>
                                     {{-- <a href="#" class="btn btn-info float-end " style="display:none;"> --}}
                                     <a href="{{ route('step',$order_details->id) }}" class="btn btn-info float-end step" style="display:none;">
                                          متابعه عمليه الشحن

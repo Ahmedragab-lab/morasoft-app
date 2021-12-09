@@ -1,7 +1,7 @@
 <!-- #content-main-wrap -->
-<div id="footer-top-wrap" class="is-clearfix">
+<div id="footer-top-wrap" class="is-clearfix mt-5">
     <div id="footer-top" class="site-footer-top">
-      <div id="footer-top-inner" class="site-footer-top-inner ">
+      {{-- <div id="footer-top-inner" class="site-footer-top-inner ">
         <section class="hero clients-section is-clearfix">
           <div class="container">
             <div class="columns is-variable is-4 is-multiline">
@@ -58,7 +58,7 @@
             </div>
           </div>
         </section>
-      </div>
+      </div> --}}
       <!-- #footer-top-inner -->
     </div>
     <!-- #footer-top -->
