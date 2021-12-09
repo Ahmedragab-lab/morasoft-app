@@ -347,8 +347,7 @@
                     aria-label="Slide 3"></button>
             </div> --}}
             <div class="carousel-inner ">
-                @foreach (\App\Models\Feedback::orderBy('id', 'DESC')->limit(15)->get()
-        as $feedback)
+                @foreach (\App\Models\Feedback::orderBy('id', 'DESC')->limit(15)->get() as $feedback)
                 <div class="carousel-item feedback @if($loop->first) active @endif h-2" data-bs-interval="1500">
                     <img src="{{asset('front/images/background/back-2.png')}}" class="d-block w-100 " style="height:500px" alt="...">
                     <div class="carousel-caption feedback-caption d-none d-md-block">
