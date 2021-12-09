@@ -78,7 +78,7 @@
                         <label class="checkbox-field">
                             {{-- <input class="frm-input " name="have-code" id="have-code" value="" type="checkbox"><span>I have promo code</span> --}}
                         </label>
-                        <a class="btn btn-warning float end checkoutbtn" href='#' id="checkoutbtn">save quantity</a>
+                        <a class="btn btn-update float end checkoutbtn" href='#' id="checkoutbtn">Update Shopping Cart</a>
                         <a class="btn btn-primary float end " href='{{ route('checkout.index') }}' id="checkoutbtn">Go to order now</a>
             @else
                         <h2>Your Cart is empty</h2>
@@ -211,6 +211,7 @@
                     // }
                     success: function(response) {
                     swal(response.status);
+                    window.location.reload();
                     },
                     error: function(response) {
                     swal(response.status);
