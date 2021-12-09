@@ -20,6 +20,11 @@
           swal("{{ session('status') }}");
     </script>
 @endif
+@if(session('error'))
+    <script>
+          swal("{{ session('error') }}");
+    </script>
+@endif
 @yield('js')
 
 @else
@@ -31,6 +36,11 @@
 @if(session('status'))
     <script>
           swal("{{ session('status') }}");
+    </script>
+@endif
+@if(session('error'))
+    <script>
+          swal("{{ session('error') }}");
     </script>
 @endif
 @yield('js')
@@ -79,7 +89,9 @@
         }
     });
     Pusher.logToConsole = true;
+
     var pusher = new Pusher('45f6c1fd40946edb6c48', {
+
         cluster: 'mt1'
     // encrypted:false
     });

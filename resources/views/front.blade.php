@@ -225,7 +225,7 @@
                     <div class="step-details">
                         <p class="step-title">lorem ipsum dolor</p>
                         <p>Lorem ipsum dolor sit amet nulla varius lectus.</p>
-                        
+
                     </div>
                 </div>
                 <div class="step-item" data-step-id="2">
@@ -371,7 +371,7 @@
                         <img src="{{ asset('uploads/user-img/' . $feedback->users->image) }}" width="150" height="150" class="img-area rounded-circle h-5 img-profil " alt="...">
 
                         <h1 class="text-light  py-2  ">{{ $feedback->users->fname }}   {{$feedback->users->lname}} </h1>
-                    
+
                         <label class="feed-service">{{ $feedback->services->serve_name }}   Service</label>
                         <p>{{ $feedback->feedback }}</p>
                     </div>
@@ -540,11 +540,13 @@
                         serv_id: serv_id,
                         sms: sms,
                     },
-                    success: function(response) {
-                        if (response) {
-                            swal(response.status);
-                            $("#ajaxform")[0].reset();
-                        }
+                    success: function(response)
+                    {
+                    swal(response.status);
+                    $("#ajaxform")[0].reset();
+                    },
+                    error: function(response) {
+                    swal(response.status);
                     }
                 });
             });
