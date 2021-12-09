@@ -20,11 +20,18 @@ Route::group(
 
         //===================================route for admin guard========================================================
             // Show Form login admin
-            Route::get('/login/admin', [AdminController::class, 'create'])
+
+            // Route::get('/login/admin', [AdminController::class, 'create'])
+            //     ->middleware('guest')
+            //     ->name('login.admin');
+            // // Request Form login admin
+            // Route::post('/login/admin', [AdminController::class, 'store'])
+            //     ->middleware('guest')->name('admin.login');
+            Route::get('morasoft', [AdminController::class, 'create'])
                 ->middleware('guest')
                 ->name('login.admin');
             // Request Form login admin
-            Route::post('/login/admin', [AdminController::class, 'store'])
+            Route::post('morasoft', [AdminController::class, 'store'])
                 ->middleware('guest')->name('admin.login');
                   // Request Form login out admin
         // Route::post('/logout/admin', [AuthenticatedSessionController::class, 'logout'])
