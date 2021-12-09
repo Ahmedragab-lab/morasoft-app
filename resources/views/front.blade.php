@@ -20,8 +20,7 @@
             <br>
             <div class="blog-list style-2 columns is-variable is-4 is-multiline">
                 <div class="owl-carousel owl-theme">
-                    @foreach (\App\Models\Product::where('status', '1')->where('trending', '1')->orderBy('id', 'DESC')->limit(5)->get()
-        as $product)
+                    @foreach (\App\Models\Product::where('status', '1')->where('trending', '1')->orderBy('id', 'DESC')->limit(10)->get() as $product)
                         <div class=" item">
                             <article class="blog-post">
                                 <figure class="post-image">
@@ -59,35 +58,36 @@
 
     <section id="tracking" class="section tracking-section is-clearfix shadow">
         <div class="container ">
-          <p class="heading-title-top has-text-centered">tracking</p>
-          <h1 class="heading-title style-3">track your shipment</h1>
-          <div class="columns is-mobile is-centered">
-            <div class="column is-10" >
-              <div class="subscribe-form style-1">
-                <form method="post" action="{{ route('searchtrackstep') }}">
-                    @csrf
-                    <div class="field has-addons has-addons-centered is-grouped">
-                        <div class="control">
-                        <input class="input" type="text" placeholder="Type your order number" name="order_no" required autocomplete="off">
+            <p class="heading-title-top has-text-centered">tracking</p>
+            <h1 class="heading-title style-3">track your shipment</h1>
+            <div class="columns is-mobile is-centered">
+                <div class="column is-10" >
+                <div class="subscribe-form style-1">
+                    <form method="post" action="{{ route('searchtrackstep') }}">
+                        @csrf
+                        <div class="field has-addons has-addons-centered is-grouped">
+                            <div class="control">
+                            <input class="input" type="text" placeholder="Type your order number" name="order_no" required autocomplete="off">
+                            </div>
+                            <div class="control">
+                            {{-- <a href="" class="button" type="submit">
+                                <span class="tracking_search">Track it</span>
+                                <span class="icon is-small">
+                                <i class="icon-target"></i>
+                                </span>
+                            </a> --}}
+                            <input type="submit" value="Track it" class="button" >
+                            </div>
                         </div>
-                        <div class="control">
-                        {{-- <a href="" class="button" type="submit">
-                            <span class="tracking_search">Track it</span>
-                            <span class="icon is-small">
-                            <i class="icon-target"></i>
-                            </span>
-                        </a> --}}
-                        <input type="submit" value="Track it" class="button" >
-                        </div>
-                    </div>
-                </form>
-              </div>
-              <p class="help"> with best regardes
-                  <span class="icon is-small">
-                     <i class="icon-target"></i>
-                  </span>Mora Soft.
-                <a href="#">Advanced Tracking</a>
-              </p>
+                    </form>
+                </div>
+                <p class="help"> with best regardes
+                    <span class="icon is-small">
+                        <i class="icon-target"></i>
+                    </span>Mora Soft.
+                    <a href="#">Advanced Tracking</a>
+                </p>
+                </div>
             </div>
         </div>
     </section>
@@ -165,7 +165,7 @@
             </div>
     </section> --}}
     {{-- End video section --}}
-   
+
 
    <!-- Start Video -->
    <div class="video shadow" style="height: 700px">
@@ -223,12 +223,12 @@
     </section> --}}
 
 
-     
+
     {{-- ********** Start Events ************ --}}
 
-   
+
     <section id="news" class="section news-section is-clearfix">
-       
+
         <div class="container shadow">
             <p class="heading-title-top has-text-centered pt-5">welcome logistics</p>
             <h1 class="heading-title style-3"> Last
@@ -331,7 +331,7 @@
 
     {{-- Asmaa Client feedback --}}
     <section>
-       
+
         <p class="heading-title-top has-text-centered pt-5">welcome logistics</p>
         <h1 class="heading-title style-3"> Feedback
             {{-- <br> difference. --}}
@@ -436,7 +436,7 @@
         </div>
     </section> --}}
     {{-- end client feedback --}}
-    
+
     {{-- anthor form --}}
     <section id="quote" class="section quote-section padding-bottom-none is-clearfix ">
         <div id="order" class="container shadow mb-5 p-4" >
@@ -524,14 +524,14 @@
                     </form>
                 </div>
                 <div class="column is-6-desktop is-12-tablet rounded" data-aos-delay="600">
-                    
+
                     <img alt="Joo - Niche Multi-Purpose HTML Template  border rounded shadow  " src="{{ asset('assets/images/man_1.png') }}">
                 </div>
             </div>
         </div>
     </section>
-   
-    
+
+
 @endsection
 @section('js')
     <script type="text/javascript">
