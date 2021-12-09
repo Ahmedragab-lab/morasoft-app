@@ -18,12 +18,12 @@ class SettingsTableSeeder extends Seeder
         DB::table('settings')->delete();
         $settings = new Setting();
 
-        $settings->comp_name =  'MoraSoft';
-        $settings->about =  'شركة مورا سوفت لخدمات النقل والشحن بمختلف الطرق .. تعمل الشركة على خدمتك على مدار الساعة ونقل شحناتك وتوصيلها عبر أأمن الطرق وافضل الاسعار';
-        $settings->phone1 = '111111111';
-        $settings->phone2 = '222222222';
-        $settings->country = 'المملكة العربية السعودية';
-        $settings->city = 'مخرج 14 , طريق عمر بن عبدالعزيز , الرياض';
+        $settings->comp_name= ['en'=>'MoraSoft','ar'=>'مورا سوفت'];
+        $settings->about = ['en'=>'Mora Soft Company for transportation and shipping services in various ways.. The company is at your service around the time','ar'=>'شركة مورا سوفت لخدمات النقل والشحن بمختلف الطرق .. تعمل الشركة على خدمتك على مدر '];
+        $settings->phone1 = '+ 970 595 842 240';
+        $settings->phone2 = '+ 972 595 842 240';
+        $settings->country = ['en'=>'Saudi Arabia','ar'=>'المملكة العربية السعودية '];
+        $settings->city = ['en'=>'Exit 14, Omar Bin Abdulaziz Road, Riyadh','ar'=>' مخرج 14 , طريق عمر بن عبدالعزيز , الرياض'];
         $settings->email = 'admin@morasoft.net';
         $settings->websiteLink =  'https://www.morasoft.net';
         $settings->FBLink =  'https://www.facebook.com';

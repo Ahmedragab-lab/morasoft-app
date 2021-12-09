@@ -201,7 +201,11 @@ return [
 // ======= Start Setting Page =========
 
 'comp_name' => 'Comp Name',
+'comp_name_en' => 'Company Name EN',
 'about' => 'About',
+'about_en' => 'About EN',
+'country_en' => 'Country EN',
+'city_en' => 'City EN',
 'phone1' => 'Phone1',
 'phone2' => 'Phone2',
 'websiteLink' => 'Website Link',

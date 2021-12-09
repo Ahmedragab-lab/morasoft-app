@@ -19,28 +19,56 @@
                     <div class="form-group">
                         <label>{{ __('site.comp_name') }}</label>
                         <input type="text" class="form-control" required name="comp_name"
-                        value="{{ $settings->comp_name }}" />
+                        value="{{ $settings->getTranslation('comp_name','ar')  }}" />
                     </div>
+
+                    <div class="form-group">
+                        <label>{{ __('site.comp_name_en') }}</label>
+                        <input type="text" class="form-control" required name="comp_name_en"
+                        value="{{ $settings->getTranslation('comp_name','en')  }}" />
+                    </div>
+
 
 
                     <div class="form-group">
                         <label>{{ __('site.about') }}</label>
                         <div>
-                            <textarea required class="form-control" rows="5" name="about">{{ $settings->about }}</textarea>
+                            <textarea required class="form-control" rows="5" name="about">{{ $settings->getTranslation('about','ar')  }}</textarea>
                         </div>
                     </div>
 
                     <div class="form-group">
+                        <label>{{ __('site.about_en') }}</label>
+                        <div>
+                            <textarea required class="form-control" rows="5" name="about_en">{{ $settings->getTranslation('about','en')  }}</textarea>
+                        </div>
+                    </div>
+
+
+
+                    <div class="form-group">
                         <label>{{ __('site.country') }}</label>
                         <input type="text" class="form-control" required name="country"
-                        value="{{ $settings->country }}" />
+                       value=" {{ $settings->getTranslation('country','ar')  }}" />
                     </div>
 
 
                     <div class="form-group">
+                        <label>{{ __('site.country_en') }}</label>
+                        <input type="text" class="form-control" required name="country_en"
+                        value=" {{ $settings->getTranslation('country','en')  }}" />
+                    </div>
+
+                    <div class="form-group">
                         <label>{{ __('site.city') }}</label>
                         <input type="text" class="form-control" required name="city"
-                        value="{{ $settings->city }}" />
+                        value=" {{ $settings->getTranslation('city','ar')  }}" />
+                    </div>
+
+                    <div class="form-group">
+                        <label>{{ __('site.city_en') }}</label>
+                        <input type="text" class="form-control" required name="city_en"
+                        value=" {{ $settings->getTranslation('city','en')  }}"  />
                     </div>
 
                     <div class="form-group">

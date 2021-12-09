@@ -43,7 +43,6 @@ class SettingController extends Controller
     public function update(Request $request , $id ){
 
         try{
-            // $validated = $request->validated();
             $settings = Setting::findorfail($id);
             if($request->hasFile('image')){
                 $path = 'uploads/settings/'. $settings->image;
@@ -56,12 +55,12 @@ class SettingController extends Controller
                 $file->move('uploads/settings',$filename);
                 $settings->image = $filename;
             }
-            $settings->comp_name = $request->comp_name;
-            $settings->about = $request->about;
+            $settings->comp_name = ['en'=>$request->comp_name_en ,'ar'=>$request->comp_name];
+            $settings->about =  ['en'=>$request->about_en ,'ar'=>$request->about];
             $settings->phone1 = $request->phone1;
             $settings->phone2 = $request->phone2;
-            $settings->country = $request->country;
-            $settings->city = $request->city;
+            $settings->country =  ['en'=>$request->country_en ,'ar'=>$request->country];
+            $settings->city =  ['en'=>$request->city_en ,'ar'=>$request->city];
             $settings->email = $request->email;
             $settings->websiteLink = $request->websiteLink;
             $settings->FBLink = $request->FBLink;
