@@ -60,7 +60,7 @@
     <section id="tracking" class="section tracking-section is-clearfix shadow">
         <div class="container ">
             <p class="heading-title-top has-text-centered">tracking</p>
-            <h1 class="heading-title style-3">track your shipment</h1>
+            <h1 class="heading-title style-3">track your Service</h1>
             <div class="columns is-mobile is-centered">
                 <div class="column is-10">
                     <div class="subscribe-form style-1">
@@ -68,7 +68,7 @@
                             @csrf
                             <div class="field has-addons has-addons-centered is-grouped">
                                 <div class="control">
-                                    <input class="input" type="text" placeholder="Type your order number"
+                                    <input class="input" type="text" placeholder="Search by service number"
                                         name="order_no" required autocomplete="off">
                                 </div>
                                 <div class="control">
@@ -103,19 +103,18 @@
                 <span class="has-text-primary">Services </span>
             </h1>
             <div class="slider">
-                <div id="slider-service" class="owl-carousel">
-                    @foreach (\App\Models\Service::orderBy('id', 'DESC')->limit(3)->get()
-        as $serv)
-                        <div class="slider-card">
-                            <div class="d-flex justify-content-center align-items-center mb-4" style="max-height: 350px ;">
-                                <img src="{{ asset('uploads/serv/' . $serv->image) }}"
-                                    style="height: 300px ;border-radius:25px">
-
-                            </div>
-                            <h2 class="mb-0 text-center"><b>{{ $serv->serve_name }} Service</b></h2>
-                        </div>
-                    @endforeach
-                </div>
+                      <div id="slider-service" class="owl-carousel">
+                        @foreach (\App\Models\Service::orderBy('id', 'DESC')->limit(3)->get() as $serv)
+                          <div class="slider-card">
+                              <div class="d-flex justify-content-center align-items-center mb-4" style="max-height: 350px ;">
+                                  <a href="{{ route('allservices.show', $serv->id) }}">
+                                    <img  src="{{ asset('uploads/serv/' . $serv->image) }}" style="height: 300px ;border-radius:25px">
+                                  </a>
+                              </div>
+                              <h2 class="mb-0 text-center"><b>{{ $serv->serve_name }} Service</b></h2>
+                          </div>
+                          @endforeach
+                      </div>
             </div>
         </div>
     </section>
@@ -172,21 +171,21 @@
     </section> --}}
     {{-- End video section --}}
 
-    <br><br><br>
-    <!-- Start Video -->
-    <section class="">
-        <div class="video shadow " style="margin-top: 30px">
-            <video autoplay muted loop>
-                <source src="{{ asset('assets/images/video.mp4') }}" type="video/mp4" />
-            </video>
-            <div class="text">
-                <h2>MoraSoft company for shipping</h2>
-                <p>Its All You Need</p>
-                <button class="rounded-pill">See More</button>
-            </div>
+<br><br><br>
+   <!-- Start Video -->
+   <section class="" >
+    <div class="video shadow " style="margin-top: 30px" >
+        <video autoplay muted loop  >
+        <source  src="{{ asset('assets/images/video.mp4') }}"   type="video/mp4" />
+        </video>
+        <div class="text">
+        <h2>MoraSoft company for shipping</h2>
+        <p>Its All You Need</p>
+        <button class="rounded-pill">See More</button>
         </div>
-    </section>
-    <!-- End Video -->
+    </div>
+   </section>
+  <!-- End Video -->
 
 
 
@@ -268,6 +267,7 @@
                         </a>
                         
                     </div>
+    </section>
 
         </div>
     </div>
@@ -489,29 +489,31 @@
 
 @endsection
 @section('js')
-    <script>
-        $("#slider-service").owlCarousel({
-            loop: true,
-            margin: 20,
-            nav: true,
-            autoplay: true,
-            autoplayTimeout: 3000,
-            autoplayHoverPause: true,
-            center: true,
+<script>
 
-            responsive: {
-                0: {
-                    items: 1
-                },
-                600: {
-                    items: 2
-                },
-                1000: {
-                    items: 3
-                }
-            }
-        });
-    </script>
+  $("#slider-service").owlCarousel({
+      loop:true,
+    margin:20,
+    nav:true,
+    autoplay:true,
+    autoplayTimeout:3000,
+    autoplayHoverPause:true,
+    center: true,
+
+    responsive:{
+        0:{
+            items:1
+        },
+        600:{
+            items:2
+        },
+        1000:{
+            items:3
+        }
+    }
+  });
+
+</script>
     <script type="text/javascript">
         $.ajaxSetup({
             headers: {

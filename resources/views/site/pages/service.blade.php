@@ -73,9 +73,24 @@
                                     style="height: 100px">
                             </div>
                             <h2>{{ $feedback->services->serve_name }} Services</h2>
-
                             <p>{{ $feedback->sms }}</p>
-
+                            <div class="testimonials-stars">
+                                <span class="icon " >
+                                  <i class="ion-md-star {{ $feedback->star == 5 ? 'active' : '' }}" ></i>
+                                </span>
+                                <span class="icon">
+                                  <i class="ion-md-star {{ $feedback->star == 4 ? 'active' : '' }}"></i>
+                                </span>
+                                <span class="icon">
+                                  <i class="ion-md-star {{ $feedback->star == 3 ? 'active' : '' }}"></i>
+                                </span>
+                                <span class="icon">
+                                  <i class="ion-md-star {{ $feedback->star == 2 ? 'active' : '' }}"></i>
+                                </span>
+                                <span class="icon">
+                                  <i class="ion-md-star {{ $feedback->star == 1 ? 'active' : '' }}"></i>
+                                </span>
+                            </div>
                         </div>
                     @endforeach
                 </div>
