@@ -26,7 +26,7 @@ class UserSeeder extends Seeder
                 'address2' => 'Hurghada',
                 'city' => 'Cairo',
                 'country' => 'Egypt',
-                'image'=>'img_1.jfif',
+                'image'=>'wolf.jpg',
             ],
             [
                 'fname' => 'mohmed',

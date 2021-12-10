@@ -14,7 +14,7 @@
                 </h1>
               <div class="columns is-variable is-4 is-multiline">
                @foreach (  \App\Models\Product::where('status','1')->orderBy('id','DESC')->get() as $product )
-                    <div class="column is-4" data-aos="fade">
+                    <div class="column is-3" data-aos="fade">
                         <div class="work-item">
                         <figure>
                             <a href="#">
@@ -40,6 +40,7 @@
                         </figure>
                         <div class="work-item-meta">
                             <h3><a href="#">{{ $product->product_name }}</a></h3>
+                            <h4><a href="#"><s>{{ $product->original_price }} LE</s></a></h4>
                             <h4><a href="#">{{ $product->selling_price }} LE</a></h4>
                             <h5><a href="#">{{ $product->trending==1?'Trending':'' }} </a></h5>
                             <div class="shop-rating">

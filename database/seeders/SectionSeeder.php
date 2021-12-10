@@ -53,5 +53,21 @@ class SectionSeeder extends Seeder
         $section->status = 1;
         $section->popular = 1;
         $section->save();
+        $section = new section();
+        $section->section_name = ['en'=>'fashion','ar'=>'ازياءوموضه'];
+        $section->slug = 'fashion';
+        $section->image = 'default6.jpg';
+        $section->desc = '  يوجد العديد من ملحقات الاجهزة المميزة    ';
+        $section->status = 1;
+        $section->popular = 1;
+        $section->save();
+        $section = new section();
+        $section->section_name = ['en'=>'tools equipment','ar'=>'معدات منزليه'];
+        $section->slug = 'tools_equipment';
+        $section->image = 'default7.jpg';
+        $section->desc = '  يوجد العديد من ملحقات الاجهزة المميزة    ';
+        $section->status = 1;
+        $section->popular = 1;
+        $section->save();
     }
 }
