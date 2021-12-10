@@ -47,7 +47,7 @@
                         </div>
                     </div>
                 </section>
-               
+
 
                 {{-- feed back --}}
                 <section class="section  is-clearfix">
@@ -74,7 +74,7 @@
                                                             {{-- <strong>{{ $order_step->order->user->fname }}{{ $order_step->order->user->lname }} </strong> --}}
                                                             {{-- <div>{{ $order_step->order->user->email }}</div> --}}
                                                             <strong class="rext-center fs-2"> How would you rate this
-                                                                course?</strong>
+                                                                serice?</strong>
                                                             <p class="text-center fs-5">Select Rating</p>
                                                             <div class="rate m-auto text-center" dir="rtl">
                                                                 <input type="radio" id="star5" name="rate" value="5" />
@@ -124,6 +124,6 @@
 
         }
 
-        
+
     </script>
 @endsection
