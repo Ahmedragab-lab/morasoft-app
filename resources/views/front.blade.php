@@ -351,7 +351,7 @@
                 <div class="carousel-item feedback @if($loop->first) active @endif h-2" data-bs-interval="1500">
                     <img src="{{asset('front/images/background/back-2.png')}}" class="d-block w-100 " style="height:500px" alt="...">
                     <div class="carousel-caption feedback-caption d-none d-md-block">
-                        <img src="{{ asset('uploads/user-img/' . $feedback->users->image) }}" width="150" height="150" class="img-area rounded-circle h-5 img-profil " alt="...">
+                        <img src="{{ asset('uploads/user-img/' . $feedback->users->image) }}"  width="150"  style="height:150px" class="img-area rounded-circle h-5 img-profil " alt="...">
 
                         <h1 class="text-light  py-2  ">{{ $feedback->users->fname }}   {{$feedback->users->lname}} </h1>
 

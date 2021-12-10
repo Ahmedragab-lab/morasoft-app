@@ -74,7 +74,7 @@
                                                             {{-- <strong>{{ $order_step->order->user->fname }}{{ $order_step->order->user->lname }} </strong> --}}
                                                             {{-- <div>{{ $order_step->order->user->email }}</div> --}}
                                                             <strong class="rext-center fs-2"> How would you rate this
-                                                                course?</strong>
+                                                                Service?</strong>
                                                             <p class="text-center fs-5">Select Rating</p>
                                                             <div class="rate m-auto text-center" dir="rtl">
                                                                 <input type="radio" id="star5" name="rate" value="5" />
@@ -93,6 +93,9 @@
                                                 </article>
                                                 <div class="m-auto text-center">
                                                     <span id='errorLastRadio'></span>
+                                                </div>
+                                                <div class="control is-expanded m-2">
+                                                    <textarea class="textarea" name="sms" placeholder="Message" required=""> Write a comment</textarea>
                                                 </div>
                                                 <div class="text-center">
                                                     <button type="submit" class="button is-success rounded-pill" onclick="validateRating()">Save

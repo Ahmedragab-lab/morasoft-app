@@ -225,22 +225,23 @@ img-area {
     opacity: 0.1;
 }
 .carousel-caption h1 {
-    font-size: 1.5rem;
-    font-weight: 200px;
     color: #cf5029 !important;
     margin-top: 2px;
+    font-size: 20px;
+    font-weight: 700;
+    text-transform: uppercase;
 }
 .carousel-caption p {
-    font-size: 1.5rem;
-    font-weight: 200px;
+    font-size: .5rem;
+    font-weight: 90px;
     /* color: #d6d2d1 !important; */
     margin-top: 2px;
 }
 .carousel-caption .feed-service {
-    font-size: 1rem;
+    font-size: 1.2rem;
     font-weight: 200px;
     padding: 10px 20px;
-    background-color: #cf5029 !important;
+    /* background-color: #cf5029 !important; */
     margin-top: 2px;
     border-radius: 3px;
 }
