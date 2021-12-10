@@ -30,7 +30,7 @@ class CreateSettingsTable extends Migration
             $table->string('LinLink');
             $table->string('YoutubeLink');
             $table->string('map');
-            $table->string('image');
+            $table->string('image')->default('1.png');
             $table->timestamps();
         });
     }

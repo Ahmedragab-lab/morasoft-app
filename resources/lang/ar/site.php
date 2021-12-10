@@ -16,6 +16,9 @@ return [
 
 
 
+
+
+
  //    sidebar
    'dashboard'=>'الرئيسيه',
    //admin

@@ -249,29 +249,29 @@
             <div class="level">
               <div class="level-left">
                 <span class="footer-copyright">
-                  <a href='/'>Joo</a> ©
-                  <span class='current-year'></span>. جميع الحقوق محفوظة. </span>
+                  <a href='/'></a> ©
+                  <span class='current-year'></span>.{{ __('front.copyright') }} . </span>
               </div>
               <!-- .level-left -->
               <div class="level-right">
                 <div class="nav-wrap">
                   <nav class="main-navigation right">
                     <ul class="menu">
-                      <li>
+                      {{-- <li>
                         <a href="./pages/about.html">من نحن</a>
-                      </li>
+                      </li> --}}
                       <li>
-                        <a href="./pages/services.html">الخدمات</a>
+                        <a href="{{ route('allproducts.index') }}">{{ __('front.products') }}</a>
                       </li>
-                      <li>
-                        <a href="./pages/pricing.html">الأسعار</a>
+                       <li>
+                        <a href="{{ route('allservices.index') }}">{{ __('front.services') }}</a>
                       </li>
-                      <li>
-                        <a href="./pages/sitemap.html">خريطة الموقع</a>
-                      </li>
-                      <li>
+                       {{-- <li>
+                        <a href="{{ route('allsections.index') }}">allsections</a>
+                      </li> --}}
+                      {{-- <li>
                         <a href="./pages/contact.html">اتصل بنا</a>
-                      </li>
+                      </li> --}}
                     </ul>
                   </nav>
                   <!-- #site-navigation -->
