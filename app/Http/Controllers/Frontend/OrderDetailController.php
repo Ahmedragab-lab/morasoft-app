@@ -6,6 +6,7 @@ use App\Events\PriceNotification;
 use App\Models\OrderDetail;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Models\UserRate;
 use App\Models\UserReqest;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
@@ -61,6 +62,7 @@ class OrderDetailController extends Controller
     public function showstep($id)
     {
         $order_step = OrderDetail::where('order_id',$id)->first();
+        // $userrate = UserRate::where('id',$order_step)->first();
         return view('site.pages.order-steps',compact('order_step'));
 
     }
