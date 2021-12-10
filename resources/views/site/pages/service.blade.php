@@ -57,6 +57,7 @@
 
     {{-- Asmaa Feedback --}}
     <section class=" container">
+        @if(\App\Models\UserRate::count() > 0)
         <h1 class="heading-title style-3 has-text-center"> Feedback
             <span class="has-text-primary">clients</span>
         </h1>
@@ -64,35 +65,37 @@
         <div id="feedback" class="owl-carousel owl-theme owl-loaded ">
             <div class="owl-stage-outer">
                 <div class="owl-stage area-content">
+
                     {{-- @foreach (\App\Models\Feedback::orderBy('id', 'DESC')->limit(3)->get() as $feedback) --}}
-                    @foreach (\App\Models\UserRate::where('service_id',$service->id)->get() as $feedback)
-                        <div class="owl-item content">
-                            <div class="image-user-feed m-auto text-center">
-                                <img alt="no photo" class="rounded-circle"
-                                    src="{{ asset('uploads/user-img/' . $feedback->users->image) }}"
-                                    style="height: 100px">
-                            </div>
-                            <h2>{{ $feedback->services->serve_name }} Services</h2>
-                            <p>{{ $feedback->sms }}</p>
-                            <div class="testimonials-stars">
-                                <span class="icon " >
-                                  <i class="ion-md-star {{ $feedback->star == 5 ? 'active' : '' }}" ></i>
-                                </span>
-                                <span class="icon">
-                                  <i class="ion-md-star {{ $feedback->star == 4 ? 'active' : '' }}"></i>
-                                </span>
-                                <span class="icon">
-                                  <i class="ion-md-star {{ $feedback->star == 3 ? 'active' : '' }}"></i>
-                                </span>
-                                <span class="icon">
-                                  <i class="ion-md-star {{ $feedback->star == 2 ? 'active' : '' }}"></i>
-                                </span>
-                                <span class="icon">
-                                  <i class="ion-md-star {{ $feedback->star == 1 ? 'active' : '' }}"></i>
-                                </span>
-                            </div>
-                        </div>
-                    @endforeach
+                            @foreach (\App\Models\UserRate::where('service_id',$service->id)->get() as $feedback)
+                                <div class="owl-item content">
+                                    <div class="image-user-feed m-auto text-center">
+                                        <img alt="no photo" class="rounded-circle"
+                                            src="{{ asset('uploads/user-img/' . $feedback->users->image) }}"
+                                            style="height: 100px">
+                                    </div>
+                                    <h2>{{ $feedback->services->serve_name }} Services</h2>
+                                    <p>{{ $feedback->sms }}</p>
+                                    <div class="testimonials-stars">
+                                        <span class="icon " >
+                                        <i class="ion-md-star {{ $feedback->star == 5 ? 'active' : '' }}" ></i>
+                                        </span>
+                                        <span class="icon">
+                                        <i class="ion-md-star {{ $feedback->star == 4 ? 'active' : '' }}"></i>
+                                        </span>
+                                        <span class="icon">
+                                        <i class="ion-md-star {{ $feedback->star == 3 ? 'active' : '' }}"></i>
+                                        </span>
+                                        <span class="icon">
+                                        <i class="ion-md-star {{ $feedback->star == 2 ? 'active' : '' }}"></i>
+                                        </span>
+                                        <span class="icon">
+                                        <i class="ion-md-star {{ $feedback->star == 1 ? 'active' : '' }}"></i>
+                                        </span>
+                                    </div>
+                                </div>
+                            @endforeach
+
                 </div>
             </div>
             <div class="owl-dots">
@@ -101,6 +104,9 @@
               <div class="owl-dot"><span></span></div>
           </div>
         </div>
+        @else
+        <h2>there is no feed back</h2>
+        @endif
     </section>
 
 
