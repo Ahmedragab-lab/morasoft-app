@@ -93,6 +93,12 @@
     </section>
 
     {{--Start Asmaa section service --}}
+                                        {{-- @foreach (\App\Models\Service::where('status', '1')->get() as $service)
+                                            <li><a href="{{ route('allservices.show', $service->id) }}"> <i
+                                                        class="fas fa-helicopter"></i> {{ $service->serve_name }}</a>
+                                            </li>
+                                            <li></li>
+                                        @endforeach --}}
     <section  class="pt-5">
         <div class="container">
             <p class="heading-title-top has-text-centered pt-5">welcome logistics</p>
@@ -102,12 +108,12 @@
             </h1>
             <div class="slider">
                       <div id="slider-service" class="owl-carousel">
-                        @foreach (\App\Models\Service::orderBy('id', 'DESC')->limit(3)->get()
-                        as $serv)
+                        @foreach (\App\Models\Service::orderBy('id', 'DESC')->limit(3)->get() as $serv)
                           <div class="slider-card">
                               <div class="d-flex justify-content-center align-items-center mb-4" style="max-height: 350px ;">
-                                  <img  src="{{ asset('uploads/serv/' . $serv->image) }}" style="height: 300px ;border-radius:25px">
-                                  
+                                  <a href="{{ route('allservices.show', $serv->id) }}">
+                                    <img  src="{{ asset('uploads/serv/' . $serv->image) }}" style="height: 300px ;border-radius:25px">
+                                  </a>
                               </div>
                               <h2 class="mb-0 text-center"><b>{{ $serv->serve_name }} Service</b></h2>
                           </div>
@@ -116,10 +122,10 @@
             </div>
         </div>
     </section>
-                         
+
     {{-- End Asmaa  section service --}}
     {{-- services section --}}
-   
+
     {{-- End services section --}}
     {{-- video section --}}
     {{-- <section class="section watch-video  is-clearfix vid-container">
@@ -172,16 +178,16 @@
 <br><br><br>
    <!-- Start Video -->
    <section class="" >
-   <div class="video shadow " style="margin-top: 30px" >
-    <video autoplay muted loop  >
-      <source  src="{{ asset('assets/images/video.mp4') }}"   type="video/mp4" />
-    </video>
-    <div class="text">
-      <h2>MoraSoft company for shipping</h2>
-      <p>Its All You Need</p>
-      <button class="rounded-pill">See More</button>
+    <div class="video shadow " style="margin-top: 30px" >
+        <video autoplay muted loop  >
+        <source  src="{{ asset('assets/images/video.mp4') }}"   type="video/mp4" />
+        </video>
+        <div class="text">
+        <h2>MoraSoft company for shipping</h2>
+        <p>Its All You Need</p>
+        <button class="rounded-pill">See More</button>
+        </div>
     </div>
-  </div>
    </section>
   <!-- End Video -->
 
@@ -325,7 +331,7 @@
                         </div>
                       </div>
                     </div>
-                </section>
+    </section>
 
 
     {{-- ********** Start News ************ --}}
@@ -538,7 +544,7 @@
 @endsection
 @section('js')
 <script>
-   
+
   $("#slider-service").owlCarousel({
       loop:true,
     margin:20,
@@ -547,7 +553,7 @@
     autoplayTimeout:3000,
     autoplayHoverPause:true,
     center: true,
-   
+
     responsive:{
         0:{
             items:1

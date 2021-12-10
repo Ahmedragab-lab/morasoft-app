@@ -73,9 +73,7 @@
                                     style="height: 100px">
                             </div>
                             <h2>{{ $feedback->services->serve_name }} Services</h2>
-
                             <p>{{ $feedback->sms }}</p>
-
                         </div>
                     @endforeach
                 </div>
