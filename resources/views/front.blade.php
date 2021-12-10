@@ -93,12 +93,6 @@
     </section>
 
     {{--Start Asmaa section service --}}
-                                        {{-- @foreach (\App\Models\Service::where('status', '1')->get() as $service)
-                                            <li><a href="{{ route('allservices.show', $service->id) }}"> <i
-                                                        class="fas fa-helicopter"></i> {{ $service->serve_name }}</a>
-                                            </li>
-                                            <li></li>
-                                        @endforeach --}}
     <section  class="pt-5">
         <div class="container">
             <p class="heading-title-top has-text-centered pt-5">welcome logistics</p>
