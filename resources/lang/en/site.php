@@ -251,8 +251,8 @@ return [
 'enter_agreement_title_en' => 'Enter Agreement Title EN',
 
 // ======= End Agreements Page =========
-
-
+'editstep'=>'Edit Step',
+'Invoice_details'=>'Invoice Details',
 
 
 ];

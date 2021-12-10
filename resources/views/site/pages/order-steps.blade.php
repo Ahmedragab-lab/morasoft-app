@@ -47,7 +47,7 @@
                         </div>
                     </div>
                 </section>
-               
+
 
                 {{-- feed back --}}
                 <section class="section  is-clearfix">
@@ -127,6 +127,6 @@
 
         }
 
-        
+
     </script>
 @endsection
