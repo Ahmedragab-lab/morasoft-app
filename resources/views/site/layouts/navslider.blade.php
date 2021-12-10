@@ -109,32 +109,42 @@
     </div>
     <div class="carousel-inner">
         <div class="carousel-item active">
-            <img src="{{ asset('front/images/slider/8.jpg') }}" class="d-block w-100 animate__animated animate__fadeInTopLeft" style="animation-delay: 1000ms" alt="...">
+            <img src="{{ asset('front/images/slider/8.jpg') }}"
+                class="d-block w-100 animate__animated animate__fadeInTopLeft" style="animation-delay: 1000ms" alt="...">
             <div class="carousel-caption d-none d-md-block">
                 <h5 class="animate__animated animate__fadeInDown">Morasoft for International shipping</h5>
-                <p>Some representative placeholder content for the first slide.</p>
+                <p>Morasoft copmany for shipping service</p>
                 <div class="slider-btn">
-                    <button class=" btn btn-1 animate__animated animate__slideInLeft" style="animation-delay: 1s"> See Our Services</button>
-                    <button class=" btn btn-2 animate__animated animate__slideInRight" style="animation-delay: 1s"> See Our Products</button>
+                    <button class=" btn btn-1 animate__animated animate__slideInLeft" style="animation-delay: 1s"> See
+                        Our Services</button>
+                    <button class=" btn btn-2 animate__animated animate__slideInRight" style="animation-delay: 1s"> See
+                        Our Products</button>
                 </div>
             </div>
         </div>
         <div class="carousel-item">
-            <img src="{{ asset('front/images/slider/6.jpg') }}" class="d-block w-100 animate__animated animate__fadeInTopLeft" style="animation-delay: 1s"alt="...">
+            <img src="{{ asset('front/images/slider/6.jpg') }}"
+                class="d-block w-100 animate__animated animate__fadeInTopLeft" style="animation-delay: 1s" alt="...">
             <div class="carousel-caption d-none d-md-block">
-                <h5>Second slide label</h5>
-                <p>Some representative placeholder content for the second slide.</p>
+                <h5>We have the map</h5>
+                <p>Morasoft copmany for shipping service</p>
                 <div class="slider-btn">
-                    <button class=" btn btn-1"> See Our Services</button>
-                    <button class=" btn btn-2">See Our Products</button>
+                    <a  href="#services" >
+                        <button class=" btn btn-1"> See Our Services</button>
+                    </a>
+                    <a>
+                        <button class=" btn btn-2">See Our Products</button>
+                    </a>
+
                 </div>
             </div>
         </div>
         <div class="carousel-item">
-            <img src="{{ asset('front/images/slider/pic.jpg') }}" class="d-block w-100 animate__animated animate__fadeInTopLeft"style="animation-delay: 1s" alt="...">
+            <img src="{{ asset('front/images/slider/pic.jpg') }}"
+                class="d-block w-100 animate__animated animate__fadeInTopLeft" style="animation-delay: 1s" alt="...">
             <div class="carousel-caption d-none d-md-block">
-                <h5>Third slide label</h5>
-                <p>Some representative placeholder content for the third slide.</p>
+                <h5>Is our field trust</h5>
+                <p>Morasoft copmany for shipping service </p>
                 <div class="slider-btn">
                     <button class=" btn btn-1"> SeeOur Services</button>
                     <button class=" btn btn-2"> See Our Products</button>
@@ -142,13 +152,14 @@
             </div>
         </div>
         <div class="carousel-item">
-            <img src="{{ asset('front/images/slider/5.jpg') }}" class="d-block w-100 animate__animated animate__fadeOut" style="animation-delay: 2s" alt="...">
+            <img src="{{ asset('front/images/slider/5.jpg') }}"
+                class="d-block w-100 animate__animated animate__fadeOut" style="animation-delay: 2s" alt="...">
             <div class="carousel-caption d-none d-md-block">
-                <h5>Third slide label</h5>
-                <p>Some representative placeholder content for the third slide.</p>
+                <h5>Is our key experience</h5>
+                <p>Morasoft copmany for shipping service </p>
                 <div class="slider-btn">
-                  <button class=" btn btn-1"> See Our Services</button>
-                  <button class=" btn btn-2"> See Our Products</button>
+                    <button class=" btn btn-1"> See Our Services</button>
+                    <button class=" btn btn-2"> See Our Products</button>
                 </div>
             </div>
         </div>

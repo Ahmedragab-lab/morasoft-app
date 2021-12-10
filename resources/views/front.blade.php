@@ -168,7 +168,7 @@
    
 
    <!-- Start Video -->
-   <div class="video shadow" style="height: 700px">
+   <div class="video shadow" >
     <video autoplay muted loop  >
       <source  src="{{ asset('assets/images/video.mp4') }}"   type="video/mp4" />
     </video>
@@ -436,6 +436,15 @@
         </div>
     </section> --}}
     {{-- end client feedback --}}
+    <div class="owl-carousel owl-theme">
+        <div> Your Content </div>
+        <div> Your Content </div>
+        <div> Your Content </div>
+        <div> Your Content </div>
+        <div> Your Content </div>
+        <div> Your Content </div>
+        <div> Your Content </div>
+      </div>
     
     {{-- anthor form --}}
     <section id="quote" class="section quote-section padding-bottom-none is-clearfix ">
