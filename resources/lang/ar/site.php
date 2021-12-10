@@ -241,6 +241,7 @@ return [
 'enter_agreement_title_en' => ' ادخل عنوان الاتفاقية بالانجليزية',
 
 // ======= End Agreements Page =========
-
+'editstep'=>'تعديل خطوات التتبع',
+'Invoice_details'=>'تفاصيل الفاتوره',
 
 ];

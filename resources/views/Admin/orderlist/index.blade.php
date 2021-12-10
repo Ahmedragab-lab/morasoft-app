@@ -39,13 +39,13 @@
                                     <td>{{ $order->order->from->Name }}</td>
                                     <td>{{ $order->order->to->Name }}</td>
                                     <td>{{ $order->order->price}}</td>
-                                    <td><a href="{{ route('orderlist.show',$order->id) }}" class="btn btn-success">Invoice details</a></td>
+                                    <td><a href="{{ route('orderlist.show',$order->id) }}" class="btn btn-success">{{ __('site.Invoice_details') }}</a></td>
                                     <td>
                                         <form action="{{ route('orderlist.destroy', $order->id) }}" method="post">
                                             @csrf
                                             @method('delete')
                                             <button type="button" class="btn btn-primary waves-effect waves-light" data-toggle="modal" data-target="#editsteps{{ $order->id }}">
-                                                {{ __('site.add tracking steps') }}
+                                                {{ __('site.editstep') }}
                                             </button>
                                             <button type="button" class="btn btn-danger"
                                             onclick="confirm('{{ __('site.Warning'.$order->id.'?') }}') ? this.parentElement.submit() : ''">

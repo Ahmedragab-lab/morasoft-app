@@ -39,7 +39,7 @@
                                     <td>{{ $order->name }}</td>
                                     <td>{{ $order->email }}</td>
                                     <td>{{ $order->user->phone }}</td>
-                                    <td>{{ $order->address }}</td>
+                                    <td>{{ $order->user->address1 }}</td>
                                     <td>
                                         <img src="{{ asset('uploads/user-img/'.$order->user->image) }}" class="img-thumbnail" width="70" alt="">
                                     </td>
