@@ -115,10 +115,11 @@
                 <h5 class="animate__animated animate__fadeInDown">Morasoft for International shipping</h5>
                 <p>Morasoft copmany for shipping service</p>
                 <div class="slider-btn">
-                    <button class=" btn btn-1 animate__animated animate__slideInLeft" style="animation-delay: 1s"> See
-                        Our Services</button>
-                    <button class=" btn btn-2 animate__animated animate__slideInRight" style="animation-delay: 1s"> See
-                        Our Products</button>
+                    <a href="#services" class=" btn btn-1 animate__animated animate__slideInLeft"
+                        style="animation-delay: 1s"> See
+                        Our Services</a>
+                    <a href="#product" class=" btn btn-2 animate__animated animate__slideInRight" style="animation-delay: 1s"> See
+                        Our Products</a>
                 </div>
             </div>
         </div>
@@ -129,11 +130,10 @@
                 <h5>We have the map</h5>
                 <p>Morasoft copmany for shipping service</p>
                 <div class="slider-btn">
-                    <a  href="#services" >
-                        <button class=" btn btn-1"> See Our Services</button>
+                    <a href="#services" class=" btn btn-1">
+                        See Our Services
                     </a>
-                    <a>
-                        <button class=" btn btn-2">See Our Products</button>
+                    <a href="#product" class=" btn btn-2">See Our Products
                     </a>
 
                 </div>
@@ -146,8 +146,8 @@
                 <h5>Is our field trust</h5>
                 <p>Morasoft copmany for shipping service </p>
                 <div class="slider-btn">
-                    <button class=" btn btn-1"> SeeOur Services</button>
-                    <button class=" btn btn-2"> See Our Products</button>
+                    <a href="#services" class=" btn btn-1"> SeeOur Services</a>
+                    <a href="#product" class=" btn btn-2"> See Our Products</a>
                 </div>
             </div>
         </div>
@@ -158,8 +158,8 @@
                 <h5>Is our key experience</h5>
                 <p>Morasoft copmany for shipping service </p>
                 <div class="slider-btn">
-                    <button class=" btn btn-1"> See Our Services</button>
-                    <button class=" btn btn-2"> See Our Products</button>
+                    <a href="#services" class=" btn btn-1"> See Our Services</a>
+                    <a href="#product" class=" btn btn-2"> See Our Products</a>
                 </div>
             </div>
         </div>

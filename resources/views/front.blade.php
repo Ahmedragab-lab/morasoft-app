@@ -9,8 +9,8 @@
 @endsection
 @section('content')
     {{-- ============================slider product======================================== --}}
-    <section id="welcome" class="section welcome-section has-background-primary-light is-clearfix">
-        <div class="container shadow overflow-hidden">
+    <section id="product" class="section welcome-section has-background-primary-light is-clearfix">
+        <div  class="container shadow overflow-hidden">
             <p class="heading-title-top has-text-centered">welcome logistics</p>
             <h1 class="heading-title style-3"> Our
                 {{-- <br> difference. --}}
@@ -91,32 +91,35 @@
             </div>
         </div>
     </section>
-    {{-- services section --}}
-    <section id="services" class="section services-section has-background-primary-light is-clearfix">
-        <div class="container shadow">
+
+    {{--Start Asmaa section service --}}
+    <section  class="pt-5">
+        <div class="container">
             <p class="heading-title-top has-text-centered pt-5">welcome logistics</p>
-        <h1 class="heading-title style-3"> Our
-            {{-- <br> difference. --}}
-            <span class="has-text-primary">Services </span>
-        </h1>
-            <div class="columns is-variable is-4 is-multiline boxes-style-2">
-                @foreach (\App\Models\Service::orderBy('id', 'DESC')->limit(3)->get()
-        as $serv)
-                    <div class="column is-4">
-                        <div class="box-item">
-                            {{-- <a href="#"><img alt="no photo" src="{{ asset('uploads/serv/'.$serv->image) }}" style="max-height: 344px ;"></a> --}}
-                            <a href="{{ route('allservices.show', $serv->id) }}"><img alt="no photo"
-                                    src="{{ asset('front/images/icons/3.png') }}" style="max-height: 344px ;"></a>
-                            <h3><a href="{{ route('allservices.show', $serv->id) }}">{{ $serv->serve_name }}</a></h3>
-                            <p>{{ $serv->desc }}</p>
-                            <p>{{ $serv->status == 1 ? 'Available' : 'Unavialable' }}</p>
-                            <a href="{{ route('allservices.show', $serv->id) }}" class="button"> Make Order</a>
-                        </div>
-                    </div>
-                @endforeach
+            <h1 class="heading-title style-3"> Our
+                {{-- <br> difference. --}}
+                <span class="has-text-primary">Services </span>
+            </h1>
+            <div class="slider">
+                      <div id="slider-service" class="owl-carousel">
+                        @foreach (\App\Models\Service::orderBy('id', 'DESC')->limit(3)->get()
+                        as $serv)
+                          <div class="slider-card">
+                              <div class="d-flex justify-content-center align-items-center mb-4" style="max-height: 350px ;">
+                                  <img  src="{{ asset('uploads/serv/' . $serv->image) }}" style="height: 300px ;border-radius:25px">
+                                  
+                              </div>
+                              <h2 class="mb-0 text-center"><b>{{ $serv->serve_name }} Service</b></h2>
+                          </div>
+                          @endforeach
+                      </div>
             </div>
         </div>
     </section>
+                         
+    {{-- End Asmaa  section service --}}
+    {{-- services section --}}
+   
     {{-- End services section --}}
     {{-- video section --}}
     {{-- <section class="section watch-video  is-clearfix vid-container">
@@ -166,9 +169,10 @@
     </section> --}}
     {{-- End video section --}}
 
-
+<br><br><br>
    <!-- Start Video -->
-   <div class="video shadow" >
+   <section class="" >
+   <div class="video shadow " style="margin-top: 30px" >
     <video autoplay muted loop  >
       <source  src="{{ asset('assets/images/video.mp4') }}"   type="video/mp4" />
     </video>
@@ -178,6 +182,7 @@
       <button class="rounded-pill">See More</button>
     </div>
   </div>
+   </section>
   <!-- End Video -->
 
 
@@ -532,6 +537,31 @@
 
 @endsection
 @section('js')
+<script>
+   
+  $("#slider-service").owlCarousel({
+      loop:true,
+    margin:20,
+    nav:true,
+    autoplay:true,
+    autoplayTimeout:3000,
+    autoplayHoverPause:true,
+    center: true,
+   
+    responsive:{
+        0:{
+            items:1
+        },
+        600:{
+            items:2
+        },
+        1000:{
+            items:3
+        }
+    }
+  });
+
+</script>
     <script type="text/javascript">
         $.ajaxSetup({
             headers: {

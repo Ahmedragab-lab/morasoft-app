@@ -90,10 +90,10 @@
                                 @endguest
                                 @auth
                                     <li class="has-dropdown">
-                                        <a href="#" class="nav-link"><img
+                                        <a href="#" class="nav-link d-flex align-items-center"><img
                                                 src={{ asset('uploads/user-img/' . Auth::user()->image) }} width="30"
-                                                class="rounded-circle">
-                                            {{ \Str::limit(auth()->user()->fname, 10) }}
+                                               class="rounded-circle border border-light border-2" style="height: 30px">
+                                           <span class="ps-2"> {{ \Str::limit(auth()->user()->fname, 10) }}</span>
                                         </a>
                                         <ul class="dropdown">
                                             <li><a href="{{ route('userprofile.show', Auth::user()->id) }}"><i
