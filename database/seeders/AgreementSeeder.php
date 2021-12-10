@@ -17,7 +17,7 @@ class AgreementSeeder extends Seeder
     {
         DB::table('agreements')->delete();
         $agrrement = new Agreement();
-        $agrrement->agreement_title = ['en'=>'warehousing','ar'=>'اتفاقيه هامه'];
+        $agrrement->agreement_title = ['en'=>'A big agreement occured between X and Y company ','ar'=>'اتفاقيه هامه'];
         $agrrement->image = 'default.jpg';
         $agrrement->desc = 'يوجد لدينا اتفاقيات متعدده';
         $agrrement->status = 1;

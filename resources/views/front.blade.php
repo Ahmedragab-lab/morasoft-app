@@ -1,7 +1,7 @@
 @extends('site.layouts.master')
 @section('title') mora soft company @endsection
 @section('css')
-<link href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.css">
     <meta name="csrf-token" content="{{ csrf_token() }}">
 @endsection
 @section('navslider')
@@ -10,7 +10,7 @@
 @section('content')
     {{-- ============================slider product======================================== --}}
     <section id="product" class="section welcome-section has-background-primary-light is-clearfix">
-        <div  class="container shadow overflow-hidden">
+        <div class="container shadow overflow-hidden">
             <p class="heading-title-top has-text-centered">welcome logistics</p>
             <h1 class="heading-title style-3"> Our
                 {{-- <br> difference. --}}
@@ -20,7 +20,8 @@
             <br>
             <div class="blog-list style-2 columns is-variable is-4 is-multiline">
                 <div class="owl-carousel owl-theme">
-                    @foreach (\App\Models\Product::where('status', '1')->where('trending', '1')->orderBy('id', 'DESC')->limit(10)->get() as $product)
+                    @foreach (\App\Models\Product::where('status', '1')->where('trending', '1')->orderBy('id', 'DESC')->limit(10)->get()
+        as $product)
                         <div class=" item">
                             <article class="blog-post">
                                 <figure class="post-image">
@@ -59,41 +60,42 @@
     <section id="tracking" class="section tracking-section is-clearfix shadow">
         <div class="container ">
             <p class="heading-title-top has-text-centered">tracking</p>
-            <h1 class="heading-title style-3">track your shipment</h1>
+            <h1 class="heading-title style-3">track your Service</h1>
             <div class="columns is-mobile is-centered">
-                <div class="column is-10" >
-                <div class="subscribe-form style-1">
-                    <form method="post" action="{{ route('searchtrackstep') }}">
-                        @csrf
-                        <div class="field has-addons has-addons-centered is-grouped">
-                            <div class="control">
-                            <input class="input" type="text" placeholder="Type your order number" name="order_no" required autocomplete="off">
-                            </div>
-                            <div class="control">
-                            {{-- <a href="" class="button" type="submit">
+                <div class="column is-10">
+                    <div class="subscribe-form style-1">
+                        <form method="post" action="{{ route('searchtrackstep') }}">
+                            @csrf
+                            <div class="field has-addons has-addons-centered is-grouped">
+                                <div class="control">
+                                    <input class="input" type="text" placeholder="Search by service number"
+                                        name="order_no" required autocomplete="off">
+                                </div>
+                                <div class="control">
+                                    {{-- <a href="" class="button" type="submit">
                                 <span class="tracking_search">Track it</span>
                                 <span class="icon is-small">
                                 <i class="icon-target"></i>
                                 </span>
                             </a> --}}
-                            <input type="submit" value="Track it" class="button" >
+                                    <input type="submit" value="Track it" class="button">
+                                </div>
                             </div>
-                        </div>
-                    </form>
-                </div>
-                <p class="help"> with best regardes
-                    <span class="icon is-small">
-                        <i class="icon-target"></i>
-                    </span>Mora Soft.
-                    <a href="#">Advanced Tracking</a>
-                </p>
+                        </form>
+                    </div>
+                    <p class="help"> with best regardes
+                        <span class="icon is-small">
+                            <i class="icon-target"></i>
+                        </span>Mora Soft.
+                        <a href="#">Advanced Tracking</a>
+                    </p>
                 </div>
             </div>
         </div>
     </section>
 
-    {{--Start Asmaa section service --}}
-    <section  class="pt-5">
+    {{-- Start Asmaa section service --}}
+    <section  id="services" class="pt-5">
         <div class="container">
             <p class="heading-title-top has-text-centered pt-5">welcome logistics</p>
             <h1 class="heading-title style-3"> Our
@@ -228,107 +230,52 @@
     </section> --}}
 
 
-
-    {{-- ********** Start Events ************ --}}
-
-
-    <section id="news" class="section news-section is-clearfix">
-
-        <div class="container shadow">
-            <p class="heading-title-top has-text-centered pt-5">welcome logistics</p>
-            <h1 class="heading-title style-3"> Last
-                {{-- <br> difference. --}}
-                <span class="has-text-primary">News </span>
-            </h1>
-            <div class="blog-list style-2 columns is-variable is-4 is-multiline">
-                <div class="column is-4" data-aos="fade">
-                    <div class="blog-post-heading">
-                        <h1 class="heading-title style-3 has-text-left">
-                            {{-- <img alt="Joo - Niche Multi-Purpose HTML Template" src="{{ asset('uploads/event/'.$Last_event->image) }}"> --}}
-                            <h1 class="heading-title style-3 has-text-left">
-                                <span class="has-text-primary">{{ $Last_event->event_title }}</span>
-                            </h1>
-                            <p>{{ $Last_event->desc }}</p>
-                            <a href="{{ route('Last_event.show', $Last_event->id) }}" class="button"> أخبارنا...
-                                <span class="icon">
-                                    <i class="ion-ios-arrow-round-forward"></i>
-                                </span>
-                            </a>
+    {{-- Asmaa start section last event last agreement --}}
+    <section>
+    <div class="container">
+        <p class="heading-title-top has-text-centered pt-5">welcome logistics</p>
+        <h1 class="heading-title style-3"> Last
+            {{-- <br> difference. --}}
+            <span class="has-text-primary">News </span>
+        </h1>
+        <div class="d-flex flex-row bd-highlight mb-3 justify-content-around ">
+            <div class="p-2 bd-highlight"><a href="" >
+                <img alt="Joo - Niche Multi-Purpose HTML Template"
+                    src="{{ asset('uploads/agreement/' . $Last_agreement->image) }}" width="500"
+                    style="height: 300px ;border-radius:25px"> </a>
+                    <div class="m-auto text-center p-4">
+                    <h2 style="font-size: 30px;font-weight:bold;">{{$Last_agreement->agreement_title }}</h2>
                     </div>
+                    <div style="width: 500px">
+                        <p class="text-center" > {{$Last_agreement->desc }}</p>
+                    </div>
+                    
                 </div>
-                <div class="column is-4" data-aos="fade">
-                    <article class="blog-post">
-                        <figure class="post-image">
-                            <a href="">
-                                <img alt="Joo - Niche Multi-Purpose HTML Template"
-                                    src="{{ asset('uploads/agreement/' . $Last_agreement->image) }}" width="400" style="height: 250px; width=500px"> </a>
-                        </figure>
-                        <div class="entry-header">
-                            <div class="post-meta">
-                                <ul>
-                                    <li>
-                                        {{-- <a href="#">
-                                      <span>أبريل 5 ، 2018</span>
-                                    </a> --}}
-                                    </li>
-                                </ul>
-                            </div>
-                            <h2 class="entry-title">
+            
 
-                                <a href="">{{ $Last_agreement->agreement_title }}</a>
-                            </h2>
-
-
-                            <p>{{ $Last_agreement->desc }}</p>
+            <div class="p-2 bd-highlight"><a href="" >
+                <a href="{{ route('Last_event.show', $Last_event->id) }}">
+                    <img alt="Joo - Niche Multi-Purpose HTML Template"
+                        src="{{ asset('uploads/event/' . $Last_event->image) }}" width="500"
+                        style="height: 300px ;border-radius:25px"> </a>
+                        <div class="m-auto text-center p-4">
+                        <h2 style="font-size: 30px;font-weight:bold;">{{$Last_event->event_title }}</h2>
                         </div>
-                        <div class="entry-footer">
-                            <a href="{{ route('Last_agrement.show', $Last_agreement->id) }}" class="button">اقرأ
-                                المزيد</a>
+                        <div style="width: 500px">
+                            <p class="text-center" > {{$Last_event->desc }}</p>
                         </div>
-                    </article>
-                    <!-- .blog-post -->
-                </div>
-
-
-                <div class="column is-4 " data-aos="fade">
-                    <article class="blog-post">
-                        <figure class="post-image shadow">
-                            <a href="./blog/single.html">
-                                <img alt="Joo - Niche Multi-Purpose HTML Template"
-                                    src="{{ asset('uploads/serv/' . $Last_service->image) }}"style="height: 250px"> </a>
-                        </figure>
-                        <div class="entry-header">
-                            <div class="post-meta">
-                                <ul>
-                                    <li>
-                                        {{-- <a href="#">
-                                      <span>أبريل 5 ، 2018</span>
-                                    </a> --}}
-                                    </li>
-                                </ul>
-                            </div>
-                            <h2 class="entry-title">
-                                <a href="./blog/single.html">{{ $Last_service->serve_name }}</a>
-                            </h2>
-                            <p>{{ $Last_service->desc }}</p>
-
-                            </div>
-                             <div class="entry-footer">
-
-                            <a href="{{ route('lastservice.showlast', $Last_service->id) }}" class="button">اقرأ
-                                المزيد</a>
-                        </div>
-                    </article>
-                    <!-- .blog-post -->
-                </div>
-
-                        </div>
-                      </div>
+                        </a>
+                        
                     </div>
     </section>
 
+        </div>
+    </div>
 
-    {{-- ********** Start News ************ --}}
+    </section>
+    {{-- Asmaa End section last event last agreement --}}
+
+    
 
 
 
@@ -352,18 +299,22 @@
                     aria-label="Slide 3"></button>
             </div> --}}
             <div class="carousel-inner ">
-                @foreach (\App\Models\Feedback::orderBy('id', 'DESC')->limit(15)->get() as $feedback)
-                <div class="carousel-item feedback @if($loop->first) active @endif h-2" data-bs-interval="1500">
-                    <img src="{{asset('front/images/background/back-2.png')}}" class="d-block w-100 " style="height:500px" alt="...">
-                    <div class="carousel-caption feedback-caption d-none d-md-block">
-                        <img src="{{ asset('uploads/user-img/' . $feedback->users->image) }}"  width="150"  style="height:150px" class="img-area rounded-circle h-5 img-profil " alt="...">
+                @foreach (\App\Models\Feedback::orderBy('id', 'DESC')->limit(15)->get()
+        as $feedback)
+                    <div class="carousel-item feedback @if ($loop->first) active @endif h-2" data-bs-interval="1500">
+                        <img src="{{ asset('front/images/background/back-2.png') }}" class="d-block w-100 "
+                            style="height:500px" alt="...">
+                        <div class="carousel-caption feedback-caption d-none d-md-block">
+                            <img src="{{ asset('uploads/user-img/' . $feedback->users->image) }}" width="150"
+                                style="height:150px" class="img-area rounded-circle h-5 img-profil " alt="...">
 
-                        <h1 class="text-light  py-2  ">{{ $feedback->users->fname }}   {{$feedback->users->lname}} </h1>
+                            <h1 class="text-light  py-2  ">{{ $feedback->users->fname }} {{ $feedback->users->lname }}
+                            </h1>
 
-                        <label class="feed-service">{{ $feedback->services->serve_name }}   Service</label>
-                        <p>{{ $feedback->feedback }}</p>
+                            <label class="feed-service">{{ $feedback->services->serve_name }} Service</label>
+                            <p>{{ $feedback->feedback }}</p>
+                        </div>
                     </div>
-                </div>
                 @endforeach
 
 
@@ -372,11 +323,11 @@
             <button class="carousel-control-prev" type="button" data-bs-target="#carouselFeedback" data-bs-slide="prev">
                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                 <span class="visually-hidden">Previous</span>
-              </button>
-              <button class="carousel-control-next" type="button" data-bs-target="#carouselFeedback" data-bs-slide="next">
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselFeedback" data-bs-slide="next">
                 <span class="carousel-control-next-icon" aria-hidden="true"></span>
                 <span class="visually-hidden">Next</span>
-              </button>
+            </button>
 
         </div>
 
@@ -397,19 +348,19 @@
                     <div class="m-auto text-center">
                         <h1 style="font-size: 60px"><i class="far fa-handshake"></i></h1>
                         <p class="title counter">{{ \App\Models\Service::count() }}</p>
-                        <p class=""style="font-size: 25px;color:#4b505d;">Service number </p>
+                        <p class="" style="font-size: 25px;color:#4b505d;">Service number </p>
                     </div>
                 </div>
                 <div class="level-item has-text-centered">
                     <div class="m-auto text-center">
                         <h1 style="font-size: 60px"><i class="fas fa-star"></i></h1>
                         <p class="title counter" style="font-size: 60px">{{ \App\Models\Feedback::count() }}</p>
-                        <p class="" style="font-size: 25px;color:#4b505d;">  feedback Numbers </p>
+                        <p class="" style="font-size: 25px;color:#4b505d;"> feedback Numbers </p>
                     </div>
                 </div>
                 <div class="level-item has-text-centered">
                     <div class="m-auto text-center">
-                        <h1 class=""style="font-size: 60px"><i class="fas fa-building"></i></h1>
+                        <h1 class="" style="font-size: 60px"><i class="fas fa-building"></i></h1>
                         <p class="title counter" style="font-size: 60px;">{{ \App\Models\Country::count() }}</p>
                         <h1 class="text-center" style="font-size: 25px;color:#4b505d;">countries covered</h1>
                     </div>
@@ -418,7 +369,7 @@
         </div>
     </section>
 
-{{-- End counter showing --}}
+    {{-- End counter showing --}}
     {{-- start client feedback --}}
     {{-- <section id="testimonials" class="section testimonials-section has-background-primary-light is-clearfix">
         <div class="container">
@@ -426,7 +377,7 @@
             <h1 class="heading-title style-3">قالوا عنا</h1>
             <div class="testimonials  owl-carousel dots carousel-items-3 columns-style-1 ">
                 @foreach (\App\Models\Feedback::orderBy('id', 'DESC')->limit(3)->get()
-        as $feedback)
+    as $feedback)
                     <div class="testimonials-item">
                         <p>{{ $feedback->feedback }}</p>
                         <img alt="no photo" src="{{ asset('uploads/user-img/' . $feedback->users->image) }}">
@@ -442,7 +393,7 @@
     {{-- end client feedback --}}
     {{-- anthor form --}}
     <section id="quote" class="section quote-section padding-bottom-none is-clearfix ">
-        <div id="order" class="container shadow mb-5 p-4" >
+        <div id="order" class="container shadow mb-5 p-4">
             <div class="columns is-variable is-2 is-multiline  p-4">
                 <div class="column is-6-desktop is-12-tablet ">
                     <h1 class="heading-title style-3 text-center"> Ask for
@@ -528,7 +479,8 @@
                 </div>
                 <div class="column is-6-desktop is-12-tablet rounded" data-aos-delay="600">
 
-                    <img alt="Joo - Niche Multi-Purpose HTML Template  border rounded shadow  " src="{{ asset('assets/images/man_1.png') }}">
+                    <img alt="Joo - Niche Multi-Purpose HTML Template  border rounded shadow  "
+                        src="{{ asset('assets/images/man_1.png') }}">
                 </div>
             </div>
         </div>
@@ -588,13 +540,12 @@
                         serv_id: serv_id,
                         sms: sms,
                     },
-                    success: function(response)
-                    {
-                    swal(response.status);
-                    $("#ajaxform")[0].reset();
+                    success: function(response) {
+                        swal(response.status);
+                        $("#ajaxform")[0].reset();
                     },
                     error: function(response) {
-                    swal(response.status);
+                        swal(response.status);
                     }
                 });
             });

@@ -73,9 +73,11 @@ class OrderController extends Controller
 
     public function update(Request $request, $id)
     {
+        $request->validate([
+            'price'=>'required|numeric',
+        ]);
         try
         {
-
             $order_price = UserReqest::findorfail($id);
             $order_price->price = $request->price;
             $order_price->save();
@@ -83,9 +85,6 @@ class OrderController extends Controller
             $user = User::where('id',$order_price->user_id)->get();
             $userrequest = UserReqest::latest()->first();
             Notification::send($user,new AdminPrice($userrequest));
-
-
-
 
             $u = User::where('id',$order_price->user_id)->get();
 
