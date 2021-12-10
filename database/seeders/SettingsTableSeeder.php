@@ -31,7 +31,7 @@ class SettingsTableSeeder extends Seeder
         $settings->YoutubeLink =  'https://www.youtube.com';
         $settings->map = 'https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d27231.420735041746!2d34.41045893742996!3d31.443660285671744!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sar!2s!4v1638996252818!5m2!1sar!2s';
 
-        $settings->image= '1.jpg';
+        $settings->image= '1.png';
         $settings->save();
 
 

@@ -9,6 +9,7 @@ return [
 'products'=>'Products',
 'feedback'=>'feedback',
 'contactus'=>'Contact Us',
+'copyright' => "All rights reserved to MoraSoft Company",
 //    nav bar ===============
 
 ];

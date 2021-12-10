@@ -31,7 +31,7 @@
                                 </figure>
                                 <div class="entry-header">
                                     <h2 class="entry-title">
-                                        <a href="#">{{ $product->product_name }}</a>
+                                        <a>{{ $product->product_name }}</a>
                                     </h2>
                                     <span class="float-start entry-title">{{ $product->selling_price }}</span>
                                     <span class="float-end "><s>{{ $product->original_price }}</s></span>
