@@ -71,8 +71,8 @@
                                                     <div class="media-content m-auto text-center  m-2"
                                                         style="height:200px ;width:100px;">
                                                         <div class="text-center m-auto">
-                                                            {{-- <strong>{{ $order_step->order->user->fname }}{{ $order_step->order->user->lname }} </strong> --}}
-                                                            {{-- <div>{{ $order_step->order->user->email }}</div> --}}
+                                                            <strong>{{ $order_step->order->user->fname }}{{ $order_step->order->user->lname }} </strong>
+                                                            <div>{{ $order_step->order->user->email }}</div>
                                                             <strong class="rext-center fs-2"> How would you rate this
                                                                 Service?</strong>
                                                             <p class="text-center fs-5">Select Rating</p>
@@ -94,8 +94,9 @@
                                                 <div class="m-auto text-center">
                                                     <span id='errorLastRadio'></span>
                                                 </div>
+                                                {{-- <input type="text" name="order_id" value=""> --}}
                                                 <div class="control is-expanded m-2">
-                                                    <textarea class="textarea" name="sms" placeholder="Message" required=""> Write a comment</textarea>
+                                                    <textarea class="textarea" name="sms" placeholder="Message" required="" > </textarea>
                                                 </div>
                                                 <div class="text-center">
                                                     <button type="submit" class="button is-success rounded-pill" onclick="validateRating()">Save

@@ -51,7 +51,7 @@
             </div>
         </div>
     </div>
-    
+
 
 
 
@@ -64,8 +64,8 @@
         <div id="feedback" class="owl-carousel owl-theme owl-loaded ">
             <div class="owl-stage-outer">
                 <div class="owl-stage area-content">
-                    @foreach (\App\Models\Feedback::orderBy('id', 'DESC')->limit(3)->get()
-        as $feedback)
+                    {{-- @foreach (\App\Models\Feedback::orderBy('id', 'DESC')->limit(3)->get() as $feedback) --}}
+                    @foreach (\App\Models\UserRate::where('service_id',$service->id)->get() as $feedback)
                         <div class="owl-item content">
                             <div class="image-user-feed m-auto text-center">
                                 <img alt="no photo" class="rounded-circle"
@@ -74,7 +74,7 @@
                             </div>
                             <h2>{{ $feedback->services->serve_name }} Services</h2>
 
-                            <p>{{ $feedback->feedback }}</p>
+                            <p>{{ $feedback->sms }}</p>
 
                         </div>
                     @endforeach
@@ -88,29 +88,7 @@
         </div>
     </section>
 
-    {{-- <section id="testimonials" class="section testimonials-section  is-clearfix mt-5">
-                <h1 class="heading-title style-3 has-text-center"> Feedback
-                    <span class="has-text-primary">clients</span>
-                </h1>
-                <p class="heading-title-bottom text-center"> Always do our best for you thank you</p>
 
-                <div class="container has-background-primary-light">
-
-                    <div class="testimonials  owl-carousel dots carousel-items-2 columns-style-2 ">
-                        @foreach (\App\Models\Feedback::orderBy('id', 'DESC')->limit(3)->get()
-    as $feedback)
-                            <div class="testimonials-item shadow border rounded-2">
-                                <p>{{ $feedback->feedback }}</p>
-                                <img alt="no photo" src="{{ asset('uploads/user-img/' . $feedback->users->image) }}">
-                                <h3>{{ $feedback->users->name }}
-                                    <br>
-                                    <span>{{ $feedback->services->serve_name }} Services</span>
-                                </h3>
-                            </div>
-                        @endforeach
-                    </div>
-                </div>
-            </section> --}}
     {{-- anthor form --}}
     <section id="order" class="section quote-section padding-bottom-none is-clearfix text-center m-auto">
         <div class="container text-center ">

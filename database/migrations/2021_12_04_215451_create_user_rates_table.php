@@ -15,9 +15,11 @@ class CreateUserRatesTable extends Migration
     {
         Schema::create('user_rates', function (Blueprint $table) {
             $table->id();
+            // $table->foreignId('order_id')->references('id')->on('user_reqests')->cascadeOnDelete();
             $table->foreignId('user_id')->references('id')->on('users')->cascadeOnDelete();
             $table->foreignId('service_id')->references('id')->on('services')->cascadeOnDelete();
-            $table->tinyInteger('star')->default(0);
+            $table->tinyInteger('star')->nullable();
+            $table->text('sms')->nullable();
             $table->timestamps();
         });
     }
