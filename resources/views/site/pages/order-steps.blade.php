@@ -71,8 +71,8 @@
                                                     <div class="media-content m-auto text-center  m-2"
                                                         style="height:200px ;width:100px;">
                                                         <div class="text-center m-auto">
-                                                            <strong>{{ $order_step->order->user->fname }}{{ $order_step->order->user->lname }} </strong>
-                                                            <div>{{ $order_step->order->user->email }}</div>
+                                                            {{-- <strong>{{ $order_step->order->user->fname }}{{ $order_step->order->user->lname }} </strong> --}}
+                                                            {{-- <div>{{ $order_step->order->user->email }}</div> --}}
                                                             <strong class="rext-center fs-2"> How would you rate this
                                                                 Service?</strong>
                                                             <p class="text-center fs-5">Select Rating</p>

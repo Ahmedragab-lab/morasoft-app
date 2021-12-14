@@ -35,13 +35,15 @@ class CheckoutController extends Controller
             // if(Order::whereNotIn('order_id',$ids )){
                 // $order = Order::whereNotIn('order_id',$ids )->get();
                 // $order = Order::where('order_id',Auth::id() )->exists();
-            $tracking_no=Order::select('tracking_no')->get();
-            // dd($tracking_no);
-            $exist = Order::whereNotIn('tracking_no',$tracking_no)->first();
-            if($exist){
-                return redirect()->back()->with('status',"cart is empty");
-            }else
-            {
+
+                
+            // $tracking_no=Order::select('tracking_no')->get();
+            // // dd($tracking_no);
+            // $exist = Order::whereNotIn('tracking_no',$tracking_no)->first();
+            // if($exist){
+            //     return redirect()->back()->with('status',"cart is empty");
+            // }else
+            // {
                 $validator = Validator::make($request->all(),
                 [
                     'phone'    => 'required|min:11|numeric',
@@ -98,7 +100,7 @@ class CheckoutController extends Controller
                 Cart::destroy($cartitems);
                 DB::commit();
                 return redirect()->route('mycart.index')->with('status',"your order done");
-            }
+            // }
         } catch (\Exception $e) {
             DB::rollback();
             return redirect()->back()->withErrors(['error' => $e->getMessage()]);

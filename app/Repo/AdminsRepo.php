@@ -72,7 +72,8 @@ class AdminsRepo implements AdminsInterface{
 
         try{
 
-        Admin::findorfail($id)->delete();
+        // Admin::findorfail($id)->delete();
+        Admin::destroy($id);
         toastr()->error(trans('messages.Delete'));
         return redirect()->route('admins.index');
 
