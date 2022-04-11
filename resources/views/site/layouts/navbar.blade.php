@@ -48,8 +48,10 @@
                                     <a href="#"> {{ __('front.sections') }}</a>
                                     <ul class="dropdown">
                                         @foreach (\App\Models\Section::where('status', '1')->get() as $section)
-                                            <li><a
-                                                    href="{{ route('allsections.show', $section->id) }}">{{ $section->section_name }}</a>
+                                            <li>
+                                                <a
+                                                    href="{{ route('allsections.show', $section->id) }}">{{ $section->section_name }}
+                                                </a>
                                             </li>
                                         @endforeach
                                     </ul>

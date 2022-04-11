@@ -22,6 +22,7 @@ var channel = pusher.subscribe('new_email');
 
 // Bind a function to a Event (the full Laravel class)
 channel.bind('App\\Events\\EmailNotification', function(data) {
+    
   var existingNotifications = notifications.html();
   var newNotificationHtml =
     `<a href="" class="dropdown-item notify-item active">
